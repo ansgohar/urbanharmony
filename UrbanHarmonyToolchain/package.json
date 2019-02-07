@@ -1,0 +1,55 @@
+{
+  "name": "urbancms",
+  "private": true,
+  "version": "0.1.0",
+  "description": "A Strapi application.",
+  "main": "./server.js",
+  "scripts": {
+    "setup": "cd admin && npm run setup",
+    "start": "node server.js",
+    "strapi": "node_modules/strapi/bin/strapi.js",
+    "lint": "node_modules/.bin/eslint api/**/*.js config/**/*.js plugins/**/*.js",
+    "postinstall": "node node_modules/strapi/lib/utils/post-install.js"
+  },
+  "devDependencies": {
+    "babel-eslint": "^7.1.1",
+    "eslint": "^3.12.2",
+    "eslint-config-airbnb": "^13.0.0",
+    "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-react": "^6.8.0"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "immutability-helper": "^2.7.0",
+    "lodash": "^4.17.10",
+    "react": "^16.3.2",
+    "react-bootstrap": "^0.32.1",
+    "react-contenteditable": "^2.1.0",
+    "react-dom": "^16.3.2",
+    "react-spinners": "^0.3.2",
+    "reactstrap": "^6.0.1",
+    "strapi": "^3.0.0-alpha.12.5",
+    "strapi-mongoose": "^3.0.0-alpha.12.5",
+    "styled-components": "^3.2.6"
+  },
+  "author": {
+    "name": "ahmed",
+    "email": "",
+    "url": ""
+  },
+  "maintainers": [
+    {
+      "name": "ahmed",
+      "email": "",
+      "url": ""
+    }
+  ],
+  "strapi": {
+    "uuid": "54392ede-9e40-4791-9d29-797ca6857612"
+  },
+  "engines": {
+    "node": ">= 7.0.0",
+    "npm": ">= 3.0.0"
+  },
+  "license": "MIT"
+}

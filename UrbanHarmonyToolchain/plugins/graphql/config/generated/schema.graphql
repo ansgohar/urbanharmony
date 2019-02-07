@@ -1,0 +1,341 @@
+type Album {
+  _id: ID!
+  createdAt: String!
+  updatedAt: String!
+  name: String
+  image: UploadFile
+}
+
+type Competitions {
+  _id: ID!
+  createdAt: String!
+  updatedAt: String!
+  Title: String
+  Description: String
+  Rules: String
+  Judges: String
+  awards: String
+  deadline: String
+  photo: UploadFile
+  contestant(sort: String, limit: Int, start: Int, where: JSON): [Contestant]
+}
+
+type Conditionsandlaws {
+  _id: ID!
+  createdAt: String!
+  updatedAt: String!
+  Title: String!
+  Descrption: String
+  pdf: UploadFile
+  type: ENUM_CONDITIONSANDLAWS_TYPE!
+}
+
+type Conferences {
+  _id: ID!
+  createdAt: String!
+  updatedAt: String!
+  Title: String
+  Date: String
+  Type: ENUM_CONFERENCES_TYPE!
+}
+
+type Consultingoffice {
+  _id: ID!
+  createdAt: String!
+  updatedAt: String!
+  officeName: String
+  owner: String
+  speciality: String
+  address: String
+  postalCode: String
+  phoneNumbers: String
+  Fax: String
+  email: String
+  specialities: String
+}
+
+type Contestant {
+  _id: ID!
+  createdAt: String!
+  updatedAt: String!
+  name: String
+  age: Int
+  email: String
+  phone: String
+  personalPhoto: UploadFile
+  competition: Competitions
+  img1: String
+  img2: String
+  img3: String
+  status: ENUM_CONTESTANT_STATUS
+}
+
+enum ENUM_CONDITIONSANDLAWS_TYPE {
+  Laws
+  Borders
+  Guidelines
+}
+
+enum ENUM_CONFERENCES_TYPE {
+  Seminar
+  Internal
+  Conference
+}
+
+enum ENUM_CONTESTANT_STATUS {
+  applied
+  accepted
+  winner
+}
+
+enum ENUM_INTERNALNEWS_TYPE {
+  Social
+  Paper
+  Electronic
+}
+
+enum ENUM_LIBRARY_BOOKCATEGORY {
+  history
+  engineering
+  literature
+  sociology
+}
+
+enum ENUM_PETITION_STATUS {
+  accepted
+  rejected
+}
+
+enum ENUM_PROJECTS_STATUS {
+  working
+  planned
+  done
+}
+
+enum ENUM_SURVEYLIST_STATUS {
+  exists
+  No
+}
+
+enum ENUM_TERMSANDABOUT_TYPE {
+  term
+  about
+  related
+  contact
+  privacy
+}
+
+type Governorate {
+  _id: ID!
+  createdAt: String!
+  updatedAt: String!
+  governateName: String
+  regions(sort: String, limit: Int, start: Int, where: JSON): [Regions]
+}
+
+type Incident {
+  _id: ID!
+  createdAt: String!
+  updatedAt: String!
+  incidentID: String
+  name: String
+  email: String
+  description: String
+  status: String
+  technicalAnalysis: String
+  descriptionAnalysis: String
+}
+
+type Internalnews {
+  _id: ID!
+  createdAt: String!
+  updatedAt: String!
+  URL: String
+  AuthorName: String
+  ArticleName: String
+  Description: String
+  ThumpURL: String
+  ImgURL: String
+  Type: ENUM_INTERNALNEWS_TYPE!
+  FullArticle: String
+}
+
+type Journal {
+  _id: ID!
+  createdAt: String!
+  updatedAt: String!
+  URL: String
+  AuthorName: String
+  ArticleName: String
+  Description: String
+  ThumpURL: String
+  ImgURL: String
+}
+
+"""
+The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
+"""
+scalar JSON
+
+type Library {
+  _id: ID!
+  createdAt: String!
+  updatedAt: String!
+  author: String
+  printingNo: String
+  classNo: String
+  numberOfCopies: String
+  publisher: String
+  yearOfPublish: String
+  location: String
+  ISBN: String
+  bookcategory: ENUM_LIBRARY_BOOKCATEGORY
+  title: String
+  image: UploadFile
+}
+
+union Morph = Album | Competitions | Conditionsandlaws | Conferences | Consultingoffice | Contestant | Governorate | Incident | Internalnews | Journal | Library | Petition | Projects | Regions | Surveylist | Termsandabout | UploadFile | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsUser
+
+type Petition {
+  _id: ID!
+  createdAt: String!
+  updatedAt: String!
+  owner: String
+  ownerType: String
+  committeeDecision: String
+  recommendation: String
+  commiteeDate: String
+  status: ENUM_PETITION_STATUS
+  surveylist: Surveylist
+}
+
+type Projects {
+  _id: ID!
+  createdAt: String!
+  updatedAt: String!
+  Place: String
+  Event: String
+  Details: String
+  Status: ENUM_PROJECTS_STATUS!
+  ImageUrl: String
+  Title: String
+}
+
+type Query {
+  album(id: ID!): Album
+  albums(sort: String, limit: Int, start: Int, where: JSON): [Album]
+  competition(id: ID!): Competitions
+  competitions(sort: String, limit: Int, start: Int, where: JSON): [Competitions]
+  conditionsandlaw(id: ID!): Conditionsandlaws
+  conditionsandlaws(sort: String, limit: Int, start: Int, where: JSON): [Conditionsandlaws]
+  conference(id: ID!): Conferences
+  conferences(sort: String, limit: Int, start: Int, where: JSON): [Conferences]
+  consultingoffice(id: ID!): Consultingoffice
+  consultingoffices(sort: String, limit: Int, start: Int, where: JSON): [Consultingoffice]
+  contestant(id: ID!): Contestant
+  contestants(sort: String, limit: Int, start: Int, where: JSON): [Contestant]
+  governorate(id: ID!): Governorate
+  governorates(sort: String, limit: Int, start: Int, where: JSON): [Governorate]
+  incident(id: ID!): Incident
+  incidents(sort: String, limit: Int, start: Int, where: JSON): [Incident]
+  internalnew(id: ID!): Internalnews
+  internalnews(sort: String, limit: Int, start: Int, where: JSON): [Internalnews]
+  journal(id: ID!): Journal
+  journals(sort: String, limit: Int, start: Int, where: JSON): [Journal]
+  library(id: ID!): Library
+  libraries(sort: String, limit: Int, start: Int, where: JSON): [Library]
+  petition(id: ID!): Petition
+  petitions(sort: String, limit: Int, start: Int, where: JSON): [Petition]
+  project(id: ID!): Projects
+  projects(sort: String, limit: Int, start: Int, where: JSON): [Projects]
+  region(id: ID!): Regions
+  regions(sort: String, limit: Int, start: Int, where: JSON): [Regions]
+  surveylist(id: ID!): Surveylist
+  surveylists(sort: String, limit: Int, start: Int, where: JSON): [Surveylist]
+  termsandabout(id: ID!): Termsandabout
+  termsandabouts(sort: String, limit: Int, start: Int, where: JSON): [Termsandabout]
+  files(sort: String, limit: Int, start: Int, where: JSON): [UploadFile]
+  role(id: ID!): UsersPermissionsRole
+
+  """
+  Retrieve all the existing roles. You can't apply filters on this query.
+  """
+  roles(sort: String, limit: Int, start: Int, where: JSON): [UsersPermissionsRole]
+  user(id: ID!): UsersPermissionsUser
+  users(sort: String, limit: Int, start: Int, where: JSON): [UsersPermissionsUser]
+}
+
+type Regions {
+  _id: ID!
+  createdAt: String!
+  updatedAt: String!
+  regionName: String
+  governorate: Governorate
+  building(sort: String, limit: Int, start: Int, where: JSON): [Surveylist]
+}
+
+type Surveylist {
+  _id: ID!
+  createdAt: String!
+  updatedAt: String!
+  registrationNumber: String
+  buildingType: String
+  buildingNumber: String
+  buildingName: String
+  fullAddress: String
+  buildingValue: String
+  status: ENUM_SURVEYLIST_STATUS!
+  region: Regions
+  petition: Petition
+}
+
+type Termsandabout {
+  _id: ID!
+  createdAt: String!
+  updatedAt: String!
+  title: String
+  type: ENUM_TERMSANDABOUT_TYPE
+  description: String
+  image: UploadFile
+}
+
+type UploadFile {
+  _id: ID!
+  createdAt: String!
+  updatedAt: String!
+  name: String!
+  hash: String!
+  ext: String
+  mime: String!
+  size: String!
+  url: String!
+  provider: String!
+  related(sort: String, limit: Int, start: Int, where: JSON): [Morph]
+}
+
+type UsersPermissionsPermission {
+  _id: ID!
+  type: String!
+  controller: String!
+  action: String!
+  enabled: Boolean!
+  policy: String!
+  role: UsersPermissionsRole
+}
+
+type UsersPermissionsRole {
+  _id: ID!
+  name: String!
+  description: String
+  type: String
+  users(sort: String, limit: Int, start: Int, where: JSON): [UsersPermissionsUser]
+  permissions(sort: String, limit: Int, start: Int, where: JSON): [UsersPermissionsPermission]
+}
+
+type UsersPermissionsUser {
+  _id: ID!
+  username: String!
+  email: String!
+  provider: String
+  role: UsersPermissionsRole
+}

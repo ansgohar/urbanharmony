@@ -1,0 +1,31 @@
+{
+  "connection": "default",
+  "collectionName": "news",
+  "info": {
+    "name": "journal",
+    "description": ""
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "URL": {
+      "type": "string"
+    },
+    "AuthorName": {
+      "type": "string"
+    },
+    "ArticleName": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "text"
+    },
+    "ThumpURL": {
+      "type": "string"
+    },
+    "ImgURL": {
+      "type": "string"
+    }
+  }
+}

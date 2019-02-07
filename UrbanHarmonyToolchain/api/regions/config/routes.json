@@ -1,0 +1,44 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/regions",
+      "handler": "Regions.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/regions/:_id",
+      "handler": "Regions.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/regions",
+      "handler": "Regions.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/regions/:_id",
+      "handler": "Regions.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/regions/:_id",
+      "handler": "Regions.destroy",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

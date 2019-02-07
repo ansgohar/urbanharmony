@@ -1,0 +1,5 @@
+{
+  "endpoint": "/graphql",
+  "shadowCRUD": true,
+  "depthLimit": 7
+}

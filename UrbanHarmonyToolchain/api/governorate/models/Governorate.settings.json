@@ -1,0 +1,21 @@
+{
+  "connection": "default",
+  "collectionName": "",
+  "info": {
+    "name": "governorate",
+    "description": ""
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "governateName": {
+      "type": "string"
+    },
+    "regions": {
+      "collection": "regions",
+      "dominant": true,
+      "via": "governorate"
+    }
+  }
+}

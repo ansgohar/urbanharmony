@@ -1,0 +1,24 @@
+{
+  "connection": "default",
+  "collectionName": "",
+  "info": {
+    "name": "regions",
+    "description": ""
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "regionName": {
+      "type": "string"
+    },
+    "governorate": {
+      "model": "governorate",
+      "via": "regions"
+    },
+    "building": {
+      "collection": "surveylist",
+      "via": "region"
+    }
+  }
+}

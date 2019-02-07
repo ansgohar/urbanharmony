@@ -1,0 +1,40 @@
+{
+  "connection": "default",
+  "collectionName": "competitions",
+  "info": {
+    "name": "competitions",
+    "description": ""
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "text"
+    },
+    "Rules": {
+      "type": "text"
+    },
+    "Judges": {
+      "type": "text"
+    },
+    "awards": {
+      "type": "string"
+    },
+    "deadline": {
+      "type": "date"
+    },
+    "contestant": {
+      "collection": "contestant",
+      "via": "competition"
+    },
+    "photo": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload"
+    }
+  }
+}

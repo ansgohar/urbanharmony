@@ -1,0 +1,35 @@
+{
+  "connection": "default",
+  "collectionName": "incident",
+  "info": {
+    "name": "incident",
+    "description": ""
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "incidentID": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "description": {
+      "minLength": 30,
+      "type": "text"
+    },
+    "status": {
+      "type": "string"
+    },
+    "technicalAnalysis": {
+      "type": "json"
+    },
+    "descriptionAnalysis": {
+      "type": "text"
+    }
+  }
+}

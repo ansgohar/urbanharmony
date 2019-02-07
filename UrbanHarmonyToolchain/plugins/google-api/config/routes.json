@@ -1,0 +1,36 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/",
+      "handler": "GoogleApi.index",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/getquery",
+      "handler": "GoogleApi.getquery",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/deletequery",
+      "handler": "GoogleApi.deletequery",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/editquery",
+      "handler": "GoogleApi.editquery",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

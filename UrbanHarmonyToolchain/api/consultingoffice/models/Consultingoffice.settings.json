@@ -1,0 +1,40 @@
+{
+  "connection": "default",
+  "collectionName": "",
+  "info": {
+    "name": "consultingoffice",
+    "description": ""
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "officeName": {
+      "type": "string"
+    },
+    "owner": {
+      "type": "string"
+    },
+    "speciality": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    },
+    "postalCode": {
+      "type": "string"
+    },
+    "phoneNumbers": {
+      "type": "string"
+    },
+    "Fax": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "specialities": {
+      "type": "text"
+    }
+  }
+}

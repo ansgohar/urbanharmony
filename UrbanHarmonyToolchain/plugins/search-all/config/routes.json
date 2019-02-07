@@ -1,0 +1,29 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/",
+      "handler": "SearchAll.index",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/createIndex",
+      "handler": "SearchAll.createIndex",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/:find",
+      "handler": "SearchAll.search",
+      "config": {
+        "policies": []
+      }
+    }
+
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "connection": "default",
+  "collectionName": "surveylist",
+  "info": {
+    "name": "surveylist",
+    "description": ""
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "registrationNumber": {
+      "type": "string"
+    },
+    "buildingType": {
+      "type": "string"
+    },
+    "buildingNumber": {
+      "type": "string"
+    },
+    "buildingName": {
+      "type": "string"
+    },
+    "fullAddress": {
+      "type": "string"
+    },
+    "buildingValue": {
+      "type": "string"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "exists",
+        "No"
+      ],
+      "required": true
+    },
+    "region": {
+      "model": "regions",
+      "via": "building"
+    },
+    "petition": {
+      "model": "petition",
+      "via": "surveylist"
+    }
+  }
+}

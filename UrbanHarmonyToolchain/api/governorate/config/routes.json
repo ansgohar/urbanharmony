@@ -1,0 +1,44 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/governorate",
+      "handler": "Governorate.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/governorate/:_id",
+      "handler": "Governorate.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/governorate",
+      "handler": "Governorate.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/governorate/:_id",
+      "handler": "Governorate.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/governorate/:_id",
+      "handler": "Governorate.destroy",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

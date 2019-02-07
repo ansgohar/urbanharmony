@@ -1,0 +1,44 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/conferences",
+      "handler": "Conferences.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/conferences/:_id",
+      "handler": "Conferences.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/conferences",
+      "handler": "Conferences.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/conferences/:_id",
+      "handler": "Conferences.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/conferences/:_id",
+      "handler": "Conferences.destroy",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

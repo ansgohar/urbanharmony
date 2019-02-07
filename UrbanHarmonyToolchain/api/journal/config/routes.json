@@ -1,0 +1,44 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/journal",
+      "handler": "Journal.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/journal/:_id",
+      "handler": "Journal.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/journal",
+      "handler": "Journal.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/journal/:_id",
+      "handler": "Journal.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/journal/:_id",
+      "handler": "Journal.destroy",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

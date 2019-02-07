@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1277px" height="328px" viewBox="0 0 1277 328" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.1 (47250) - http://www.bohemiancoding.com/sketch -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Urban-Harmony-Landing-Page" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(0.000000, -512.000000)" opacity="0.454257246">
+        <g id="عن-المؤسسة" transform="translate(0.000000, 488.000000)" stroke="#5AA16D">
+            <g id="Group">
+                <g transform="translate(0.000000, 24.000000)" id="Rectangle-4">
+                    <rect x="0.5" y="17.5" width="101" height="101" rx="2"></rect>
+                    <rect transform="translate(249.000000, 262.000000) rotate(-68.000000) translate(-249.000000, -262.000000) " x="198.5" y="211.5" width="101" height="101" rx="2"></rect>
+                    <rect x="392.5" y="17.5" width="101" height="101" rx="2"></rect>
+                    <rect x="585.5" y="17.5" width="101" height="101" rx="2"></rect>
+                    <rect x="779.5" y="17.5" width="101" height="101" rx="2"></rect>
+                    <rect x="981.5" y="17.5" width="101" height="101" rx="2"></rect>
+                    <rect x="1175.5" y="17.5" width="101" height="101" rx="2"></rect>
+                    <rect x="0.5" y="211.5" width="101" height="101" rx="2"></rect>
+                    <rect x="585.5" y="211.5" width="101" height="101" rx="2"></rect>
+                    <rect x="779.5" y="211.5" width="101" height="101" rx="2"></rect>
+                    <rect x="981.5" y="211.5" width="101" height="101" rx="2"></rect>
+                    <rect x="1175.5" y="211.5" width="101" height="101" rx="2"></rect>
+                    <rect transform="translate(243.000000, 67.000000) rotate(-23.000000) translate(-243.000000, -67.000000) " x="192.5" y="16.5" width="101" height="101" rx="2"></rect>
+                    <rect transform="translate(441.000000, 261.000000) rotate(-23.000000) translate(-441.000000, -261.000000) " x="390.5" y="210.5" width="101" height="101" rx="2"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

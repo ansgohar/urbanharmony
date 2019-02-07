@@ -1,0 +1,38 @@
+{
+  "connection": "default",
+  "collectionName": "projects",
+  "info": {
+    "name": "projects",
+    "description": ""
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "Place": {
+      "type": "text",
+      "multiple": false
+    },
+    "Event": {
+      "type": "text",
+      "multiple": false
+    },
+    "Details": {
+      "type": "text",
+      "multiple": false
+    },
+    "Status": {
+      "type":"enumeration",
+      "enum": ["working","planned","done"],
+      "required": true
+    },
+    "ImageUrl": {
+      "type": "string",
+      "multiple": false
+    },
+    "Title": {
+      "type": "string",
+      "multiple": false
+    }
+  }
+}

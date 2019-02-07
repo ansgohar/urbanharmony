@@ -1,0 +1,55 @@
+{
+  "connection": "default",
+  "collectionName": "library",
+  "info": {
+    "name": "library",
+    "description": ""
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "author": {
+      "default": "printingNo",
+      "type": "string"
+    },
+    "printingNo": {
+      "type": "string"
+    },
+    "classNo": {
+      "type": "string"
+    },
+    "numberOfCopies": {
+      "type": "string"
+    },
+    "publisher": {
+      "type": "string"
+    },
+    "yearOfPublish": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string"
+    },
+    "ISBN": {
+      "type": "string"
+    },
+    "bookcategory": {
+      "type": "enumeration",
+      "enum": [
+        "history",
+        "engineering",
+        "literature",
+        "sociology"
+      ]
+    },
+    "title": {
+      "type": "string"
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload"
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "connection": "default",
+  "collectionName": "",
+  "info": {
+    "name": "petition",
+    "description": ""
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "owner": {
+      "type": "string"
+    },
+    "ownerType": {
+      "type": "string"
+    },
+    "committeeDecision": {
+      "type": "string"
+    },
+    "recommendation": {
+      "type": "string"
+    },
+    "commiteeDate": {
+      "type": "date"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "accepted",
+        "rejected"
+      ]
+    },
+    "surveylist": {
+      "model": "surveylist",
+      "via": "petition"
+    }
+  }
+}

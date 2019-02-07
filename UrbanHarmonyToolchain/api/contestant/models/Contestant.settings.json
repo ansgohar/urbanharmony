@@ -1,0 +1,51 @@
+{
+  "connection": "default",
+  "collectionName": "contestant",
+  "info": {
+    "name": "contestant",
+    "description": ""
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "age": {
+      "type": "integer"
+    },
+    "email": {
+      "type": "email"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "personalPhoto": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload"
+    },
+    "competition": {
+      "model": "competitions",
+      "via": "contestant"
+    },
+    "img1": {
+      "type": "string"
+    },
+    "img2": {
+      "type": "string"
+    },
+    "img3": {
+      "type": "string"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "applied",
+        "accepted",
+        "winner"
+      ]
+    }
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "miscellaneous": {
+    "attributes": {
+      "title": {
+        "appearance": ""
+      },
+      "description": {
+        "appearance": "WYSIWYG"
+      }
+    }
+  },
+  "surveylist": {
+    "attributes": {
+      "regNumber": {
+        "appearance": ""
+      }
+    }
+  },
+  "termsAndAbout": {
+    "attributes": {
+      "title": {
+        "appearance": ""
+      },
+      "type": {
+        "appearance": ""
+      },
+      "description": {
+        "appearance": "WYSIWYG"
+      }
+    }
+  },
+  "library": {
+    "attributes": {
+      "bookcategory": {
+        "appearance": ""
+      },
+      "title": {
+        "appearance": ""
+      }
+    }
+  },
+  "petition": {
+    "attributes": {
+      "owner": {
+        "appearance": ""
+      },
+      "ownerType": {
+        "appearance": ""
+      },
+      "committeeDecision": {
+        "appearance": ""
+      },
+      "recommendation": {
+        "appearance": ""
+      },
+      "commiteeDate": {
+        "appearance": ""
+      },
+      "status": {
+        "appearance": ""
+      }
+    }
+  },
+  "consultingOffice": {
+    "attributes": {
+      "officeName": {
+        "appearance": ""
+      },
+      "owner": {
+        "appearance": ""
+      },
+      "speciality": {
+        "appearance": ""
+      },
+      "address": {
+        "appearance": ""
+      },
+      "postalCode": {
+        "appearance": ""
+      },
+      "phoneNumbers": {
+        "appearance": ""
+      },
+      "Fax": {
+        "appearance": ""
+      },
+      "email": {
+        "appearance": ""
+      },
+      "specialities": {
+        "appearance": "WYSIWYG"
+      }
+    }
+  },
+  "contestant": {
+    "attributes": {
+      "status": {
+        "appearance": ""
+      }
+    }
+  }
+}

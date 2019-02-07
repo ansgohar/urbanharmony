@@ -1,0 +1,6 @@
+{
+  "port": 3000,
+  "CMS_URL":"http://localhost:1337/",
+  "NODE_RED_URL": "https://urbanharmonyflows.mybluemix.net/"
+
+}

@@ -1,0 +1,45 @@
+{
+  "connection": "default",
+  "collectionName": "internalnews",
+  "info": {
+    "name": "internalnews",
+    "description": ""
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "URL": {
+      "type": "string"
+    },
+    "AuthorName": {
+      "type": "string"
+    },
+    "ArticleName": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "text"
+    },
+    "ThumpURL": {
+      "type": "string"
+    },
+    "ImgURL": {
+      "type": "string"
+    },
+    "Type": {
+      "type":"enumeration",
+      "enum": 
+      [
+        "Social",
+        "Paper",
+        "Electronic"
+      ],
+      "required": true
+    },
+    "FullArticle": {
+      "type": "text"
+    }
+  
+  }
+}

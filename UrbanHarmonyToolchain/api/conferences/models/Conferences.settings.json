@@ -1,0 +1,26 @@
+{
+  "connection": "default",
+  "collectionName": "conferences",
+  "info": {
+    "name": "conferences",
+    "description": ""
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "multiple": false
+    },
+    "Date": {
+      "type": "date",
+      "multiple": false
+    },
+    "Type": {
+      "type":"enumeration",
+      "enum": ["Seminar","Internal Conference"],
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/internalnews",
+      "handler": "Internalnews.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/internalnews/:_id",
+      "handler": "Internalnews.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/internalnews",
+      "handler": "Internalnews.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/internalnews/:_id",
+      "handler": "Internalnews.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/internalnews/:_id",
+      "handler": "Internalnews.destroy",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

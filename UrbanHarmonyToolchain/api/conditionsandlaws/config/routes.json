@@ -1,0 +1,44 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/conditionsandlaws",
+      "handler": "Conditionsandlaws.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/conditionsandlaws/:_id",
+      "handler": "Conditionsandlaws.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/conditionsandlaws",
+      "handler": "Conditionsandlaws.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/conditionsandlaws/:_id",
+      "handler": "Conditionsandlaws.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/conditionsandlaws/:_id",
+      "handler": "Conditionsandlaws.destroy",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

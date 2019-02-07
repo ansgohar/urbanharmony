@@ -1,0 +1,18 @@
+{
+  "ServiceId": "com.ibm.cloudoe.orion.client.deploy",
+  "Params": {
+    "Target": {
+      "Url": "https://api.ng.bluemix.net",
+      "Org": "hassana@eg.ibm.com",
+      "Space": "UrbanHarmonyDev"
+    },
+    "Name": "UrbanHarmonyCMS",
+    "Instrumentation": {
+      "host": "UrbanHarmonyCMS",
+      "domain": "mybluemix.net",
+      "instances": "1"
+    }
+  },
+  "Path": "manifest.yml",
+  "Type": "Cloud Foundry"
+}

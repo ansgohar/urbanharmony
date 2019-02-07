@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/consultingoffice",
+      "handler": "Consultingoffice.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/consultingoffice/count",
+      "handler": "Consultingoffice.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/consultingoffice/:_id",
+      "handler": "Consultingoffice.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/consultingoffice",
+      "handler": "Consultingoffice.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/consultingoffice/:_id",
+      "handler": "Consultingoffice.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/consultingoffice/:_id",
+      "handler": "Consultingoffice.destroy",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

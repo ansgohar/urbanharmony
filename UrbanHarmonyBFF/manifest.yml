@@ -1,0 +1,13 @@
+applications:
+  - instances: 1
+    timeout: 180
+    name: urbanHarmonyBFF
+    buildpack: sdk-for-nodejs
+    command: 'npm prune --production && NODE_ENV=production npm start'
+    memory: 256MB
+    domain: mybluemix.net
+    host: urbanHarmonyBFF
+    env:
+      NPM_CONFIG_PRODUCTION: false
+      CMS_URL: 'https://urbanharmonycms.mybluemix.net/'
+      NODE_RED_URL: 'https://urbanharmonyflows.mybluemix.net/'

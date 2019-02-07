@@ -1,0 +1,180 @@
+import React from 'react';
+import HomePage from './components/home.jsx';
+import MoreNews from './components/moreNewsPage.jsx';
+import DetailInternal from './components/internalDetails.jsx'
+import CompetitionDetails from './components/competition/competitionDetails.jsx'
+import MoreProjects from './components/project/moreProjects.jsx'
+import ProjectDetails from './components/project/projectDetails.jsx'
+import ComplainsPage from './components/complains/complains.jsx'
+import LawsBordersPage from './components/laws-borders/allcontent.jsx'
+import Vision from './components/static pages/vision.jsx'
+import LibraryPage from './components/library/library.jsx'
+import GlobalSearchPage from './components/global search/searchPage.jsx';
+import CompetitionInfo from './components/competition/competitionINFO.jsx';
+
+import { connect } from 'react-redux';
+import { BrowserRouter, Route, Link, Switch } from 'react-router-dom';
+
+class App extends React.Component {
+
+    render() {
+
+        return (
+            <div className="container-fluid no-padding">
+                {/* <!-- Navbar -->  */}
+                <div className="row">
+                    <header>
+                        <div className="col-xs-12 navbar sticky no-padding">
+                            <div className="nav-right-side col-xs-2 no-padding">
+                                <a id="logo" href="#"><img className="nav-brand" src="assets/images/logo/urban-harmony-logo.jpeg" /></a>
+                            </div>
+                            <div className="burger-menu no-padding"><a href="#" className="burg-icon">&#9776;</a></div>
+                            <nav className="navul col-xs-12 col-sm-12 col-md-10 no-padding">
+                                <ul id="myTopnav" className="col-xs-12 col-sm-12 col-md-10 topnav" >
+
+                                    <li className="menu-position active"><a href="/" id="home">الرئيسية</a></li>
+                                    <li className="menu-position"><a href="#about" >عن الجهاز</a></li>
+                                    <li id="imp-service-menu" className="menu-position">
+                                        <a href="#services">أهم الخدمات<strong class="caret"></strong> </a>
+                                        <ul id="imp-service-sub" class="second-level">
+                                            <li><a href="#">قوائم الحصر والتظلمات</a></li>
+                                            <li><a href="#">المرصد الحضاري</a></li>
+                                            <li><a href="#">القوانين</a></li>
+                                            <li><a href="#">مكاتب إستشارية</a></li>
+                                        </ul>
+
+                                    </li>
+                                    <li className="menu-position"><a href="#competitions" >ندوات و مسابقات</a></li>
+                                    <li className="menu-position"><a href="#projects" >مشروعات</a></li>
+                                    <li className="menu-position"><a href="#news" >الأخبار</a></li>
+                                    <li className="menu-position"><a href="/library" id="lib">مكتبة الجهاز</a></li>
+                                </ul>
+                                <div className="col-xs-6 col-sm-4 col-md-2 search-cont">
+                                    <a id="searchBTN" onClick={()=> {
+                                         document.getElementById('searchBTN').href = "/search?query=" + document.getElementById('globalsearch').value;
+                                    }}>
+                                        <img src="/assets/images/icons/search.png" />
+                                    </a>
+                                    {/* <button className="search-btn" type="submit"></button> */}
+                                    <input className="search-input" type="search" id="globalsearch" />
+                                </div>
+                            </nav>
+                        </div>
+                    </header>
+                </div>
+
+                {/* Routes Will Go Here  */}
+
+                <Switch>
+                    <Route exact path="/" component={HomePage} />
+                    <Route path="/more" component={MoreNews} />
+                    <Route path="/detail" component={DetailInternal} />
+                    <Route path="/competitionDetails" component={CompetitionDetails} />
+                    <Route path="/moreProjects" component={MoreProjects} />
+                    <Route path="/projectDetail" component={ProjectDetails} />
+                    <Route path="/complainsDetail" component={ComplainsPage} />
+                    <Route path="/lawsDetails" component={LawsBordersPage} />
+                    <Route path="/vision" component={Vision} />
+                    <Route path="/library" component={LibraryPage} />
+                    <Route path="/search" component={GlobalSearchPage} />
+                    <Route path="/competitionInfo" component={CompetitionInfo} />
+                </Switch>
+
+
+
+                {/* <!-- Footer --> */}
+                <div className="row">
+                    <div className="col-xs-12 footerContainer no-padding">
+                        <div className="footer col-xs-12 no-padding">
+                            <div className="footerLeftSide col-xs-12 col-sm-3">
+                                {/* <h2> النشرة الدورية</h2>
+                                <h4> هل أنت مهتم باخر اخبار الجهاز</h4>
+                                <button type="button" className="subscribeBtn">إشترك</button> */}
+                            </div>
+                            <div className="footerRightSide col-xs-12 col-sm-9">
+                                <div className="footerLinks col-xs-12 no-padding">
+                                    <a href="#">من نحن</a>
+                                    <a href="#">إتصل بنا</a>
+                                    <a href="#">مواقع ذات صلة</a>
+                                    <a href="#">الخصوصية</a>
+                                    <a href="#">الشروط والأحكام</a>
+                                </div>
+                                <div className="col-xs-12 no-padding followUs">
+                                    <span>تابعنا على</span>
+                                    <a href="#"><img src="assets/images/icons/facebook_icon.svg" alt="facebook" className="fbIcon" /></a>
+                                    <a href="#"><img src="assets/images/icons/youtube_icon.svg" alt="youtube" className="ytIcon" />
+                                    </a>
+                                    <div className="copy-right">تم التصميم والتنفيذ بواسطة <img className="ibmIcon" src="assets/images/icons/ibm.png" alt="IBMCopyrights" /></div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        )
+    }
+}
+
+
+
+
+
+function equalizeHeights(itemSelector) {
+    var maxHeight = 0;
+    $(itemSelector).each(function () {
+        if ($(this).height() > maxHeight) { maxHeight = $(this).height(); }
+    });
+    $(itemSelector).height(maxHeight);
+}
+
+$(document).ready(function () {
+    equalizeHeights(".serviceCard .cardText");
+    equalizeHeights(".competitionCardsContainer .comp-textitems-cont");
+});
+
+
+export default connect()(App);
+
+
+$(document).ready(function () {
+    $(".burg-icon").click(function () {
+        $(".topnav").toggleClass("responsive");
+    });
+});
+
+// $(document).ready(function(){
+// $('body').scrollspy({
+//     offset:200
+//  });
+// });
+//search script
+$(document).ready(function () {
+    $(".search-btn").click(function () {
+        $(".search-show").toggle();
+    });
+
+});
+
+//script to switch checked radio button
+$(function () {
+    var $radios = $('input:radio[name=color]');
+    if ($radios.is(':checked') === false) {
+        $radios.filter('[value=all]').prop('checked', true);
+    }
+});
+
+//script to fix scroll
+
+$("#myTopnav a").on('click', function (event) {
+
+    if (this.hash !== "") {
+        event.preventDefault();
+        var hash = this.hash;
+
+        $('html, body').animate({ scrollTop: ($(hash).offset().top - 115) + 'px' }, 900);
+        //, function(){
+        //window.location.hash = hash;
+        //});
+    } // End if
+});

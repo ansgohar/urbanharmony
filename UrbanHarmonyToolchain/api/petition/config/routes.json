@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/petition",
+      "handler": "Petition.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/petition/count",
+      "handler": "Petition.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/petition/:_id",
+      "handler": "Petition.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/petition",
+      "handler": "Petition.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/petition/:_id",
+      "handler": "Petition.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/petition/:_id",
+      "handler": "Petition.destroy",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

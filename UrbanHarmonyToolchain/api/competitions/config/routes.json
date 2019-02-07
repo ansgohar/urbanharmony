@@ -1,0 +1,44 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/competitions",
+      "handler": "Competitions.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/competitions/:_id",
+      "handler": "Competitions.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/competitions",
+      "handler": "Competitions.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/competitions/:_id",
+      "handler": "Competitions.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/competitions/:_id",
+      "handler": "Competitions.destroy",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

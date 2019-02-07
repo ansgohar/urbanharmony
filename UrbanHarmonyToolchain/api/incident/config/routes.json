@@ -1,0 +1,44 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/incident",
+      "handler": "Incident.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/incident/:_id",
+      "handler": "Incident.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/incident",
+      "handler": "Incident.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/incident/:_id",
+      "handler": "Incident.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/incident/:_id",
+      "handler": "Incident.destroy",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

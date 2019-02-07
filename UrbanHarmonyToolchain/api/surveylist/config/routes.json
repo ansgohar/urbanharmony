@@ -1,0 +1,44 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/surveylist",
+      "handler": "Surveylist.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/surveylist/:_id",
+      "handler": "Surveylist.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/surveylist",
+      "handler": "Surveylist.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/surveylist/:_id",
+      "handler": "Surveylist.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/surveylist/:_id",
+      "handler": "Surveylist.destroy",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
