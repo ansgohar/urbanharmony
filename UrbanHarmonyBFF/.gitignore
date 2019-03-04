@@ -8,3 +8,5 @@ localdev-config.json
 heapdump*
 public/js/*
 public/index.html
+package.json
+package-lock.json

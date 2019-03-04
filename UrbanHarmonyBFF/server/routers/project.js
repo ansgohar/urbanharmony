@@ -7,11 +7,14 @@ module.exports = function (app) {
 
     router.get('/:status', function (req, res, next) {
         project.getprojects(req.params.status,function(data) {
-            if(Object.keys(data).length == 0){
+            if (Object.keys(data).length == 0) {
                 res.json([]);
             }
-            else{
-            res.json(data);
+            else if (Array.isArray(data)) {
+                res.json(data);
+            }
+            else {
+                res.json([data]);
             }
         });
     });
@@ -19,11 +22,14 @@ module.exports = function (app) {
 
     router.get('/all/:status', function (req, res, next) {
         project.getAllProjects(req.params.status,function(data) {
-            if(Object.keys(data).length == 0){
+            if (Object.keys(data).length == 0) {
                 res.json([]);
             }
-            else{
-            res.json(data);
+            else if (Array.isArray(data)) {
+                res.json(data);
+            }
+            else {
+                res.json([data]);
             }
         });
     });

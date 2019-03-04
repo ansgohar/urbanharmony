@@ -11,8 +11,11 @@ module.exports = function (app) {
             if (Object.keys(data).length == 0) {
                 res.json([]);
             }
-            else {
+            else if (Array.isArray(data)) {
                 res.json(data);
+            }
+            else {
+                res.json([data]);
             }
         });
 
@@ -112,8 +115,11 @@ module.exports = function (app) {
             if (Object.keys(data).length == 0) {
                 res.json([]);
             }
-            else {
+            else if (Array.isArray(data)) {
                 res.json(data);
+            }
+            else {
+                res.json([data]);
             }
         });
 

@@ -24,8 +24,12 @@ module.exports = function (app) {
         competitionService.getAllCompetition(function (data) {
             if (Object.keys(data).length == 0) {
                 res.json([]);
-            } else {
+            }
+            else if (Array.isArray(data)) {
                 res.json(data);
+            }
+            else {
+                res.json([data]);
             }
         }
         );
@@ -36,8 +40,12 @@ module.exports = function (app) {
         competitionService.getCompetitionWinners(function (data) {
             if (Object.keys(data).length == 0) {
                 res.json([]);
-            } else {
+            }
+            else if (Array.isArray(data)) {
                 res.json(data);
+            }
+            else {
+                res.json([data]);
             }
         }
         );

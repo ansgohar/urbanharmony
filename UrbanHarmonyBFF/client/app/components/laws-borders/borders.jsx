@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { getBorders } from '../../actions/index.js'
 
 
-
 class Borders extends React.Component {
     constructor(props) {
         super(props);
@@ -36,7 +35,6 @@ class Brd extends React.Component {
         super(props);
     }
 
-
     render() {
         return (
             <div class="tile pressCard law-card col-xs-12 col-sm-10">
@@ -47,7 +45,7 @@ class Brd extends React.Component {
                             {this.props.record.detail}
                         </p>
                         <div class="col-xs-12 col-sm-2 no-padding sharing-cont">
-                            <a href={"https://urbanharmonycms.mybluemix.net" + this.props.record.PDF} class="pdf-btn" target="_blank"></a>
+                            <a href={"http://localhost:1337" + this.props.record.PDF} class="pdf-btn" target="_blank"></a>
                         </div>
                     </div>
                 </div>

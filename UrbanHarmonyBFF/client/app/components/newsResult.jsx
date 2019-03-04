@@ -15,7 +15,6 @@ class NewsResult extends React.Component {
         }).then(res => res.json())
             .then(data => this.props.dispatch(retrieveArticle(data))
             );
-
     }
 
 
@@ -38,8 +37,6 @@ class NewsResult extends React.Component {
             return <NewsRecord record={a} key={a.id} />;
         });
     }
-
-
 }
 
 export default connect()(NewsResult);

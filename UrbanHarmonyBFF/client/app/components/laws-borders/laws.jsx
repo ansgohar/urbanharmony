@@ -37,21 +37,20 @@ class Lws extends React.Component {
 
     render() {
         return (
-                <div class="col-xs-12 tite law-card conferenceCard col-sm-10">
-                    <div class="col-xs-12 newscard-container nopadding-mobile">
-                        <div class="col-xs-12  news-leftSide">
-                            {/* <span class="new">جديد</span> */}
-                            <h3>{this.props.record.title}</h3>
-                            <p class="col-xs-12 col-sm-10 lawcard-text no-padding">
-                                {this.props.record.detail}
-                            </p>
-                            <div class="col-xs-12 col-sm-2 no-padding sharing-cont">
-                                {/* <a href={"https://urbanharmonycms.mybluemix.net" + this.props.record.PDF} class="download-btn" download="True"></a> */}
-                                <a href={"https://urbanharmonycms.mybluemix.net" + this.props.record.PDF} class="pdf-btn" target="_blank"></a>
-                            </div>
+            <div class="col-xs-12 tite law-card conferenceCard col-sm-10">
+                <div class="col-xs-12 newscard-container nopadding-mobile">
+                    <div class="col-xs-12  news-leftSide">
+                        <h3>{this.props.record.title}</h3>
+                        <p class="col-xs-12 col-sm-10 lawcard-text no-padding">
+                            {this.props.record.detail}
+                        </p>
+                        <div class="col-xs-12 col-sm-2 no-padding sharing-cont">
+                            {/* <a href={"https://urbanharmonycms.mybluemix.net" + this.props.record.PDF} class="download-btn" download="True"></a> */}
+                            <a href={"http://localhost:1337" + this.props.record.PDF} class="pdf-btn" target="_blank"></a>
                         </div>
                     </div>
                 </div>
+            </div>
         );
     }
 }

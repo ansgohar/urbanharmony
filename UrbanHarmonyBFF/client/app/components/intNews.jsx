@@ -16,7 +16,6 @@ class IntNews extends React.Component {
         )
             .then(data => this.props.dispatch(getInternalNews(data))
             );
-
     }
 
     componentDidMount() {

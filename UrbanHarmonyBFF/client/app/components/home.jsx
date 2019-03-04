@@ -77,20 +77,16 @@ export class HomePage extends React.Component {
                                         width="560" height="315" src="https://www.youtube.com/embed/WB1-H25b3DY" frameborder="0" allow="autoplay; encrypted-media" allowFullScreen>
 
                                     </iframe> */}
-
                                     <img src="assets/images/logo/urban-harmony-logo-video.jpeg" />
-
                                 </div>
                             </div>
                             <div className="col-xs-12 col-sm-7 sec2LeftSide nopadding-mobile">
                                 <div className="sec2LeftSideText col-xs-12">
                                     <h2>رؤيتنا و أهدافنا</h2>
-                                    <p>يهدف الجهاز إلى تحقيق القيم الجمالية للشكل الخارجى للأبنية والفراغات العمرانية والأثرية وأسس النسيج البصرى للمدن والقرى وكافة المناطق الحضارية للدولة، بما فى ذلك المجتمعات العمرانية الجديدة.
-                            </p>
+                                    <p>يهدف الجهاز إلى تحقيق القيم الجمالية للشكل الخارجى للأبنية والفراغات العمرانية والأثرية وأسس النسيج البصرى للمدن والقرى وكافة المناطق الحضارية للدولة، بما فى ذلك المجتمعات العمرانية الجديدة.</p>
                                     <a className="sec2Btn" href="/vision"> المزيد </a>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
@@ -111,9 +107,7 @@ export class HomePage extends React.Component {
                                         رصد وتسجيل الجهاز للتغيرات الايجابية والسلبية التي تحدث في العمران المصري
                                     </p>
                                     <a className="serviceCardMoreBtn" href="#">المزيد</a>
-
                                 </div>
-
                             </div>
                             <div className="col-xs-12 col-sm-10 downCard leftCard no-padding serviceCard">
                                 <div className=" card-img col-xs-12 col-sm-7 no-padding ">
@@ -301,9 +295,6 @@ export class HomePage extends React.Component {
                     <div className="col-xs-12 no-padding sec6">
                         <h2 className="sec-h2">اخر الاخبار</h2>
                         <div className="filter-container col-xs-12 col-sm-10">
-
-                            {/* <input type="radio" id="conferenceCard" name="color" value="conferenceCard" />
-                            <label className="filter-conBtn filterBtn col-xs-3" htmlFor="conferenceCard">مؤتمرات</label> */}
                             <input type="radio" id="pressCard" name="color" value="pressCard" />
                             <label className="filter-pressBtn filterBtn col-xs-4" htmlFor="pressCard">صحافة</label>
                             <input type="radio" id="newsCard" name="color" value="newsCard" />
