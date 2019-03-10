@@ -20,16 +20,13 @@ module.exports = function (app) {
     });
 
 
-    router.get('/:id', function (req, res, next) {
+    router.get('/id/:id', function (req, res, next) {
         OFFICES.getOfficeByID(req.params.id,function(data) {
             if (Object.keys(data).length == 0) {
                 res.json([]);
             }
-            else if (Array.isArray(data)) {
-                res.json(data);
-            }
             else {
-                res.json([data]);
+                res.json(data);
             }
         });
     });

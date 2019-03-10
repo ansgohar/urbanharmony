@@ -29,6 +29,8 @@ import guidelines from './laws-borders/guidelines'
 import complainsList from './complain/complainslist'
 import globalsearch from './globalsearch'
 import books from './library/books'
+import offices from './offices'
+import officeDetails from './officeDetails'
 
 import { reducer as reduxFormReducer } from 'redux-form';
 
@@ -62,6 +64,8 @@ const reducers = combineReducers({
     competitionID,
     books,
     guidelines,
+    offices,
+    officeDetails,
     form: reduxFormReducer // mounted under "form"
 })
 

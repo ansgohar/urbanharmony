@@ -228,3 +228,20 @@ export function getALLInternalNews(allinternalnews) {
       books
     });
   };
+
+
+  export function getConsultingOffices(offices) {
+    console.log(offices);
+    return ({
+      type: 'RETRIEVE_CONSULTING_OFFICES',
+      offices
+    });
+  };
+
+  export function getConsultingOfficeDetails(officeDetails) {
+    console.log(officeDetails);
+    return ({
+      type: 'RETRIEVE_CONSULTING_OFFICE_DETAILS',
+      officeDetails
+    });
+  };

@@ -17,4 +17,5 @@ module.exports = function (app) {
   app.use('/search', router);
   app.use('/competitionInfo', router);
   app.use('/consultingOffices', router);
+  app.use('/consultingOfficeDetails', router);
 }
