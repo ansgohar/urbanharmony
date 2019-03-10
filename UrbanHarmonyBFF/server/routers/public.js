@@ -15,5 +15,6 @@ module.exports = function (app) {
   app.use('/vision', router);
   app.use('/library', router);
   app.use('/search', router);
-  app.use('/competitionInfo',router);
+  app.use('/competitionInfo', router);
+  app.use('/consultingOffices', router);
 }

@@ -121,7 +121,7 @@ export class HomePage extends React.Component {
                                     <p>
                                         دليل لبعض  المكاتب الاستشارية التى يمكن التعامل معها لتوفير تصاميم وفقا لمعاير الجهاز
                                     </p>
-                                    <a className="serviceCardMoreBtn" href="#">المزيد</a>
+                                    <a className="serviceCardMoreBtn" href="/consultingOffices">المزيد</a>
                                     {/* <form action="#">
                                         <div className="advbtn-cont stickTotheBottom">
                                             <input className="advisoryBtn" type="submit" value="أدرج مكتبك كخبير" />

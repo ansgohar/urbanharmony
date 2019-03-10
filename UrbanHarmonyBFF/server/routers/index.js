@@ -23,4 +23,6 @@ module.exports = function (app) {
     require('./globalsearch')(app);
 
     require('./books')(app);
+
+    require('./offices')(app);
 };  
