@@ -1,107 +1,72 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { getGuidelines } from '../../actions/index.js';
+import Slider from "react-slick";
 
 class Guidelines extends React.Component {
     constructor(props) {
         super(props);
-        
-        
+        this.getGuidelinesData();
     }
 
-//    componentDidMount(){
-//        
-//        setTimeout(slickTrigger, 0);
-//    }
-    
-    
+    getGuidelinesData() {
+        fetch('/lawsborders/guidelines', {
+            method: 'GET'
+        }).then(res => res.json()
 
+        ).then(data => this.props.dispatch(getGuidelines(data))
+        );
+    }
 
     render() {
-        
-        
+        var settings = {
+            dots: true,
+            infinite: true,
+            speed: 500,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: true
+        }
+
+        if (this.props.hide) {
+            return null;
+        }
+
         return (
-            <div id="menu3" className="tab-pane fade col-xs-12 no-padding">
-                <div className="col-xs-12 col-sm-10 limitheader-cont">
-                    <div className="col-xs-12">
-                        <h2 className="col-xs-12">مقدمة عن القوانين والعقوبات المترتبة على مخالفة قواعد البناء في المناطق المتميزة. مقدمة عن القوانين والعقوبات
-                        المترتبة على مخالفة قواعد البناء في المناطق المتميزة</h2>
-                    </div>
-                </div>
-        
-                    <div className="swiper-container">
-                        <div className="swiper-wrapper">
-
-                            <div className="swiper-slide">
-                                <div className="image-container-4x3">
-                                    <img src="assets/images/img.png" alt="#" className="img-slider-img" />
-                                </div>
-                            </div>
-                            <div className="swiper-slide">
-                                <div className="image-container-4x3">
-                                    <img src="assets/images/img.png" alt="#" className="img-slider-img" />
-                                </div>
-                            </div>
-                            <div className="swiper-slide">
-                                <div className="image-container-4x3">
-                                    <img src="assets/images/img.png" alt="#" className="img-slider-img" />
-                                </div>
-                            </div>
-                            <div className="swiper-slide">
-                                <div className="image-container-4x3">
-                                    <img src="assets/images/img.png" alt="#" className="img-slider-img" />
-                                </div>
-                            </div>
-                            <div className="swiper-slide">
-                                <div className="image-container-4x3">
-                                    <img src="assets/images/img.png" alt="#" className="img-slider-img" />
-                                </div>
-                            </div>
-                            <div className="swiper-slide">
-                                <div className="image-container-4x3">
-                                    <img src="assets/images/img.png" alt="#" className="img-slider-img" />
-                                </div>
-                            </div>
-                            <div className="swiper-slide">
-                                <div className="image-container-4x3">
-                                    <img src="assets/images/img.png" alt="#" className="img-slider-img" />
-                                </div>
-                            </div>
-                            <div className="swiper-slide">
-                                <div className="image-container-4x3">
-                                    <img src="assets/images/img.png" alt="#" className="img-slider-img" />
-                                </div>
-                            </div>
-                            <div className="swiper-slide">
-                                <div className="image-container-4x3">
-                                    <img src="assets/images/img.png" alt="#" className="img-slider-img" />
-                                </div>
-                            </div>
-                            <div className="swiper-slide">
-                                <div className="image-container-4x3">
-                                    <img src="assets/images/img.png" alt="#" className="img-slider-img" />
-                                </div>
-                            </div>
-                            <div className="swiper-slide">
-                                <div className="image-container-4x3">
-                                    <img src="assets/images/img.png" alt="#" className="img-slider-img" />
-                                </div>
-                            </div>
-
-                        </div>
-                        {/* <!-- Add Pagination --> */}
-                        <div className="swiper-pagination"></div>
-                        <div className="swiper-button-next"></div>
-                        <div className="swiper-button-prev"></div>
-                    </div>
-             
-
-
-
-                <div className="col-xs-12 col-sm-8 pdfsec-cont">
-                    <iframe src="assets/images/sections/lamborgini.pdf" style={{ width: '100%', height: '800px', border: 'none' }}></iframe>
+            <div class="tile pressCard law-card col-xs-12 col-sm-10">
+                <div class="col-xs-12 newscard-container nopadding-mobile">
+                    <Slider {...settings}>
+                        {this.renderPDF()}
+                    </Slider>
                 </div>
             </div>
+        )
+    }
 
+    renderPDF() {
+        let allGuidelines = this.props.guidelines;
+        return allGuidelines.map(a => {
+            return <GDL record={a} key={a.id} />
+        })
+    }
+}
+
+class GDL extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
+    render() {
+        return (
+            <div class="col-xs-12  news-leftSide">
+                {/* <h3>{this.props.record.title}</h3>
+                <p class="col-xs-12 col-sm-10 lawcard-text no-padding">
+                    {this.props.record.detail}
+                </p> */}
+                <div>
+                    <iframe src={"http://localhost:1337" + this.props.record.PDF} style={{ width: '100%', height: '500px', border: 'none' }}></iframe>
+                </div>
+            </div>
         );
     }
 }

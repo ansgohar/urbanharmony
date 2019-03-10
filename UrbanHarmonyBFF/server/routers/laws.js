@@ -21,7 +21,6 @@ module.exports = function (app) {
     });
 
 
-
     router.get('/borders', function (req, res, next) {
         LAWS.getAllBorders(function (data) {
             if (Object.keys(data).length == 0) {
@@ -34,7 +33,20 @@ module.exports = function (app) {
                 res.json([data]);
             }
         });
+    });
 
+    router.get('/guidelines', function (req, res, next) {
+        LAWS.getAllGuidelines(function (data) {
+            if (Object.keys(data).length == 0) {
+                res.json([]);
+            }
+            else if (Array.isArray(data)) {
+                res.json(data);
+            }
+            else {
+                res.json([data]);
+            }
+        });
     });
 
     app.use("/lawsborders", router);

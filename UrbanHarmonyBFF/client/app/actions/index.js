@@ -12,7 +12,7 @@ export function getNews(news) {
     type: 'GET_NEWS',
     news
   });
-}
+};
 
 export function getProject(oneproject) {
   console.log(oneproject);
@@ -22,7 +22,6 @@ export function getProject(oneproject) {
   });
 };
 
-
 export function getPressNews(pressNews) {
   console.log(pressNews);
   return ({
@@ -30,8 +29,6 @@ export function getPressNews(pressNews) {
     pressNews
   });
 };
-
-
 
 export function getInternalByID(internalDetail) {
   console.log(internalDetail);
@@ -41,8 +38,6 @@ export function getInternalByID(internalDetail) {
   });
 };
 
-
-
 export function getInternalNews(internalnews) {
   console.log(internalnews);
   return ({
@@ -50,7 +45,6 @@ export function getInternalNews(internalnews) {
     internalnews
   });
 };
-
 
 export function getALLInternalNews(allinternalnews) {
   console.log(allinternalnews);
@@ -60,7 +54,6 @@ export function getALLInternalNews(allinternalnews) {
   });
 };
 
-
   export function retrieveDetail(detail) {
     console.log(detail);
     return ({
@@ -68,7 +61,6 @@ export function getALLInternalNews(allinternalnews) {
       detail
     });
   };
-
 
   export function getWorkingProject(working) {
     console.log(working);
@@ -108,7 +100,6 @@ export function getALLInternalNews(allinternalnews) {
     })
   }
 
-
   export function getAllWorkingProject(allworking) {
     console.log(allworking);
     return ({
@@ -141,7 +132,6 @@ export function getALLInternalNews(allinternalnews) {
     });
   };
 
-
   export function getComplainsSurveyList(surveyList) {
     console.log(surveyList);
     return ({
@@ -150,15 +140,13 @@ export function getALLInternalNews(allinternalnews) {
     });
   };
 
-
   export function addImageToTheList(photos) {
     console.log(photos);
     return ({
       type: 'ADD_IMAGE_TO_THE_LIST',
       photos
-    }) 
-     
-  }
+    });
+  };
 
   export function getComplainsGovernorates(governorates) {
     console.log(governorates);
@@ -168,7 +156,6 @@ export function getALLInternalNews(allinternalnews) {
     });
   };
 
-
   export function getComplainsRegions(regions) {
     console.log(regions);
     return ({
@@ -176,8 +163,6 @@ export function getALLInternalNews(allinternalnews) {
       regions
     });
   };
-
-
 
   export function getLaws(laws) {
     console.log(laws);
@@ -187,7 +172,6 @@ export function getALLInternalNews(allinternalnews) {
     });
   };
 
-
   export function getBorders(borders) {
     console.log(borders);
     return ({
@@ -196,8 +180,14 @@ export function getALLInternalNews(allinternalnews) {
     });
   };
 
+  export function getGuidelines(guidelines) {
+    console.log(guidelines);
+    return ({
+      type: 'RETRIEVE_GUIDELINES',
+      guidelines
+    });
+  };
 
-  
   export function getComplainsList(complainsList) {
     console.log(complainsList);
     return ({
@@ -205,8 +195,6 @@ export function getALLInternalNews(allinternalnews) {
       complainsList
     });
   };
-
-
 
   export function getGlobalSearch(globalsearch) {
     console.log(globalsearch);
@@ -216,7 +204,6 @@ export function getALLInternalNews(allinternalnews) {
     });
   };
 
-
   export function getWinners(winners) {
     console.log(winners);
     return ({
@@ -224,7 +211,6 @@ export function getALLInternalNews(allinternalnews) {
       winners
     });
   };
-
 
   export function getCompetitionID(competitionID) {
     console.log(competitionID);

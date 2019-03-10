@@ -184,6 +184,29 @@ border-color: green;
 	font-size: 16px;
 }
 
+/** slider arrows **/
+.slick-arrow {
+    width: 35px;
+    height: 35px;
+}
+
+.slick-next {
+    margin-left: -15px;
+}
+
+.slick-prev {
+    margin-right: -15px;
+}
+
+.slick-next::before, .slick-prev::before {
+    font-size: 35px;
+    color: #70B683;
+}
+
+.slick-next::before:hover, .slick-prev::before:hover {
+    color:   #6fb681;
+}
+
 /** navbar start **/
 .topnav{
     float:right;
@@ -2594,8 +2617,6 @@ background-color:#f5f5f5;
         line-height: 21px;
         max-height: 136px;
         padding: 8px 20px 0 20px;
-    }
-    
-    
+    }   
 }
 /**  Media queries End **/

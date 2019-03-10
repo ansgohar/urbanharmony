@@ -25,6 +25,7 @@ import governorates from './complain/governorate'
 import regions from './complain/regions'
 import laws from './laws-borders/laws'
 import borders from './laws-borders/borders'
+import guidelines from './laws-borders/guidelines'
 import complainsList from './complain/complainslist'
 import globalsearch from './globalsearch'
 import books from './library/books'
@@ -60,6 +61,7 @@ const reducers = combineReducers({
     winners,
     competitionID,
     books,
+    guidelines,
     form: reduxFormReducer // mounted under "form"
 })
 

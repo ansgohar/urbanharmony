@@ -30,6 +30,18 @@ class LawsService {
                 callback(borderObject);
             });
     }
+
+    getAllGuidelines(callback) {
+        fetch(url + 'conditionsandlaws?type=Guidelines')
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (myJson) {
+                let expression = jsonata('$.{"id":_id,"title":Title,"detail":Descrption, "PDF":pdf.url}');
+                let guidelineObject = expression.evaluate(myJson);
+                callback(guidelineObject);
+            });
+    }
 }
 
 module.exports = function (app, serviceManager) {
