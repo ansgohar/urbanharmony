@@ -123,5 +123,15 @@
         "appearance": ""
       }
     }
+  },
+  "incident": {
+    "attributes": {
+      "Date": {
+        "appearance": ""
+      },
+      "Photographer": {
+        "appearance": ""
+      }
+    }
   }
 }

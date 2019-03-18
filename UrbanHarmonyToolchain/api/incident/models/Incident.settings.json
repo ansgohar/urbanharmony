@@ -9,27 +9,24 @@
     "timestamps": true
   },
   "attributes": {
-    "incidentID": {
+    "subject": {
       "type": "string"
     },
-    "name": {
+    "address": {
       "type": "string"
-    },
-    "email": {
-      "type": "email"
     },
     "description": {
       "minLength": 30,
       "type": "text"
     },
-    "status": {
+    "imageURL": {
       "type": "string"
     },
-    "technicalAnalysis": {
-      "type": "json"
+    "Date": {
+      "type": "date"
     },
-    "descriptionAnalysis": {
-      "type": "text"
+    "Photographer": {
+      "type": "string"
     }
   }
 }

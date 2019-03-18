@@ -137,13 +137,12 @@ type Incident {
   _id: ID!
   createdAt: String!
   updatedAt: String!
-  incidentID: String
-  name: String
-  email: String
+  subject: String
+  address: String
   description: String
-  status: String
-  technicalAnalysis: String
-  descriptionAnalysis: String
+  imageURL: String
+  Date: String
+  Photographer: String
 }
 
 type Internalnews {
