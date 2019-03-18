@@ -98,5 +98,30 @@
         "appearance": ""
       }
     }
+  },
+  "videos": {
+    "attributes": {
+      "ProgramName": {
+        "appearance": ""
+      },
+      "URL": {
+        "appearance": ""
+      },
+      "Title": {
+        "appearance": ""
+      },
+      "Date": {
+        "appearance": ""
+      },
+      "GuestNames": {
+        "appearance": ""
+      },
+      "Description": {
+        "appearance": ""
+      },
+      "MoreDetails": {
+        "appearance": ""
+      }
+    }
   }
 }

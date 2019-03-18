@@ -194,7 +194,7 @@ type Library {
   image: UploadFile
 }
 
-union Morph = Album | Competitions | Conditionsandlaws | Conferences | Consultingoffice | Contestant | Governorate | Incident | Internalnews | Journal | Library | Petition | Projects | Regions | Surveylist | Termsandabout | UploadFile | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsUser
+union Morph = Album | Competitions | Conditionsandlaws | Conferences | Consultingoffice | Contestant | Governorate | Incident | Internalnews | Journal | Library | Petition | Projects | Regions | Surveylist | Termsandabout | Videos | UploadFile | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsUser
 
 type Petition {
   _id: ID!
@@ -254,6 +254,8 @@ type Query {
   surveylists(sort: String, limit: Int, start: Int, where: JSON): [Surveylist]
   termsandabout(id: ID!): Termsandabout
   termsandabouts(sort: String, limit: Int, start: Int, where: JSON): [Termsandabout]
+  video(id: ID!): Videos
+  videos(sort: String, limit: Int, start: Int, where: JSON): [Videos]
   files(sort: String, limit: Int, start: Int, where: JSON): [UploadFile]
   role(id: ID!): UsersPermissionsRole
 
@@ -338,4 +340,17 @@ type UsersPermissionsUser {
   email: String!
   provider: String
   role: UsersPermissionsRole
+}
+
+type Videos {
+  _id: ID!
+  createdAt: String!
+  updatedAt: String!
+  ProgramName: String
+  URL: String
+  Title: String
+  Date: String
+  GuestNames: String
+  Description: String
+  MoreDetails: String
 }
