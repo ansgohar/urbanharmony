@@ -18,8 +18,8 @@ class LibraryPage extends React.Component {
                         <div class="col-xs-12 filter-tabs">
                             <ul class="col-xs-12 col-sm-5 nav nav-tabs no-padding">
                                 <li class="active"><a data-toggle="tab" href="#menu1">المكتبة العامة</a></li>
-                                <li><a data-toggle="tab" href="#menu2">دراسات و بحوث</a></li>
-                                <li><a data-toggle="tab" href="#menu3">دراسات و بحوث</a></li>
+                                <li><a data-toggle="tab" href="#menu2">تسجيلات الجهاز </a></li>
+                                {/* <li><a data-toggle="tab" href="#menu3">دراسات و بحوث</a></li> */}
                             </ul>
                         </div>
                         <div class="tab-content">

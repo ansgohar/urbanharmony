@@ -1,6 +1,6 @@
 {
   "connection": "default",
-  "collectionName": "",
+  "collectionName": "videos",
   "info": {
     "name": "videos",
     "description": ""
@@ -15,7 +15,7 @@
     "URL": {
       "type": "string"
     },
-    "Title": {
+    "Channel": {
       "type": "string"
     },
     "Date": {

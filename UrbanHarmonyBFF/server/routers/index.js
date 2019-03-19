@@ -27,4 +27,6 @@ module.exports = function (app) {
     require('./offices')(app);
 
     require('./incidents')(app);
+
+    require('./videos')(app);
 };  

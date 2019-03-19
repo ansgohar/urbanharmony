@@ -19,6 +19,7 @@ module.exports = merge(common, {
       "/globalsearch": "http://localhost:3100",
       "/offices": "http://localhost:3100",
       "/incidents":"http://localhost:3100",
+      "/videos":"http://localhost:3100",
     }
   }
 });
