@@ -52,8 +52,8 @@ class Incident extends React.Component {
                         </div>
                     </div>
                     <div className="col-xs-12 col-sm-9 news-leftSide nopadding-mobile">
-                        <h2><a href={"/incidentDetails?incident=" + this.props.record.id}>{this.props.record.title}</a></h2>
-                        <h3>تاريخ الرصد :{this.props.record.date}</h3>
+                        <h3><a href={"/incidentDetails?incident=" + this.props.record.id}>{this.props.record.title}</a></h3>
+                        <h4>تاريخ الرصد :{this.props.record.date}</h4>
                     </div>
                 </div>
             </div>
