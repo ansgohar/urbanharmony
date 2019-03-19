@@ -25,4 +25,6 @@ module.exports = function (app) {
     require('./books')(app);
 
     require('./offices')(app);
+
+    require('./incidents')(app);
 };  

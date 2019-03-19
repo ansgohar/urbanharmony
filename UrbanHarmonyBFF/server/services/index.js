@@ -15,4 +15,5 @@ module.exports = function (app) {
     require('./globalSearchService')(app, serviceManager);
     require('./bookService')(app, serviceManager);
     require('./officesService')(app, serviceManager);
+    require('./incidentService')(app, serviceManager);
 };

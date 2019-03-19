@@ -18,6 +18,7 @@ module.exports = merge(common, {
       "/lawsborders": "http://localhost:3100",
       "/globalsearch": "http://localhost:3100",
       "/offices": "http://localhost:3100",
+      "/incidents":"http://localhost:3100",
     }
   }
 });
