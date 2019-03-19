@@ -29,6 +29,7 @@ import guidelines from './laws-borders/guidelines'
 import complainsList from './complain/complainslist'
 import globalsearch from './globalsearch'
 import books from './library/books'
+import videos from './library/videos'
 import offices from './offices'
 import officeDetails from './officeDetails'
 import incidents from './incidents/incidents'
@@ -65,6 +66,7 @@ const reducers = combineReducers({
     winners,
     competitionID,
     books,
+    videos,
     guidelines,
     offices,
     officeDetails,

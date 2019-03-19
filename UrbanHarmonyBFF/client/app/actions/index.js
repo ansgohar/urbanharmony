@@ -261,3 +261,11 @@ export function getALLInternalNews(allinternalnews) {
       incidentDetails
     });
   };
+
+  export function getVideos(videos) {
+    console.log(videos);
+    return ({
+      type: 'RETRIEVE_VIDEOS',
+      videos
+    });
+  };

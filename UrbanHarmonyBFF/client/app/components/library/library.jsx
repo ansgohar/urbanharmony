@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import BooksDetails from './booksPage.jsx';
+import AllVideos from './videos.jsx';
 
 class LibraryPage extends React.Component {
     constructor(props) {
@@ -107,10 +108,11 @@ class LibraryPage extends React.Component {
                                 </div>
 
                             </div>
+
                             <div id="menu2" class="tab-pane fade col-xs-12 no-padding">
-
-                                {/* SHOULD BE IMPLEMENTED */}
-
+                                
+                                <AllVideos videos={this.props.videos} />
+                                
                             </div>
                         </div>
 
@@ -125,6 +127,7 @@ class LibraryPage extends React.Component {
 
 const mapStateToProps = (state, ownProps) => ({
     books: state.books,
+    videos: state.videos
 });
 
 export default connect(mapStateToProps)(LibraryPage);
