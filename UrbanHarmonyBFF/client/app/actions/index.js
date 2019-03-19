@@ -245,3 +245,19 @@ export function getALLInternalNews(allinternalnews) {
       officeDetails
     });
   };
+  
+  export function getIncidents(incidents) {
+    console.log(incidents);
+    return ({
+      type: 'RETRIEVE_INCIDENTS',
+      incidents
+    });
+  };
+
+  export function getIncidentDetails(incidentDetails) {
+    console.log(incidentDetails);
+    return ({
+      type: 'RETRIEVE_INCIDENT_DETAILS',
+      incidentDetails
+    });
+  };

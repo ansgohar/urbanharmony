@@ -18,4 +18,6 @@ module.exports = function (app) {
   app.use('/competitionInfo', router);
   app.use('/consultingOffices', router);
   app.use('/consultingOfficeDetails', router);
+  app.use('/allIncidents', router);
+  app.use('/incidentDetails', router);
 }

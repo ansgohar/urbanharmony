@@ -31,6 +31,8 @@ import globalsearch from './globalsearch'
 import books from './library/books'
 import offices from './offices'
 import officeDetails from './officeDetails'
+import incidents from './incidents/incidents'
+import incidentDetails from './incidents/incidentDetails'
 
 import { reducer as reduxFormReducer } from 'redux-form';
 
@@ -66,6 +68,8 @@ const reducers = combineReducers({
     guidelines,
     offices,
     officeDetails,
+    incidents,
+    incidentDetails,
     form: reduxFormReducer // mounted under "form"
 })
 

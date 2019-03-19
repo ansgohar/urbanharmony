@@ -106,7 +106,7 @@ export class HomePage extends React.Component {
                                     <p>
                                         رصد وتسجيل الجهاز للتغيرات الايجابية والسلبية التي تحدث في العمران المصري
                                     </p>
-                                    <a className="serviceCardMoreBtn" href="#">المزيد</a>
+                                    <a className="serviceCardMoreBtn" href="/allIncidents">المزيد</a>
                                 </div>
                             </div>
                             <div className="col-xs-12 col-sm-10 downCard leftCard no-padding serviceCard">

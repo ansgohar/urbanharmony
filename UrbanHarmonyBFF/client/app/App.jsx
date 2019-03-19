@@ -13,6 +13,8 @@ import GlobalSearchPage from './components/global search/searchPage.jsx';
 import CompetitionInfo from './components/competition/competitionINFO.jsx';
 import ConsultingOffices from './components/consultingOffices/consultOffices.jsx';
 import ConsultingOfficeDetails from './components/consultingOffices/consultingOfficeDetails.jsx';
+import AllIncidents from './components/incidents/incidents.jsx';
+import IncidentDetails from './components/incidents/incidentDetails.jsx';
 
 import { connect } from 'react-redux';
 import { BrowserRouter, Route, Link, Switch } from 'react-router-dom';
@@ -82,6 +84,8 @@ class App extends React.Component {
                     <Route path="/competitionInfo" component={CompetitionInfo} />
                     <Route path="/consultingOffices" component={ConsultingOffices} />
                     <Route path="/consultingOfficeDetails" component={ConsultingOfficeDetails} />
+                    <Route path="/allIncidents" component={AllIncidents} />
+                    <Route path="/incidentDetails" component={IncidentDetails} />
                 </Switch>
 
 

@@ -54,7 +54,7 @@ class LibraryPage extends React.Component {
                                     <h3 class="col-xs-12 librarysearch-result nopadding-mobile">نتيجة البحث</h3>
                                     <BooksDetails books={this.props.books} />
 
-                                    <ul class="col-xs-12 pagination pagination-sm">
+                                    {/* <ul class="col-xs-12 pagination pagination-sm">
                                         <li><a class="pagi-arrows" href="#">&ltrif;</a></li>
                                         <li><a href="#">٥</a></li>
                                         <li><a href="#">٤</a></li>
@@ -103,7 +103,7 @@ class LibraryPage extends React.Component {
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> */}
                                 </div>
 
                             </div>

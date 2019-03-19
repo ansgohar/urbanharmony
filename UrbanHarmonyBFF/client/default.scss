@@ -18,6 +18,16 @@ body{
     height:100%;
     font-family: 'myFirstFont', "Helvetica Neue",Helvetica,Arial,sans-serif;
 }
+.default-table {
+    width: 100%;
+}
+.default-table, .table-row, .table-data {
+    border: 2px #70B683 solid;
+    min-width: 10%;
+    padding: 1% 0;
+    margin: 2% 0 5% 0;
+    text-align: center;
+}
 .row{
     margin-right:0px;
     margin-left:0px;
@@ -56,6 +66,10 @@ body{
 .search-cont .search-input{
     max-width: 78%;
     float: left;
+}
+.image-size {
+    width: 100%;
+    margin-bottom: 5%;
 }
 .image-container-4x3 {
 	background-color: rgba(0, 0, 0, 0.8) !important;
@@ -205,10 +219,6 @@ border-color: green;
 
 .slick-next::before:hover, .slick-prev::before:hover {
     color:   #6fb681;
-}
-
-.consult-office {
-    padding-right: 175px;
 }
 
 .divider-bottom {
@@ -2564,6 +2574,17 @@ background-color:#f5f5f5;
     }
 }
 @media screen and (min-width:768px){
+    .default-table, .table-row, .table-data {
+        border: 2px #70B683 solid;
+        font-size: x-large;
+        min-width: 150px;
+    }
+    .table-padding {
+        padding: 0 7%;
+    }
+    .consult-office {
+        padding-right: 13%;
+    }
    
     .sec2RightSide{
         float:right;

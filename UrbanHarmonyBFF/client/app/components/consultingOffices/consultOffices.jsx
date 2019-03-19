@@ -23,7 +23,7 @@ class ConsultingOffices extends React.Component {
         }
 
         return (
-            <div className="col-xs-12 page-margin consult-office newscard-container nopadding-mobile">
+            <div className="col-xs-12 page-margin consult-office newscard-container">
             {this.renderOffices()}
             </div>
         )
