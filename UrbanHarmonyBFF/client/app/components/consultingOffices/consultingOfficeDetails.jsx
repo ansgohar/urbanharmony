@@ -25,17 +25,58 @@ class ConsultingOfficeDetails extends React.Component {
             return null;
         }
         return (
-            <div className="col-xs-12 newscard-container consult-office nopadding-mobile page-margin">
-            <h3> اسم المكتب : {this.props.officeDetails.officeName}</h3>
-            <h3>   المسئول : {this.props.officeDetails.owner} </h3>
-            <h3>مجال التخصص : {this.props.officeDetails.speciality}</h3>
-            <h3>   العنوان : {this.props.officeDetails.address}</h3>
-            <h3> الرمز البريدى : {this.props.officeDetails.postalCode}</h3>
-            <h3> الهاتف : {this.props.officeDetails.number}</h3>
-            <h3> فاكس : {this.props.officeDetails.Fax}</h3>
-            <h3>البريد الأليكترونى : {this.props.officeDetails.email}</h3>
-            <h3>   التخصصات المقيد بها المكتب : {this.props.officeDetails.details}</h3>
-        </div>
+            <div className=" newscard-container page-margin table-padding">
+                <div className="col-xs-12 news-rightSide nopadding-mobile">
+                    <div className="col-xs-12 news-leftSide">
+                        <table className="default-table">
+                            <tr className="table-row">
+                                <td className="table-data table-header">اسم المكتب</td>
+                                <td className="table-data">{this.props.officeDetails.officeName}</td>
+                            </tr>
+
+                            <tr className="table-row">
+                                <td className="table-data table-header">المسئول</td>
+                                <td className="table-data">{this.props.officeDetails.owner}</td>
+                            </tr>
+
+                            <tr className="table-row">
+                                <td className="table-data table-header">مجال التخصص</td>
+                                <td className="table-data">{this.props.officeDetails.speciality}</td>
+                            </tr>
+
+                            <tr className="table-row">
+                                <td className="table-data table-header"> العنوان </td>
+                                <td className="table-data">{this.props.officeDetails.address}</td>
+                            </tr>
+
+                            <tr className="table-row">
+                                <td className="table-data table-header"> الرمز البريدى </td>
+                                <td className="table-data">{this.props.officeDetails.postalCode}</td>
+                            </tr>
+
+                            <tr className="table-row">
+                                <td className="table-data table-header"> الهاتف </td>
+                                <td className="table-data">{this.props.officeDetails.number}</td>
+                            </tr>
+
+                            <tr className="table-row">
+                                <td className="table-data table-header"> فاكس </td>
+                                <td className="table-data">{this.props.officeDetails.Fax}</td>
+                            </tr>
+
+                            <tr className="table-row">
+                                <td className="table-data table-header"> البريد الأليكترونى </td>
+                                <td className="table-data">{this.props.officeDetails.email}</td>
+                            </tr>
+
+                            <tr className="table-row">
+                                <td className="table-data table-header"> التخصصات المقيد بها المكتب </td>
+                                <td className="table-data">{this.props.officeDetails.details}</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
         );
     }
 }

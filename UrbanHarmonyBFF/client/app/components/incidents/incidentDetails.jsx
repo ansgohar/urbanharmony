@@ -30,22 +30,22 @@ class IncidentDetails extends React.Component {
                     <div className="col-xs-12 news-leftSide">
                         <table className="default-table">
                             <tr className="table-row">
-                                <td className="table-data">موقع الرصد </td>
+                                <td className="table-data table-header">موقع الرصد </td>
                                 <td className="table-data">{this.props.incidentDetails.address}</td>
                             </tr>
 
                             <tr className="table-row">
-                                <td className="table-data">سبب الرصد </td>
+                                <td className="table-data table-header">سبب الرصد </td>
                                 <td className="table-data">{this.props.incidentDetails.description}</td>
                             </tr>
 
                             <tr className="table-row">
-                                <td className="table-data"> تاريخ الرصد </td>
+                                <td className="table-data table-header"> تاريخ الرصد </td>
                                 <td className="table-data">{this.props.incidentDetails.date}</td>
                             </tr>
 
                             <tr className="table-row">
-                                <td className="table-data"> تصوير </td>
+                                <td className="table-data table-header"> تصوير </td>
                                 <td className="table-data">{this.props.incidentDetails.photographer}</td>
                             </tr>
                         </table>

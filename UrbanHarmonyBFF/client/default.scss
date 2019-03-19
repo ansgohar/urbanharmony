@@ -21,6 +21,9 @@ body{
 .default-table {
     width: 100%;
 }
+.table-header {
+    font-weight: bold;
+}
 .default-table, .table-row, .table-data {
     border: 2px #70B683 solid;
     min-width: 10%;
