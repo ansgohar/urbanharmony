@@ -133,5 +133,19 @@
         "appearance": ""
       }
     }
+  },
+  "journal": {
+    "attributes": {
+      "DatePublished": {
+        "appearance": ""
+      }
+    }
+  },
+  "internalnews": {
+    "attributes": {
+      "datePublished": {
+        "appearance": ""
+      }
+    }
   }
 }

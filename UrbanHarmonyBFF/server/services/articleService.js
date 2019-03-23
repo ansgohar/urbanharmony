@@ -12,7 +12,7 @@ class ArticleService {
                 return response.json();
             })
             .then(function (myJson) {
-                let expression = jsonata('$.{"id":_id,"title":ArticleName,"article":Description,"date":createdAt,"image":ImgURL, "linkURL":URL, "author":AuthorName}');
+                let expression = jsonata('$.{"id":_id,"title":ArticleName,"article":Description,"date":createdAt,"image":ImgURL, "linkURL":URL, "author":AuthorName, "DatePublished":DatePublished}');
                 let articleObject = expression.evaluate(myJson);
                 callback(articleObject);
             });
@@ -25,7 +25,7 @@ class ArticleService {
                 return response.json();
             })
             .then(function (myJson) {
-                let expression = jsonata('$.{"id":_id,"title":ArticleName,"article":Description,"date":createdAt,"image":ImgURL, "linkURL":URL, "author":AuthorName}');
+                let expression = jsonata('$.{"id":_id,"title":ArticleName,"article":Description,"date":createdAt,"image":ImgURL, "linkURL":URL, "author":AuthorName,"DatePublished":DatePublished}');
                 let articleObject = expression.evaluate(myJson);
                 callback(articleObject);
             });
@@ -40,7 +40,7 @@ class ArticleService {
             })
             .then(function (myJson) {
 
-                let expression = jsonata('{"id":_id,"title":ArticleName,"article":Description,"date":createdAt,"image":ImgURL,"linkURL":URL, "author":AuthorName}');
+                let expression = jsonata('{"id":_id,"title":ArticleName,"article":Description,"date":createdAt,"image":ImgURL,"linkURL":URL, "author":AuthorName,"DatePublished":DatePublished}');
                 let articleObject = expression.evaluate(myJson);
                 callback(articleObject);
             });

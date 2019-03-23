@@ -154,9 +154,10 @@ type Internalnews {
   ArticleName: String
   Description: String
   ThumpURL: String
-  ImgURL: String
   Type: ENUM_INTERNALNEWS_TYPE!
   FullArticle: String
+  image: UploadFile
+  datePublished: String
 }
 
 type Journal {
@@ -169,6 +170,7 @@ type Journal {
   Description: String
   ThumpURL: String
   ImgURL: String
+  DatePublished: String
 }
 
 """
@@ -347,7 +349,7 @@ type Videos {
   updatedAt: String!
   ProgramName: String
   URL: String
-  Title: String
+  Channel: String
   Date: String
   GuestNames: String
   Description: String

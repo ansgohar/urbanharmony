@@ -24,13 +24,9 @@
     "ThumpURL": {
       "type": "string"
     },
-    "ImgURL": {
-      "type": "string"
-    },
     "Type": {
-      "type":"enumeration",
-      "enum": 
-      [
+      "type": "enumeration",
+      "enum": [
         "Social",
         "Paper",
         "Electronic"
@@ -39,7 +35,14 @@
     },
     "FullArticle": {
       "type": "text"
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload"
+    },
+    "datePublished": {
+      "type": "date"
     }
-  
   }
 }

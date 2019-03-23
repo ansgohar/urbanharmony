@@ -26,6 +26,9 @@
     },
     "ImgURL": {
       "type": "string"
+    },
+    "DatePublished": {
+      "type": "date"
     }
   }
 }

@@ -10,29 +10,35 @@
   },
   "attributes": {
     "Place": {
-      "type": "text",
-      "multiple": false
+      "type": "text"
     },
     "Event": {
-      "type": "text",
-      "multiple": false
+      "type": "text"
     },
     "Details": {
-      "type": "text",
-      "multiple": false
+      "type": "text"
     },
     "Status": {
-      "type":"enumeration",
-      "enum": ["working","planned","done"],
+      "type": "enumeration",
+      "enum": [
+        "working",
+        "planned",
+        "done"
+      ],
       "required": true
     },
-    "ImageUrl": {
-      "type": "string",
-      "multiple": false
-    },
     "Title": {
-      "type": "string",
-      "multiple": false
+      "type": "string"
+    },
+    "imgBefore": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload"
+    },
+    "imgAfter": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload"
     }
   }
 }
