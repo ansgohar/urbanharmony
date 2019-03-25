@@ -218,8 +218,9 @@ type Projects {
   Event: String
   Details: String
   Status: ENUM_PROJECTS_STATUS!
-  ImageUrl: String
   Title: String
+  imgBefore: UploadFile
+  imgAfter: UploadFile
 }
 
 type Query {
