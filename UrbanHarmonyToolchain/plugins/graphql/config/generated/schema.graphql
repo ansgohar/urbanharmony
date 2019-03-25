@@ -195,7 +195,7 @@ type Library {
   image: UploadFile
 }
 
-union Morph = Album | Competitions | Conditionsandlaws | Conferences | Consultingoffice | Contestant | Governorate | Incident | Internalnews | Journal | Library | Petition | Projects | Regions | Surveylist | Termsandabout | Videos | UploadFile | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsUser
+union Morph = Album | Competitions | Conditionsandlaws | Conferences | Consultingoffice | Contestant | Governorate | Incident | Internalnews | Journal | Library | Petition | Projects | Regions | Research | Surveylist | Termsandabout | Videos | UploadFile | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsUser
 
 type Petition {
   _id: ID!
@@ -252,6 +252,7 @@ type Query {
   projects(sort: String, limit: Int, start: Int, where: JSON): [Projects]
   region(id: ID!): Regions
   regions(sort: String, limit: Int, start: Int, where: JSON): [Regions]
+  research(sort: String, limit: Int, start: Int, where: JSON): [Research]
   surveylist(id: ID!): Surveylist
   surveylists(sort: String, limit: Int, start: Int, where: JSON): [Surveylist]
   termsandabout(id: ID!): Termsandabout
@@ -276,6 +277,17 @@ type Regions {
   regionName: String
   governorate: Governorate
   building(sort: String, limit: Int, start: Int, where: JSON): [Surveylist]
+}
+
+type Research {
+  _id: ID!
+  createdAt: String!
+  updatedAt: String!
+  Title: String
+  ResearcherName: String
+  Date: String
+  Summary: String
+  PDF: UploadFile
 }
 
 type Surveylist {

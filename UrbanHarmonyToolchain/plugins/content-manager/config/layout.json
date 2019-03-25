@@ -147,5 +147,21 @@
         "appearance": ""
       }
     }
+  },
+  "research": {
+    "attributes": {
+      "Title": {
+        "appearance": ""
+      },
+      "ResearcherName": {
+        "appearance": ""
+      },
+      "Date": {
+        "appearance": ""
+      },
+      "Summary": {
+        "appearance": ""
+      }
+    }
   }
 }
