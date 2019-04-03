@@ -40,13 +40,14 @@ class VID extends React.Component {
             <div className="tile pressCard col-xs-12 padding-mobile">
                 <div className="col-xs-12 newscard-container no-padding">
                     <div className="col-xs-12 col-sm-3 news-rightSide nopadding-mobile">
-                        <div className="image-container-4x3">
+                        {/* <div className="image-container-4x3"> */}
                             {/* Add image here */}
                             {/* <img src={this.props.record.image} /> */}
-                        </div>
+                        {/* </div> */}
                     </div>
                     <div className="col-xs-12 col-sm-9 news-leftSide nopadding-mobile">
                         {/* Add Data here */}
+                        <h2>{this.props.record.title}</h2>
                     </div>
                 </div>
             </div>
