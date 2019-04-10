@@ -18,6 +18,15 @@ class ComplainsData extends React.Component {
         );
     }
 
+    translateStatus(value) {
+        if(value == 'No') {
+            return 'لا يوجد';
+        }
+        else {
+            return 'يوجد';
+        }
+    }
+
     render() {
         const columns = [{
             Header: 'رقم التوثيق',
@@ -38,7 +47,8 @@ class ComplainsData extends React.Component {
         },
         {
             Header: 'حالة التظلم',
-            accessor: 'status'
+            accessor: 'status',
+            Cell: props => <span>{this.translateStatus(props.value)}</span>
         }]
 
         return (
