@@ -50,7 +50,8 @@ class Internal extends React.Component {
                         <span className="cardCat">{this.props.record.label}</span>
 
                         <h3>{this.props.record.title}</h3>
-                    <span className="author"> كتبة  {this.props.record.author} </span>
+                        <span className="author"> كتبة  {this.props.record.author} </span>
+                        <h5>تاريخ النشر : {this.props.record.DatePublished}</h5>
                         <p>{this.props.record.article}</p>
                         <a href={"/detail?news=" + this.props.record.id} >اقرأ المزيد</a>
                     </div>

@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { getInternalByID } from '../actions/index.js'
 import * as queryString from "query-string";
-import  ReactMarkdown from 'react-markdown';
+import ReactMarkdown from 'react-markdown';
 
 
 class DetailInternal extends React.Component {
@@ -60,8 +60,9 @@ class DetailID extends React.Component {
                     </div>
                     <div className="col-xs-12 news-leftSide">
                         <h3>{this.props.record.title}</h3>
-                    <span className="author">   كتبة  {this.props.record.author} </span>
-                        <ReactMarkdown source={this.props.record.fullarticle} />   
+                        <span className="author">   كتبة  {this.props.record.author} </span>
+                        <h5>تاريخ النشر : {this.props.record.DatePublished}</h5>
+                        <ReactMarkdown source={this.props.record.fullarticle} />
                     </div>
                 </div>
 
