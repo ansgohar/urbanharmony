@@ -11,7 +11,7 @@ class InternalService {
                 return response.json();
             })
             .then(function (myJson) {
-                let expression = jsonata('$.{"id":_id,"title":ArticleName,"article":Description,"date":createdAt,"author":AuthorName, "fullarticle":FullArticle,"image":ImgURL, "label":Type,"DatePublished":datePublished}');
+                let expression = jsonata('$.{"id":_id,"title":ArticleName,"article":Description,"date":createdAt,"author":AuthorName, "fullarticle":FullArticle,"image":"' + url.slice(0, -1) + '"& image.url, "label":Type,"DatePublished":datePublished}');
                 let newsObject = expression.evaluate(myJson);
                 callback(newsObject);
             });
@@ -26,7 +26,7 @@ class InternalService {
                 return response.json();
             })
             .then(function (myJson) {
-                let expression = jsonata('$.{"id":_id,"title":ArticleName,"article":Description,"date":createdAt,"author":AuthorName, "fullarticle":FullArticle, "image":ImgURL,"label":Type,"DatePublished":datePublished}');
+                let expression = jsonata('$.{"id":_id,"title":ArticleName,"article":Description,"date":createdAt,"author":AuthorName, "fullarticle":FullArticle, "image":"' + url.slice(0, -1) + '"& image.url,"label":Type,"DatePublished":datePublished}');
                 let newsObject = expression.evaluate(myJson);
                 callback(newsObject);
             });
@@ -41,7 +41,7 @@ class InternalService {
                 return response.json();
             })
             .then(function (myJson) {
-                let expression = jsonata('$.{"id":_id,"title":ArticleName,"article":Description,"date":createdAt,"author":AuthorName, "fullarticle":FullArticle,"image":ImgURL,"label":Type,"DatePublished":datePublished}');
+                let expression = jsonata('$.{"id":_id,"title":ArticleName,"article":Description,"date":createdAt,"author":AuthorName, "fullarticle":FullArticle,"image":"' + url.slice(0, -1) + '"& image.url,"label":Type,"DatePublished":datePublished}');
                 let newsObject = expression.evaluate(myJson);
                 console.log(newsObject);
                 callback(newsObject);

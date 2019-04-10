@@ -55,7 +55,7 @@ class DetailID extends React.Component {
                 <div className="col-xs-12 newscard-container nopadding-mobile">
                     <div className="col-xs-12 news-rightSide nopadding-mobile">
                         <div className="image-container-16x5">
-                            <img src="assets/images/sections/big-image.png" />
+                            <img src={this.props.record.image} />
                         </div>
                     </div>
                     <div className="col-xs-12 news-leftSide">
