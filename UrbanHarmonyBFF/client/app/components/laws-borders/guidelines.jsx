@@ -64,7 +64,7 @@ class GDL extends React.Component {
                     {this.props.record.detail}
                 </p> */}
                 <div>
-                    <iframe src={"http://localhost:1337" + this.props.record.PDF} style={{ width: '100%', height: '500px', border: 'none' }}></iframe>
+                    <iframe src={this.props.record.PDF} style={{ width: '100%', height: '500px', border: 'none' }}></iframe>
                 </div>
             </div>
         );

@@ -39,15 +39,41 @@ class VID extends React.Component {
         return (
             <div className="tile pressCard col-xs-12 padding-mobile">
                 <div className="col-xs-12 newscard-container no-padding">
-                    <div className="col-xs-12 col-sm-3 news-rightSide nopadding-mobile">
-                        {/* <div className="image-container-4x3"> */}
-                            {/* Add image here */}
-                            {/* <img src={this.props.record.image} /> */}
-                        {/* </div> */}
+                    <div className="col-xs-12 col-sm-4 news-rightSide nopadding-mobile">
+                        <table className="default-table no-border-table">
+                            <tr className="table-row">
+                                <td className="table-data table-header">اسم القناة/الاذاعة </td>
+                                <td className="table-data">{this.props.record.channel}</td>
+                            </tr>
+
+                            <tr className="table-row">
+                                <td className="table-data table-header">اسم البرنامج</td>
+                                <td className="table-data">{this.props.record.title}</td>
+                            </tr>
+
+                            <tr className="table-row">
+                                <td className="table-data table-header"> تاريخ البث </td>
+                                <td className="table-data">{this.props.record.date}</td>
+                            </tr>
+
+                            <tr className="table-row">
+                                <td className="table-data table-header"> اسماء الضيوف </td>
+                                <td className="table-data">{this.props.record.guests}</td>
+                            </tr>
+
+                            <tr className="table-row">
+                                <td className="table-data table-header">موضوع اللقاء</td>
+                                <td className="table-data">{this.props.record.description}</td>
+                            </tr>
+
+                            <tr className="table-row">
+                                <td className="table-data table-header">معلومات أخرى  </td>
+                                <td className="table-data">{this.props.record.MoreDetails}</td>
+                            </tr>
+                        </table>
                     </div>
-                    <div className="col-xs-12 col-sm-9 news-leftSide nopadding-mobile">
-                        {/* Add Data here */}
-                        <h2>{this.props.record.title}</h2>
+                    <div className="col-xs-12 col-sm-6 news-leftSide nopadding-mobile">
+                        <iframe className="iframe-size" src={this.props.record.url} />
                     </div>
                 </div>
             </div>

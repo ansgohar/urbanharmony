@@ -11,7 +11,7 @@ class LawsService {
                 return response.json();
             })
             .then(function (myJson) {
-                let expression = jsonata('$.{"id":_id,"title":Title,"detail":Descrption, "PDF":pdf.url}');
+                let expression = jsonata('$.{"id":_id,"title":Title,"detail":Descrption, "PDF":"' + url.slice(0, -1) + '"& pdf.url}');
                 let lawObject = expression.evaluate(myJson);
                 callback(lawObject);
             });
@@ -25,7 +25,7 @@ class LawsService {
                 return response.json();
             })
             .then(function (myJson) {
-                let expression = jsonata('$.{"id":_id,"title":Title,"detail":Descrption, "PDF":pdf.url}');
+                let expression = jsonata('$.{"id":_id,"title":Title,"detail":Descrption, "PDF":"' + url.slice(0, -1) + '"& pdf.url}');
                 let borderObject = expression.evaluate(myJson);
                 callback(borderObject);
             });
@@ -37,7 +37,7 @@ class LawsService {
                 return response.json();
             })
             .then(function (myJson) {
-                let expression = jsonata('$.{"id":_id,"title":Title,"detail":Descrption, "PDF":pdf.url}');
+                let expression = jsonata('$.{"id":_id,"title":Title,"detail":Descrption, "PDF":"' + url.slice(0, -1) + '"& pdf.url}');
                 let guidelineObject = expression.evaluate(myJson);
                 callback(guidelineObject);
             });

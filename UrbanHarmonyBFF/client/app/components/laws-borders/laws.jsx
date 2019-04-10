@@ -46,7 +46,7 @@ class Lws extends React.Component {
                         </p>
                         <div class="col-xs-12 col-sm-2 no-padding sharing-cont">
                             {/* <a href={"https://urbanharmonycms.mybluemix.net" + this.props.record.PDF} class="download-btn" download="True"></a> */}
-                            <a href={"http://localhost:1337" + this.props.record.PDF} class="pdf-btn" target="_blank"></a>
+                            <a href={this.props.record.PDF} class="pdf-btn" target="_blank"></a>
                         </div>
                     </div>
                 </div>
