@@ -54,65 +54,14 @@ class LibraryPage extends React.Component {
                                 <div class="col-xs-12  col-sm-10 library-cardscont">
                                     <h3 class="col-xs-12 librarysearch-result nopadding-mobile">نتيجة البحث</h3>
                                     <BooksDetails books={this.props.books} />
-
-                                    {/* <ul class="col-xs-12 pagination pagination-sm">
-                                        <li><a class="pagi-arrows" href="#">&ltrif;</a></li>
-                                        <li><a href="#">٥</a></li>
-                                        <li><a href="#">٤</a></li>
-                                        <li><a href="#">٣</a></li>
-                                        <li><a href="#">٢</a></li>
-                                        <li><a class="active" href="#">١</a></li>
-                                        <li><a class="pagi-arrows" href="#">&rtrif;</a></li>
-                                    </ul>
-                                    <div class="col-xs-12 relatedbooks-container">
-                                        <div class="col-xs-12 relatedbooks-box no-padding">
-                                            <h3>كتب ذات صلة</h3>
-                                            <div class="col-xs-12 col-sm-3 related-book-card">
-
-                                                <div class="related-image-container image-container-16x9 col-xs-12">
-                                                    <img src="images/200x150.png" alt="#" />
-                                                </div>
-                                                <div class="related-book-name col-xs-12">
-                                                    <p class="col-xs-12">مقالات في التنسيق الحضاري</p>
-                                                </div>
-                                            </div>
-                                            <div class="col-xs-12 col-sm-3 related-book-card">
-
-                                                <div class="related-image-container image-container-16x9 col-xs-12">
-                                                    <img src="images/200x150.png" alt="#" />
-                                                </div>
-                                                <div class="related-book-name col-xs-12">
-                                                    <p class="col-xs-12">مقالات في التنسيق الحضاري</p>
-                                                </div>
-                                            </div>
-                                            <div class="col-xs-12 col-sm-3 related-book-card">
-
-                                                <div class="related-image-container image-container-16x9 col-xs-12">
-                                                    <img src="images/200x150.png" alt="#" />
-                                                </div>
-                                                <div class="related-book-name col-xs-12">
-                                                    <p class="col-xs-12">مقالات في التنسيق الحضاري</p>
-                                                </div>
-                                            </div>
-                                            <div class="col-xs-12 col-sm-3 related-book-card">
-
-                                                <div class="related-image-container image-container-16x9 col-xs-12">
-                                                    <img src="images/200x150.png" alt="#" />
-                                                </div>
-                                                <div class="related-book-name col-xs-12">
-                                                    <p class="col-xs-12">مقالات في التنسيق الحضاري</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div> */}
                                 </div>
 
                             </div>
 
                             <div id="menu2" class="tab-pane fade col-xs-12 no-padding">
-                                
+
                                 <AllVideos videos={this.props.videos} />
-                                
+
                             </div>
                         </div>
 
