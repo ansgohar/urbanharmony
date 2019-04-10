@@ -599,6 +599,12 @@ nav ul li a:active {
 	color: white;
 }
 
+.inline-image {
+    margin: 0 50px;
+    width: 300px;
+    height: 300px;
+}
+
 /** sec5 Projects end **/
 
 /** sec6 News start **/
@@ -2319,6 +2325,10 @@ background-color:#f5f5f5;
 //consultation page styles end//
 /**  Media queries start **/
 @media screen and (max-width:767px){
+    .inline-image {
+        margin: 15px;
+    }
+
     .search-input{
         max-width: 148px;
     }
@@ -2636,6 +2646,10 @@ background-color:#f5f5f5;
     }
 }
 @media (min-width:768px) and (max-width:1199px){
+    .inline-image {
+        margin: 0 25px;
+    }
+
     .carouselContent{
         width: 51%;
         bottom: 0px;

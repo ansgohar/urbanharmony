@@ -10,7 +10,7 @@ class ProjectService {
                 return response.json();
             })
             .then(function (myJson) {
-                let expression = jsonata('$.{"status":Status,"detail":Details,"event":Event,"place":Place, "id":_id,"title":Title,"image":ImageUrl}');
+                let expression = jsonata('$.{"status":Status,"detail":Details,"event":Event,"place":Place, "id":_id,"title":Title,"image":"' + url.slice(0, -1) + '"& imgAfter.url}');
                 let projectObject = expression.evaluate(myJson);
                 callback(projectObject);
             });
@@ -23,7 +23,7 @@ class ProjectService {
                 return response.json();
             })
             .then(function (myJson) {
-                let expression = jsonata('$.{"status":Status,"detail":Details,"event":Event,"place":Place, "id":_id,"title":Title,"image":ImageUrl}');
+                let expression = jsonata('$.{"status":Status,"detail":Details,"event":Event,"place":Place, "id":_id,"title":Title, "image" :  "' + url.slice(0, -1) + '"& imgAfter.url}');
                 let projectObject = expression.evaluate(myJson);
                 callback(projectObject);
             });
@@ -37,7 +37,7 @@ class ProjectService {
                 return response.json();
             })
             .then(function (myJson) {
-                let expression = jsonata('$.{"status":Status,"detail":Details,"event":Event,"place":Place, "id":_id,"title":Title,"image":ImageUrl}');
+                let expression = jsonata('$.{"status":Status,"detail":Details,"event":Event,"place":Place, "id":_id,"title":Title,"imageBefore":"' + url.slice(0, -1) + '"& imgBefore.url, "imageAfter":"' + url.slice(0, -1) + '"& imgAfter.url}');
                 let projectObject = expression.evaluate(myJson);
                 callback(projectObject);
             });

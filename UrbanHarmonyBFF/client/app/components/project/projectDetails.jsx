@@ -50,15 +50,15 @@ class PrjID extends React.Component {
         return (
             <div className="col-xs-12 newscard-container nopadding-mobile page-margin">
                 <div className="col-xs-12 news-rightSide nopadding-mobile">
-                    <div className="image-container-16x5">
-                        <img src={this.props.record.image} />
-                    </div>
                 </div>
                 <div className="col-xs-12 news-leftSide">
                     {/* <div className="col-xs-12 col-sm-9 news-leftSide"> */}
                     <h2>{this.props.record.title}</h2>
                     <h3>{this.props.record.place}</h3>
                     <p>{this.props.record.detail}</p>
+                    
+                    <img className="inline-image" src={this.props.record.imageBefore} />
+                    <img className="inline-image" src={this.props.record.imageAfter} />
                     {/* <div className="col-xs-12 no-padding">
                         <a href="#" className="share-btn"></a>
                         <a href="#" className="pdf-btn"></a>

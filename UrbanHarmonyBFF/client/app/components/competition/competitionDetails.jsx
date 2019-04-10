@@ -65,47 +65,7 @@ class CompetitionDetails extends React.Component {
                                 />
                             </div>
                             <div id="menu3" className="tab-pane fade col-xs-12 no-padding">
-                            <CompetitionWinners winners={this.props.winners} />
-                                {/* <div className="col-xs-12 winners">
-                                    <h2>الفائزون</h2>
-                                    <div className="col-xs-12 comp-filters competitionDetailsForm">
-                                        <div className="col-xs-12 col-sm-6 timepicker-cont"> </div>
-                                        <div className="col-xs-12 col-sm-6 compwin-cont nopadding-mobile">
-                                            <div className="col-xs-12 col-sm-6 form-group timepicker-cont nopadding-mobile">
-                                                <label className="fieldLabel col-sm-3 col-xs-12">تاريخ عرضها</label>
-                                                <div className="col-xs-12 col-sm-9 calendar input-group date" id="datetimepicker1"> <span className="input-group-addon" > <span className="glyphicon glyphicon-calendar"></span> </span>
-                                                    <input className="form-control" type="text" />
-                                                </div>
-                                            </div>
-                                            <div className="col-xs-12 col-sm-6 form-group no-padding">
-                                                <label className="fieldLabel col-sm-3 col-xs-12">إسم المسابقة</label>
-                                                <div className="col-xs-12 col-sm-9 formField">
-                                                    <select className="formDropdown" name="#">
-                                                        <option value="1">1</option>
-                                                        <option value="2">2</option>
-                                                        <option value="3">3</option>
-                                                        <option value="3">4</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="col-xs-12 tite conferenceCard no-padding">
-                                        <div className="col-xs-12 newscard-container nopadding-mobile">
-                                            <div className="col-xs-12 col-sm-3 news-rightSide nopadding-mobile">
-                                                <div className="image-container-4x3"> <img src="images/sections/news_01.svg" /> </div>
-                                            </div>
-                                            <div className="col-xs-12 col-sm-9 news-leftSide">
-                                                <div className="col-xs-12 winner-name no-padding">
-                                                    <div><span>إسم الفائز</span> الإسم</div>
-                                                    <div><span>المسابقة</span>إسم المسابقة</div>
-                                                </div>
-                                                <p>لوريم إيبسوم(Lorem Ipsum) هو ببساطة نص شكلي (بمعنى أن الغاية هي الشكل وليس المحتوى) ويُستخدم في صناعات المطابع ودور النشر. كان لوريم إيبسوم ولايزال المعيار للنص الشكلي منذ القرن الخامس عشر عندما قامت مطبعة مجهولة برص مجموعة من الأحرف بشكل عشوائي أخذتها من نص، لتكوّن كتيّب بمثابة دليل أو مرجع شكلي لهذه الأحرف. </p>
-                                                <a className="read-more" href="#">المزيد</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div> */}
+                                <CompetitionWinners winners={this.props.winners} />
                             </div>
                         </div>
                     </div>
