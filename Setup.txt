@@ -1,0 +1,62 @@
+
+Setup for UrbanHarmonyBFF:
+
+1) Cd into UrbanHarmonyBFF folder
+2) Open cmd in directory
+3) run command npm install
+4) run command npm start
+
+----------------------------------------------------
+
+Setup for UrbanHarmonyToolchain:
+
+1) Cd into UrbanHarmonyToolchain folder
+2) Open cmd in directory
+3) run command npm install
+4) run command npm start
+
+----------------------------------------------------
+
+Starting UrbanHarmonyBFF:
+
+1) open cmd
+
+cd C:\Work\Urban\urbanharmony\UrbanHarmonyBFF
+npm start
+open http://localhost:3000/
+
+----------------------------------------------------
+
+Starting UrbanHarmonyToolchain:
+
+1) open cmd
+
+cd C:\Work\Urban\urbanharmony\UrbanHarmonyToolchain
+npm start
+open http://localhost:1337/admin
+
+Username: admin
+Password: ABC2020$
+
+----------------------------------------------------
+
+Pulling from Repo:
+
+1) open cmd
+
+cd C:\Work\Urban\urbanharmony
+git pull
+cd UrbanHarmonyBFF
+npm run build
+cd ../
+cd UrbanHarmonyToolchain
+npm run build
+
+To start refer to the previous descriptions
+
+----------------------------------------------------
+
+Starting Mongodb:
+
+1) run exe program from desktop "mongod.exe"
+
