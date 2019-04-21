@@ -1,11 +1,3 @@
-type Album {
-  _id: ID!
-  createdAt: String!
-  updatedAt: String!
-  name: String
-  image: UploadFile
-}
-
 type Competitions {
   _id: ID!
   createdAt: String!
@@ -195,7 +187,7 @@ type Library {
   image: UploadFile
 }
 
-union Morph = Album | Competitions | Conditionsandlaws | Conferences | Consultingoffice | Contestant | Governorate | Incident | Internalnews | Journal | Library | Petition | Projects | Regions | Research | Surveylist | Termsandabout | Videos | UploadFile | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsUser
+union Morph = Competitions | Conditionsandlaws | Conferences | Consultingoffice | Contestant | Governorate | Incident | Internalnews | Journal | Library | Petition | Projects | Regions | Research | Studies | Surveylist | Termsandabout | Videos | UploadFile | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsUser
 
 type Petition {
   _id: ID!
@@ -224,8 +216,6 @@ type Projects {
 }
 
 type Query {
-  album(id: ID!): Album
-  albums(sort: String, limit: Int, start: Int, where: JSON): [Album]
   competition(id: ID!): Competitions
   competitions(sort: String, limit: Int, start: Int, where: JSON): [Competitions]
   conditionsandlaw(id: ID!): Conditionsandlaws
@@ -253,6 +243,8 @@ type Query {
   region(id: ID!): Regions
   regions(sort: String, limit: Int, start: Int, where: JSON): [Regions]
   research(sort: String, limit: Int, start: Int, where: JSON): [Research]
+  study(id: ID!): Studies
+  studies(sort: String, limit: Int, start: Int, where: JSON): [Studies]
   surveylist(id: ID!): Surveylist
   surveylists(sort: String, limit: Int, start: Int, where: JSON): [Surveylist]
   termsandabout(id: ID!): Termsandabout
@@ -288,6 +280,17 @@ type Research {
   Date: String
   Summary: String
   PDF: UploadFile
+}
+
+type Studies {
+  _id: ID!
+  createdAt: String!
+  updatedAt: String!
+  Title: String
+  PDF: UploadFile
+  ResearcherName: String
+  Date: String
+  Summary: String
 }
 
 type Surveylist {
