@@ -1,0 +1,30 @@
+{
+  "connection": "default",
+  "collectionName": "album",
+  "info": {
+    "name": "studies",
+    "description": ""
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "PDF": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload"
+    },
+    "ResearcherName": {
+      "type": "string"
+    },
+    "Date": {
+      "type": "date"
+    },
+    "Summary": {
+      "type": "text"
+    }
+  }
+}

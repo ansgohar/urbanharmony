@@ -163,5 +163,18 @@
         "appearance": ""
       }
     }
+  },
+  "studies": {
+    "attributes": {
+      "ResearcherName": {
+        "appearance": ""
+      },
+      "Date": {
+        "appearance": ""
+      },
+      "Summary": {
+        "appearance": ""
+      }
+    }
   }
 }

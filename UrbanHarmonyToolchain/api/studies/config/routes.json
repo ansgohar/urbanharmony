@@ -2,48 +2,48 @@
   "routes": [
     {
       "method": "GET",
-      "path": "/consultingoffice",
-      "handler": "Consultingoffice.find",
+      "path": "/studies",
+      "handler": "Studies.find",
       "config": {
         "policies": []
       }
     },
     {
       "method": "GET",
-      "path": "/consultingoffice/count",
-      "handler": "Consultingoffice.count",
+      "path": "/studies/count",
+      "handler": "Studies.count",
       "config": {
         "policies": []
       }
     },
     {
       "method": "GET",
-      "path": "/consultingoffice/:_id",
-      "handler": "Consultingoffice.findOne",
+      "path": "/studies/:_id",
+      "handler": "Studies.findOne",
       "config": {
         "policies": []
       }
     },
     {
       "method": "POST",
-      "path": "/consultingoffice",
-      "handler": "Consultingoffice.create",
+      "path": "/studies",
+      "handler": "Studies.create",
       "config": {
         "policies": []
       }
     },
     {
       "method": "PUT",
-      "path": "/consultingoffice/:_id",
-      "handler": "Consultingoffice.update",
+      "path": "/studies/:_id",
+      "handler": "Studies.update",
       "config": {
         "policies": []
       }
     },
     {
       "method": "DELETE",
-      "path": "/consultingoffice/:_id",
-      "handler": "Consultingoffice.destroy",
+      "path": "/studies/:_id",
+      "handler": "Studies.destroy",
       "config": {
         "policies": []
       }

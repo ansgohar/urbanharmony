@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * Lifecycle callbacks for the `Album` model.
+ * Lifecycle callbacks for the `Studies` model.
  */
 
 module.exports = {
@@ -29,11 +29,11 @@ module.exports = {
   // afterFetch: async (model, result) => {},
 
   // Before creating a value.
-  // Fired before `insert` query.
+  // Fired before an `insert` query.
   // beforeCreate: async (model) => {},
 
   // After creating a value.
-  // Fired after `insert` query.
+  // Fired after an `insert` query.
   // afterCreate: async (model, result) => {},
 
   // Before updating a value.
