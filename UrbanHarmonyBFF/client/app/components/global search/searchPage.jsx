@@ -63,14 +63,27 @@ class GSP extends React.Component {
         super(props);
     }
 
+    translateResultTitle(value) {
+        if(value == 'news') {
+            return 'صحافة';
+        }
+        else if(value == 'projects')
+        {
+            return 'مشروعات';
+        }
+        else if (value == 'competitions') {
+            return 'مسابقات';
+        }
+        else {
+            return 'اخبار';
+        }
+    }
+
     render() {
         return (
-
-
-
             <div class="tite conferenceCard col-xs-12">
                 <div class="col-xs-12">
-                    <h3 class="sec-h3">نتيجة البحث في {this.props.record.contentType}</h3>
+                    <h3 class="sec-h3">نتيجة البحث في {this.translateResultTitle(this.props.record.contentType)}</h3>
                 </div>
                 <div class="col-xs-12 newscard-container nopadding-mobile">
                     <div class="col-xs-12 col-sm-3 news-rightSide nopadding-mobile">
