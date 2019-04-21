@@ -41,10 +41,10 @@ class App extends React.Component {
                                     <li id="imp-service-menu" className="menu-position">
                                         <a href="#services">أهم الخدمات<strong class="caret"></strong> </a>
                                         <ul id="imp-service-sub" class="second-level">
-                                            <li><a href="#">قوائم الحصر والتظلمات</a></li>
-                                            <li><a href="#">المرصد الحضاري</a></li>
-                                            <li><a href="#">القوانين</a></li>
-                                            <li><a href="#">مكاتب إستشارية</a></li>
+                                            <li><a href="/complainsDetail">قوائم الحصر والتظلمات</a></li>
+                                            <li><a href="/allIncidents">المرصد الحضاري</a></li>
+                                            <li><a href="/lawsDetails">القوانين</a></li>
+                                            <li><a href="/consultingOffices">مكاتب إستشارية</a></li>
                                         </ul>
 
                                     </li>
