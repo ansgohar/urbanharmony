@@ -14,11 +14,12 @@ class GlobalSearchService {
                 return response.json();
             })
             .then(function (myJson) {
+                var contentObject = [];
                 var mergedExpression = [];
                 myJson.forEach(element => {
                     if (element.contentType == 'projects') {
                         delete element.contentType;
-                        var expression = jsonata('*.$.{"id":_id,"title":Title,"image":ImageUrl,"details":Event, "contentType":"projects"}');
+                        var expression = jsonata('*.$.{"id":_id,"title":Title,"image":"' + url.slice(0, -1) + '"& ImageUrl,"details":Event, "contentType":"projects"}');
                     }
 
                     else if (element.contentType == 'news') {
@@ -36,10 +37,8 @@ class GlobalSearchService {
                         var expression = jsonata('*.$.{"id":_id,"title":Title,"image": "' + url.slice(0, -1) + '"& photo.url,"details":Description, "contentType":"competitions"}');
                     }
 
-
-
-                    let contentObject = expression.evaluate(element);
-                    mergedExpression = [...mergedExpression, ...contentObject];
+                    contentObject = expression.evaluate(element);
+                    mergedExpression.push(contentObject);
                 });
 
                 callback(mergedExpression);
