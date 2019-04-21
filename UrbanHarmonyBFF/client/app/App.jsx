@@ -37,7 +37,7 @@ class App extends React.Component {
                                 <ul id="myTopnav" className="col-xs-12 col-sm-12 col-md-10 topnav" >
 
                                     <li className="menu-position active"><a href="/" id="home">الرئيسية</a></li>
-                                    <li className="menu-position"><a href="#about" >عن الجهاز</a></li>
+                                    <li className="menu-position"><a href="/vision" >عن الجهاز</a></li>
                                     <li id="imp-service-menu" className="menu-position">
                                         <a href="#services">أهم الخدمات<strong class="caret"></strong> </a>
                                         <ul id="imp-service-sub" class="second-level">
@@ -48,9 +48,9 @@ class App extends React.Component {
                                         </ul>
 
                                     </li>
-                                    <li className="menu-position"><a href="#competitions" >ندوات و مسابقات</a></li>
-                                    <li className="menu-position"><a href="#projects" >مشروعات</a></li>
-                                    <li className="menu-position"><a href="#news" >الأخبار</a></li>
+                                    <li className="menu-position"><a href="/competitionDetails" >ندوات و مسابقات</a></li>
+                                    <li className="menu-position"><a href="/moreProjects" >مشروعات</a></li>
+                                    <li className="menu-position"><a href="/more" >الأخبار</a></li>
                                     <li className="menu-position"><a href="/library" id="lib">مكتبة الجهاز</a></li>
                                 </ul>
                                 <div className="col-xs-6 col-sm-4 col-md-2 search-cont">
