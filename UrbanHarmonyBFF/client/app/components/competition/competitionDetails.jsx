@@ -39,7 +39,7 @@ class CompetitionDetails extends React.Component {
                                             <ul className="col-xs-12 nav nav-tabs">
                                                 <li className="active"><a data-toggle="tab" href="#menu1tab1">معلومات عن المسابقة</a></li>
                                                 <li><a data-toggle="tab" href="#menu1tab2">إشترك معنا</a></li>
-                                                <li><a data-toggle="tab" href="#menu1tab3">تسليم صور المسابقة</a></li>
+                                                {/* <li><a data-toggle="tab" href="#menu1tab3">تسليم صور المسابقة</a></li> */}
                                             </ul>
                                             <div className="col-xs-12 tab-content nopadding-mobile">
                                                 <div id="menu1tab1" className="col-xs-12 tab-pane subtab fade in active">
@@ -47,13 +47,20 @@ class CompetitionDetails extends React.Component {
                                                         competition={this.props.competition} />
                                                 </div>
                                                 <div id="menu1tab2" className="col-xs-12 tab-pane subtab fade">
-                                                    <p> من فضلك أدخل معلوماتك لتستطيع المشاركة في المسابقة</p>
-                                                    <Subscribe onSubmit={showResults} />
+                                                    <p>للإشتراك في المسابقة برجاء إرسال :</p>
+                                                    <ul>
+                                                        <li>الاسم</li>
+                                                        <li>صورة شخصية</li>
+                                                        <li>المهنة</li>
+                                                        <li>المحمول</li>
+                                                    </ul>
+                                                    <p>على البريد الالكتروني لهيئة التنسيق الحضاري info@urbanharmony.org</p>
+                                                    {/* <Subscribe onSubmit={showResults} /> */}
                                                 </div>
-                                                <div id="menu1tab3" className="col-xs-12 tab-pane subtab fade no-padding">
+                                                {/* <div id="menu1tab3" className="col-xs-12 tab-pane subtab fade no-padding">
                                                     <p> برجاء وضع روابط الصور الخاصه بك وتأكد من ظهورها فى خانة العرض قبل  </p>
                                                     <UploadImages token={queryString.parse(this.props.location.search).KEY} onSubmit={uploadResult} />
-                                                </div>
+                                                </div> */}
                                             </div>
                                         </div>
                                     </div>
