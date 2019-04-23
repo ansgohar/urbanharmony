@@ -184,8 +184,8 @@ export class HomePage extends React.Component {
                     <div className="col-xs-12 sec4">
                         <h2 className="sec-h2"> احداث وفاعليات </h2>
                         <div className="col-xs-12 cardsContainer nopadding-mobile">
-                            <div className="col-xs-12 col-sm-10 competitionCardsContainer">
-                                <div className="cardContainer col-xs-12  col-sm-4 nopadding-mobile">
+                            <div className="col-xs-12 col-sm-8 competitionCardsContainer">
+                                <div className="cardContainer col-xs-12  col-sm-6 nopadding-mobile">
                                     <div className="card col-xs-12 no-padding">
                                         <div className="cardImgContainer col-xs-12 no-padding">
                                             <div className="image-container-4x3">
@@ -202,7 +202,7 @@ export class HomePage extends React.Component {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="cardContainer col-xs-12  col-sm-4 nopadding-mobile">
+                                <div className="cardContainer col-xs-12  col-sm-6 nopadding-mobile">
                                     <div className="card col-xs-12 middleCard no-padding">
                                         <div className="cardImgContainer col-xs-12 no-padding">
                                             <div className="image-container-4x3">
@@ -217,7 +217,7 @@ export class HomePage extends React.Component {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="cardContainer col-xs-12  col-sm-4 nopadding-mobile">
+                                {/* <div className="cardContainer col-xs-12  col-sm-4 nopadding-mobile">
                                     <div className="card col-xs-12 no-padding">
                                         <div className="cardImgContainer col-xs-12 no-padding">
                                             <div className="image-container-4x3">
@@ -233,7 +233,7 @@ export class HomePage extends React.Component {
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                         {/* <div className="col-xs-12">
