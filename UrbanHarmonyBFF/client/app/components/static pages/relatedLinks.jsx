@@ -10,7 +10,7 @@ class RelatedLinks extends React.Component {
     render() {
         return (
             <div id="project-details" className="row project-details">
-                <div className="col-xs-12 no-padding ">
+                <div className="col-xs-12 no-padding greyish-background">
                     <h2 className="sec-h2 add-padding">مواقع ذات صلة</h2>
                     <div className="add-margin">
                         <div className="col-sm-6 section-right-side related-links">

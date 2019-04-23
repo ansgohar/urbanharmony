@@ -10,7 +10,7 @@ class Vision extends React.Component {
     render() {
         return (
             <div id="project-details" className="row project-details">
-                <div className="col-xs-12 no-padding ">
+                <div className="col-xs-12 no-padding greyish-background">
                     <h2 className="sec-h2 add-padding">رؤيتنا و أهدافنا</h2>
                     <div className="add-margin">
                         <p>
