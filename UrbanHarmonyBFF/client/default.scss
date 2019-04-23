@@ -463,6 +463,14 @@ nav ul li a:active {
 .vision-page{
     min-height: 600px;
 }
+
+.section-right-side {
+    float: right;
+}
+
+.related-links {
+    font-size: 20px;
+}
 /** sec3 our services end **/
 
 /** sec4 Competetions start **/
@@ -845,6 +853,12 @@ background-color:#f5f5f5;
 
 /** Newslist page Styles end**/
 /** competition pages Styles start**/
+.add-padding {
+    padding-bottom: 15px;
+}
+.add-margin {
+    margin: 20px;
+}
 .competition-details{
     background-color: #f5f5f5;
 }

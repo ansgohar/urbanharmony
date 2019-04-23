@@ -8,6 +8,8 @@ import ProjectDetails from './components/project/projectDetails.jsx'
 import ComplainsPage from './components/complains/complains.jsx'
 import LawsBordersPage from './components/laws-borders/allcontent.jsx'
 import Vision from './components/static pages/vision.jsx'
+import ContactUs from './components//static pages/contactUS.jsx'
+import RelatedLinks from './components/static pages/relatedLinks.jsx'
 import LibraryPage from './components/library/library.jsx'
 import GlobalSearchPage from './components/global search/searchPage.jsx';
 import CompetitionInfo from './components/competition/competitionINFO.jsx';
@@ -79,6 +81,8 @@ class App extends React.Component {
                     <Route path="/complainsDetail" component={ComplainsPage} />
                     <Route path="/lawsDetails" component={LawsBordersPage} />
                     <Route path="/vision" component={Vision} />
+                    <Route path="/contact-us" component={ContactUs} />
+                    <Route path="/related-links" component={RelatedLinks} />
                     <Route path="/library" component={LibraryPage} />
                     <Route path="/search" component={GlobalSearchPage} />
                     <Route path="/competitionInfo" component={CompetitionInfo} />
@@ -102,8 +106,8 @@ class App extends React.Component {
                             <div className="footerRightSide col-xs-12 col-sm-9">
                                 <div className="footerLinks col-xs-12 no-padding">
                                     <a href="#">من نحن</a>
-                                    <a href="#">إتصل بنا</a>
-                                    <a href="#">مواقع ذات صلة</a>
+                                    <a href="/contact-us">إتصل بنا</a>
+                                    <a href="/related-links">مواقع ذات صلة</a>
                                     <a href="#">الخصوصية</a>
                                     <a href="#">الشروط والأحكام</a>
                                 </div>

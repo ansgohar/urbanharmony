@@ -13,6 +13,8 @@ module.exports = function (app) {
   app.use('/complainsDetail', router);
   app.use('/lawsDetails', router);
   app.use('/vision', router);
+  app.use('/contact-us', router);
+  app.use('/related-links', router);
   app.use('/library', router);
   app.use('/search', router);
   app.use('/competitionInfo', router);
