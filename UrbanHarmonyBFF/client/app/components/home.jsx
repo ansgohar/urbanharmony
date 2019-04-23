@@ -172,11 +172,11 @@ export class HomePage extends React.Component {
 
                             </div>
                         </div>
-                        <div className="col-xs-12">
+                        {/* <div className="col-xs-12">
                             <div className="col-xs-12 others-cont">
                                 <a href="#" className="more-black" >خدمات أخرى</a>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
                 {/* <!-- Competitions -->  */}
