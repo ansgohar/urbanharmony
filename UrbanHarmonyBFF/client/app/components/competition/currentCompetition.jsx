@@ -23,6 +23,7 @@ class CurrentCompetition extends React.Component {
                 <h2> {this.props.competition.title}</h2>
                 <ReactMarkdown source={this.props.competition.description} />
                 <ReactMarkdown source={this.props.competition.rules} />
+                <p>{this.props.competition.awards}</p>
                 <ReactMarkdown source={this.props.competition.judges} />
             </div>
         );

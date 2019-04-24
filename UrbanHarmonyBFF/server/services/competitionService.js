@@ -10,7 +10,7 @@ class CompetitionService {
                 return response.json();
             })
             .then(function (myJson) {
-                let expression = jsonata('$.{"id":_id,"title":Title,"description":Description, "rules": Rules, "judges" : Judges, "deadline" : Deadline}');
+                let expression = jsonata('$.{"id":_id,"title":Title,"description":Description, "rules": Rules, "judges" : Judges, "deadline" : Deadline, "awards" : awards}');
                 let competitionOfTheMonth = expression.evaluate(myJson);
                 callback(competitionOfTheMonth);
             });
@@ -20,7 +20,7 @@ class CompetitionService {
         fetch(url + 'competitions')
             .then(res => res.json())
             .then(function (json) {
-                let expression = jsonata('$.{"id":_id,"title":Title,"description":Description, "rules": Rules, "judges" : Judges, "deadline" : deadline, "image" :  "' + url.slice(0, -1) + '"& photo.url}');
+                let expression = jsonata('$.{"id":_id,"title":Title,"description":Description, "rules": Rules, "judges" : Judges, "deadline" : deadline, "image" :  "' + url.slice(0, -1) + '"& photo.url, "awards" : awards}');
                 let competitions = expression.evaluate(json);
                 callback(competitions);
             });
@@ -30,7 +30,7 @@ class CompetitionService {
         fetch(url + 'competitions?_id=' + ID)
             .then(res => res.json())
             .then(function (json) {
-                let expression = jsonata('$.{"id":_id,"title":Title,"description":Description, "rules": Rules, "judges" : Judges, "deadline" : deadline, "image" :  "' + url.slice(0, -1) + '"& photo.url}');
+                let expression = jsonata('$.{"id":_id,"title":Title,"description":Description, "rules": Rules, "judges" : Judges, "deadline" : deadline, "image" :  "' + url.slice(0, -1) + '"& photo.url, "awards" : awards}');
                 let competitionID = expression.evaluate(json);
                 callback(competitionID);
             });

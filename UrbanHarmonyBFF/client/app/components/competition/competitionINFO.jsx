@@ -47,6 +47,8 @@ class CmpID extends React.Component {
                     <ReactMarkdown source={this.props.competition.description} />
                     <h3> القوانين : </h3>
                     <ReactMarkdown source={this.props.competition.rules} />
+                    <h3> الجوائز : </h3>
+                    <p>{this.props.competition.awards}</p>
                     <h3> الحكام : </h3>
                     <ReactMarkdown source={this.props.competition.judges} />
                 </div>
