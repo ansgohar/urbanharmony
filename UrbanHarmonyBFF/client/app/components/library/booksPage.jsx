@@ -30,6 +30,23 @@ class BK extends React.Component {
     constructor(props) {
         super(props);
     }
+
+    translateLabel(label) {
+        if (label == 'history') {
+            return 'حضارة وتاريخ'
+        }
+        else if (label == 'engineering') {
+            return 'هندسة وتخطيط عمراني'
+        }
+        else if (label == 'sociology') {
+            return 'علوم إجتماعية وبيئية'
+        }
+        else {
+            return 'ادب وفنون'
+        }
+    }
+
+
     render() {
         return (
             <div class="col-xs-12 newscard-container nopadding-mobile">
@@ -39,7 +56,7 @@ class BK extends React.Component {
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-9 news-leftSide nopadding-mobile">
-                    <span class="cardCat">ادب و فنون</span>
+                    <span class="cardCat book-label">{this.translateLabel(this.props.record.bookCategory)}</span>
                     <h3>{this.props.record.title}</h3>
                     <div class="col-xs-12 col-sm-6 no-padding book-table">
                         <table>
@@ -61,7 +78,7 @@ class BK extends React.Component {
                             </tr>
                             <tr>
                                 <td>المجموعة التي ينتمي إليها الكتاب</td>
-                                <td>{this.props.record.bookCategory}</td>
+                                <td>{this.translateLabel(this.props.record.bookCategory)}</td>
                             </tr>
                         </table>
 
