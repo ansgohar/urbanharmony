@@ -40,7 +40,7 @@ class Prj extends React.Component {
             <div className="carouselContent">
                 <h2><h2><img class="thumb-img" src={this.props.rec.image}></img>{this.props.rec.title}</h2>{this.props.rec.title}</h2>
                 <p>{this.props.rec.event}</p>
-                <a href="#">المزيد</a>
+                <a href={"/projectDetail?project=" + this.props.rec.id}>المزيد</a>
             </div>
         );
     }
