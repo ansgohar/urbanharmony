@@ -9,9 +9,6 @@
     "timestamps": true
   },
   "attributes": {
-    "URL": {
-      "type": "string"
-    },
     "AuthorName": {
       "type": "string"
     },
@@ -20,9 +17,6 @@
     },
     "Description": {
       "type": "text"
-    },
-    "ThumpURL": {
-      "type": "string"
     },
     "Type": {
       "type": "enumeration",

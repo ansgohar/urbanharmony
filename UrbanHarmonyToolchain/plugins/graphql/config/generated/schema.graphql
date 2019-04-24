@@ -141,11 +141,9 @@ type Internalnews {
   _id: ID!
   createdAt: String!
   updatedAt: String!
-  URL: String
   AuthorName: String
   ArticleName: String
   Description: String
-  ThumpURL: String
   Type: ENUM_INTERNALNEWS_TYPE!
   FullArticle: String
   image: UploadFile
