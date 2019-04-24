@@ -7,7 +7,7 @@ class ArticleService {
 
     getallnews(callback) {
 
-        fetch(url + 'Journal')
+        fetch(url + 'Journal?_sort=updatedAt:desc')
             .then(function (response) {
                 return response.json();
             })
