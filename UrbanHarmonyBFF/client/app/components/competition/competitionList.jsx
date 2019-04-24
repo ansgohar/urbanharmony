@@ -55,6 +55,16 @@ class CompetitionEntry extends React.Component {
     constructor(props) {
         super(props);
     }
+    convertDateToArabic(date) {
+        if (date) {
+            let arabicDate = new Date(date);
+            return arabicDate.toLocaleDateString('ar-EG');
+        }
+        else {
+            return '' };
+
+    }
+
     render() {
         return (
             <div className="col-xs-12 tite conferenceCard no-padding">
@@ -65,7 +75,7 @@ class CompetitionEntry extends React.Component {
                     <div className="col-xs-12 col-sm-9 news-leftSide">
                         <div className="col-xs-12 winner-name no-padding">
                             <div><span>المسابقة</span> {this.props.record.title}</div>
-                            <div><span>التاريخ</span>{this.props.record.deadline}</div>
+                            <div><span>التاريخ</span>{this.convertDateToArabic(this.props.record.deadline)}</div>
                         </div>
                         <p> {this.props.record.description} </p>
                         <a className="read-more" href={"/competitionInfo?competition="+this.props.record.id}>المزيد</a>

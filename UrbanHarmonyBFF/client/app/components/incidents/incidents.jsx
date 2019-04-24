@@ -42,6 +42,16 @@ class Incident extends React.Component {
         super(props);
     }
 
+    convertDateToArabic(date) {
+        if (date) {
+            let arabicDate = new Date(date);
+            return arabicDate.toLocaleDateString('ar-EG');
+        }
+        else {
+            return '' };
+
+    }
+
     render() {
         return (
             <div className="tile pressCard col-xs-12 padding-mobile">
@@ -53,7 +63,7 @@ class Incident extends React.Component {
                     </div>
                     <div className="col-xs-12 col-sm-9 news-leftSide nopadding-mobile">
                         <h3><a href={"/incidentDetails?incident=" + this.props.record.id}>{this.props.record.title}</a></h3>
-                        <h4>تاريخ الرصد :{this.props.record.date}</h4>
+                        <h4>تاريخ الرصد :{this.convertDateToArabic(this.props.record.date)}</h4>
                     </div>
                 </div>
             </div>

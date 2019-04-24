@@ -20,6 +20,16 @@ class IncidentDetails extends React.Component {
 
     }
 
+    convertDateToArabic(date) {
+        if (date) {
+            let arabicDate = new Date(date);
+            return arabicDate.toLocaleDateString('ar-EG');
+        }
+        else {
+            return '' };
+
+    }
+
     render() {
         if (this.props.hide) {
             return null;
@@ -41,7 +51,7 @@ class IncidentDetails extends React.Component {
 
                             <tr className="table-row">
                                 <td className="table-data table-header"> تاريخ الرصد </td>
-                                <td className="table-data">{this.props.incidentDetails.date}</td>
+                                <td className="table-data">{this.convertDateToArabic(this.props.incidentDetails.date)}</td>
                             </tr>
 
                             <tr className="table-row">

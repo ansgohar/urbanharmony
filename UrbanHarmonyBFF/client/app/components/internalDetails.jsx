@@ -45,6 +45,16 @@ class DetailID extends React.Component {
         super(props);
     }
 
+    convertDateToArabic(date) {
+        if (date) {
+            let arabicDate = new Date(date);
+            return arabicDate.toLocaleDateString('ar-EG');
+        }
+        else {
+            return '' };
+
+    }
+
     render() {
 
         if (this.props.hide) {
@@ -61,7 +71,7 @@ class DetailID extends React.Component {
                     <div className="col-xs-12 news-leftSide">
                         <h3>{this.props.record.title}</h3>
                         <span className="author">   كتبة  {this.props.record.author} </span>
-                        <h5>تاريخ النشر : {this.props.record.DatePublished}</h5>
+                        <h5>تاريخ النشر : {this.convertDateToArabic(this.props.record.DatePublished)}</h5>
                         <ReactMarkdown source={this.props.record.fullarticle} />
                     </div>
                 </div>

@@ -35,6 +35,16 @@ class VID extends React.Component {
         super(props);
     }
 
+    convertDateToArabic(date) {
+        if (date) {
+            let arabicDate = new Date(date);
+            return arabicDate.toLocaleDateString('ar-EG');
+        }
+        else {
+            return '' };
+
+    }
+
     render() {
         return (
             <div className="tile pressCard col-xs-12 padding-mobile">
@@ -53,7 +63,7 @@ class VID extends React.Component {
 
                             <tr className="table-row">
                                 <td className="table-data table-header"> تاريخ البث </td>
-                                <td className="table-data">{this.props.record.date}</td>
+                                <td className="table-data">{this.convertDateToArabic(this.props.record.date)}</td>
                             </tr>
 
                             <tr className="table-row">

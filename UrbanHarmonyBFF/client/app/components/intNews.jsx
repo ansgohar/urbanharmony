@@ -50,6 +50,16 @@ class Internal extends React.Component {
         }
     }
 
+    convertDateToArabic(date) {
+        if (date) {
+            let arabicDate = new Date(date);
+            return arabicDate.toLocaleDateString('ar-EG');
+        }
+        else {
+            return '' };
+
+    }
+
     render() {
         return (
             <div className="tile newsCard col-xs-12 no-padding">
@@ -63,7 +73,7 @@ class Internal extends React.Component {
                         <span className="cardCat">{this.translateLabel(this.props.record.label)}</span>
                         <h3>{this.props.record.title}</h3>
                         <span className="author">   كتبة  {this.props.record.author} </span>
-                        <h5>تاريخ النشر : {this.props.record.DatePublished}</h5>
+                        <h5>تاريخ النشر : {this.convertDateToArabic(this.props.record.DatePublished)}</h5>
                         <p>{this.props.record.article}</p>
                         <a href={"/detail?news=" + this.props.record.id} >اقرأ المزيد</a>
                     </div>
