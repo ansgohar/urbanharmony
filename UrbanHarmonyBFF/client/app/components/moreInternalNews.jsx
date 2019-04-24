@@ -55,7 +55,7 @@ class Internal extends React.Component {
                 <div className="col-xs-12 newscard-container no-padding">
                     <div className="col-xs-12 col-sm-3 news-rightSide nopadding-mobile">
                         <div className="image-container-4x3">
-                            <img src="assets/images/sections/news_03.svg" />
+                            <img src={this.props.record.image}/>
                         </div>
                     </div>
                     <div className="col-xs-12 col-sm-9 news-leftSide nopadding-mobile">
