@@ -10,7 +10,6 @@
   },
   "attributes": {
     "author": {
-      "default": "printingNo",
       "type": "string"
     },
     "printingNo": {
