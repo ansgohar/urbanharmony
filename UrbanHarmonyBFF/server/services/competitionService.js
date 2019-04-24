@@ -40,7 +40,7 @@ class CompetitionService {
         fetch(url + 'contestant?status=winner')
             .then(res => res.json())
             .then(function (json) {
-                let expression = jsonata('$.{"id":_id,"name":name,"competitionName":competition.Title, "description": competition.Description,"image":personalPhoto, "compID":competition._id}');
+                let expression = jsonata('$.{"id":_id,"name":name,"competitionName":competition.Title, "description": competition.Description,"image":"' + url.slice(0, -1) + '"& personalPhoto.url, "compID":competition._id}');
                 let winners = expression.evaluate(json);
                 callback(winners);
             });
