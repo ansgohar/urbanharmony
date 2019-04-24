@@ -66,7 +66,7 @@ class BK extends React.Component {
                             </tr>
                             <tr>
                                 <td>إسم السلسلة</td>
-                                <td>سلسلة</td>
+                                <td>{this.props.record.series}</td>
                             </tr>
                             <tr>
                                 <td>عدد النسخ</td>

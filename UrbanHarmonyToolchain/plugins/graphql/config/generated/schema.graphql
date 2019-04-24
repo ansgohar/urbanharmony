@@ -183,6 +183,7 @@ type Library {
   bookcategory: ENUM_LIBRARY_BOOKCATEGORY
   title: String
   image: UploadFile
+  seriesName: String
 }
 
 union Morph = Competitions | Conditionsandlaws | Conferences | Consultingoffice | Contestant | Governorate | Incident | Internalnews | Journal | Library | Petition | Projects | Regions | Studies | Surveylist | Termsandabout | Videos | UploadFile | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsUser

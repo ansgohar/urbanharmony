@@ -50,6 +50,9 @@
       "model": "file",
       "via": "related",
       "plugin": "upload"
+    },
+    "seriesName": {
+      "type": "string"
     }
   }
 }
