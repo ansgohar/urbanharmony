@@ -82,7 +82,7 @@ class BK extends React.Component {
                             </tr>
                             <tr>
                                 <td>سنة النشر</td>
-                                <td>{this.props.record.yearOfPublish}</td>
+                                <td>{this.props.record.publishYear}</td>
                             </tr>
                             <tr>
                                 <td>مكان النشر</td>
