@@ -39,7 +39,7 @@ class ComplainsPage extends React.Component {
                                     surveyList={this.props.surveyList} onSubmit={searchResults} />
 
                                 <div className="col-xs-12 search-result">
-                                    <div className="col-xs-12 result-title">عدد المباني داخل الحي ٥٠ مبنى</div>
+                                    <div className="col-xs-12 result-title"> المباني داخل الحي  </div>
 
                                     {/* =========== REACT TABLEEEE ============ */}
                                     <ComplainsData surveyList={this.props.surveyList} />
