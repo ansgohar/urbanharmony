@@ -132,9 +132,9 @@ type Incident {
   subject: String
   address: String
   description: String
-  imageURL: String
   Date: String
   Photographer: String
+  image: UploadFile
 }
 
 type Internalnews {

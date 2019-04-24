@@ -11,7 +11,7 @@ class IncidentsService {
                 return response.json();
             })
             .then(function (myJson) {
-                let expression = jsonata('$.{"id":_id,"title":subject,"date":Date,"image":imageURL}');
+                let expression = jsonata('$.{"id":_id,"title":subject,"date":Date,"image":"' + url.slice(0, -1) + '"& image.url}');
                 let incidentsObject = expression.evaluate(myJson);
                 callback(incidentsObject);
             });
@@ -23,7 +23,7 @@ class IncidentsService {
                 return response.json();
             })
             .then(function (myJson) {
-                let expression = jsonata('$.{"id":_id,"title":subject,"date":Date,"image":imageURL,"description":description,"address":address,"photographer":Photographer}');
+                let expression = jsonata('$.{"id":_id,"title":subject,"date":Date,"image":"' + url.slice(0, -1) + '"&image.url ,"description":description,"address":address,"photographer":Photographer}');
                 let incidentsObject = expression.evaluate(myJson);
                 callback(incidentsObject);
             });

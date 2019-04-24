@@ -19,14 +19,16 @@
       "minLength": 30,
       "type": "text"
     },
-    "imageURL": {
-      "type": "string"
-    },
     "Date": {
       "type": "date"
     },
     "Photographer": {
       "type": "string"
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload"
     }
   }
 }
