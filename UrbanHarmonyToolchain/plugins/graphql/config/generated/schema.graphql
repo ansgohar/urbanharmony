@@ -109,14 +109,6 @@ enum ENUM_SURVEYLIST_STATUS {
   No
 }
 
-enum ENUM_TERMSANDABOUT_TYPE {
-  term
-  about
-  related
-  contact
-  privacy
-}
-
 type Governorate {
   _id: ID!
   createdAt: String!
@@ -186,7 +178,7 @@ type Library {
   seriesName: String
 }
 
-union Morph = Competitions | Conditionsandlaws | Conferences | Consultingoffice | Contestant | Governorate | Incident | Internalnews | Journal | Library | Petition | Projects | Regions | Studies | Surveylist | Termsandabout | Videos | UploadFile | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsUser
+union Morph = Competitions | Conditionsandlaws | Conferences | Consultingoffice | Contestant | Governorate | Incident | Internalnews | Journal | Library | Petition | Projects | Regions | Studies | Surveylist | Videos | UploadFile | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsUser
 
 type Petition {
   _id: ID!
@@ -245,8 +237,6 @@ type Query {
   studies(sort: String, limit: Int, start: Int, where: JSON): [Studies]
   surveylist(id: ID!): Surveylist
   surveylists(sort: String, limit: Int, start: Int, where: JSON): [Surveylist]
-  termsandabout(id: ID!): Termsandabout
-  termsandabouts(sort: String, limit: Int, start: Int, where: JSON): [Termsandabout]
   video(id: ID!): Videos
   videos(sort: String, limit: Int, start: Int, where: JSON): [Videos]
   files(sort: String, limit: Int, start: Int, where: JSON): [UploadFile]
@@ -293,16 +283,6 @@ type Surveylist {
   status: ENUM_SURVEYLIST_STATUS!
   region: Regions
   petition: Petition
-}
-
-type Termsandabout {
-  _id: ID!
-  createdAt: String!
-  updatedAt: String!
-  title: String
-  type: ENUM_TERMSANDABOUT_TYPE
-  description: String
-  image: UploadFile
 }
 
 type UploadFile {
