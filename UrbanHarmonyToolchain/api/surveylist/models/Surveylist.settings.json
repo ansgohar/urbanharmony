@@ -30,6 +30,7 @@
     "status": {
       "type": "enumeration",
       "enum": [
+        " ",
         "exists",
         "No"
       ],

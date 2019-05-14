@@ -110,7 +110,7 @@ class ComplainService {
 
     getAllComplainsList(callback) {
         // let query = encodeURIComponent('يوجد');
-        fetch(url + 'surveylist?status=exits')
+        fetch(url + 'surveylist?status=exists')
             .then(function (response) {
                 return response.json();
             })
