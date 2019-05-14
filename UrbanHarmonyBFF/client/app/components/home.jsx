@@ -250,9 +250,9 @@ export class HomePage extends React.Component {
                         <div className="col-xs-12 tabs-container">
                             <div className="col-xs-12">
                                 <ul className="col-xs-12 col-sm-5 nav nav-tabs no-padding">
-                                    <li className="active"><a data-toggle="tab" href="#menu3" id="1">مشروعات تمت</a></li>
+                                    <li><a data-toggle="tab" href="#menu3" id="1">مشروعات تمت</a></li>
                                     <li><a data-toggle="tab" href="#menu2">مشروعات مقترحة</a></li>
-                                    <li><a data-toggle="tab" href="#menu1">مشروعات جارية</a></li>
+                                    <li className="active"><a data-toggle="tab" href="#menu1">مشروعات جارية</a></li>
                                 </ul>
                             </div>
                             <div className="tab-content">
@@ -262,21 +262,19 @@ export class HomePage extends React.Component {
                                         <WorkingProject hide={this.props.working.length === 0}
                                             work={this.props.working} />
                                     </div>
-
                                 </div>
+
                                 <div id="menu2" className="tab-pane fade col-xs-12 no-padding">
                                     <div className="col-xs-12 col-sm-10 tabsUpperRow">
                                         <PlannedProject hide={this.props.planned.length === 0}
                                             plan={this.props.planned} />
                                     </div>
-
                                 </div>
+
                                 <div id="menu3" className="tab-pane fade col-xs-12 no-padding">
                                     <div className="col-xs-12 col-sm-10 tabsUpperRow">
                                         <DoneProject hide={this.props.done.length === 0}
                                             done={this.props.done} />
-
-
                                     </div>
 
                                 </div>
