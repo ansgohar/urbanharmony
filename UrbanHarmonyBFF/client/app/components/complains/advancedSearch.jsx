@@ -16,11 +16,13 @@ class AdvancedSearchForm extends React.Component {
 
     render() {
         const { handleSubmit, pristine, reset, submitting } = this.props;
-        
+
         return (
             <div>
                 <form onSubmit={handleSubmit}>
                     <div className="col-xs-12 col-sm-10 advancedsearch-cont Adv-Search" id={this.props.compID} >
+
+                        <p> يمكنك البحث باستخام احدى الاختيارات الاتية : </p>
 
                         <Governorates governorates={this.props.governorates} regions={this.props.regions} />
 

@@ -54,14 +54,14 @@ class Governorates extends React.Component {
         return (
             <div>
                 <div className="col-xs-12 col-sm-6">
-                    <label className="fieldLabel col-xs-12">المنطقة </label>
+                    <label className="fieldLabel col-xs-12">المنطقة</label>
                     <select className="formDropdown" placeholder="إختر إسم المنطقة" name="#">
                         {regionOptions}
                     </select>
                 </div>
 
                 <div className="col-xs-12 col-sm-6" onChange={this.handleChange}>
-                    <label className="fieldLabel col-xs-12">المحافظة </label>
+                    <label className="fieldLabel col-xs-12">المحافظة</label>
                     <select className="formDropdown" name="#">
                         {optionItems}
                     </select>
