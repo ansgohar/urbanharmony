@@ -26,17 +26,17 @@ class AdvancedSearchForm extends React.Component {
 
                         <div className="col-xs-12">
                             <div className="col-xs-12 col-sm-8 street-name">
-                                <label className="fieldLabel col-xs-12">إسم الشارع<span className="requiredField">*</span></label>
+                                <label className="fieldLabel col-xs-12">إسم الشارع </label>
 
                                 <Field className="input-search" component="input" name="streetName" type="text" className="form-control" placeholder="" />
 
                             </div>
                             <div className="col-xs-12 col-sm-2 no-padding building-no">
-                                <label className="fieldLabel col-xs-12">إسم العقار<span className="requiredField">*</span></label>
+                                <label className="fieldLabel col-xs-12">إسم العقار </label>
                                 <Field className="input-search" component="input" name="buildingName" type="text" className="form-control" placeholder="" />
                             </div>
                             <div className="col-xs-12 col-sm-2 no-padding building-no">
-                                <label className="fieldLabel col-xs-12">رقم العقار<span className="requiredField">*</span></label>
+                                <label className="fieldLabel col-xs-12">رقم العقار </label>
                                 <Field className="input-search" component="input" name="buildingNumber" type="text" className="form-control" placeholder="" />
                             </div>
                         </div>

@@ -27,6 +27,8 @@ export default (async function ComplainSearchResults(values, dispatch) {
         );
 
     }
+
+    dispatch(reset('searchComplains'));
 });
 
 

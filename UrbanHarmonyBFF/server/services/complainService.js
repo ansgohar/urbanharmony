@@ -7,7 +7,6 @@ const url = localConfig.CMS_URL || process.env.CMS_URL;
 class ComplainService {
 
     getSurveyList(callback) {
-
         fetch(url + 'surveylist')
             .then(function (response) {
                 return response.json();
@@ -33,16 +32,15 @@ class ComplainService {
             });
     }
 
-
     searhByAddressInSurveylist(searchAddress, callback) {
         // let queryAddress = encodeURIComponent(searchAddress);
-        let bodyParam = { query: "query { surveylists (where: { fullAddress_contains:\"" + searchAddress + "\"}){fullAddress buildingName registrationNumber buildingType buildingValue buildingNumber}}" };
+        let bodyParam = { query: "query { surveylists (where: { fullAddress_contains:\"" + searchAddress + "\"}){fullAddress buildingName registrationNumber buildingType buildingValue buildingNumber status}}" };
         fetch(url + 'graphql', {
             method: 'POST',
             body: JSON.stringify(bodyParam),
             headers: {
                 "Content-Type": "application/json",
-                "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YWFkYTJjYjE5MDUzMjQwMjc0ZjI0ZGMiLCJpYXQiOjE1NTYwNjE0NjMsImV4cCI6MTU1ODY1MzQ2M30.nCtF9ohmtyU1f-yEDZi7yD3QUNP26tLcAUqFPPK4wvU"
+                "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YWFkYTJjYjE5MDUzMjQwMjc0ZjI0ZGMiLCJpYXQiOjE1NjAwNTI2OTcsImV4cCI6MTU2MjY0NDY5N30.brxnflIaaXz8JZq70COPP83ZwNjMsMjPIGj45IRxhzY"
             }
         }).then(function (response) {
             return response.json();
@@ -58,20 +56,20 @@ class ComplainService {
 
     searchByAddressInComplainslist(addressQuery, callback) {
         // let queryAddress = encodeURIComponent(searchAddress);
-        let bodyParam = { query: "query { surveylists (where: { fullAddress_contains:\"" + addressQuery + "\",  status_contains:\"exits\"}){fullAddress buildingName registrationNumber buildingType buildingValue buildingNumber}}" };
+        let bodyParam = { query: "query { surveylists (where: { fullAddress_contains:\"" + addressQuery + "\",  status_contains:\"exists\"}){fullAddress buildingName registrationNumber buildingType buildingValue buildingNumber status}}" };
         fetch(url + 'graphql', {
             method: 'POST',
             body: JSON.stringify(bodyParam),
             headers: {
                 "Content-Type": "application/json",
-                "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YWFkYTJjYjE5MDUzMjQwMjc0ZjI0ZGMiLCJpYXQiOjE1NTYwNjE0NjMsImV4cCI6MTU1ODY1MzQ2M30.nCtF9ohmtyU1f-yEDZi7yD3QUNP26tLcAUqFPPK4wvU"
+                "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YWFkYTJjYjE5MDUzMjQwMjc0ZjI0ZGMiLCJpYXQiOjE1NjAwNTI2OTcsImV4cCI6MTU2MjY0NDY5N30.brxnflIaaXz8JZq70COPP83ZwNjMsMjPIGj45IRxhzY"
             }
         }).then(function (response) {
             return response.json();
         })
             .then(function (myJson) {
                 // console.log(myJson);
-                let expression = jsonata('data.$.surveylists.{"id":_id, "registrationNO":registrationNumber, "type":buildingType, "address":fullAddress, "value":buildingValue,"status":"Yes", "date":updatedAt,"buildingNo":buildingNumber,"buildingName":buildingName}');
+                let expression = jsonata('data.$.surveylists.{"id":_id, "registrationNO":registrationNumber, "type":buildingType, "address":fullAddress, "value":buildingValue,"status":status, "date":updatedAt,"buildingNo":buildingNumber,"buildingName":buildingName}');
                 let cmplist = expression.evaluate(myJson);
                 callback(cmplist);
             });
@@ -81,7 +79,7 @@ class ComplainService {
 
 
     getComplainsSearchResults(Search, callback) {
-        fetch(url + 'surveylist?status=exits&' + Search)
+        fetch(url + 'surveylist?status=exists&' + Search)
             .then(function (response) {
                 return response.json();
             })

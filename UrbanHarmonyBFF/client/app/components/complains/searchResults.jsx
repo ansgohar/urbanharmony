@@ -27,6 +27,8 @@ export default (async function searchResults(values, dispatch) {
 
         );
     }
+
+    dispatch(reset('searchComplains'));
 });
 
 
