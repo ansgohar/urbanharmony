@@ -17,6 +17,7 @@ import ConsultingOffices from './components/consultingOffices/consultOffices.jsx
 import ConsultingOfficeDetails from './components/consultingOffices/consultingOfficeDetails.jsx';
 import AllIncidents from './components/incidents/incidents.jsx';
 import IncidentDetails from './components/incidents/incidentDetails.jsx';
+import Conferences from './components/conference/conferences.jsx';
 
 import { connect } from 'react-redux';
 import { BrowserRouter, Route, Link, Switch } from 'react-router-dom';
@@ -90,6 +91,7 @@ class App extends React.Component {
                     <Route path="/consultingOfficeDetails" component={ConsultingOfficeDetails} />
                     <Route path="/allIncidents" component={AllIncidents} />
                     <Route path="/incidentDetails" component={IncidentDetails} />
+                    <Route path="/conferences" component={Conferences} />
                 </Switch>
 
 
