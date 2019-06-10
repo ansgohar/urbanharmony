@@ -87,7 +87,8 @@ body{
     margin-bottom: 5%;
 }
 .image-container-4x3 {
-	background-color: rgba(0, 0, 0, 0.8) !important;
+    background-image:  url("/assets/images/no-image-4x3.png") !important;
+	// background-color: rgba(0, 0, 0, 0.8) !important;
 	display: block;
 	width: 100%;
 	position: relative;
@@ -103,7 +104,8 @@ background-color: green;
 border-color: green;
 }
 .image-container-3x4 {
-	background-color: rgba(0, 0, 0, 0.8) !important;
+    background-image:  url("/assets/images/no-image-3x4.png") !important;
+	// background-color: rgba(0, 0, 0, 0.8) !important;
 	display: block;
 	width: 100%;
 	position: relative;
@@ -113,7 +115,8 @@ border-color: green;
     overflow: hidden;
 }
 .image-container-16x9 {
-	background-color: rgba(0, 0, 0, 0.8) !important;
+    background-image:  url("/assets/images/no-image-16x9.png") !important;
+	// background-color: rgba(0, 0, 0, 0.8) !important;
 	display: block;
 	width: 100%;
 	position: relative;
@@ -123,7 +126,8 @@ border-color: green;
     
 }
 .image-container-16x5 {
-	background-color: rgba(0, 0, 0, 0.8) !important;
+    background-image:  url("/assets/images/no-image-16x5.png") !important;
+	// background-color: rgba(0, 0, 0, 0.8) !important;
 	display: block;
 	width: 100%;
 	position: relative;
@@ -133,7 +137,8 @@ border-color: green;
     overflow: hidden;
 }
 .image-container-16x7 {
-	background-color: rgba(0, 0, 0, 0.8) !important;
+    background-image:  url("/assets/images/no-image-16x5.png") !important;
+	// background-color: rgba(0, 0, 0, 0.8) !important;
 	display: block;
 	width: 100%;
 	position: relative;
