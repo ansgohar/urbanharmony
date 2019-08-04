@@ -46,7 +46,7 @@ class App extends React.Component {
                                         <ul id="imp-service-sub" class="second-level">
                                             <li><a href="/complainsDetail">قوائم الحصر والتظلمات</a></li>
                                             <li><a href="/allIncidents">المرصد الحضاري</a></li>
-                                            <li><a href="/lawsDetails">القوانين</a></li>
+                                            <li style={{display: 'block'}}><a href="/lawsDetails">القوانين</a></li>
                                             <li><a href="/consultingOffices">مكاتب إستشارية</a></li>
                                         </ul>
 
@@ -107,11 +107,11 @@ class App extends React.Component {
                             </div>
                             <div className="footerRightSide col-xs-12 col-sm-9">
                                 <div className="footerLinks col-xs-12 no-padding">
-                                    <a href="#">من نحن</a>
-                                    <a href="/contact-us">إتصل بنا</a>
-                                    <a href="/related-links">مواقع ذات صلة</a>
-                                    <a href="#">الخصوصية</a>
-                                    <a href="#">الشروط والأحكام</a>
+                                    <a href="#">من نحن&#32;</a>
+                                    <a href="/contact-us">إتصل بنا&#32;</a>
+                                    <a href="/related-links">مواقع ذات صلة&#32;</a>
+                                    <a href="#">الخصوصية&#32;</a>
+                                    <a href="#">الشروط والأحكام&#32;</a>
                                 </div>
                                 <div className="col-xs-12 no-padding followUs">
                                     <span>تابعنا على</span>

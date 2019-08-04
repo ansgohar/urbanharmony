@@ -58,6 +58,13 @@ class ComplainsData extends React.Component {
                     data={this.props.surveyList}
                     columns={columns}
                     defaultPageSize={5}
+                    previousText='قبل'
+                    nextText='بعد'
+                    loadingText='تحميل...'
+                    noDataText='لا يوجد نتائج'
+                    pageText='صفحة'
+                    ofText='من'
+                    rowsText='صفوف'
                 />
             </div>
         );
