@@ -44,10 +44,50 @@ class CompetitionList extends React.Component {
                         </div>
                     </div>
                 </div> */}
-                {typeof this.props.allCompetitions === 'undefined' ?  <div/> : this.props.allCompetitions.map(comp =>  <CompetitionEntry record={comp} key={comp.id}/>)}
+                {typeof this.props.allCompetitions === 'undefined' ?  <div/> : this.props.allCompetitions.map(
+                    (comp) =>  {
+                    
+                    return this.checkDates(comp.deadline, (valid) => {
+                        if (valid){
+                            return <CompetitionEntry record={comp} key={comp.id}/>
+                        }
+                        else{
+                            return <div></div>
+                        }
+                    });
+                    
+                }
+                    )
+                }
             </div>
         );
     }
+
+    /**
+     * Function that checks if a given date is larger than or equal the current date, does not consider time.
+     * 
+     * @param {string} givenDate            ISODate with the specified datetime in UTC <YYYY-mm-ddTHH:MM:ssZ>.
+     * @param {function} callback           Callback function that takes a boolean as a parameter.
+     * 
+     * @return {function} Returns a callback function with either true/false value; false if given is smaller and true otherwise.
+     */
+    checkDates(givenDate, callback) {
+        let dateObj = new Date();
+
+        let currentDate = new Date(
+            dateObj.getFullYear(),
+            dateObj.getMonth(),
+            dateObj.getDate()
+        );
+
+        let splt = givenDate.split('T');
+
+        let givenDateObj = new Date(splt[0]);
+
+        return (givenDateObj < currentDate ? callback(false) : callback(true));
+    }
+
+
 }
 
 
