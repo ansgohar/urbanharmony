@@ -42,7 +42,6 @@ class VideosService {
             })
             .then(function (myJson) {
                 let expression = jsonata('$.{"id":_id,"channel":Channel,"title":ProgramName,"guests":GuestNames,"date":date,"description":Description,"url":URL,"moreDetails":MoreDetails}');
-                console.log(expression)
                 let videosObject = expression.evaluate(myJson);
                 
                 callback(videosObject);
