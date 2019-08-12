@@ -48,7 +48,6 @@ class BK extends React.Component {
 
 
     render() {
-        console.log(JSON.stringify(this.props.record.image) + "sdhskdskmdkdnksandfskjnfsjkd")
         return (
             <div class="col-xs-12 newscard-container nopadding-mobile">
                 <div class="col-xs-12 col-sm-3 news-rightSide nopadding-mobile">
