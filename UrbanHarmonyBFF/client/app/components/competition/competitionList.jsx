@@ -47,11 +47,14 @@ class CompetitionList extends React.Component {
                 {typeof this.props.allCompetitions === 'undefined' ?  <div/> : this.props.allCompetitions.map(
                     (comp) =>  {
                     
-                    let check = this.checkDates(comp.deadline, valid => valid);
-                    
-                    if (check){
-                        return <CompetitionEntry record={comp} key={comp.id}/>
-                    }
+                    return this.checkDates(comp.deadline, (valid) => {
+                        if (valid){
+                            return <CompetitionEntry record={comp} key={comp.id}/>
+                        }
+                        else{
+                            return <div></div>
+                        }
+                    });
                     
                 }
                     )
