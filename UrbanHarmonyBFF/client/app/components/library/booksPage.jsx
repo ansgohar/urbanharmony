@@ -48,11 +48,13 @@ class BK extends React.Component {
 
 
     render() {
+        console.log(JSON.stringify(this.props.record.image) + "sdhskdskmdkdnksandfskjnfsjkd")
         return (
             <div class="col-xs-12 newscard-container nopadding-mobile">
                 <div class="col-xs-12 col-sm-3 news-rightSide nopadding-mobile">
-                    <div class="image-container-3x4">
-                        <img src={this.props.record.image} />
+
+                    <div class="image-container-3x4" style={this.props.record.image === "http://localhost:1337" ? {backgroundImage: 'url("/assets/images/no-image-4x3.png")', backgroundRepeat:'no-repeat', backgroundPosition:'center'  } : {backgroundImage: 'none' } }>
+                        <img src= { (this.props.record.image) !== "http://localhost:1337" ? this.props.record.image : null} />
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-9 news-leftSide nopadding-mobile">
