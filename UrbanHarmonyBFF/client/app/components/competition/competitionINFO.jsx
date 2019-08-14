@@ -38,10 +38,9 @@ class CmpID extends React.Component {
         return (
             <div className="col-xs-12 newscard-container nopadding-mobile page-margin">
                 <div className="col-xs-12 news-rightSide nopadding-mobile">
-                    <div className="image-container-16x5">
-                        <img src={this.props.competition.image} />
-                    </div>
-                </div>
+                    <div className="image-container-16x5"style={this.props.competition.image === "http://localhost:1337/uploads/682a2fc6d5df46b88703a6e88b0c04d4.jpg" ? {backgroundImage: 'url("/assets/images/no-image-4x3.png")', backgroundRepeat:'no-repeat', backgroundPosition:'center' }: {backgroundImage: 'none' }}>  
+                        <img src={(this.props.competition.image) !== "http://localhost:1337/uploads/682a2fc6d5df46b88703a6e88b0c04d4.jpg" ? this.props.competition.image: null} /> </div>
+                        </div>
                 <div className="col-xs-12 news-leftSide">
                     <h2> {this.props.competition.title}</h2>
                     <ReactMarkdown source={this.props.competition.description} />
