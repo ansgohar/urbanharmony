@@ -6,6 +6,7 @@ var serviceManager = require('./service-manager');
 IBMCloudEnv.init();
 
 module.exports = function (app) {
+    require('./authenticationService')(app, serviceManager);
     require('./articleService')(app, serviceManager);
     require('./projectService')(app, serviceManager);
     require('./internalService')(app, serviceManager);

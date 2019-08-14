@@ -3,34 +3,12 @@ const fetch = require("node-fetch");
 const jsonata = require("jsonata");
 const url = localConfig.CMS_URL || process.env.CMS_URL;
 
+const auth = require('../services/service-manager').get('auth-service');
+
 class VideosService {
 
-    getAuthToken(callback){
-        const user = localConfig.USER || process.env.USER;
-        const secert = localConfig.SECERT || process.env.SECERT;
-        
-        let authPath = url + 'auth/local/';
-        let config = {
-            method: 'POST',
-            body: JSON.stringify({
-                "identifier": `${user}`,
-                "password": `${secert}`
-            }),
-            headers: {
-                "Content-Type": "application/json"
-            }
-        }
-        fetch(authPath, config)
-        .then(function(res){
-            return res.json();
-        })
-        .then(function(json){
-            callback(json.jwt);
-        })
-    }
-
     getAllVideos(callback) {
-        this.getAuthToken(function(token){
+        auth.getAuthToken(function(token){
             fetch(url + 'videos', {
                 headers: {
                     "Content-Type": "application/json",
