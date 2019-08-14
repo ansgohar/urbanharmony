@@ -71,7 +71,7 @@ module.exports = function (app) {
 
     router.get('/complainAddress/:address', function (req, res, next) {
         complains.searchByAddressInComplainslist(req.params.address, function (data) {
-            if (Object.keys(data).length == 0) {
+            if (data === undefined || Object.keys(data).length == 0) {
                 res.json([]);
             }
 
