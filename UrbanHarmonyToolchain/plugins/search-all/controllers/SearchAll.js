@@ -1,5 +1,8 @@
 'use strict';
 
+// TODO: Enhance the import statement so that it inquires about the ENV and imports DB config as required
+const DB_CONFIG = require('../config/environments/development/database.json');
+
 /**
  * SearchAll.js controller
  *
@@ -77,7 +80,8 @@ module.exports = {
   createIndex: async (ctx)=>{
 
     var MongoClient = require('mongodb').MongoClient;
-    var url = "mongodb://admin:NeverLooseFaithInCats@ds117730.mlab.com:17730/strapi";
+    // TODO: URL Must include access restriction
+    var url = `mongodb://${DB_CONFIG.connections.default.settings.host}:${DB_CONFIG.connections.default.settings.port}/${DB_CONFIG.connections.default.settings.database}`;
 
     var cn = await get_collection_names(url,MongoClient)
     for (var i = 0; i < cn[0].length; i++) {
@@ -98,7 +102,7 @@ module.exports = {
   search: async (ctx) => {
     // Add your own logic here.
     var MongoClient = require('mongodb').MongoClient;
-    var url = "mongodb://admin:NeverLooseFaithInCats@ds117730.mlab.com:17730/strapi";
+    var url = `mongodb://${DB_CONFIG.connections.default.settings.host}:${DB_CONFIG.connections.default.settings.port}/${DB_CONFIG.connections.default.settings.database}`;
     
 
     var data =  ['termsandabout', 'article', 'internalnews','conferences', 'news', 'competitions', 'projects']
