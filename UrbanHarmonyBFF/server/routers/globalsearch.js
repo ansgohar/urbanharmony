@@ -7,7 +7,7 @@ module.exports = function (app) {
 
     router.get('/:value', function (req, res, next) {
         SEARCH.searchAllContents(req.params.value,function (data) {
-            if (Object.keys(data).length == 0) {
+            if (data === undefined || Object.keys(data).length == 0) {
                 res.json([]);
             }
             else if (Array.isArray(data)) {
