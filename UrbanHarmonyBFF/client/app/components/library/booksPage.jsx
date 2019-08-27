@@ -8,6 +8,7 @@ class BooksDetails extends React.Component {
         this.getBooks();
     }
 
+
     getBooks() {
         fetch('/books', {
             method: 'GET'
@@ -21,7 +22,23 @@ class BooksDetails extends React.Component {
 
     render() {
         return (
-            typeof this.props.books === 'undefined' ? <div /> : this.props.books.map(book => <BK record={book} key={book.id} />)
+            typeof this.props.books === undefined ? <div /> : this.props.books.filter(arr => {
+                if(arr.title === undefined){
+                }
+                if( (arr.bookCategory) && (arr.title) && (arr.bookCategory === this.props.query.category) && ((arr.title).includes(this.props.query.bookName))){                    
+                    return arr
+                }
+                else if(this.props.query.bookName === ""){
+                    
+                    return arr
+                }
+                else if(arr.title === undefined){
+                }
+                else if((this.props.query.category === "All") && ((arr.title).includes(this.props.query.bookName))){
+                    return arr
+
+                }
+            }).map(book => <BK record={book} key={book.id} />)
         );
     }
 }

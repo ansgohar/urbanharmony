@@ -173,7 +173,7 @@ type Library {
   location: String
   ISBN: String
   bookcategory: ENUM_LIBRARY_BOOKCATEGORY
-  title: String
+  title: String!
   image: UploadFile
   seriesName: String
 }

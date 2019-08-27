@@ -44,7 +44,8 @@
       ]
     },
     "title": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "image": {
       "model": "file",
