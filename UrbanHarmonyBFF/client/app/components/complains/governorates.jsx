@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { getComplainsGovernorates } from '../../actions/index.js'
 import { getComplainsRegions } from '../../actions/index.js'
+import { Field } from 'redux-form';
 
 class Governorates extends React.Component {
     constructor(props) {
@@ -55,16 +56,18 @@ class Governorates extends React.Component {
             <div>
                 <div className="col-xs-12 col-sm-6">
                     <label className="fieldLabel col-xs-12">المنطقة</label>
-                    <select className="formDropdown" placeholder="إختر إسم المنطقة" name="#">
+                    <Field component="select" className="formDropdown" placeholder="إختر إسم المنطقة" name="regionType">
+                        <option></option>
                         {regionOptions}
-                    </select>
+                    </Field>
                 </div>
 
                 <div className="col-xs-12 col-sm-6" onChange={this.handleChange}>
                     <label className="fieldLabel col-xs-12">المحافظة</label>
-                    <select className="formDropdown" name="#">
+                    <Field component="select" className="formDropdown" name="govType">
+                    <option></option>
                         {optionItems}
-                    </select>
+                    </Field>
                 </div>
             </div>
         );

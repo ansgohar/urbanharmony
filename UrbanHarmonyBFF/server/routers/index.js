@@ -29,4 +29,6 @@ module.exports = function (app) {
     require('./incidents')(app);
 
     require('./videos')(app);
+    
+    require('./search')(app);
 };  
