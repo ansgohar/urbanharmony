@@ -51,7 +51,8 @@ class App extends React.Component {
                                         </ul>
 
                                     </li>
-                                    <li className="menu-position"><a href="/competitionDetails" >ندوات و مسابقات</a></li>
+                                    <li className="menu-position"><a href="/competitionDetails" > مسابقات</a></li>
+                                    <li className="menu-position"><a href="/conferences" >ندوات </a></li>
                                     <li className="menu-position"><a href="/moreProjects" >مشروعات</a></li>
                                     <li className="menu-position"><a href="/more" >الأخبار</a></li>
                                     <li className="menu-position"><a href="/library" id="lib">مكتبة الجهاز</a></li>
