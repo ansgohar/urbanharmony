@@ -1,5 +1,5 @@
 {
-  "timeout": 3000,
+  "timeout": 10000,
   "load": {
     "order": [
       "Define the hooks' load order by putting their names in this array in the right order"

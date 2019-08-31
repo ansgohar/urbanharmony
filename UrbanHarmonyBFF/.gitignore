@@ -10,3 +10,4 @@ public/js/*
 public/index.html
 package.json
 package-lock.json
+server/routers/test.js
