@@ -43,10 +43,10 @@ class App extends React.Component {
                                     <li className="menu-position"><a href="/vision" >عن الجهاز</a></li>
                                     <li id="imp-service-menu" className="menu-position">
                                         <a href="#services">أهم الخدمات<strong class="caret"></strong> </a>
-                                        <ul id="imp-service-sub" class="second-level">
+                                        <ul id="imp-service-sub" class="second-level" >
                                             <li><a href="/complainsDetail">قوائم الحصر والتظلمات</a></li>
                                             <li><a href="/allIncidents">المرصد الحضاري</a></li>
-                                            <li style={{display: 'block'}}><a href="/lawsDetails">القوانين</a></li>
+                                            <li style={{"width": "200px"}}><a href="/lawsDetails">القوانين</a></li>
                                             <li><a href="/consultingOffices">مكاتب إستشارية</a></li>
                                         </ul>
 
