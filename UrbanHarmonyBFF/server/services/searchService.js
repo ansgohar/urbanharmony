@@ -27,7 +27,21 @@ class SearchService {
             let filters = '';
 
             if (payload.filters !== undefined){
-                filters = `(where: ${payload.filters})`;
+
+                let filters_keys = Object.keys(payload.filters);
+                let filters_string = '';
+
+                for (let i = 0; i < filters_keys.length; ++i){
+                    let key = filters_keys[i];
+
+                    filters_string += `${key}: \"${payload.filters[key]}\"`;
+
+                    if (i !== filters_keys.length - 1){
+                        filters_string += ',';
+                    }
+                }
+
+                filters = '(where: {' + filters_string + '})';
             }
 
             let fields = '';
