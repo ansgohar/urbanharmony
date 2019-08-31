@@ -45,8 +45,6 @@ class SurveySearch extends React.Component {
 
                         <p> يمكنك البحث باستخام احدى الاختيارات الاتية : </p>
 
-                        <Governorates governorates={this.props.governorates} regions={this.props.regions} />
-
                         <div className="col-xs-12">
                             <div className="col-xs-12 col-sm-8 street-name">
                                 <label className="fieldLabel col-xs-12">إسم الشارع </label>
