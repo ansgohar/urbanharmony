@@ -22,7 +22,7 @@ class CompetitionDetails extends React.Component {
                     <div className="image-container-16x5"> <img src="assets/images/sections/comp_big.png" alt="image" /> </div>
                 </div>
                 <div className="col-xs-12 no-padding ">
-                    <h2 className="sec-h2">ندوات و مسابقات</h2>
+                    <h2 className="sec-h2">مسابقات</h2>
                     <div className="col-xs-12 tabs-container no-padding">
                         <div className="col-xs-12 filter-tabs">
                             <ul className="col-xs-12 col-sm-5 nav nav-tabs no-padding">

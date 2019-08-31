@@ -18,4 +18,5 @@ module.exports = function (app) {
     require('./officesService')(app, serviceManager);
     require('./incidentService')(app, serviceManager);
     require('./videoService')(app, serviceManager);
+    require('./conferencesService')(app, serviceManager);
 };

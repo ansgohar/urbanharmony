@@ -269,3 +269,12 @@ export function getALLInternalNews(allinternalnews) {
       videos
     });
   };
+
+  export function getConferences(conferencesList){
+    console.log(conferencesList)
+    return({
+        type:'RETRIEVE_CONFERENCES',
+        conferencesList
+      }
+    );
+  }
