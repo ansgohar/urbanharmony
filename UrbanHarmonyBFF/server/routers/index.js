@@ -6,8 +6,6 @@ module.exports = function (app) {
 
     require('./health')(app);
 
-    require('./test')(app);
-
     require('./articles')(app);
 
     require('./project')(app);
