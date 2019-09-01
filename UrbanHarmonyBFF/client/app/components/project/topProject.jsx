@@ -38,7 +38,7 @@ class Prj extends React.Component {
     render() {
         return (
             <div className="carouselContent">
-                <h2><h2><img class="thumb-img" src={this.props.rec.image}></img>{this.props.rec.title}</h2>{this.props.rec.title}</h2>
+                <h1 style={{"paddingTop": "15px"}}><img class="thumb-img" src={this.props.rec.image}></img>{this.props.rec.title}</h1>
                 <p>{this.props.rec.event}</p>
                 <a href={"/projectDetail?project=" + this.props.rec.id}>المزيد</a>
             </div>
