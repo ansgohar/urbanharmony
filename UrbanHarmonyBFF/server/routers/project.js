@@ -7,7 +7,7 @@ module.exports = function (app) {
 
     router.get('/:status', function (req, res, next) {
         project.getprojects(req.params.status,function(data) {
-            if (Object.keys(data).length == 0) {
+            if (data === undefined || Object.keys(data).length == 0) {
                 res.json([]);
             }
             else if (Array.isArray(data)) {
@@ -22,7 +22,7 @@ module.exports = function (app) {
 
     router.get('/all/:status', function (req, res, next) {
         project.getAllProjects(req.params.status,function(data) {
-            if (Object.keys(data).length == 0) {
+            if (data === undefined || Object.keys(data).length == 0) {
                 res.json([]);
             }
             else if (Array.isArray(data)) {
@@ -37,7 +37,7 @@ module.exports = function (app) {
 
     router.get('/id/:id', function (req, res, next) {
         project.getProjectByID(req.params.id,function(data) {
-            if(Object.keys(data).length == 0){
+            if(data === undefined || Object.keys(data).length == 0){
                 res.json([]);
             }
             else{

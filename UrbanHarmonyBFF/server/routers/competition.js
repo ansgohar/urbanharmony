@@ -10,7 +10,7 @@ module.exports = function (app) {
 
     router.get('/current', function (req, res, next) {
         competitionService.getCompetitionOfTheMonth(function (data) {
-            if (Object.keys(data).length == 0) {
+            if (data === undefined || Object.keys(data).length == 0) {
                 res.json([]);
             }
             else {
@@ -22,7 +22,7 @@ module.exports = function (app) {
 
     router.get('/', function (req, res, next) {
         competitionService.getAllCompetition(function (data) {
-            if (Object.keys(data).length == 0) {
+            if (data === undefined || Object.keys(data).length == 0) {
                 res.json([]);
             }
             else if (Array.isArray(data)) {
@@ -38,7 +38,7 @@ module.exports = function (app) {
 
     router.get('/winners', function (req, res, next) {
         competitionService.getCompetitionWinners(function (data) {
-            if (Object.keys(data).length == 0) {
+            if (data === undefined || Object.keys(data).length == 0) {
                 res.json([]);
             }
             else if (Array.isArray(data)) {
@@ -53,7 +53,7 @@ module.exports = function (app) {
 
     router.get('/:ID', function (req, res, next) {
         competitionService.getCompetitionByID(req.params.ID,function (data) {
-            if (Object.keys(data).length == 0) {
+            if (data === undefined || Object.keys(data).length == 0) {
                 res.json([]);
             } else {
                 res.json([data]);

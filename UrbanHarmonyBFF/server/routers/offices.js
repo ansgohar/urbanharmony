@@ -22,7 +22,7 @@ module.exports = function (app) {
 
     router.get('/id/:id', function (req, res, next) {
         OFFICES.getOfficeByID(req.params.id,function(data) {
-            if (Object.keys(data).length == 0) {
+            if (data === undefined || Object.keys(data).length == 0) {
                 res.json([]);
             }
             else {

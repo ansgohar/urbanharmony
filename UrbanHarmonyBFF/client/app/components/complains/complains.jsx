@@ -31,7 +31,8 @@ class ComplainsPage extends React.Component {
                             <div id="menu1" className="tab-pane fade col-xs-12 no-padding active in">
                                 <div className="col-xs-12 col-sm-10 limitheader-cont no-padding">
                                     <div className="col-xs-12 no-padding">
-                                        <h2 className="col-xs-12">مقدمة عن قوائم الحصر.يمكنك البحث في قوائم حصر العقارات المميزة وتقديم تظلمك للبث فيه</h2>
+                                        <h2 className="col-xs-12">مقدمة عن قوائم الحصر</h2>
+                                        <h2 className="col-xs-12">يمكنك البحث في قوائم حصر العقارات المميزة وتقديم تظلمك للبث فيه</h2>
                                     </div>
                                 </div>
 

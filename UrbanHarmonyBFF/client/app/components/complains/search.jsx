@@ -32,20 +32,14 @@ class SurveySearch extends React.Component {
                     <div className="col-xs-12  col-sm-10 search-barcont">
                         <label className="fieldLabel col-xs-12">بحث برقم بتوثيق العقار<span className="requiredField">*</span></label>
                         <div className="col-xs-3 col-sm-2 searchbar-btn">
-                            <button className="btn btn-info submitFormBtn" disabled={pristine || submitting} type="submit">بحث</button></div>
+                            <button className="btn btn-info submitFormBtn" disabled={submitting} type="submit">بحث</button></div>
                         <div className="col-xs-9 col-sm-10 searchbar">
                             <Field className="input-search" component="input" name="registrationNumber" type="text" className="form-control" placeholder="" />
-                            <div className="advancedsearch-cont"><a onClick={() => this.toggle(this.props.compID)}>بحث متقدم</a></div>
                         </div>
-
-                    </div>
-                </form>
-                <form onSubmit={handleSubmit}>
-                    <div className="col-xs-12 col-sm-10 advancedsearch-cont Adv-Search" id={this.props.compID} >
-
-                        <p> يمكنك البحث باستخام احدى الاختيارات الاتية : </p>
-
+                        <br></br>
                         <div className="col-xs-12">
+                            <p> يمكنك البحث باستخام احدى الاختيارات الاتية : </p>
+                            <br></br>
                             <div className="col-xs-12 col-sm-8 street-name">
                                 <label className="fieldLabel col-xs-12">إسم الشارع </label>
                                 <Field className="input-search" component="input" name="streetName" type="text" className="form-control" placeholder="" />
@@ -59,9 +53,6 @@ class SurveySearch extends React.Component {
                                 <label className="fieldLabel col-xs-12">رقم العقار </label>
                                 <Field className="input-search" component="input" name="buildingNumber" type="text" className="form-control" placeholder="" />
                             </div>
-                        </div>
-                        <div className="col-xs-12 advanced-btn-submit">
-                            <div className="col-xs-2 searchbar-btn no-padding"><button className="btn btn-info submitFormBtn" disabled={pristine || submitting} type="submit" >بحث</button></div>
                         </div>
                     </div>
                 </form>
