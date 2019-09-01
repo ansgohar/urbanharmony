@@ -33,7 +33,7 @@ class App extends React.Component {
                     <header>
                         <div className="col-xs-12 navbar sticky no-padding">
                             <div className="nav-right-side col-xs-2 no-padding">
-                                <a id="logo" href="#"><img className="nav-brand" src="assets/images/logo/urban-harmony-logo.jpeg" /></a>
+                                <a id="logo" href="/"><img className="nav-brand" src="assets/images/logo/urban-harmony-logo.jpeg" /></a>
                             </div>
                             <div className="burger-menu no-padding"><a href="#" className="burg-icon">&#9776;</a></div>
                             <nav className="navul col-xs-12 col-sm-12 col-md-10 no-padding">
@@ -43,15 +43,16 @@ class App extends React.Component {
                                     <li className="menu-position"><a href="/vision" >عن الجهاز</a></li>
                                     <li id="imp-service-menu" className="menu-position">
                                         <a href="#services">أهم الخدمات<strong class="caret"></strong> </a>
-                                        <ul id="imp-service-sub" class="second-level">
+                                        <ul id="imp-service-sub" class="second-level" >
                                             <li><a href="/complainsDetail">قوائم الحصر والتظلمات</a></li>
                                             <li><a href="/allIncidents">المرصد الحضاري</a></li>
-                                            <li style={{display: 'block'}}><a href="/lawsDetails">القوانين</a></li>
+                                            <li style={{"width": "200px"}}><a href="/lawsDetails">القوانين</a></li>
                                             <li><a href="/consultingOffices">مكاتب إستشارية</a></li>
                                         </ul>
 
                                     </li>
-                                    <li className="menu-position"><a href="/competitionDetails" >ندوات و مسابقات</a></li>
+                                    <li className="menu-position"><a href="/competitionDetails" > مسابقات</a></li>
+                                    <li className="menu-position"><a href="/conferences" >ندوات </a></li>
                                     <li className="menu-position"><a href="/moreProjects" >مشروعات</a></li>
                                     <li className="menu-position"><a href="/more" >الأخبار</a></li>
                                     <li className="menu-position"><a href="/library" id="lib">مكتبة الجهاز</a></li>

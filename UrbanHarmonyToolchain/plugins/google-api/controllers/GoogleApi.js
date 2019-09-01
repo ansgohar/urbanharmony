@@ -1,5 +1,8 @@
 'use strict';
 
+// TODO: Enhance the import statement so that it inquires about the ENV and imports DB config as required
+const DB_CONFIG = require('../config/environments/development/database.json');
+
 /**
  * GoogleApi.js controller
  *
@@ -98,7 +101,8 @@ module.exports = {
   getquery: async (ctx) => {
     // Add your own logic here.
     var MongoClient = require('mongodb').MongoClient;
-    var url = "mongodb://admin:NeverLooseFaithInCats@ds117730.mlab.com:17730/strapi";
+    // TODO: URL Must include access restriction
+    var url = `mongodb://${DB_CONFIG.connections.default.settings.host}:${DB_CONFIG.connections.default.settings.port}/${DB_CONFIG.connections.default.settings.database}`;
     await createDBIFNE(url, MongoClient);
     var data = await get_API_Query(url, MongoClient);
     if (!data)
@@ -110,7 +114,7 @@ module.exports = {
   },
   deletequery: async (ctx) => {
     var MongoClient = require('mongodb').MongoClient;
-    var url = "mongodb://admin:NeverLooseFaithInCats@ds117730.mlab.com:17730/strapi";
+    var url = `mongodb://${DB_CONFIG.connections.default.settings.host}:${DB_CONFIG.connections.default.settings.port}/${DB_CONFIG.connections.default.settings.database}`;
     var data = await get_API_Query(url, MongoClient);
     if (data)
       data = await deletequeryf(url, MongoClient);
@@ -122,7 +126,7 @@ module.exports = {
   },
   editquery: async (ctx) => {
     var MongoClient = require('mongodb').MongoClient;
-    var url = "mongodb://admin:NeverLooseFaithInCats@ds117730.mlab.com:17730/strapi";
+    var url = `mongodb://${DB_CONFIG.connections.default.settings.host}:${DB_CONFIG.connections.default.settings.port}/${DB_CONFIG.connections.default.settings.database}`;
     var data = await get_API_Query(url, MongoClient);
     if (data)
       data= await editqueryf(url,MongoClient,ctx.request.body); 

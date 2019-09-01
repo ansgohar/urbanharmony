@@ -1,6 +1,6 @@
 {
   "connection": "default",
-  "collectionName": "",
+  "collectionName": "governorate",
   "info": {
     "name": "governorate",
     "description": ""
@@ -10,12 +10,13 @@
   },
   "attributes": {
     "governateName": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "regions": {
       "collection": "regions",
-      "dominant": true,
-      "via": "governorate"
+      "via": "governorate",
+      "dominant": true
     }
   }
 }

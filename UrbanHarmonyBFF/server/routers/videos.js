@@ -7,7 +7,7 @@ module.exports = function (app) {
 
     router.get('/', function (req, res, next) {
         VIDEOS.getAllVideos(function (data) {
-            if (Object.keys(data).length == 0) {
+            if (data === undefined || Object.keys(data).length == 0) {
                 res.json([]);
             }
             else if (Array.isArray(data)) {

@@ -6,8 +6,6 @@ module.exports = function (app) {
 
     require('./health')(app);
 
-    require('./test')(app);
-
     require('./articles')(app);
 
     require('./project')(app);
@@ -29,4 +27,8 @@ module.exports = function (app) {
     require('./incidents')(app);
 
     require('./videos')(app);
+    
+    require('./search')(app);
+
+    require('./conferencesList')(app)
 };  

@@ -6,6 +6,7 @@ var serviceManager = require('./service-manager');
 IBMCloudEnv.init();
 
 module.exports = function (app) {
+    require('./authenticationService')(app, serviceManager);
     require('./articleService')(app, serviceManager);
     require('./projectService')(app, serviceManager);
     require('./internalService')(app, serviceManager);
@@ -17,4 +18,6 @@ module.exports = function (app) {
     require('./officesService')(app, serviceManager);
     require('./incidentService')(app, serviceManager);
     require('./videoService')(app, serviceManager);
+    require('./searchService')(app, serviceManager);
+    require('./conferencesService')(app, serviceManager);
 };

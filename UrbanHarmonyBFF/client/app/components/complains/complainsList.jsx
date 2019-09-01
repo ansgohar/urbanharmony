@@ -46,6 +46,14 @@ class AllComplainsList extends React.Component {
             accessor: 'value'
         },
         {
+            Header: 'اسم المبنى',
+            accessor: 'buildingName'
+        },
+        {
+            Header: 'رقم المبنى',
+            accessor: 'buildingNo'
+        },
+        {
             Header: 'حالة التظلم',
             accessor: 'status',
             Cell: props => <span>{this.translateStatus(props.value)}</span>

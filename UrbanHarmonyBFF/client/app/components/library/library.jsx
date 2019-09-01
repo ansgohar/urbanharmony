@@ -6,7 +6,12 @@ import AllVideos from './videos.jsx';
 class LibraryPage extends React.Component {
     constructor(props) {
         super(props);
+        this.state={
+            bookName:"",
+            category:""
+        }
     }
+
 
 
 
@@ -31,29 +36,39 @@ class LibraryPage extends React.Component {
                                 <div class="col-xs-12  col-sm-8 search-barcont">
                                     <div class="col-xs-12 col-sm-7 searchbar">
                                         <label class="fieldLabel col-xs-12 nopadding-mobile">بحث بإسم</label>
-                                        <input class="input-search" />
+                                        <input class="input-search" id="query"/>
                                     </div>
 
                                     <div class="col-xs-12 col-sm-3 search-in">
                                         <label class="fieldLabel col-xs-12 nopadding-mobile">البحث في</label>
-                                        <select class="search-drop formDropdown">
-                                            <option value="كل الكتب" selected>كل الكتب</option>
-                                            <option value="">أدب و فنون </option>
-                                            <option value="vw">علوم إجتماعية و بيئية</option>
-                                            <option value="audi" >هندسة و تخطيط عمراني</option>
-                                            <option value="audi" >حضارة و تاريخ</option>
+                                        <select class="search-drop formDropdown" id="bookCategory">
+                                            <option value="All" selected>كل الكتب</option>
+                                            <option value="literature">أدب و فنون </option>
+                                            <option value="sociology">علوم إجتماعية و بيئية</option>
+                                            <option value="engineering" >هندسة و تخطيط عمراني</option>
+                                            <option value="history" >حضارة و تاريخ</option>
                                         </select>
                                     </div>
 
 
                                     <div class="col-xs-12 col-sm-2 searchbar-btn">
-                                        <button class="btn btn-info submitFormBtn">بحث</button>
+                                        <a id="searchLibrary" >
+                                        <button class="btn btn-info submitFormBtn" 
+                                        id="searchLibrary-input" 
+                                        onClick={()=>{this.setState(prevState =>{
+            return {
+                bookName: document.getElementById("query").value , 
+                category: document.getElementById("bookCategory").value
+            }
+        })}}>بحث</button>
+                                        </a>
+                                        
                                     </div>
                                 </div>
 
                                 <div class="col-xs-12  col-sm-10 library-cardscont">
                                     <h3 class="col-xs-12 librarysearch-result nopadding-mobile">نتيجة البحث</h3>
-                                    <BooksDetails books={this.props.books} />
+                                    <BooksDetails books={this.props.books} query={this.state}/>
                                 </div>
 
                             </div>

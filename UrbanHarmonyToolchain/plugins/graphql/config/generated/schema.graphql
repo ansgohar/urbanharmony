@@ -113,7 +113,7 @@ type Governorate {
   _id: ID!
   createdAt: String!
   updatedAt: String!
-  governateName: String
+  governateName: String!
   regions(sort: String, limit: Int, start: Int, where: JSON): [Regions]
 }
 
@@ -173,7 +173,7 @@ type Library {
   location: String
   ISBN: String
   bookcategory: ENUM_LIBRARY_BOOKCATEGORY
-  title: String
+  title: String!
   image: UploadFile
   seriesName: String
 }

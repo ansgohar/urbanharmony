@@ -8,7 +8,7 @@ module.exports = function (app) {
 
     router.get('/', function (req, res, next) {
         complains.getSurveyList(function (data) {
-            if (Object.keys(data).length == 0) {
+            if (data === undefined || Object.keys(data).length == 0) {
                 res.json([]);
             }
             else if (Array.isArray(data)) {
@@ -24,7 +24,7 @@ module.exports = function (app) {
 
     router.get('/surveySearch/:query', function (req, res, next) {
         complains.getSearchResults(req.params.query, function (data) {
-            if (Object.keys(data).length == 0) {
+            if (data === undefined || Object.keys(data).length == 0) {
                 res.json([]);
             }
             else if (Array.isArray(data)) {
@@ -39,7 +39,7 @@ module.exports = function (app) {
 
     router.get('/surveyAddress/:address', function (req, res, next) {
         complains.searhByAddressInSurveylist(req.params.address, function (data) {
-            if (Object.keys(data).length == 0) {
+            if (data === undefined || Object.keys(data).length == 0) {
                 res.json([]);
             }
 
@@ -55,7 +55,7 @@ module.exports = function (app) {
 
     router.get('/complainsSearch/:searchQuery', function (req, res, next) {
         complains.getComplainsSearchResults(req.params.searchQuery, function (data) {
-            if (Object.keys(data).length == 0) {
+            if (data === undefined || Object.keys(data).length == 0) {
                 res.json([]);
             }
 
@@ -71,7 +71,7 @@ module.exports = function (app) {
 
     router.get('/complainAddress/:address', function (req, res, next) {
         complains.searchByAddressInComplainslist(req.params.address, function (data) {
-            if (Object.keys(data).length == 0) {
+            if (data === undefined || Object.keys(data).length == 0) {
                 res.json([]);
             }
 
@@ -87,7 +87,7 @@ module.exports = function (app) {
 
     router.get('/governorate', function (req, res, next) {
         complains.getGovernorates(function (data) {
-            if (Object.keys(data).length == 0) {
+            if (data === undefined || Object.keys(data).length == 0) {
                 res.json([]);
             }
             else {
@@ -99,7 +99,7 @@ module.exports = function (app) {
 
     router.get('/regions/:id', function (req, res, next) {
         complains.getRegionsByGovernorate(req.params.id, function (data) {
-            if (Object.keys(data).length == 0) {
+            if (data === undefined || Object.keys(data).length == 0) {
                 res.json([]);
             }
             else if (Array.isArray(data)) {
@@ -115,7 +115,7 @@ module.exports = function (app) {
 
     router.get('/list', function (req, res, next) {
         complains.getAllComplainsList(function (data) {
-            if (Object.keys(data).length == 0) {
+            if (data === undefined || Object.keys(data).length == 0) {
                 res.json([]);
             }
             else if (Array.isArray(data)) {

@@ -1,13 +1,13 @@
 const fetch = require("node-fetch");
-const SEARCH = require('./../services/service-manager').get('global-search-services');
+const CONFERENCES = require('./../services/service-manager').get('conferences-services');
 var express = require('express');
 
 module.exports = function (app) {
     var router = express.Router();
 
-    router.get('/:value', function (req, res, next) {
-        SEARCH.searchAllContents(req.params.value,function (data) {
-            if (data === undefined || Object.keys(data).length == 0) {
+    router.get('/', function (req, res, next) {
+        CONFERENCES.getAllConferences(function (data) {
+            if (Object.keys(data).length == 0) {
                 res.json([]);
             }
             else if (Array.isArray(data)) {
@@ -17,9 +17,9 @@ module.exports = function (app) {
                 res.json([data]);
             }
         });
+
     });
 
 
-
-    app.use("/globalsearch", router);
+    app.use("/conferencesList", router);
 }
