@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { browserHistory } from 'react-router';
 import { getWinners } from '../../actions/index'
+import Image from '../image.jsx'
 
 class CompetitionWinners extends React.Component {
 
@@ -38,8 +39,9 @@ class Winner extends React.Component {
             <div className="col-xs-12 tite conferenceCard no-padding">
                 <div className="col-xs-12 newscard-container nopadding-mobile">
                     <div className="col-xs-12 col-sm-3 news-rightSide nopadding-mobile">
-                    <div className="image-container-4x3" style={this.props.record.image === "http://localhost:1337" ? {backgroundImage: 'url("/assets/images/no-image-4x3.png")', backgroundRepeat:'no-repeat', backgroundPosition:'center' }: {backgroundImage: 'none' }}>  
-                        <img src={(this.props.record.image) !== "http://localhost:1337" ? this.props.record.image: null} /> </div>
+                    <div className="image-container-4x3" >  
+                    <Image src={this.props.record.image} /> 
+</div>
                         </div>
                     <div className="col-xs-12 col-sm-9 news-leftSide">
                         <div className="col-xs-12 winner-name no-padding">

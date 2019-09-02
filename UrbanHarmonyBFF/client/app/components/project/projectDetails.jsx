@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { getProjectID } from '../../actions/index.js'
 import * as queryString from "query-string";
+import Image from '../image.jsx'
 
 
 class ProjectDetails extends React.Component {
@@ -57,8 +58,10 @@ class PrjID extends React.Component {
                     <h3>{this.props.record.place}</h3>
                     <p>{this.props.record.detail}</p>
                     
-                    <img className="inline-image" src={this.props.record.imageBefore} />
-                    <img className="inline-image" src={this.props.record.imageAfter} />
+                    {/* <img className="inline-image" src={this.props.record.imageBefore} /> */}
+                    <Image src={this.props.record.imageBefore} class={"inline-image"}/> 
+                    {/* <img className="inline-image" src={this.props.record.imageAfter} /> */}
+                    <Image src={this.props.record.imageAfter} class={"inline-image"}/> 
                     {/* <div className="col-xs-12 no-padding">
                         <a href="#" className="share-btn"></a>
                         <a href="#" className="pdf-btn"></a>
