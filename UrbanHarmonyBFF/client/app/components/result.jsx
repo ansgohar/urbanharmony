@@ -33,7 +33,7 @@ class NewsRecord extends React.Component {
                         <span className="cardCat">صحافة</span>
                         <h3>{this.props.record.title}</h3>
                         <span className="author"> كتبة {this.props.record.author} </span>
-                        <h5>تاريخ النشر : {this.convertDateToArabic(this.props.record.DatePublished)}</h5>
+                        <h5 className="h5news">تاريخ النشر : {this.convertDateToArabic(this.props.record.DatePublished)}</h5>
                         <p>{this.props.record.article}</p>
                         <a target="_blank" href={this.props.record.linkURL}> مصدر الخبر</a>
                     </div>
