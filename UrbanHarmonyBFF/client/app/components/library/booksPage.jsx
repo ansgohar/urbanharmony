@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { getLibraryBooks } from '../../actions/index.js';
+import Image from '../image.jsx'
 
 class BooksDetails extends React.Component {
     constructor(props) {
@@ -69,8 +70,9 @@ class BK extends React.Component {
             <div class="col-xs-12 newscard-container nopadding-mobile">
                 <div class="col-xs-12 col-sm-3 news-rightSide nopadding-mobile">
 
-                    <div class="image-container-3x4" style={this.props.record.image === "http://localhost:1337" ? {backgroundImage: 'url("/assets/images/no-image-4x3.png")', backgroundRepeat:'no-repeat', backgroundPosition:'center'  } : {backgroundImage: 'none' } }>
-                        <img src= { (this.props.record.image) !== "http://localhost:1337" ? this.props.record.image : null} />
+                    <div class="image-container-3x4" >
+                    <Image src={this.props.record.image} /> 
+
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-9 news-leftSide nopadding-mobile">

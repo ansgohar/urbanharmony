@@ -1,6 +1,7 @@
 import React from 'react';
 import { getAllPlannedProject } from '../../actions/index'
 import { connect } from 'react-redux';
+import Image from '../image.jsx'
 
 class AllPlannedProject extends React.Component {
     constructor(props) {
@@ -39,7 +40,8 @@ class Planned extends React.Component {
             <div className="col-xs-12 newscard-container nopadding-mobile">
                 <div className="col-xs-12 col-sm-3 news-rightSide nopadding-mobile">
                     <div className="image-container-4x3">
-                        <img src={this.props.record.image}/>
+                        {/* <img src={this.props.record.image}/> */}
+                        <Image src={this.props.record.image} /> 
                     </div>
                 </div>
 
