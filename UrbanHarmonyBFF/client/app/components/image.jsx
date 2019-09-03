@@ -16,7 +16,7 @@ class Image extends React.Component {
             return false
         }
 
-        var status = true
+        let status = true
         let imageNotAvailable = "/assets/images/no-image-3x4.png";
 
         let options = {
