@@ -25,22 +25,11 @@ class GlobalSearchPage extends React.Component {
     }
 
     render() {
-        if (this.props.globalsearch.length === 0) {
-            return null;
-        }
+        let results = <span><h2 class="sec-h2">نتيجة البحث</h2>{this.renderPage()}</span>;
+        let nothing = <h2 class="sec-h2">لا يوجد نتيجة البحث</h2>;
 
         return (
-            <div id="search-resultpage" class="row search-resultpage">
-
-                <div class="col-xs-12 no-padding sec6">
-
-                    <div class="filter-container">
-
-                        <h2 class="sec-h2">نتيجة البحث</h2>
-                        {this.renderPage()}
-                    </div>
-                </div>
-            </div>
+            <div id="search-resultpage" class="row search-resultpage"><div class="col-xs-12 no-padding sec6"><div class="filter-container">{this.renderPage() === undefined ? nothing : results}</div></div></div>
         );
 
     }
@@ -54,6 +43,9 @@ class GlobalSearchPage extends React.Component {
 
             })
 
+        }
+        else{
+            return undefined;
         }
     }
 }
