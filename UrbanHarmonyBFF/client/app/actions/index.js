@@ -278,3 +278,11 @@ export function getALLInternalNews(allinternalnews) {
       }
     );
   }
+
+  export function getImage(image){
+    console.log(image)
+    return({
+      type:'RETRIEVE_IMAGE',
+        image
+    })
+  }

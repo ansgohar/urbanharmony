@@ -86,6 +86,7 @@ class VID extends React.Component {
                         <iframe className="iframe-size" src={this.props.record.url} />
                     </div>
                 </div>
+                <hr></hr>
             </div>
         );
     }
