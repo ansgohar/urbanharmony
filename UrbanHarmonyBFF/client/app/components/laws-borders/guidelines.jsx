@@ -28,11 +28,10 @@ class Guidelines extends React.Component {
             arrows: true
         }
 
-        if (this.props.hide) {
-            return null;
-        }
+        
 
         return (
+
             <div class="tile pressCard law-card col-xs-12 col-sm-10">
                 <div class="col-xs-12 newscard-container nopadding-mobile">
                     <Slider {...settings}>
@@ -46,7 +45,10 @@ class Guidelines extends React.Component {
     renderPDF() {
         let allGuidelines = this.props.guidelines;
         return allGuidelines.map(a => {
-            return <GDL record={a} key={a.id} />
+            console.log(a.PDF)
+            if (a.PDF.match(/\.(pdf)$/)) {
+                return <GDL record={a} key={a.id} />
+            }
         })
     }
 }

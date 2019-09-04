@@ -18,9 +18,6 @@ class LawsPage extends React.Component {
     }
 
     render() {
-        if (this.props.hide) {
-            return null;
-        }
 
         let allLaws = this.props.laws;
         return allLaws.map(a => {

@@ -19,16 +19,20 @@ class Borders extends React.Component {
     }
 
     render() {
-        if (this.props.hide) {
-            return null;
-        }
+        
 
         let allborders = this.props.borders;
         return allborders.map(a => {
-            return <Brd record={a} key={a.id} />
+            console.log(a.PDF)
+            if (a.PDF.match(/\.(pdf)$/)){
+                return <Brd record={a} key={a.id} />
+            }
         })
     }
 }
+
+
+ 
 
 class Brd extends React.Component {
     constructor(props) {
