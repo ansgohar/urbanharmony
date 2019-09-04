@@ -46,7 +46,7 @@ class App extends React.Component {
                                         <ul id="imp-service-sub" class="second-level" >
                                             <li><a href="/complainsDetail">قوائم الحصر والتظلمات</a></li>
                                             <li><a href="/allIncidents">المرصد الحضاري</a></li>
-                                            <li style={{"width": "200px"}}><a href="/lawsDetails">القوانين</a></li>
+                                            <li id="dropdow" style={{"width": "200px"}}><a href="/lawsDetails">القوانين</a></li>
                                             <li><a href="/consultingOffices">مكاتب إستشارية</a></li>
                                         </ul>
 
@@ -111,8 +111,8 @@ class App extends React.Component {
                                     <a href="/vision">من نحن&#32;</a>
                                     <a href="/contact-us">إتصل بنا&#32;</a>
                                     <a href="/related-links">مواقع ذات صلة&#32;</a>
-                                    <a href="#">الخصوصية&#32;</a>
-                                    <a href="#">الشروط والأحكام&#32;</a>
+                                    <a href="#" enabled="false">الخصوصية&#32;</a>
+                                    <a href="#" enabled="false">الشروط والأحكام&#32;</a>
                                 </div>
                                 <div className="col-xs-12 no-padding followUs">
                                     <span>تابعنا على</span>

@@ -1142,7 +1142,8 @@ padding-bottom: 15px;
 }		
 #imp-service-sub{		
  display: none;	
- width: 200px;	
+ width: 100px;
+
 }		
 	#imp-service-menu:hover #imp-service-sub{		
    display: block;		
@@ -2710,5 +2711,12 @@ background-color:#f5f5f5;
         max-height: 136px;
         padding: 8px 20px 0 20px;
     }   
+
+}
+
+@media (max-width:768px){
+    .h5news{
+        padding-right: 15px;
+    }
 }
 /**  Media queries End **/

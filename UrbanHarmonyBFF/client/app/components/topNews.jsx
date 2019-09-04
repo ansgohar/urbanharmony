@@ -44,7 +44,7 @@ class News extends React.Component {
                 {/* <img class="thumb-img" src={this.props.rec.image}></img> */}
                 <Image src={this.props.rec.image} class={"thumb-img"}/> 
                 </div>
-                <h2>{this.props.rec.title}</h2>
+                <h2 className="h2NewsTop">{this.props.rec.title}</h2>
             <p>{this.props.rec.article}</p>
             <a target="_blank" href={this.props.rec.linkURL}>مصدر الخبر</a>
         </div>
