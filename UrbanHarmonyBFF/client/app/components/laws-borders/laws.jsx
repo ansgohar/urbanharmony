@@ -20,9 +20,9 @@ class LawsPage extends React.Component {
     render() {
 
         let allLaws = this.props.laws;
-        return allLaws.map(a => {
-            console.log(a.PDF)
-            if (a.PDF.match(/\.(pdf)$/) ){
+            return allLaws.map(a => {
+                console.log(a.PDF)
+                if (a.PDF.match(/\.(pdf)$/) ){
                 return <Lws record={a} key={a.id} />
             }
             
