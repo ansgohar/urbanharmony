@@ -19,7 +19,7 @@ class LibraryPage extends React.Component {
         return (
             <div id="borders-page" class="row library-page">
                 <div class="col-xs-12 no-padding ">
-                    <h2 class="sec-h2">مكتبة الجهاز</h2>
+                    <h2 class="sec-h2" style={{marginTop:"10px"}}>مكتبة الجهاز</h2>
                     <div class="col-xs-12 tabs-container no-padding">
                         <div class="col-xs-12 filter-tabs">
                             <ul class="col-xs-12 col-sm-5 nav nav-tabs no-padding">
@@ -65,9 +65,9 @@ class LibraryPage extends React.Component {
                                         
                                     </div>
 
-                                    <div class="col-xs-12 col-sm-2 searchbar-btn">
+                                    <div class="col-xs-12 col-sm-2 searchbar-btn" >
                                         <a id="resetSearch">
-                                            <button class="btn btn-info submitFormBtn" id="searchLibrary-reset"
+                                            <button  id="searchLibrary-reset" class="btn btn-info submitFormBtn"    
                                             onClick={()=>{ document.getElementById("query").value = "";
                                             document.getElementById("bookCategory").value = "All";
                                             this.setState(prevState =>{
