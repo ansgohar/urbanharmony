@@ -63,14 +63,14 @@ module.exports = function (app) {
     });
 
     router.post('/', function (req, res) {
-        console.log(req.body);
+        //////console.log(req.body);
         competitionService.subscribeToTheCompetition(req.body, function (data) {
             res.json(data);
         })
     });
 
     router.put('/', function (req, res) {
-        console.log(req.body);
+        //////console.log(req.body);
         competitionService.sendPics(req.body, function (data) {
             res.json(data);
         });

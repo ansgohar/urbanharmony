@@ -45,7 +45,7 @@ class Guidelines extends React.Component {
     renderPDF() {
         let allGuidelines = this.props.guidelines;
         return allGuidelines.map(a => {
-            console.log(a.PDF)
+            //console.log(a.PDF)
             if (a.PDF.match(/\.(pdf)$/)) {
                 return <GDL record={a} key={a.id} />
             }

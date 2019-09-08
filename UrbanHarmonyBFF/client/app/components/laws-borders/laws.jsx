@@ -21,7 +21,7 @@ class LawsPage extends React.Component {
 
         let allLaws = this.props.laws;
             return allLaws.map(a => {
-                console.log(a.PDF)
+                //console.log(a.PDF)
                 if (a.PDF.match(/\.(pdf)$/) ){
                 return <Lws record={a} key={a.id} />
             }

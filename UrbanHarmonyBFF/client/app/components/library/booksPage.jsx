@@ -30,15 +30,14 @@ class BooksDetails extends React.Component {
          let queryBookName = this.props.query.bookName;
          let queryBookCategory = this.props.query.category;
 
-         console.log(queryBookName)
 
          function checkbook (book, query){
              
              if( book && query && book.includes(query)){
-                console.log(book + " " + query)
+              
                         return true;  
              }
-             console.log(book + " " + query)
+            
              return false
 
          
@@ -51,32 +50,32 @@ class BooksDetails extends React.Component {
             
             let booklist = this.props.books.filter(arr => {
                 if(arr.title === undefined){
-                    console.log("what")
+                    
                      
                 }
                 
                  // case 01: book name & category both matched
                 else if( (arr.bookCategory) && (arr.title) && (arr.bookCategory === queryBookCategory) && (checkbook(arr.title, queryBookName))){      
-                    console.log("case 01: book name & category both matched")              
+                    //console.log("case 01: book name & category both matched")              
                     return arr
                 }
                 // case 02: no empty bookname query
                 else if(queryBookName.match(/^$/)){
-                    console.log("case 02: no empty bookname query");
+                    //console.log("case 02: no empty bookname query");
                     // case 02.1: empty bookname with category name
                     if(queryBookCategory == arr.bookCategory){
-                        console.log("case 02.1: empty bookname with category name");
+                        //console.log("case 02.1: empty bookname with category name");
                         return arr
                     // case 02.2: empty bookname with no category
                     }else if(queryBookCategory === "All"){
-                        console.log("case 02.2: empty bookname with no category");
+                        //console.log("case 02.2: empty bookname with no category");
                         return arr
                     }
                     
                 }
                 // case 03: bookname matched and category is empty
                 else if((queryBookCategory === "All") && (checkbook(arr.title, queryBookName))){
-                    console.log("case 03: bookname matched and category is empty")              
+                    //console.log("case 03: bookname matched and category is empty")              
 
                     return arr
 

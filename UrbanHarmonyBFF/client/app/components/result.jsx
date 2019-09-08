@@ -16,8 +16,6 @@ class NewsRecord extends React.Component {
         function convertDateToArabic(date) {
             if (date) {
                 let arabicDate = new Date(date);
-                console.log(arabicDate);
-                console.log(arabicDate.toLocaleDateString('ar-EG'));
                 return arabicDate.toLocaleDateString('ar-EG');
             }
             else {

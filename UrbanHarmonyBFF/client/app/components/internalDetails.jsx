@@ -13,8 +13,8 @@ class DetailInternal extends React.Component {
 
     getDetailID() {
         var parsed = queryString.parse(this.props.location.search);
-        console.log(parsed);
-        console.log(this.props.location);
+        //console.log(parsed);
+        //console.log(this.props.location);
         fetch('/internalnews/id/' + parsed.news, {
             method: 'GET'
         }).then(res => res.json()
@@ -60,8 +60,8 @@ class DetailID extends React.Component {
        function convertDateToArabic(date) {
             if (date) {
                 let arabicDate = new Date(date);
-                console.log(arabicDate);
-                console.log(arabicDate.toLocaleDateString('ar-EG'));
+                //console.log(arabicDate);
+                //console.log(arabicDate.toLocaleDateString('ar-EG'));
                 return arabicDate.toLocaleDateString('ar-EG');
             }
             else {

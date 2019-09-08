@@ -12,9 +12,9 @@ class GlobalSearchPage extends React.Component {
 
     SearchResult() {
         var parsed = queryString.parse(this.props.location.search);
-        console.log(parsed);
-        console.log(parsed.query);
-        console.log(this.props.location);
+        // console.log(parsed);
+        // console.log(parsed.query);
+        // console.log(this.props.location);
         fetch('/globalsearch/' + parsed.query, {
             method: 'GET'
         }).then(res => res.json()

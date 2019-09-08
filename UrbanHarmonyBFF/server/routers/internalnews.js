@@ -38,7 +38,7 @@ module.exports = function (app) {
     });
 
     router.get('/id/:id', function (req, res, next) {
-        console.log(req.params);
+        //console.log(req.params);
         NEWS.getnewsbyID(req.params.id, function (data) {
             if (data === undefined || Object.keys(data).length == 0) {
                 res.json([]);

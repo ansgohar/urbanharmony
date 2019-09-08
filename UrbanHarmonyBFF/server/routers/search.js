@@ -10,7 +10,7 @@ module.exports = function (app) {
     router.post('/', function (req, res) {
         try {
             
-            console.log(req.body);
+            //console.log(req.body);
             search.advanceSearch(req.body, function (response) {
                 if (response === undefined || Object.keys(response).length === 0) {
                     res.json({});

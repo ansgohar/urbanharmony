@@ -23,7 +23,7 @@ class Borders extends React.Component {
 
         let allborders = this.props.borders;
         return allborders.map(a => {
-            console.log(a.PDF)
+            //console.log(a.PDF)
             if (a.PDF.match(/\.(pdf)$/)){
                 return <Brd record={a} key={a.id} />
             }
