@@ -47,7 +47,7 @@ class SurveySearch extends React.Component {
         }
 
         return (
-            <div className="container">
+            <div className="col-xs-12 container">
                 <form onSubmit={handleSubmit}>
                     <h3 style={{padding: '100px 10px 10px 10px', width:'100%'}}>برجاء ادخال محددات البحث</h3>
 
