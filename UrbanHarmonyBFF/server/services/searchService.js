@@ -26,7 +26,8 @@ class SearchService {
             
             let filters = '';
 
-            if (payload.filters !== undefined){
+            // If there are filters && Object has keys
+            if (payload.filters !== undefined && Object.keys(payload.filters).length !== 0){
 
                 let filters_keys = Object.keys(payload.filters);
                 let filters_string = '';

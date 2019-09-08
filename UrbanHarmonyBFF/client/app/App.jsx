@@ -43,10 +43,10 @@ class App extends React.Component {
                                     <li className="menu-position"><a href="/vision" >عن الجهاز</a></li>
                                     <li id="imp-service-menu" className="menu-position">
                                         <a href="#services">أهم الخدمات<strong class="caret"></strong> </a>
-                                        <ul id="imp-service-sub" class="second-level" >
+                                        <ul id="imp-service-sub" class="second-level" style={{'width':'200px'}}>
                                             <li><a href="/complainsDetail">قوائم الحصر والتظلمات</a></li>
                                             <li><a href="/allIncidents">المرصد الحضاري</a></li>
-                                            <li style={{"width": "200px"}}><a href="/lawsDetails">القوانين</a></li>
+                                            <li id="dropdow" style={{"width": "200px"}}><a href="/lawsDetails">القوانين</a></li>
                                             <li><a href="/consultingOffices">مكاتب إستشارية</a></li>
                                         </ul>
 
@@ -108,17 +108,16 @@ class App extends React.Component {
                             </div>
                             <div className="footerRightSide col-xs-12 col-sm-9">
                                 <div className="footerLinks col-xs-12 no-padding">
-                                    <a href="#">من نحن&#32;</a>
+                                    <a href="/vision">من نحن&#32;</a>
                                     <a href="/contact-us">إتصل بنا&#32;</a>
                                     <a href="/related-links">مواقع ذات صلة&#32;</a>
-                                    <a href="#">الخصوصية&#32;</a>
-                                    <a href="#">الشروط والأحكام&#32;</a>
+                                    <a href="#" enabled="false">الخصوصية&#32;</a>
+                                    <a href="#" enabled="false">الشروط والأحكام&#32;</a>
                                 </div>
                                 <div className="col-xs-12 no-padding followUs">
                                     <span>تابعنا على</span>
-                                    <a href="#"><img src="assets/images/icons/facebook_icon.svg" alt="facebook" className="fbIcon" /></a>
-                                    <a href="#"><img src="assets/images/icons/youtube_icon.svg" alt="youtube" className="ytIcon" />
-                                    </a>
+                                    <a href="https://www.facebook.com/NOUH.Egypt/" target="blank" ><img src="assets/images/icons/facebook_icon.svg" alt="facebook" className="fbIcon" /></a>
+                                    <a href="https://www.youtube.com/channel/UCn6HUs-FBOwl8--4WuKZiTw" target="_blank"><img src="assets/images/icons/youtube_icon.svg" alt="youtube" className="ytIcon"  /></a>
                                     <div className="copy-right">تم التصميم والتنفيذ بواسطة <img className="ibmIcon" src="assets/images/icons/ibm.png" alt="IBMCopyrights" /></div>
                                 </div>
 

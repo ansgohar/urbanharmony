@@ -25,48 +25,59 @@ class SurveySearch extends React.Component {
     render() {
         const { handleSubmit, pristine, reset, submitting } = this.props;
 
+        const buttonStyle = {
+            marginLeft: '30px',
+            borderRadius: '5px',
+            marginBottom: '60px',
+            marginTop: '20px'
+        };
+
+        const inputStyle = {
+            marginBottom: '25px',
+        };
+
+        const labelStyle = {
+            marginBottom: '10px'
+        };
+
+        const divStyle = {
+            display: 'inline-block',
+            width: '25%',
+            marginTop: '30px'
+        }
+
         return (
-            <div>
-                <form onSubmit={handleSubmit} >
-
-                    <div className="col-xs-12  col-sm-10 search-barcont">
-                        <label className="fieldLabel col-xs-12">بحث برقم بتوثيق العقار<span className="requiredField">*</span></label>
-                        <div className="col-xs-3 col-sm-2 searchbar-btn">
-                            <button className="btn btn-info submitFormBtn" disabled={pristine || submitting} type="submit">بحث</button></div>
-                        <div className="col-xs-9 col-sm-10 searchbar">
-                            <Field className="input-search" component="input" name="registrationNumber" type="text" className="form-control" placeholder="" />
-                            <div className="advancedsearch-cont"><a onClick={() => this.toggle(this.props.compID)}>بحث متقدم</a></div>
-                        </div>
-
-                    </div>
-                </form>
+            <div className="col-xs-12 container">
                 <form onSubmit={handleSubmit}>
-                    <div className="col-xs-12 col-sm-10 advancedsearch-cont Adv-Search" id={this.props.compID} >
+                    <h3 style={{padding: '100px 10px 10px 10px', width:'100%'}}>برجاء ادخال محددات البحث</h3>
 
-                        <p> يمكنك البحث باستخام احدى الاختيارات الاتية : </p>
+                    <div style={divStyle}>
+                        <label htmlFor="registrationNumber" style={labelStyle}>بحث برقم بتوثيق العقار</label>
+                        <Field className="input-search form-control" style={inputStyle} component="input" name="registrationNumber" type="text" placeholder="برجاء ادخال رقم التوثيق العقاري"/>
+                    </div>
+                    
+                    <div style={divStyle}>
+                        <label htmlFor="streetName" style={labelStyle}>العنوان</label>
+                        <Field className="input-search form-control" style={inputStyle} component="input" name="streetName" type="text" placeholder="برجاء ادخال العنوان او جزء منه"/>
+                    </div>
+                    
+                    <div style={divStyle}>
+                        <label htmlFor="buildingName" style={labelStyle}>إسم العقار</label>
+                        <Field className="input-search form-control" style={inputStyle} component="input" name="buildingName" type="text" placeholder="برجاء ادخال اسم العقار او جزء منه"/>
+                    </div>
 
-                        <div className="col-xs-12">
-                            <div className="col-xs-12 col-sm-8 street-name">
-                                <label className="fieldLabel col-xs-12">إسم الشارع </label>
-                                <Field className="input-search" component="input" name="streetName" type="text" className="form-control" placeholder="" />
-
-                            </div>
-                            <div className="col-xs-12 col-sm-2 no-padding building-no">
-                                <label className="fieldLabel col-xs-12">إسم العقار </label>
-                                <Field className="input-search" component="input" name="buildingName" type="text" className="form-control" placeholder="" />
-                            </div>
-                            <div className="col-xs-12 col-sm-2 no-padding building-no">
-                                <label className="fieldLabel col-xs-12">رقم العقار </label>
-                                <Field className="input-search" component="input" name="buildingNumber" type="text" className="form-control" placeholder="" />
-                            </div>
-                        </div>
-                        <div className="col-xs-12 advanced-btn-submit">
-                            <div className="col-xs-2 searchbar-btn no-padding"><button className="btn btn-info submitFormBtn" disabled={pristine || submitting} type="submit" >بحث</button></div>
-                        </div>
+                    <div style={divStyle}>
+                        <label htmlFor="buildingNumber" style={labelStyle}>رقم العقار</label>
+                        <Field className="input-search form-control" style={inputStyle} component="input" name="buildingNumber" type="text" placeholder="برجاء ادخال رقم العقار"/>
+                    </div>
+                    
+                    <div style={{textAlign: 'center', position: 'relative'}}>
+                        <button disabled={pristine || submitting} type="submit" style={{paddingRight:"40px",paddingLeft:"40px", marginLeft: '30px', borderRadius: '5px', marginBottom: '60px', marginTop: '20px'}}>بحث</button>
+                        <button disabled={submitting} type="submit" style={buttonStyle}>ارجاع جميع العقارات</button>
+                        <button type="button" disabled={pristine || submitting} onClick={reset} style={buttonStyle}>اخلاء جميع الخانات</button>
                     </div>
                 </form>
             </div>
-
         );
 
     }

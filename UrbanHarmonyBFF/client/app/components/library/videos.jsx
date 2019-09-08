@@ -36,8 +36,10 @@ class VID extends React.Component {
     }
 
     convertDateToArabic(date) {
+        console.log(date)
         if (date) {
             let arabicDate = new Date(date);
+            console.log(arabicDate.toLocaleDateString('ar-EG'))
             return arabicDate.toLocaleDateString('ar-EG');
         }
         else {
@@ -46,6 +48,7 @@ class VID extends React.Component {
     }
 
     render() {
+        console.log(this.props.record)
         return (
             <div className="tile pressCard col-xs-12 padding-mobile">
                 <div className="col-xs-12 newscard-container no-padding">
@@ -63,7 +66,7 @@ class VID extends React.Component {
 
                             <tr className="table-row">
                                 <td className="table-data table-header"> تاريخ البث </td>
-                                <td className="table-data">{this.convertDateToArabic(this.props.record.date)}</td>
+                                <td className="table-data">{this.convertDateToArabic(this.props.record.Date)}</td>
                             </tr>
 
                             <tr className="table-row">
@@ -86,6 +89,7 @@ class VID extends React.Component {
                         <iframe className="iframe-size" src={this.props.record.url} />
                     </div>
                 </div>
+                <hr></hr>
             </div>
         );
     }

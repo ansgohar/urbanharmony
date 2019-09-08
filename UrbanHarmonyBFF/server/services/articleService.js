@@ -33,7 +33,7 @@ class ArticleService {
 
 
     getarticlebyid(id, callback) {
-        console.log(id);
+        //console.log(id);
         fetch(url + 'news/' + id)
             .then(function (response) {
                 return response.json();

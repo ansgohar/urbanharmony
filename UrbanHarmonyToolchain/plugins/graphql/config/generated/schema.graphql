@@ -280,7 +280,7 @@ type Surveylist {
   buildingName: String
   fullAddress: String
   buildingValue: String
-  status: ENUM_SURVEYLIST_STATUS!
+  status: ENUM_SURVEYLIST_STATUS
   region: Regions
   petition: Petition
 }

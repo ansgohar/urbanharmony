@@ -51,7 +51,7 @@ class Conferences extends React.Component {
 
             var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 
-            let conferenceDate = event.toLocaleDateString('ar-EG', options);
+            let conferenceDate = conference.date ? event.toLocaleDateString('ar-EG', options) : " غير متوفر " ;
 
             return <TableRow title={conference.title} conferenceType={conferenceType} key={conference.id} conferenceDate={conferenceDate} />
         }

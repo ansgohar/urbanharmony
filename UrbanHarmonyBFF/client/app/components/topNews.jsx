@@ -1,6 +1,7 @@
 import React from 'react';
 import { getNews } from '../actions/index'
 import { connect } from 'react-redux';
+import Image from '../components/image.jsx'
 
 class TopNews extends React.Component {
     constructor(props) {
@@ -39,7 +40,11 @@ class News extends React.Component {
     render() {
         return (
             <div className="carouselContent">
-            <div className="thumb-cont"><img class="thumb-img" src={this.props.rec.image}></img></div><h2>{this.props.rec.title}</h2>
+            <div className="thumb-cont">
+                {/* <img class="thumb-img" src={this.props.rec.image}></img> */}
+                <Image src={this.props.rec.image} class={"thumb-img"}/> 
+                </div>
+                <h2 className="h2NewsTop">{this.props.rec.title}</h2>
             <p>{this.props.rec.article}</p>
             <a target="_blank" href={this.props.rec.linkURL}>مصدر الخبر</a>
         </div>

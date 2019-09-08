@@ -7,7 +7,7 @@ module.exports = function (app) {
 
     router.get('/', function (req, res, next) {
         NEWS.getallinternalnews(function (data) {
-            if (Object.keys(data).length == 0) {
+            if (data === undefined || Object.keys(data).length == 0) {
                 res.json([]);
             }
             else if (Array.isArray(data)) {
@@ -23,7 +23,7 @@ module.exports = function (app) {
 
     router.get('/:limit', function (req, res, next) {
         NEWS.getlimitednews(req.params.limit, function (data) {
-            if (Object.keys(data).length == 0) {
+            if (data === undefined || Object.keys(data).length == 0) {
                 res.json([]);
             }
             else if (Array.isArray(data)) {
@@ -38,9 +38,9 @@ module.exports = function (app) {
     });
 
     router.get('/id/:id', function (req, res, next) {
-        console.log(req.params);
+        //console.log(req.params);
         NEWS.getnewsbyID(req.params.id, function (data) {
-            if (Object.keys(data).length == 0) {
+            if (data === undefined || Object.keys(data).length == 0) {
                 res.json([]);
             }
             else {

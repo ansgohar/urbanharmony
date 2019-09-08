@@ -7,7 +7,7 @@ module.exports = function (app) {
 
     router.get('/', function (req, res, next) {
         articles.getallnews(function (data) {
-            if (Object.keys(data).length == 0) {
+            if (data === undefined || Object.keys(data).length == 0) {
                 res.json([]);
             }
             else if (Array.isArray(data)) {
@@ -23,7 +23,7 @@ module.exports = function (app) {
 
     router.get('/:limit', function (req, res, next) {
         articles.getlimited(req.params.limit, function (data) {
-            if (Object.keys(data).length == 0) {
+            if (data === undefined || Object.keys(data).length == 0) {
                 res.json([]);
             }
             else if (Array.isArray(data)) {

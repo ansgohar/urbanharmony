@@ -47,7 +47,7 @@ class GlobalSearchService {
                                 delete element.contentType;
                                 expression = jsonata('*.$.{"id":_id,"title":Title,"image": "' + url.slice(0, -1) + '"& photo.url,"details":Description, "contentType":"competitions"}');
                             }
-                            console.log(expression)
+                            //console.log(expression)
                             if (expression !== undefined){
                                 contentObject = expression.evaluate(element);
                                 mergedExpression.push(contentObject);

@@ -7,7 +7,7 @@ module.exports = function (app) {
 
     router.get('/', function (req, res, next) {
         Incidents.getAllIncidents(function (data) {
-            if (Object.keys(data).length == 0) {
+            if (data === undefined || Object.keys(data).length == 0) {
                 res.json([]);
             }
             else if (Array.isArray(data)) {
@@ -22,7 +22,7 @@ module.exports = function (app) {
 
     router.get('/:id', function (req, res, next) {
         Incidents.getIncidentByID(req.params.id,function(data) {
-            if (Object.keys(data).length == 0) {
+            if (data === undefined || Object.keys(data).length == 0) {
                 res.json([]);
             }
             else {

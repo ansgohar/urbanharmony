@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { getIncidents } from '../../actions/index.js'
+import Image from '../image.jsx'
 
 
 class AllIncidents extends React.Component {
@@ -58,7 +59,8 @@ class Incident extends React.Component {
                 <div className="col-xs-12 newscard-container no-padding">
                     <div className="col-xs-12 col-sm-3 news-rightSide nopadding-mobile">
                         <div className="image-container-4x3">
-                            <img src={this.props.record.image} />
+                            {/* <img src={this.props.record.image} /> */}
+                            <Image src={this.props.record.image} />
                         </div>
                     </div>
                     <div className="col-xs-12 col-sm-9 news-leftSide nopadding-mobile">

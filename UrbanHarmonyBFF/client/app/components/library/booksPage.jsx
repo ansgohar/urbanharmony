@@ -1,11 +1,15 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { getLibraryBooks } from '../../actions/index.js';
+import Image from '../image.jsx'
 
 class BooksDetails extends React.Component {
     constructor(props) {
         super(props);
         this.getBooks();
+        this.state={
+            books:[]
+        }
     }
 
 
@@ -21,25 +25,86 @@ class BooksDetails extends React.Component {
     }
 
     render() {
-        return (
-            typeof this.props.books === undefined ? <div /> : this.props.books.filter(arr => {
+
+         //   typeof this.props.books === undefined ? <div /> : 
+         let queryBookName = this.props.query.bookName;
+         let queryBookCategory = this.props.query.category;
+
+
+         function checkbook (book, query){
+             
+             if( book && query && book.includes(query)){
+              
+                        return true;  
+             }
+            
+             return false
+
+         
+        }
+
+         if (this.props.query.bookName == "EMPTY"){
+             return this.props.books.map(book => <BK record={book} key={book.id} />)
+         }
+            
+            
+            let booklist = this.props.books.filter(arr => {
                 if(arr.title === undefined){
-                }
-                if( (arr.bookCategory) && (arr.title) && (arr.bookCategory === this.props.query.category) && ((arr.title).includes(this.props.query.bookName))){                    
-                    return arr
-                }
-                else if(this.props.query.bookName === ""){
                     
+                     
+                }
+                
+                 // case 01: book name & category both matched
+                else if( (arr.bookCategory) && (arr.title) && (arr.bookCategory === queryBookCategory) && (checkbook(arr.title, queryBookName))){      
+                    //console.log("case 01: book name & category both matched")              
                     return arr
                 }
-                else if(arr.title === undefined){
+                // case 02: no empty bookname query
+                else if(queryBookName.match(/^$/)){
+                    //console.log("case 02: no empty bookname query");
+                    // case 02.1: empty bookname with category name
+                    if(queryBookCategory == arr.bookCategory){
+                        //console.log("case 02.1: empty bookname with category name");
+                        return arr
+                    // case 02.2: empty bookname with no category
+                    }else if(queryBookCategory === "All"){
+                        //console.log("case 02.2: empty bookname with no category");
+                        return arr
+                    }
+                    
                 }
-                else if((this.props.query.category === "All") && ((arr.title).includes(this.props.query.bookName))){
+                // case 03: bookname matched and category is empty
+                else if((queryBookCategory === "All") && (checkbook(arr.title, queryBookName))){
+                    //console.log("case 03: bookname matched and category is empty")              
+
                     return arr
 
-                }
-            }).map(book => <BK record={book} key={book.id} />)
-        );
+                }})
+
+
+            let noresult = 
+
+                <div class="col-xs-12 newscard-container nopadding-mobile">
+                    <div class="nopadding-mobile">
+                        <h2 style={{paddingTop: "12px", textAlign: "center"}}>لا يوجد نتيجة للبحث</h2>
+                    </div>
+                </div>
+                   
+            
+                
+            console.log(booklist)
+            
+            return booklist[0] === undefined ? noresult : booklist.map(book => <BK record={book} key={book.id} />) ;
+
+            // if (booklist[0] != undefined){
+            //     return booklist.map(book => <BK record={book} key={book.id} />)
+            // }else {
+            //     return
+            //        <div>
+            //             <h2 style={{paddingTop: "12px", textAlign: "center"}}>لا يوجد نتيجة للبحث</h2>
+            
+            //        </div> }  
+       
     }
 }
 
@@ -59,7 +124,7 @@ class BK extends React.Component {
             return 'علوم إجتماعية وبيئية'
         }
         else {
-            return 'ادب وفنون'
+            return ''
         }
     }
 
@@ -69,8 +134,9 @@ class BK extends React.Component {
             <div class="col-xs-12 newscard-container nopadding-mobile">
                 <div class="col-xs-12 col-sm-3 news-rightSide nopadding-mobile">
 
-                    <div class="image-container-3x4" style={this.props.record.image === "http://localhost:1337" ? {backgroundImage: 'url("/assets/images/no-image-4x3.png")', backgroundRepeat:'no-repeat', backgroundPosition:'center'  } : {backgroundImage: 'none' } }>
-                        <img src= { (this.props.record.image) !== "http://localhost:1337" ? this.props.record.image : null} />
+                    <div class="image-container-3x4" >
+                    <Image src={this.props.record.image} /> 
+
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-9 news-leftSide nopadding-mobile">

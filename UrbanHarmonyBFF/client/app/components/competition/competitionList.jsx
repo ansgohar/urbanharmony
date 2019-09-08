@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { browserHistory } from 'react-router';
 import { getAllCompetitions } from '../../actions/index'
+import Image from '../image.jsx'
 
 class CompetitionList extends React.Component {
 
@@ -77,13 +78,39 @@ class CompetitionList extends React.Component {
         let currentDate = new Date(
             dateObj.getFullYear(),
             dateObj.getMonth(),
-            dateObj.getDate()
+            dateObj.getDate(),
+            dateObj.getHours(),
+            dateObj.getMinutes(),
+            dateObj.getSeconds(),
+            dateObj.getMilliseconds()
         );
 
-        let splt = givenDate.split('T');
+        var b = givenDate.split(/\D+/);
 
-        let givenDateObj = new Date(splt[0]);
+        let givenDateObj = new Date(Date.UTC(b[0], --b[1], b[2], b[3], b[4], b[5], b[6]));
+        // remove the line below if current local time is ahead the actual value
+        givenDateObj.setHours(givenDateObj.getHours()-2);
+            
+            
+        // let splt = givenDate.split('T');
+        // let spltG = currentDate.split('T');
 
+        // let givenDateObj = new Date(splt[0]);
+        // let currentDateObj = new Date(splitG[0]);
+
+        // if(givenDateObj < currentDateObj){
+        //     if(split[1] < splitG[1]){
+        //         return callback(false);
+        //     }else{
+        //         return callback(true)
+        //     }
+        // }else{
+        //     return callback(true)
+        // }
+
+
+console.log(currentDate);
+console.log(givenDateObj);
         return (givenDateObj < currentDate ? callback(false) : callback(true));
     }
 
@@ -110,7 +137,9 @@ class CompetitionEntry extends React.Component {
             <div className="col-xs-12 tite conferenceCard no-padding">
                 <div className="col-xs-12 newscard-container nopadding-mobile">
                     <div className="col-xs-12 col-sm-3 news-rightSide nopadding-mobile">
-                        <div className="image-container-4x3"> <img src={this.props.record.image} /> </div>
+                        <div className="image-container-4x3"> 
+                        <Image src={this.props.record.image} /> 
+</div>
                     </div>
                     <div className="col-xs-12 col-sm-9 news-leftSide">
                         <div className="col-xs-12 winner-name no-padding">

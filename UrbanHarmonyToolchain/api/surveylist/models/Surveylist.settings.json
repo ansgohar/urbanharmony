@@ -32,8 +32,7 @@
       "enum": [
         "exists",
         "No"
-      ],
-      "required": true
+      ]
     },
     "region": {
       "model": "regions",
