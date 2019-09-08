@@ -2373,6 +2373,7 @@ background-color:#f5f5f5;
 //consultation page styles end//
 /**  Media queries start **/
 @media screen and (max-width:767px){
+    
     .inline-image {
         margin: 15px;
     }
@@ -2721,6 +2722,9 @@ background-color:#f5f5f5;
 @media (max-width:768px){
     .h5news{
         padding-right: 15px;
+    }
+    .searchLibrary-reset{
+        width: 100%;
     }
 }
 /**  Media queries End **/
