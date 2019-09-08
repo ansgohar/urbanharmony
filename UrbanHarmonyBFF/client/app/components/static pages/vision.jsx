@@ -12,16 +12,17 @@ class Vision extends React.Component {
             <div id="project-details" className="row project-details">
                 <div className="col-xs-12 no-padding greyish-background">
                     <h2 className="sec-h2 add-padding">رؤيتنا و أهدافنا</h2>
-                    <div className="add-margin">
-                        <p>
+                    <div className="add-margin" style={{fontSize: "20px"}}>
+                        <strong><p style={{marginTop: "40px"}}>
                             يهدف الجهاز إلى تحقيق القيم الجمالية للشكل الخارجى للأبنية والفراغات العمرانية والأثرية وأسس النسيج البصرى للمدن والقرى وكافة المناطق الحضارية للدولة، بما فى ذلك المجتمعات العمرانية الجديدة.
-                    </p>
+                    </p></strong>
 
-                        <p>
+                        <strong><p style={{marginTop:"30px"}}>
                             ويحق للجهاز فى سبيل تحقيق أهدافه اتخاذ جميع القرارات والتوصيات اللازمة لتحقيق أهدافه, وذلك بما لا يتعارض مع أحكام القوانين والتشريعات القائمة و له على الأخص ما يلى
-                    </p>
+                    </p></strong>
 
-                        <p>
+                        <p style={{lineHeight: "40px", paddingBottom: "40px", paddingTop:"30px"}}>
+
                             ١‎.      إعادة صياغة الرؤية الجمالية لكافة مناطق الدولة والعمل على إزالة  التشوهات الحالية.
 <br />
                             ٢‎.      إعداد قاعدة بيانات شاملة لجميع المبانى ذات الطابع المعمارى المميز بجميع محافظات الجمهورية ووضع القواعد اللازمة للحفاظ عليها.
