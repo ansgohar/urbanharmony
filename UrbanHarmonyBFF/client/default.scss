@@ -795,6 +795,7 @@ input[type="radio"][id="newsCard"]:checked ~ .conferenceCard, input[type="radio"
 }
 .news-home .sec6 a{
     color:#5d6268;
+    font-weight: bold;
 }
 .news-home .newsnav-cont{
     background-color:#5ba16d;
@@ -2725,6 +2726,9 @@ background-color:#f5f5f5;
     }
     .searchLibrary-reset{
         width: 100%;
+    }
+    .news-home .sec6 a{
+        margin-right: 15px;
     }
 }
 /**  Media queries End **/

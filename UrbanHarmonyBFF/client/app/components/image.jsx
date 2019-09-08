@@ -31,25 +31,25 @@ class Image extends React.Component {
             .then(c => {
                 if(Object.values(c)[0] == 404){
                     status = false;
-                    console.log(c)
+                    //console.log(c)
                     
                 }
             }).catch(err => {
-                console.log(err)
+                //console.log(err)
             });
 
         if((url.match(/\.(jpeg|jpg|gif|png)$/)) == null){
                 status = false
             };
 
-        console.log(status + " " + url)
+        //console.log(status + " " + url)
         return status ? url : imageNotAvailable;
 
     }
 
     render(){
         let imgurl = this.checkurl(this.props.src)
-        console.log(imgurl)
+        //console.log(imgurl)
         let imgClass = "";
         if(this.props.class != undefined){
             imgClass = this.props.class
