@@ -7,8 +7,8 @@ class LibraryPage extends React.Component {
     constructor(props) {
         super(props);
         this.state={
-            bookName:"",
-            category:""
+            bookName:"EMPTY",
+            category:"All"
         }
     }
 
@@ -33,7 +33,7 @@ class LibraryPage extends React.Component {
                             <div id="menu1" class="tab-pane fade col-xs-12 no-padding active in">
 
 
-                                <div class="col-xs-12  col-sm-8 search-barcont">
+                                <div class="col-xs-12  col-sm-8 search-barcont" style={{zIndex: "3"}}>
                                     <div class="col-xs-12 col-sm-7 searchbar">
                                         <label class="fieldLabel col-xs-12 nopadding-mobile">بحث بإسم</label>
                                         <input class="input-search" id="query"/>
@@ -64,9 +64,25 @@ class LibraryPage extends React.Component {
                                         </a>
                                         
                                     </div>
+
+                                    <div class="col-xs-12 col-sm-2 searchbar-btn">
+                                        <a id="resetSearch">
+                                            <button class="btn btn-info submitFormBtn" id="searchLibrary-reset"
+                                            onClick={()=>{ document.getElementById("query").value = "";
+                                            document.getElementById("bookCategory").value = "All";
+                                            this.setState(prevState =>{
+                                                return {
+                                                    bookName: document.getElementById("query").value , 
+                                                    category: document.getElementById("bookCategory").value
+                                                }
+                                            })
+
+                                            }}> اخلاء خانات البحث </button>
+                                        </a>
+                                    </div>
                                 </div>
 
-                                <div class="col-xs-12  col-sm-10 library-cardscont">
+                                <div class="col-xs-12  col-sm-10 library-cardscont" style={{paddingBlock: "25px"}}>
                                     <h3 class="col-xs-12 librarysearch-result nopadding-mobile">نتيجة البحث</h3>
                                     <BooksDetails books={this.props.books} query={this.state}/>
                                 </div>
