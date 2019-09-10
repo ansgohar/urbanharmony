@@ -28,7 +28,11 @@ class IntNews extends React.Component {
             return null;
         }
         let news = this.props.internalnews;
-        return news.map(a => {
+        let sortedNews = news;
+        console.log(news);
+        console.log(sortedNews);
+        sortedNews.sort((a, b) => (a.DatePublished < b.DatePublished) ? 1 : -1)
+        return sortedNews.map(a => {
             return <Internal record={a} key={a.id} />;
         });
     }
