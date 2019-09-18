@@ -125,6 +125,21 @@ class ComplainService {
             });
     }
 
+    getAllPetitions(callback){
+        
+        fetch(url + 'petiton')
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (myJson) {
+                // let expression = jsonata('$.{"id":_id, "registrationNO":registrationNumber, "type":buildingType, "address":fullAddress, "value":buildingValue,"status":status, "date":updatedAt, "region":region.regionName,"buildingNo":buildingNumber,"buildingName":buildingName}');
+                // let cmplist = expression.evaluate(myJson);
+                callback(myJson);
+            });
+
+    }
+
+
 
 
     getRegionsByGovernorate(id, callback) {
