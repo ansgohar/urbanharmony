@@ -22,9 +22,10 @@ class MoreProjects extends React.Component {
                     <div className="col-xs-12 tabs-container no-padding">
                         <div className="col-xs-12 filter-tabs">
                             <ul className="col-xs-12 col-sm-5 nav nav-tabs no-padding">
-                                <li className="active"><a data-toggle="tab" href="#menu1">مشروعات جارية</a></li>
-                                <li><a data-toggle="tab" href="#menu2">مشروعات مقترحة</a></li>
                                  <li><a data-toggle="tab" href="#menu3" id="1">مشروعات تمت</a></li>
+                                 
+                                 <li><a data-toggle="tab" href="#menu2">مشروعات مقترحة</a></li>
+                                 <li className="active"><a data-toggle="tab" href="#menu1">مشروعات جارية</a></li>
                             </ul>
                         </div>
                         <div className="tab-content">

@@ -1,0 +1,3 @@
+{"_id":{"$oid":"5b06dc900dc06a60c74f4a44"},"governateName":"القاهرة","createdAt":{"$date":"2018-05-24T15:38:56.701Z"},"updatedAt":{"$date":"2018-07-19T09:42:57.979Z"},"__v":0,"id":"5b06dc900dc06a60c74f4a44"}
+{"_id":{"$oid":"5b06dc9f0dc06a60c74f4a45"},"governateName":"اﻷسكندرية","createdAt":{"$date":"2018-05-24T15:39:11.548Z"},"updatedAt":{"$date":"2018-05-24T15:39:12.263Z"},"__v":0,"id":{"$oid":"5b06dc9f0dc06a60c74f4a45"}}
+{"_id":{"$oid":"5b06dcab0dc06a60c74f4a46"},"governateName":"الجيزة","createdAt":{"$date":"2018-05-24T15:39:23.919Z"},"updatedAt":{"$date":"2018-05-24T15:39:24.623Z"},"__v":0,"id":{"$oid":"5b06dcab0dc06a60c74f4a46"}}

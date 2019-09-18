@@ -26,7 +26,7 @@ class CompetitionDetails extends React.Component {
                     <div className="col-xs-12 tabs-container no-padding">
                         <div className="col-xs-12 filter-tabs">
                             <ul className="col-xs-12 col-sm-5 nav nav-tabs no-padding">
-                                <li className="active"><a data-toggle="tab" href="#menu1">مسابقة الشهر</a></li>
+                                <li className="active"><a data-toggle="tab" href="#menu1">المسابقة الحالية</a></li>
                                 <li><a data-toggle="tab" href="#menu2">مسابقات</a></li>
                                 <li><a data-toggle="tab" href="#menu3" id="1">الفائزون في المسابقات</a></li>
                             </ul>
