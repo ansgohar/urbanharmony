@@ -10,13 +10,15 @@
   },
   "attributes": {
     "name": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "age": {
       "type": "integer"
     },
     "email": {
-      "type": "email"
+      "type": "email",
+      "required": true
     },
     "phone": {
       "type": "string"
@@ -25,10 +27,6 @@
       "model": "file",
       "via": "related",
       "plugin": "upload"
-    },
-    "competition": {
-      "model": "competitions",
-      "via": "contestant"
     },
     "img1": {
       "type": "string"
@@ -40,12 +38,17 @@
       "type": "string"
     },
     "status": {
+      "default": "applied",
       "type": "enumeration",
       "enum": [
         "applied",
         "accepted",
         "winner"
       ]
+    },
+    "competitions": {
+      "model": "competitions",
+      "via": "contestants"
     }
   }
 }

@@ -99,6 +99,27 @@
     "attributes": {
       "status": {
         "appearance": ""
+      },
+      "name": {
+        "appearance": ""
+      },
+      "age": {
+        "appearance": ""
+      },
+      "email": {
+        "appearance": ""
+      },
+      "phone": {
+        "appearance": ""
+      },
+      "img1": {
+        "appearance": ""
+      },
+      "img2": {
+        "appearance": ""
+      },
+      "img3": {
+        "appearance": ""
       }
     }
   },
@@ -176,6 +197,28 @@
         "appearance": ""
       },
       "Summary": {
+        "appearance": ""
+      }
+    }
+  },
+  "competitions": {
+    "attributes": {
+      "Title": {
+        "appearance": ""
+      },
+      "Description": {
+        "appearance": ""
+      },
+      "Rules": {
+        "appearance": ""
+      },
+      "Judges": {
+        "appearance": ""
+      },
+      "awards": {
+        "appearance": ""
+      },
+      "deadline": {
         "appearance": ""
       }
     }
