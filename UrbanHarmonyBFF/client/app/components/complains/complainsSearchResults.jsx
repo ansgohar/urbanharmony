@@ -33,7 +33,7 @@ export default (async function modified_searchResults(values, dispatch){
     let payload = {
       dir: 'surveylists',
       filters: filters,
-      fields: ["fullAddress","buildingName","registrationNumber","buildingType","buildingValue","buildingNumber", "status"]
+      fields: ["_id", "fullAddress","buildingName","registrationNumber","buildingType","buildingValue","buildingNumber", "status"]
     };
 
     options['body'] = JSON.stringify(payload);
@@ -41,6 +41,7 @@ export default (async function modified_searchResults(values, dispatch){
     fetch(url, options)
       .then(res => {return res.json()})
       .then(body => {
+        console.log(body)
         let expression = jsonata('data.$.surveylists.{"id":_id, "registrationNO":registrationNumber, "type":buildingType, "address":fullAddress, "value":buildingValue,"status":status, "date":updatedAt,"buildingNo":buildingNumber,"buildingName":buildingName}');
         let surveyList = expression.evaluate(body);
 

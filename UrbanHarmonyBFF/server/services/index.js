@@ -20,4 +20,5 @@ module.exports = function (app) {
     require('./videoService')(app, serviceManager);
     require('./searchService')(app, serviceManager);
     require('./conferencesService')(app, serviceManager);
+    require('./petitionService')(app, serviceManager);
 };
