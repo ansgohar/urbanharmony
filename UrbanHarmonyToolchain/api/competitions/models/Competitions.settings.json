@@ -10,7 +10,8 @@
   },
   "attributes": {
     "Title": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "Description": {
       "type": "text"
@@ -25,16 +26,17 @@
       "type": "string"
     },
     "deadline": {
-      "type": "date"
-    },
-    "contestant": {
-      "collection": "contestant",
-      "via": "competition"
+      "type": "date",
+      "required": true
     },
     "photo": {
       "model": "file",
       "via": "related",
       "plugin": "upload"
+    },
+    "contestants": {
+      "collection": "contestant",
+      "via": "competitions"
     }
   }
 }
