@@ -2,14 +2,14 @@ type Competitions {
   _id: ID!
   createdAt: String!
   updatedAt: String!
-  Title: String
+  Title: String!
   Description: String
   Rules: String
   Judges: String
   awards: String
-  deadline: String
+  deadline: String!
   photo: UploadFile
-  contestant(sort: String, limit: Int, start: Int, where: JSON): [Contestant]
+  contestants(sort: String, limit: Int, start: Int, where: JSON): [Contestant]
 }
 
 type Conditionsandlaws {
@@ -50,16 +50,16 @@ type Contestant {
   _id: ID!
   createdAt: String!
   updatedAt: String!
-  name: String
+  name: String!
   age: Int
-  email: String
+  email: String!
   phone: String
   personalPhoto: UploadFile
-  competition: Competitions
   img1: String
   img2: String
   img3: String
   status: ENUM_CONTESTANT_STATUS
+  competitions: Competitions
 }
 
 enum ENUM_CONDITIONSANDLAWS_TYPE {
