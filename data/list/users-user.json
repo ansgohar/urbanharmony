@@ -1,0 +1,3 @@
+{"_id":{"$oid":"5aada2cb19053240274f24dc"},"username":"admin","password":"$2a$10$v1cn6cvEZFnZWpHnqPkwvuQOtkdQIHaKX5f8J1hCgjTHV/aApD60C","email":"hassana@eg.ibm.com","provider":"local","role":{"$oid":"5aada091b481b93fa08b9ffe"},"__v":0}
+{"_id":{"$oid":"5abd04248dd4ae0ef62ccdaa"},"username":"Mamdouh","email":"user@strapi.io","password":"mypass","provider":"local","role":{"$oid":"5af995eef03780cc70b4566f"},"__v":0}
+{"_id":{"$oid":"5ac5da7ff75e8f265f944722"},"username":"Strapi","email":"user@strapi2.io","password":"$2a$10$qGYHghGWLA1q1GRMSpAjIOfjSbCGecWgqoQ./2Hqec.VuHL7TRZvC","provider":"local","role":{"$oid":"5abcf6e4013fad0e0840e74f"},"__v":0}

@@ -1,5 +1,6 @@
 const fetch = require("node-fetch");
 const complains = require('./../services/service-manager').get('complain-services');
+const petitions = require('./../services/service-manager').get('petition-services');
 var express = require('express');
 
 
@@ -128,5 +129,23 @@ module.exports = function (app) {
 
     });
 
+    router.get('/petition', function (req, res, next) {
+        petitions.getAllPetitions(function (data) {
+            if (data === undefined || Object.keys(data).length == 0) {
+                res.json([]);
+            }
+            else if (Array.isArray(data)) {
+                res.json(data);
+            }
+            else {
+                res.json([data]);
+            }
+        });
+    
+    });
+    
     app.use("/complains", router);
 }
+
+
+

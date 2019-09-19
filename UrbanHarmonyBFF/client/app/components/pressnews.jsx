@@ -25,8 +25,12 @@ class MorePressNews extends React.Component {
         if (this.props.hide) {
             return null;
         }
-        let press = this.props.pressNews;
-        return press.map(a => {
+        let news = this.props.pressNews;
+        let sortedNews = news;
+        console.log(news);
+        console.log(sortedNews);
+        sortedNews.sort((a, b) => (a.DatePublished < b.DatePublished) ? 1 : -1)
+        return sortedNews.map(a => {
             return <Press record={a} key={a.id} />;
         });
     }

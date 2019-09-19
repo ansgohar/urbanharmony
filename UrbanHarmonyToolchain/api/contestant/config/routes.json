@@ -10,6 +10,14 @@
     },
     {
       "method": "GET",
+      "path": "/contestant/count",
+      "handler": "Contestant.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
       "path": "/contestant/:_id",
       "handler": "Contestant.findOne",
       "config": {

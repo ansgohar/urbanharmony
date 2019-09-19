@@ -33,6 +33,16 @@ module.exports = {
   },
 
   /**
+   * Count competitions records.
+   *
+   * @return {Number}
+   */
+
+  count: async (ctx) => {
+    return strapi.services.competitions.count(ctx.query);
+  },
+
+  /**
    * Create a/an competitions record.
    *
    * @return {Object}
