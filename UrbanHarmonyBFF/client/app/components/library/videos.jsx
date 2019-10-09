@@ -48,7 +48,49 @@ class VID extends React.Component {
     }
 
     render() {
-        console.log(this.props.record)
+
+        function getId(url) {
+            var regExpYoutube = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+            var regExpFacebook = /facebook\.com\/([A-z0-9\.]+)\/videos(?:\/[0-9A-z].+)?\/(\d+)(?:.+)?$/gm;
+            var matchYoutube = url.match(regExpYoutube);
+            var matchFacebook = url.match(regExpFacebook);
+
+               if(matchYoutube && matchYoutube[2].length == 11) {
+                    let srcY = "//www.youtube.com/embed/"+matchYoutube[2];
+                    // return srcY;
+                    return <iframe className="iframe-size" width="560" height="315" src={srcY} frameborder="0" allowfullscreen/>
+            }
+             
+
+             else if(matchFacebook){
+
+            
+                let list=matchFacebook[0].split("/")
+               
+
+                let id;
+
+                for (let i=0 ; list.length>i ; i++){
+                    if(list != undefined && list[i].match(/^[0-9]+$/) != null){
+                        id = list[i];
+                    }
+                }
+               
+
+                let srcF = "https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Ffacebook%2Fvideos%2F"+id+"%2F&width=500&show_text=false&height=280&appId" ;
+
+                // return srcF;
+                return  <iframe className="iframe-size" src={srcF} width="500" height="280"  scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media" allowFullScreen="true"/>
+            }
+        
+            else{
+
+                // return url;
+                return <iframe className="iframe-size" src={url}/>
+
+            }
+        }
+        
         return (
             <div className="tile pressCard col-xs-12 padding-mobile">
                 <div className="col-xs-12 newscard-container no-padding">
@@ -86,7 +128,8 @@ class VID extends React.Component {
                         </table>
                     </div>
                     <div className="col-xs-12 col-sm-6 news-leftSide nopadding-mobile">
-                        <iframe className="iframe-size" src={this.props.record.url} />
+                        {getId(this.props.record.url)} 
+            {/* <iframe className="iframe-size" src={getId(this.props.record.url)}/> */}
                     </div>
                 </div>
                 <hr></hr>
