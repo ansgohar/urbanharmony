@@ -282,7 +282,7 @@ type Surveylist {
   buildingValue: String
   status: ENUM_SURVEYLIST_STATUS
   region: Regions
-  petition: Petition
+  petition(sort: String, limit: Int, start: Int, where: JSON): [Petition]
 }
 
 type UploadFile {

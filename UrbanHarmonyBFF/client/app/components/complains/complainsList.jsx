@@ -97,11 +97,14 @@ class AllComplainsList extends React.Component {
             accessor: 'status',
             Cell: props => {
                 let surveyed_building_ID = props.original.id;
-                let filtered_data = this.state.petitionList.filter((document) => document.surveylist._id === surveyed_building_ID);
-
-                console.log(surveyed_building_ID);
-                console.log(props);
-                console.log(this.state.petitionList);
+                let filtered_data = this.state.petitionList.filter((document) => {
+                    if (!document.hasOwnProperty('surveylist') || !document.surveylist.hasOwnProperty('_id')){
+                        console.log(document);
+                        console.log(surveyed_building_ID);
+                    }
+                    else (document.surveylist._id === surveyed_building_ID)
+                        return document;
+                });
 
                 if (filtered_data.length !== 0){
                     return (<span><a id={`${filtered_data[0]._id}`} onClick={() => this.showData(filtered_data[0]._id)}>{this.translateStatus(props.value)}</a></span>)
