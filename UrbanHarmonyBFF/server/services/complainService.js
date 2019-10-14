@@ -11,7 +11,7 @@ class ComplainService {
 
     getSurveyList(callback) {
         auth.getAuthToken(function (token) {
-            fetch(url + 'surveylist', {
+            fetch(url + 'surveylist?_limit=7000', {
                     method: 'GET',
                     headers: {
                         "Content-Type": "application/json",
@@ -153,7 +153,7 @@ class ComplainService {
         // let query = encodeURIComponent('يوجد');
         auth.getAuthToken(function (token) {
 
-            fetch(url + 'surveylist?status=exists', {
+            fetch(url + 'surveylist?status=exists&_limit=7000', {
                     method: 'GET',
                     headers: {
                         "Content-Type": "application/json",
@@ -174,7 +174,7 @@ class ComplainService {
     getAllPetitions(callback) {
         auth.getAuthToken(function (token) {
 
-            fetch(url + 'petiton', {
+            fetch(url + 'petiton?_limit=7000', {
                     method: 'GET',
                     headers: {
                         "Content-Type": "application/json",
