@@ -204,6 +204,8 @@ type Projects {
   Title: String
   imgBefore: UploadFile
   imgAfter: UploadFile
+  imgBefore2: UploadFile
+  imgAfter2: UploadFile
 }
 
 type Query {

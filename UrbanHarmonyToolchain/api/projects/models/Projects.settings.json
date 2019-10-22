@@ -39,6 +39,17 @@
       "model": "file",
       "via": "related",
       "plugin": "upload"
+    },
+    "imgBefore2": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload"
+    },
+    "imgAfter2": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload"
     }
+    
   }
 }
