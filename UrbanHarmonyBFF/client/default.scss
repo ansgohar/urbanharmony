@@ -331,10 +331,14 @@ nav ul li a:active {
     width: 100%;
     word-wrap: break-word;
     padding: 20px 20px 0 20px;
-    max-height: 167px;
+    max-width: height 70px; ;
     overflow: hidden;
     font-size: 14px;
     line-height: 30px;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
 }
 .carouselContent h2 {
 	padding-right: 20px;
@@ -342,12 +346,18 @@ nav ul li a:active {
 }
 .thumb-cont{
     float: right;
-    padding: 15px;
-    margin-top: 10px;
+    //padding: 15px;
+    //margin-top: 10px;
 }
 .thumb-img {
     width: 100px;
 }
+
+.thumb-img-news {
+    width: 200px;
+    padding-right: 15px;
+}
+
 .carouselContent a {
 	font-weight: bolder;
 	padding-right: 20px;
@@ -2703,14 +2713,17 @@ background-color:#f5f5f5;
     .carouselContent{
         width: 51%;
         bottom: 0px;
-        margin-top: 122px;
+        margin-top: 50px;
+        padding-top: 50px;
     }
     .carouselContent h2{
         font-size: 14px;
-        margin-top: 119px;
+        margin-top: 50px;
+ 
     }
     .thumb-cont{
-        margin-top: 102px;
+        margin-top: 30px;
+        padding-top: 50px;
     }
     .carouselContent p{
         line-height: 21px;
