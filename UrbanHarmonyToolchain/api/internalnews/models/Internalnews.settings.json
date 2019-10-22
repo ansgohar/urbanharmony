@@ -37,6 +37,11 @@
     },
     "datePublished": {
       "type": "date"
+    },
+    "image2": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload"
     }
   }
 }

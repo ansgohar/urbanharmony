@@ -140,6 +140,7 @@ type Internalnews {
   FullArticle: String
   image: UploadFile
   datePublished: String
+  image2: UploadFile
 }
 
 type Journal {
