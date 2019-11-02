@@ -169,6 +169,42 @@
     "attributes": {
       "datePublished": {
         "appearance": ""
+      },
+      "new_paragraph1": {
+        "appearance": ""
+      },
+      "new_image1Alt": {
+        "appearance": ""
+      },
+      "new_image1Comment": {
+        "appearance": ""
+      },
+      "new_paragraph2": {
+        "appearance": ""
+      },
+      "new_image2Alt": {
+        "appearance": ""
+      },
+      "new_paragraph3": {
+        "appearance": ""
+      },
+      "new_image3Alt": {
+        "appearance": ""
+      },
+      "new_paragraph4": {
+        "appearance": ""
+      },
+      "new_image4Alt": {
+        "appearance": ""
+      },
+      "new_paragraph5": {
+        "appearance": ""
+      },
+      "new_image5Alt": {
+        "appearance": ""
+      },
+      "news_id": {
+        "appearance": ""
       }
     }
   },
@@ -219,6 +255,28 @@
         "appearance": ""
       },
       "deadline": {
+        "appearance": ""
+      }
+    }
+  },
+  "temporary": {
+    "attributes": {
+      "title": {
+        "appearance": ""
+      },
+      "description": {
+        "appearance": ""
+      },
+      "link": {
+        "appearance": ""
+      },
+      "deadline": {
+        "appearance": ""
+      },
+      "isActive": {
+        "appearance": ""
+      },
+      "type": {
         "appearance": ""
       }
     }
