@@ -59,9 +59,11 @@ class PrjID extends React.Component {
                     <p>{this.props.record.detail}</p>
                     
                     {/* <img className="inline-image" src={this.props.record.imageBefore} /> */}
-                    <Image src={this.props.record.imageBefore} class={"inline-image"}/> 
+                    <Image src={this.props.record.imageBefore} class={"inline-image-new"}/> 
+                    <Image src={this.props.record.imageBefore2} class={"inline-image-new"}/> 
                     {/* <img className="inline-image" src={this.props.record.imageAfter} /> */}
-                    <Image src={this.props.record.imageAfter} class={"inline-image"}/> 
+                    <Image src={this.props.record.imageAfter} class={"inline-image-new"}/> 
+                    <Image src={this.props.record.imageAfter2} class={"inline-image-new"}/> 
                     {/* <div className="col-xs-12 no-padding">
                         <a href="#" className="share-btn"></a>
                         <a href="#" className="pdf-btn"></a>
