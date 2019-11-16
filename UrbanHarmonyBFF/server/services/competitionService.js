@@ -33,7 +33,7 @@ class CompetitionService {
                 return response.json();
             })
             .then(function (myJson) {
-                let expression = jsonata('$.{"id":_id,"title":Title,"description":Description, "rules": Rules, "judges" : Judges, "deadline" : Deadline, "awards" : awards}');
+                let expression = jsonata('$.{"id":_id,"title":Title,"description":Description, "rules": Rules, "judges" : Judges, "deadline" : deadline, "awards" : awards}');
                 let competitionOfTheMonth = expression.evaluate(myJson);
                 callback(competitionOfTheMonth);
             });

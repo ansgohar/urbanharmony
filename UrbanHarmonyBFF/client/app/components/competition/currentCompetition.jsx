@@ -19,17 +19,22 @@ class CurrentCompetition extends React.Component {
     }
     render() {
 
+        let date = new Date();
+
         let currentComps = this.props.competition.map(value => {
-            return <React.Fragment>
-                <div className="cardText col-xs-12">
-                    <h2> {value.title}</h2>
-                    <ReactMarkdown source={value.description} />
-                    <ReactMarkdown source={value.rules} />
-                    <p>{value.awards}</p>
-                    <ReactMarkdown source={value.judges} />
-                </div>
-                <hr></hr>
-            </React.Fragment>;
+            if ((new Date()) <= (new Date(value.deadline))){
+                return <React.Fragment>
+                    <div className="cardText col-xs-12">
+                        <h2> {value.title}</h2>
+                        <ReactMarkdown source={value.description} />
+                        <ReactMarkdown source={value.rules} />
+                        <p>{value.awards}</p>
+                        <ReactMarkdown source={value.judges} />
+                    </div>
+                    <hr></hr>
+                </React.Fragment>;
+            }
+            
         });
 
         return (
