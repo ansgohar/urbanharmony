@@ -44,10 +44,10 @@ class CompetitionService {
                 }
             }
 
-            fetch(url + 'competitions', payload)
+            fetch(url + 'competitions/?_limit=1000&_sort=-createdAt', payload)
             .then(res => res.json())
             .then(function (json) {
-                let expression = jsonata('$.{"id":_id,"title":Title,"description":Description, "rules": Rules, "judges" : Judges, "deadline" : deadline, "image" :  "' + url.slice(0, -1) + '"& photo.url, "awards" : awards}');
+                let expression = jsonata('$.{"id":_id,"title":Title,"description":Description, "rules": Rules, "judges" : Judges, "deadline" : deadline, "image" :  "' + url.slice(0, -1) + '"& photo.url, "awards" : awards, "PDF": "' + url.slice(0, -1) + '" & extraInfo.url}');
                 let competitions = expression.evaluate(json);
                 
                 
@@ -72,7 +72,7 @@ class CompetitionService {
             fetch(url + 'competitions?_id=' + ID, payload)
             .then(res => res.json())
             .then(function (json) {
-                let expression = jsonata('$.{"id":_id,"title":Title,"description":Description, "rules": Rules, "judges" : Judges, "deadline" : deadline, "image" :  "' + url.slice(0, -1) + '"& photo.url, "awards" : awards}');
+                let expression = jsonata('$.{"id":_id,"title":Title,"description":Description, "rules": Rules, "judges" : Judges, "deadline" : deadline, "image" :  "' + url.slice(0, -1) + '"& photo.url, "awards" : awards, "PDF": "' + url.slice(0, -1) + '" & extraInfo.url}');
                 let competitionID = expression.evaluate(json);
                 callback(competitionID);
             });

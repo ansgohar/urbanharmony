@@ -110,6 +110,7 @@ class CmpID extends React.Component {
                         <p>{this.props.competition.awards}</p>
                         <h3> الحكام : </h3>
                         <ReactMarkdown source={this.props.competition.judges} />
+                        {this.props.competition.PDF.includes("uploads") ? <React.Fragment><p>المزيد من التفاصيل: <a href={this.props.competition.PDF} target="_blank">عرض الملف</a></p></React.Fragment> : ''}
                     </div>
                 </div>
             );
