@@ -10,50 +10,68 @@ const auth = require('../services/service-manager').get('auth-service');
 class ComplainService {
 
     getSurveyList(callback) {
-        fetch(url + 'surveylist')
-            .then(function (response) {
-                return response.json();
-            })
-            .then(function (myJson) {
-                let expression = jsonata('$.{"id":_id, "registrationNO":registrationNumber, "type":buildingType, "address":fullAddress, "value":buildingValue,"status":status, "date":updatedAt, "region":region.regionName,"buildingNo":buildingNumber,"buildingName":buildingName}');
-                let surveyList = expression.evaluate(myJson);
-                callback(surveyList);
-            });
+        auth.getAuthToken(function (token) {
+            fetch(url + 'surveylist?_limit=7000', {
+                    method: 'GET',
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Authorization": `Bearer ${token}`
+                    }
+                })
+                .then(function (response) {
+                    return response.json();
+                })
+                .then(function (myJson) {
+                    let expression = jsonata('$.{"id":_id, "registrationNO":registrationNumber, "type":buildingType, "address":fullAddress, "value":buildingValue,"status":status, "date":updatedAt, "region":region.regionName,"buildingNo":buildingNumber,"buildingName":buildingName}');
+                    let surveyList = expression.evaluate(myJson);
+                    callback(surveyList);
+                });
+        });
     }
 
 
     getSearchResults(SearchQuery, callback) {
-        fetch(url + 'surveylist?' + SearchQuery)
-            .then(function (response) {
-                return response.json();
-            })
-            .then(function (myJson) {
-                //console.log(myJson);
-                let expression = jsonata('$.{"id":_id, "registrationNO":registrationNumber, "type":buildingType, "address":fullAddress, "value":buildingValue,"status":status, "date":updatedAt, "region":region.regionName,"buildingNo":buildingNumber,"buildingName":buildingName}');
-                let surveyList = expression.evaluate(myJson);
-                callback(surveyList);
-            });
+        auth.getAuthToken(function (token) {
+            fetch(url + 'surveylist?' + SearchQuery, {
+                    method: 'GET',
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Authorization": `Bearer ${token}`
+                    }
+                })
+                .then(function (response) {
+                    return response.json();
+                })
+                .then(function (myJson) {
+                    //console.log(myJson);
+                    let expression = jsonata('$.{"id":_id, "registrationNO":registrationNumber, "type":buildingType, "address":fullAddress, "value":buildingValue,"status":status, "date":updatedAt, "region":region.regionName,"buildingNo":buildingNumber,"buildingName":buildingName}');
+                    let surveyList = expression.evaluate(myJson);
+                    callback(surveyList);
+                });
+        });
     }
 
     searhByAddressInSurveylist(searchAddress, callback) { // TODO: Update with auth
         // let queryAddress = encodeURIComponent(searchAddress);
-        auth.getAuthToken(function(token){
-        let bodyParam = { query: "query { surveylists (where: { fullAddress_contains:\"" + searchAddress + "\"}){fullAddress buildingName registrationNumber buildingType buildingValue buildingNumber status}}" };
-        fetch(url + 'graphql', {
-            method: 'POST',
-            body: JSON.stringify(bodyParam),
-            headers: {
-                "Content-Type": "application/json",
-                "Authorization": `Bearer ${token}`
-            }
-        }).then(function (response) {
-            return response.json();
-        })
-            .then(function (myJson) {
-                let expression = jsonata('data.$.surveylists.{"id":_id, "registrationNO":registrationNumber, "type":buildingType, "address":fullAddress, "value":buildingValue,"status":status, "date":updatedAt,"buildingNo":buildingNumber,"buildingName":buildingName}');
-                let surveyList = expression.evaluate(myJson);
-                callback(surveyList);
-            });
+        auth.getAuthToken(function (token) {
+            let bodyParam = {
+                query: "query { surveylists (where: { fullAddress_contains:\"" + searchAddress + "\"}){fullAddress buildingName registrationNumber buildingType buildingValue buildingNumber status}}"
+            };
+            fetch(url + 'graphql', {
+                    method: 'POST',
+                    body: JSON.stringify(bodyParam),
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Authorization": `Bearer ${token}`
+                    }
+                }).then(function (response) {
+                    return response.json();
+                })
+                .then(function (myJson) {
+                    let expression = jsonata('data.$.surveylists.{"id":_id, "registrationNO":registrationNumber, "type":buildingType, "address":fullAddress, "value":buildingValue,"status":status, "date":updatedAt,"buildingNo":buildingNumber,"buildingName":buildingName}');
+                    let surveyList = expression.evaluate(myJson);
+                    callback(surveyList);
+                });
 
         })
     }
@@ -61,98 +79,143 @@ class ComplainService {
 
     searchByAddressInComplainslist(addressQuery, callback) { // TODO: update with auth
         // let queryAddress = encodeURIComponent(searchAddress);
-        auth.getAuthToken(function(token){
-            let bodyParam = { query: "query { surveylists (where: { fullAddress_contains:\"" + addressQuery + "\",  status_contains:\"exists\"}){fullAddress buildingName registrationNumber buildingType buildingValue buildingNumber status}}" };
+        auth.getAuthToken(function (token) {
+            let bodyParam = {
+                query: "query { surveylists (where: { fullAddress_contains:\"" + addressQuery + "\",  status_contains:\"exists\"}){fullAddress buildingName registrationNumber buildingType buildingValue buildingNumber status}}"
+            };
             fetch(url + 'graphql', {
-            method: 'POST',
-            body: JSON.stringify(bodyParam),
-            headers: {
-                "Content-Type": "application/json",
-                "Authorization": `Bearer ${token}`
-            }
-        }).then(function (response) {
-            return response.json();
-        })
-            .then(function (myJson) {
-                // //console.log(myJson);
-                let expression = jsonata('data.$.surveylists.{"id":_id, "registrationNO":registrationNumber, "type":buildingType, "address":fullAddress, "value":buildingValue,"status":status, "date":updatedAt,"buildingNo":buildingNumber,"buildingName":buildingName}');
-                let cmplist = expression.evaluate(myJson);
-                callback(cmplist);
-            });
+                    method: 'POST',
+                    body: JSON.stringify(bodyParam),
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Authorization": `Bearer ${token}`
+                    }
+                }).then(function (response) {
+                    return response.json();
+                })
+                .then(function (myJson) {
+                    // //console.log(myJson);
+                    let expression = jsonata('data.$.surveylists.{"id":_id, "registrationNO":registrationNumber, "type":buildingType, "address":fullAddress, "value":buildingValue,"status":status, "date":updatedAt,"buildingNo":buildingNumber,"buildingName":buildingName}');
+                    let cmplist = expression.evaluate(myJson);
+                    callback(cmplist);
+                });
         })
     }
 
 
 
     getComplainsSearchResults(Search, callback) {
-        fetch(url + 'surveylist?status=exists&' + Search)
-            .then(function (response) {
-                return response.json();
-            })
-            .then(function (myJson) {
-                let expression = jsonata('$.{"id":_id, "registrationNO":registrationNumber, "type":buildingType, "address":fullAddress, "value":buildingValue,"status":status, "date":updatedAt, "region":region.regionName,"buildingNo":buildingNumber,"buildingName":buildingName}');
-                let cmplist = expression.evaluate(myJson);
-                callback(cmplist);
-            });
+        auth.getAuthToken(function (token) {
+
+            fetch(url + 'surveylist?status=exists&' + Search, {
+                    method: 'GET',
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Authorization": `Bearer ${token}`
+                    }
+                })
+                .then(function (response) {
+                    return response.json();
+                })
+                .then(function (myJson) {
+                    let expression = jsonata('$.{"id":_id, "registrationNO":registrationNumber, "type":buildingType, "address":fullAddress, "value":buildingValue,"status":status, "date":updatedAt, "region":region.regionName,"buildingNo":buildingNumber,"buildingName":buildingName}');
+                    let cmplist = expression.evaluate(myJson);
+                    callback(cmplist);
+                });
+        });
     }
 
 
     getGovernorates(callback) {
+        auth.getAuthToken(function (token) {
 
-        fetch(url + 'Governorate')
-            .then(function (response) {
-                return response.json();
-            })
-            .then(function (myJson) {
-                let expression = jsonata('$.{"id":_id, "name":governateName, "region":regions.regionName}');
-                let governorates = expression.evaluate(myJson);
-                callback(governorates);
-            });
+            fetch(url + 'Governorate', {
+                    method: 'GET',
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Authorization": `Bearer ${token}`
+                    }
+                })
+                .then(function (response) {
+                    return response.json();
+                })
+                .then(function (myJson) {
+                    let expression = jsonata('$.{"id":_id, "name":governateName, "region":regions.regionName}');
+                    let governorates = expression.evaluate(myJson);
+                    callback(governorates);
+                });
+        });
     }
 
 
 
     getAllComplainsList(callback) {
         // let query = encodeURIComponent('يوجد');
-        fetch(url + 'surveylist?status=exists')
-            .then(function (response) {
-                return response.json();
-            })
-            .then(function (myJson) {
-                let expression = jsonata('$.{"id":_id, "registrationNO":registrationNumber, "type":buildingType, "address":fullAddress, "value":buildingValue,"status":status, "date":updatedAt, "region":region.regionName,"buildingNo":buildingNumber,"buildingName":buildingName}');
-                let cmplist = expression.evaluate(myJson);
-                callback(cmplist);
-            });
+        auth.getAuthToken(function (token) {
+
+            fetch(url + 'surveylist?status=exists&_limit=7000', {
+                    method: 'GET',
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Authorization": `Bearer ${token}`
+                    }
+                })
+                .then(function (response) {
+                    return response.json();
+                })
+                .then(function (myJson) {
+                    let expression = jsonata('$.{"id":_id, "registrationNO":registrationNumber, "type":buildingType, "address":fullAddress, "value":buildingValue,"status":status, "date":updatedAt, "region":region.regionName,"buildingNo":buildingNumber,"buildingName":buildingName}');
+                    let cmplist = expression.evaluate(myJson);
+                    callback(cmplist);
+                });
+        });
     }
 
-    getAllPetitions(callback){
-        
-        fetch(url + 'petiton')
-            .then(function (response) {
-                return response.json();
-            })
-            .then(function (myJson) {
-                // let expression = jsonata('$.{"id":_id, "registrationNO":registrationNumber, "type":buildingType, "address":fullAddress, "value":buildingValue,"status":status, "date":updatedAt, "region":region.regionName,"buildingNo":buildingNumber,"buildingName":buildingName}');
-                // let cmplist = expression.evaluate(myJson);
-                callback(myJson);
-            });
+    getAllPetitions(callback) {
+        auth.getAuthToken(function (token) {
 
+            fetch(url + 'petiton?_limit=7000', {
+                    method: 'GET',
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Authorization": `Bearer ${token}`
+                    }
+                })
+                .then(function (response) {
+                    return response.json();
+                })
+                .then(function (myJson) {
+                    // let expression = jsonata('$.{"id":_id, "registrationNO":registrationNumber, "type":buildingType, "address":fullAddress, "value":buildingValue,"status":status, "date":updatedAt, "region":region.regionName,"buildingNo":buildingNumber,"buildingName":buildingName}');
+                    // let cmplist = expression.evaluate(myJson);
+                    callback(myJson);
+                });
+
+        });
     }
 
 
 
 
     getRegionsByGovernorate(id, callback) {
+        auth.getAuthToken(function (token) {
 
-        fetch(url + 'regions?governorate._id=' + id)
-            .then(function (response) {
-                return response.json();
-            })
-            .then(function (myJson) {
-                let expression = jsonata('$.{"id":_id, "name":regionName}');
-                let regions = expression.evaluate(myJson);
-                callback(regions);
-            });
+            fetch(url + 'regions?governorate._id=' + id, {
+                    method: 'GET',
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Authorization": `Bearer ${token}`
+                    }
+                })
+                .then(function (response) {
+                    return response.json();
+                })
+                .then(function (myJson) {
+                    let expression = jsonata('$.{"id":_id, "name":regionName}');
+                    let regions = expression.evaluate(myJson);
+                    callback(regions);
+                });
+        });
+
     }
 }
 

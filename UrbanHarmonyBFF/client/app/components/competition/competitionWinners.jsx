@@ -4,6 +4,7 @@ import { browserHistory } from 'react-router';
 import { getWinners } from '../../actions/index'
 import Image from '../image.jsx'
 
+
 class CompetitionWinners extends React.Component {
 
     constructor(props) {
@@ -20,6 +21,7 @@ class CompetitionWinners extends React.Component {
             );
     }
     render() {
+        console.log(this.props)
         return (
             <div className="col-xs-12 winners">
                 <h2>الفائزون</h2>
@@ -40,16 +42,16 @@ class Winner extends React.Component {
                 <div className="col-xs-12 newscard-container nopadding-mobile">
                     <div className="col-xs-12 col-sm-3 news-rightSide nopadding-mobile">
                     <div className="image-container-4x3" >  
-                    <Image src={this.props.record.image} /> 
+                    <Image src={this.props.record.personalPhoto.url} /> 
 </div>
                         </div>
                     <div className="col-xs-12 col-sm-9 news-leftSide">
                         <div className="col-xs-12 winner-name no-padding">
                             <div><span>إسم الفائز</span>{this.props.record.name}</div>
-                            <div><span>المسابقة</span>{this.props.record.competitionName}</div>
+                            <div><span>المسابقة</span></div>
                         </div>
                         <p> {this.props.record.description} </p>
-                        <a className="read-more" href={"/competitionInfo?competition="+this.props.record.compID}>المزيد</a>
+                        <a className="read-more" href={"/competitionInfo?competition="+this.props.record.competition}>المزيد</a>
                     </div>
                 </div>
             </div>

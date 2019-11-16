@@ -39,7 +39,7 @@
       "via": "building"
     },
     "petition": {
-      "model": "petition",
+      "collection": "petition",
       "via": "surveylist"
     }
   }

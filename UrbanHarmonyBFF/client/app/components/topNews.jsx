@@ -42,10 +42,11 @@ class News extends React.Component {
             <div className="carouselContent">
             <div className="thumb-cont">
                 {/* <img class="thumb-img" src={this.props.rec.image}></img> */}
-                <Image src={this.props.rec.image} class={"thumb-img"}/> 
+                 <h2 className="h2NewsTop">{this.props.rec.title}</h2>
+                <Image src={this.props.rec.image} class={"thumb-img-news"}/> 
                 </div>
-                <h2 className="h2NewsTop">{this.props.rec.title}</h2>
-            <p>{this.props.rec.article}</p>
+               
+            <p>{this.props.rec.article}</p> 
             <a target="_blank" href={this.props.rec.linkURL}>مصدر الخبر</a>
         </div>
         );

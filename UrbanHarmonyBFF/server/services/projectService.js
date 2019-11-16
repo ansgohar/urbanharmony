@@ -37,7 +37,7 @@ class ProjectService {
                 return response.json();
             })
             .then(function (myJson) {
-                let expression = jsonata('$.{"status":Status,"detail":Details,"event":Event,"place":Place, "id":_id,"title":Title,"imageBefore":"' + url.slice(0, -1) + '"& imgBefore.url, "imageAfter":"' + url.slice(0, -1) + '"& imgAfter.url}');
+                let expression = jsonata('$.{"status":Status,"detail":Details,"event":Event,"place":Place, "id":_id,"title":Title,"imageBefore":"' + url.slice(0, -1) + '"& imgBefore.url, "imageAfter":"' + url.slice(0, -1) + '"& imgAfter.url, "imageBefore2":"' + url.slice(0, -1) + '"& imgBefore2.url, "imageAfter2":"' + url.slice(0, -1) + '"& imgAfter2.url}');
                 let projectObject = expression.evaluate(myJson);
                 callback(projectObject);
             });

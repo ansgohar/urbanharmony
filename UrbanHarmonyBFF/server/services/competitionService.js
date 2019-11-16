@@ -49,8 +49,8 @@ class CompetitionService {
             .then(function (json) {
                 let expression = jsonata('$.{"id":_id,"title":Title,"description":Description, "rules": Rules, "judges" : Judges, "deadline" : deadline, "image" :  "' + url.slice(0, -1) + '"& photo.url, "awards" : awards}');
                 let competitions = expression.evaluate(json);
-                console.log(competitions);
-                console.log(json);
+                
+                
                 callback(competitions);
             });
             
@@ -94,9 +94,14 @@ class CompetitionService {
             fetch(url + 'contestant?status=winner', payload)
             .then(res => res.json())
             .then(function (json) {
-                let expression = jsonata('$.{"id":_id,"name":name,"competitionName":competition.Title, "description": competition.Description,"image":"' + url.slice(0, -1) + '"& personalPhoto.url, "compID":competition._id}');
-                let winners = expression.evaluate(json);
-                callback(winners);
+                // let expression = jsonata('$.{"id":_id,"name":name,"competitionName":competition.Title, "description": competition.Description,"image":"' + url.slice(0, -1) + '"& personalPhoto.url, "compID":competition._id}');
+                // let winners = expression.evaluate(json);
+             
+         
+                for(let i=0 ; json.length > i ; i++){
+                    json[i].personalPhoto.url = url.slice(0,-1) + json[i].personalPhoto.url;  
+                }
+                callback(json);
             });
 
         });
