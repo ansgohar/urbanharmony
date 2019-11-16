@@ -54,7 +54,7 @@ class CompetitionDetails extends React.Component {
                                                         <li>المهنة</li>
                                                         <li>المحمول</li>
                                                     </ul>
-                                                    <p>على البريد الالكتروني لهيئة التنسيق الحضاري info@urbanharmony.org</p>
+                                                    <p>على البريد الالكتروني لجهاز التنسيق الحضاري info@urbanharmony.org</p>
                                                     {/* <Subscribe onSubmit={showResults} /> */}
                                                 </div>
                                                 {/* <div id="menu1tab3" className="col-xs-12 tab-pane subtab fade no-padding">
