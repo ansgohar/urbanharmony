@@ -18,13 +18,23 @@ class CurrentCompetition extends React.Component {
         this.competitionOfTheMonth();
     }
     render() {
+
+        let currentComps = this.props.competition.map(value => {
+            return <React.Fragment>
+                <div className="cardText col-xs-12">
+                    <h2> {value.title}</h2>
+                    <ReactMarkdown source={value.description} />
+                    <ReactMarkdown source={value.rules} />
+                    <p>{value.awards}</p>
+                    <ReactMarkdown source={value.judges} />
+                </div>
+                <hr></hr>
+            </React.Fragment>;
+        });
+
         return (
-            <div className="cardText col-xs-12">
-                <h2> {this.props.competition.title}</h2>
-                <ReactMarkdown source={this.props.competition.description} />
-                <ReactMarkdown source={this.props.competition.rules} />
-                <p>{this.props.competition.awards}</p>
-                <ReactMarkdown source={this.props.competition.judges} />
+            <div>
+                {currentComps}
             </div>
         );
     }

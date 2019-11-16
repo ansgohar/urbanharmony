@@ -18,8 +18,17 @@ class CompetitionService {
                     Authorization: `Bearer ${token}`
                 }
             }
+            
+            let date = new Date();
+            let year = date.getFullYear();
+            let month = date.getMonth();
 
-            fetch(url + 'competitions?_sort=deadline:desc&_limit=1', payload)
+            let firstDay = new Date(year, month, 1);
+            let lastDay = new Date(year, month + 1, 0);
+
+            let query = `_sort=-createdAt&_limit=2&deadline_gt=${firstDay.toISOString()}&deadline_lte=${lastDay.toISOString()}`;
+
+            fetch(url + `competitions?${query}`, payload)
             .then(function (response) {
                 return response.json();
             })
