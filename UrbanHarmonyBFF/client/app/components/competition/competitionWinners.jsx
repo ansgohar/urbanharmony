@@ -37,12 +37,19 @@ class Winner extends React.Component {
         super(props);
     }
     render() {
+
+        let imageAvailable = true;
+
+        if (!this.props.record.personalPhoto){
+            imageAvailable = false;
+        }
+
         return (
             <div className="col-xs-12 tite conferenceCard no-padding">
                 <div className="col-xs-12 newscard-container nopadding-mobile">
                     <div className="col-xs-12 col-sm-3 news-rightSide nopadding-mobile">
                     <div className="image-container-4x3" >  
-                    <Image src={this.props.record.personalPhoto.url} /> 
+                    {imageAvailable ? <Image src={this.props.record.personalPhoto.url}/> : <Image src={'../../../../public/assets/images/no-image-4x3.png'} />} 
 </div>
                         </div>
                     <div className="col-xs-12 col-sm-9 news-leftSide">
@@ -51,7 +58,7 @@ class Winner extends React.Component {
                             <div><span>المسابقة</span></div>
                         </div>
                         <p> {this.props.record.description} </p>
-                        <a className="read-more" href={"/competitionInfo?competition="+this.props.record.competition}>المزيد</a>
+                        <a className="read-more" href={"/competitionInfo?competition="+this.props.record.competitions.id}>المزيد</a>
                     </div>
                 </div>
             </div>

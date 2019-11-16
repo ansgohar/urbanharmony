@@ -108,7 +108,8 @@ class CompetitionService {
              
          
                 for(let i=0 ; json.length > i ; i++){
-                    json[i].personalPhoto.url = url.slice(0,-1) + json[i].personalPhoto.url;  
+                    if (json[i].personalPhoto !== null)
+                        json[i].personalPhoto.url = url.slice(0,-1) + json[i].personalPhoto.url;
                 }
                 callback(json);
             });
