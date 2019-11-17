@@ -25,7 +25,8 @@
         "Paper",
         "Electronic"
       ],
-      "required": true
+      "required": true,
+      "default": "Social"
     },
     "FullArticle": {
       "type": "text"
