@@ -135,8 +135,6 @@ module.exports = {
   amountLimiting: (params) => {
     if (params.limit && params.limit < 0) {
       params.limit = 0;
-    } else if (params.limit && params.limit > 100) {
-      params.limit = 100;
     }
 
     return params;
