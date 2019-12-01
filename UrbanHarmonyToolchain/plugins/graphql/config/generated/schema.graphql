@@ -9,6 +9,7 @@ type Competitions {
   awards: String
   deadline: String!
   photo: UploadFile
+  extraInfo: UploadFile
   contestants(sort: String, limit: Int, start: Int, where: JSON): [Contestant]
 }
 
@@ -171,6 +172,7 @@ type Journal {
   ThumpURL: String
   ImgURL: String
   DatePublished: String
+  image: UploadFile
 }
 
 """
@@ -194,6 +196,7 @@ type Library {
   title: String!
   image: UploadFile
   seriesName: String
+  abstract: String
 }
 
 union Morph = Competitions | Conditionsandlaws | Conferences | Consultingoffice | Contestant | Governorate | Incident | Internalnews | Journal | Library | Petition | Projects | Regions | Studies | Surveylist | Videos | UploadFile | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsUser

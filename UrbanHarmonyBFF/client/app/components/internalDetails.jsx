@@ -84,7 +84,7 @@ class DetailID extends React.Component {
                     </div>
                     <div className="col-xs-12 news-leftSide">
                         <h3>{this.props.record.title}</h3>
-                        <span className="author">   كتبة  {this.props.record.author} </span>
+                        <span className="author">كتبه: جهاز التنسيق الحضاري </span>
                         <h5>تاريخ النشر : {convertDateToArabic(this.props.record.DatePublished)}</h5>
                         <ReactMarkdown source={this.props.record.p1} />
                         <div className="image-container-4x3">

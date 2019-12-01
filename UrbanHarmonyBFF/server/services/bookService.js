@@ -11,7 +11,7 @@ class BooksService {
                 return response.json();
             })
             .then(function (myJson) {
-                let expression = jsonata('$.{"id":_id,"title":title,"ISBN":ISBN,"author":author,"classNO":classNo,"location":location,"NumCopies":numberOfCopies,"printingNO":printingNo,"publisher":publisher,"publishYear":yearOfPublish,"image" :  "' +url.slice(0, -1) +'"& image.url, "bookCategory":bookcategory, "series":seriesName}');
+                let expression = jsonata('$.{"id":_id,"title":title,"ISBN":ISBN,"author":author,"classNO":classNo,"location":location,"NumCopies":numberOfCopies,"printingNO":printingNo,"publisher":publisher,"publishYear":yearOfPublish,"image" :  "' +url.slice(0, -1) +'"& image.url, "bookCategory":bookcategory, "series":seriesName, "abstract":abstract}');
                 let booksObject = expression.evaluate(myJson);
                 callback(booksObject);
             });

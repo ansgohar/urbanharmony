@@ -130,6 +130,8 @@ class BK extends React.Component {
 
 
     render() {
+
+        const abstractAvialable = this.props.record.abstract != undefined;
         return (
             <div class="col-xs-12 newscard-container nopadding-mobile">
                 <div class="col-xs-12 col-sm-3 news-rightSide nopadding-mobile">
@@ -164,6 +166,7 @@ class BK extends React.Component {
                                 <td>المجموعة التي ينتمي إليها الكتاب</td>
                                 <td>{this.translateLabel(this.props.record.bookCategory)}</td>
                             </tr>
+                            {!abstractAvialable ? "" : <React.Fragment><tr><td>نبذة</td><td>{this.props.record.abstract}</td></tr></React.Fragment>}
                         </table>
 
                     </div>

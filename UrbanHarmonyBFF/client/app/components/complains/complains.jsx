@@ -41,7 +41,7 @@ class ComplainsPage extends React.Component {
 
                                 <div className="col-xs-12 search-result">
                                     <div className="col-xs-12 result-title"> المباني داخل الحي  </div>
-
+                                    <strong>** يمكنك تكبير أو تصغير القوائم بسحبهم لليمين أو اليسار</strong>
                                     {/* =========== REACT TABLEEEE ============ */}
                                     <ComplainsData surveyList={this.props.surveyList} />
 
@@ -147,7 +147,9 @@ class ComplainsPage extends React.Component {
                                                         complainsList={this.props.complainsList} onSubmit={ComplainSearchResults}  />
 
                                                     <div className="col-xs-12 search-result">
-                                                        <div className="col-xs-12 result-title"></div>
+                                                        <div className="col-xs-12 result-title">
+                                                            <strong>** يمكنك تكبير أو تصغير القوائم بسحبهم لليمين أو اليسار</strong>
+                                                        </div>
                                                         <AllComplainsList complainsList={this.props.complainsList} />
 
                                                     </div>
