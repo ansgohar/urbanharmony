@@ -39,6 +39,9 @@
       },
       "seriesName": {
         "appearance": ""
+      },
+      "abstract": {
+        "appearance": "WYSIWYG"
       }
     }
   },

@@ -196,6 +196,7 @@ type Library {
   title: String!
   image: UploadFile
   seriesName: String
+  abstract: String
 }
 
 union Morph = Competitions | Conditionsandlaws | Conferences | Consultingoffice | Contestant | Governorate | Incident | Internalnews | Journal | Library | Petition | Projects | Regions | Studies | Surveylist | Videos | UploadFile | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsUser

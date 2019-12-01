@@ -54,6 +54,9 @@
     },
     "seriesName": {
       "type": "string"
+    },
+    "abstract": {
+      "type": "text"
     }
   }
 }
