@@ -29,6 +29,11 @@
     },
     "DatePublished": {
       "type": "date"
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload"
     }
   }
 }

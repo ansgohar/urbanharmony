@@ -31,30 +31,43 @@ class ComplainsData extends React.Component {
         const columns = [{
             Header: 'رقم التوثيق',
             id: 'registrationNO',
-            accessor: d => d.registrationNO,
+            type: Number,
+            accessor: d => {
+                if (d.registrationNO === " " || d.registrationNO === null || d.registrationNO === undefined){
+                    return Number(0);
+                } else{
+                    return Number(d.registrationNO);
+                }
+            },
         },
         {
             Header: 'نوع المبنى',
+            type: String,
             accessor: 'type'
         },
         {
             Header: 'العنوان',
+            type: String,
             accessor: 'address'
         },
         {
             Header: 'قيمة',
+            type: String,
             accessor: 'value'
         },
         {
             Header: 'اسم المبنى',
+            type: String,
             accessor: 'buildingName'
         },
         {
             Header: 'رقم المبنى',
+            type: Number,
             accessor: 'buildingNo'
         },
         {
             Header: 'حالة التظلم',
+            type: String,
             accessor: 'status',
             Cell: props => <span>{this.translateStatus(props.value)}</span>
         }]

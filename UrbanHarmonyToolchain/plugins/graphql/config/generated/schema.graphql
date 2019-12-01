@@ -172,6 +172,7 @@ type Journal {
   ThumpURL: String
   ImgURL: String
   DatePublished: String
+  image: UploadFile
 }
 
 """
