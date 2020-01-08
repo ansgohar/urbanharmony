@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import ReactTable from "react-table";
 import { getComplainsList } from '../../actions/index.js'
+import 'react-table/react-table.css';
 
 class AllComplainsList extends React.Component {
     constructor(props) {

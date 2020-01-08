@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import ReactTable from "react-table";
+import 'react-table/react-table.css';
 import { getComplainsSurveyList } from '../../actions/index.js'
 
 class ComplainsData extends React.Component {
