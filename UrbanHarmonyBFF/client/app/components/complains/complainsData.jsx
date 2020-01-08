@@ -51,6 +51,21 @@ class ComplainsData extends React.Component {
             type: String,
             accessor: 'address'
         },
+	    {
+            Header: 'المحافظة',
+            type: String,
+            accessor: 'governorate'
+        },
+		{
+            Header: 'المنطقة الرئيسية',
+            type: String,
+            accessor: 'mainArea'
+        },
+		{
+            Header: 'المنطقة الفرعية',
+            type: String,
+            accessor: 'subArea'
+        },
         {
             Header: 'قيمة',
             type: String,

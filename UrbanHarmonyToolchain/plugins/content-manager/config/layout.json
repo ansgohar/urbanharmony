@@ -13,6 +13,24 @@
     "attributes": {
       "regNumber": {
         "appearance": ""
+      },
+      "address": {
+        "appearance": ""
+      },
+      "governorate": {
+        "appearance": ""
+      },
+      "mainArea": {
+        "appearance": ""
+      },
+      "subArea": {
+        "appearance": ""
+      },
+      "registrationNumber": {
+        "appearance": ""
+      },
+      "buildingNumber": {
+        "appearance": ""
       }
     }
   },

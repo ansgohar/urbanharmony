@@ -56,11 +56,26 @@ class SurveySearch extends React.Component {
                         <Field className="input-search form-control" style={inputStyle} component="input" name="registrationNumber" type="text" placeholder="برجاء ادخال رقم التوثيق العقاري"/>
                     </div>
                     
-                    <div style={divStyle}>
-                        <label htmlFor="streetName" style={labelStyle}>العنوان</label>
-                        <Field className="input-search form-control" style={inputStyle} component="input" name="streetName" type="text" placeholder="برجاء ادخال العنوان او جزء منه"/>
-                    </div>
-                    
+					<div style={divStyle}>
+						<label htmlFor="address" style={labelStyle}>العنوان</label>
+						<Field className="input-search form-control" style={inputStyle} component="input" name="address" type="text" placeholder="برجاء ادخال العنوان او جزء منه" />
+					</div>
+			
+					<div style={divStyle}>
+						<label htmlFor="governorate" style={labelStyle}>المحافظة</label>
+						<Field className="input-search form-control" style={inputStyle} component="input" name="governorate" type="text" placeholder="برجاء ادخال المحافظة او جزء منها" />
+					</div>
+			
+					<div style={divStyle}>
+						<label htmlFor="mainArea" style={labelStyle}>المنطقة الرئيسية</label>
+						<Field className="input-search form-control" style={inputStyle} component="input" name="mainArea" type="text" placeholder="برجاء ادخال المنطقة الرئيسية او جزء منها" />
+					</div>
+			
+					<div style={divStyle}>
+						<label htmlFor="subArea" style={labelStyle}>المنطقة الفرعية</label>
+						<Field className="input-search form-control" style={inputStyle} component="input" name="subArea" type="text" placeholder="برجاء ادخال المنطقة الفرعية او جزء منها" />
+					</div>
+			
                     <div style={divStyle}>
                         <label htmlFor="buildingName" style={labelStyle}>إسم العقار</label>
                         <Field className="input-search form-control" style={inputStyle} component="input" name="buildingName" type="text" placeholder="برجاء ادخال اسم العقار او جزء منه"/>

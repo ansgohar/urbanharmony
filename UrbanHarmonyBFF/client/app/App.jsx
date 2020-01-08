@@ -37,13 +37,13 @@ class App extends React.Component {
                             </div>
                             <div className="burger-menu no-padding"><a href="#" className="burg-icon">&#9776;</a></div>
                             <nav className="navul col-xs-12 col-sm-12 col-md-10 no-padding">
-                                <ul id="myTopnav" className="col-xs-12 col-sm-12 col-md-10 topnav" >
+                                <ul id="myTopnav" className="col-xs-12 col-sm-12 col-md-10 topnav">
 
                                     <li className="menu-position active"><a href="/" id="home">الرئيسية</a></li>
                                     <li className="menu-position"><a href="/vision" >عن الجهاز</a></li>
                                     <li id="imp-service-menu" className="menu-position">
                                         <a href="#services">أهم الخدمات<strong class="caret"></strong> </a>
-                                        <ul id="imp-service-sub" class="second-level" style={{'width':'200px'}}>
+                                        <ul id="imp-service-sub" class="second-level" style={{'width':'200px', marginTop: 0}}>
                                             <li><a href="/complainsDetail">قوائم الحصر والتظلمات</a></li>
                                             <li><a href="/allIncidents">المرصد الحضاري</a></li>
                                             <li id="dropdow" style={{"width": "200px"}}><a href="/lawsDetails">القوانين</a></li>

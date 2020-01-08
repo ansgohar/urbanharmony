@@ -279,7 +279,6 @@ type Regions {
   updatedAt: String!
   regionName: String
   governorate: Governorate
-  building(sort: String, limit: Int, start: Int, where: JSON): [Surveylist]
 }
 
 type Studies {
@@ -297,14 +296,16 @@ type Surveylist {
   _id: ID!
   createdAt: String!
   updatedAt: String!
-  registrationNumber: String
+  registrationNumber: Int
   buildingType: String
-  buildingNumber: String
   buildingName: String
-  fullAddress: String
   buildingValue: String
   status: ENUM_SURVEYLIST_STATUS
-  region: Regions
+  address: String
+  governorate: String
+  mainArea: String
+  subArea: String
+  buildingNumber: Int
   petition(sort: String, limit: Int, start: Int, where: JSON): [Petition]
 }
 

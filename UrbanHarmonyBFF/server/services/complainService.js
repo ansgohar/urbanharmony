@@ -22,7 +22,7 @@ class ComplainService {
                     return response.json();
                 })
                 .then(function (myJson) {
-                    let expression = jsonata('$.{"id":_id, "registrationNO":registrationNumber, "type":buildingType, "address":fullAddress, "value":buildingValue,"status":status, "date":updatedAt, "region":region.regionName,"buildingNo":buildingNumber,"buildingName":buildingName}');
+                    let expression = jsonata('$.{"id":_id, "registrationNO":registrationNumber, "type":buildingType, "address":address, "governorate":governorate, "mainArea":mainArea, "subArea":subArea, "value":buildingValue,"status":status, "date":updatedAt, "region":region.regionName,"buildingNo":buildingNumber,"buildingName":buildingName}');
                     let surveyList = expression.evaluate(myJson);
                     callback(surveyList);
                 });
@@ -164,7 +164,7 @@ class ComplainService {
                     return response.json();
                 })
                 .then(function (myJson) {
-                    let expression = jsonata('$.{"id":_id, "registrationNO":registrationNumber, "type":buildingType, "address":fullAddress, "value":buildingValue,"status":status, "date":updatedAt, "region":region.regionName,"buildingNo":buildingNumber,"buildingName":buildingName}');
+                    let expression = jsonata('$.{"id":_id, "registrationNO":registrationNumber, "type":buildingType, "address":address, "governorate":governorate, "mainArea":mainArea, "subArea":subArea, "value":buildingValue,"status":status, "date":updatedAt, "region":region.regionName,"buildingNo":buildingNumber,"buildingName":buildingName}');
                     let cmplist = expression.evaluate(myJson);
                     callback(cmplist);
                 });
