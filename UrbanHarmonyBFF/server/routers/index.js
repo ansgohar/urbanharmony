@@ -30,5 +30,7 @@ module.exports = function (app) {
     
     require('./search')(app);
 
-    require('./conferencesList')(app)
+    require('./conferencesList')(app);
+
+    require('./contestant')(app);
 };  

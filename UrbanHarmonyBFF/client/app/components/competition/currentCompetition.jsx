@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { browserHistory } from 'react-router';
 import { getCompetitionOfTheMonth } from '../../actions/index'
 import ReactMarkdown from 'react-markdown';
+import SignUp from './signup.jsx';
 
 class CurrentCompetition extends React.Component {
     constructor(props) {
@@ -21,19 +22,35 @@ class CurrentCompetition extends React.Component {
     render() {
 
         let date = new Date();
-        
-        let currentCompetition = this.props.competition;
-        console.info(currentCompetition);
+
+        let currentCompetition = null;
+
+        if (Array.isArray(this.props.competition) && this.props.competition.length !== 0) {
+            let nearestDate = new Date(this.props.competition[0].deadline);
+            currentCompetition = this.props.competition[0];
+
+            for (let i = 0; i < this.props.competition.length; ++i) {
+                let checkDate = new Date(this.props.competition[i].deadline);
+                if (checkDate < nearestDate) {
+                    currentCompetition = this.props.competition[i];
+                }
+            }
+        } else {
+            currentCompetition = this.props.competition;
+        }
+
         if (currentCompetition && date <= (new Date(currentCompetition.deadline))) {
         return (
-        <div className="cardText col-xs-12">
-            <h2> {currentCompetition.title}</h2>
-            <ReactMarkdown source={currentCompetition.description} />
-            <ReactMarkdown source={currentCompetition.rules} />
-            <p>{currentCompetition.awards}</p>
-            <ReactMarkdown source={currentCompetition.judges} />
-            <a href={`/competitionInfo?competition=${currentCompetition.id}`}>للمزيد من التفاصيل اضغط هنا</a>
-        </div>
+                <div className="cardText row">
+                    <h2> {currentCompetition.title}</h2>
+                    <ReactMarkdown source={currentCompetition.description} />
+                    <ReactMarkdown source={currentCompetition.rules} />
+                    <p>{currentCompetition.awards}</p>
+                    <ReactMarkdown source={currentCompetition.judges} />
+                    <a href={`/competitionInfo?competition=${currentCompetition.id}`}>للمزيد من التفاصيل اضغط هنا</a>
+                    <hr />
+                    <SignUp competitions={currentCompetition.id} style="margin: 10px" />
+                </div>
         )
         }
 
