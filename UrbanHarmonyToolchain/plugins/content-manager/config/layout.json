@@ -247,14 +247,20 @@
   },
   "studies": {
     "attributes": {
-      "ResearcherName": {
+      "researchName": {
         "appearance": ""
       },
-      "Date": {
+      "researcher": {
         "appearance": ""
       },
-      "Summary": {
+      "publicationDate": {
         "appearance": ""
+      },
+      "publishingHouse": {
+        "appearance": ""
+      },
+      "brief": {
+        "appearance": "WYSIWYG"
       }
     }
   },

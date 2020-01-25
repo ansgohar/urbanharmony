@@ -281,15 +281,17 @@ type Regions {
   governorate: Governorate
 }
 
+"""Support for adding studies."""
 type Studies {
   _id: ID!
   createdAt: String!
   updatedAt: String!
-  Title: String
-  PDF: UploadFile
-  ResearcherName: String
-  Date: String
-  Summary: String
+  researchName: String!
+  researcher: String!
+  publicationDate: String
+  publishingHouse: String
+  brief: String
+  research: UploadFile
 }
 
 type Surveylist {

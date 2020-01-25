@@ -33,4 +33,6 @@ module.exports = function (app) {
     require('./conferencesList')(app);
 
     require('./contestant')(app);
+
+    require('./studies')(app);
 };  
