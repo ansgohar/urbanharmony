@@ -104,6 +104,71 @@
     },
     "news_id": {
       "type": "integer"
+    },
+    "newsShortText": {
+      "type": "text"
+    },
+    "newsSmallImg": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload"
+    },
+    "newsSmallImgWidth": {
+      "type": "integer"
+    },
+    "newsSmallImgHeight": {
+      "type": "integer"
+    },
+    "newsSmallImgAlt": {
+      "type": "string"
+    },
+    "new_image1_width": {
+      "type": "integer"
+    },
+    "new_image1_height": {
+      "type": "integer"
+    },
+    "press1": {
+      "type": "string"
+    },
+    "presstext1": {
+      "type": "text"
+    },
+    "press2": {
+      "type": "string"
+    },
+    "presstext2": {
+      "type": "text"
+    },
+    "press3": {
+      "type": "string"
+    },
+    "presstext3": {
+      "type": "text"
+    },
+    "new_image2_width": {
+      "type": "integer"
+    },
+    "new_image2_height": {
+      "type": "integer"
+    },
+    "new_image3_width": {
+      "type": "integer"
+    },
+    "new_image3_height": {
+      "type": "integer"
+    },
+    "new_image4_width": {
+      "type": "integer"
+    },
+    "new_image4_height": {
+      "type": "integer"
+    },
+    "new_image5_width": {
+      "type": "integer"
+    },
+    "new_image5_height": {
+      "type": "integer"
     }
   }
 }
