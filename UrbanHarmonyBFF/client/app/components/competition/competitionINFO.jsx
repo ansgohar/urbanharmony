@@ -4,7 +4,7 @@ import { getCompetitionID } from '../../actions/index.js'
 import * as queryString from "query-string";
 import ReactMarkdown from 'react-markdown';
 import Image from '../image.jsx'
-
+import Signup from './signup.jsx';
 
 class CompetitionInfo extends React.Component {
     constructor(props) {
@@ -111,6 +111,8 @@ class CmpID extends React.Component {
                         <h3> الحكام : </h3>
                         <ReactMarkdown source={this.props.competition.judges} />
                         {this.props.competition.PDF.includes("uploads") ? <React.Fragment><p>المزيد من التفاصيل: <a href={this.props.competition.PDF} target="_blank">عرض الملف</a></p></React.Fragment> : ''}
+                        <hr></hr>
+                        <Signup competitions={this.props.competition.id} style="margin: 10px" />
                     </div>
                 </div>
             );
@@ -131,8 +133,9 @@ class CmpID extends React.Component {
                         <p>{this.props.competition.awards}</p>
                         <h3> الحكام : </h3>
                         <ReactMarkdown source={this.props.competition.judges} />
-                      
                         <a className="read-more" href={"/competitionInfo?competition="+prevCmp}>الارشيف</a>
+                        <hr></hr>
+                        <Signup competitions={this.props.competition.id} style="margin: 10px" />
                     </div>
                 </div>
             );

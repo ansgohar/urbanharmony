@@ -55,10 +55,9 @@ class Winner extends React.Component {
                     <div className="col-xs-12 col-sm-9 news-leftSide">
                         <div className="col-xs-12 winner-name no-padding">
                             <div><span>إسم الفائز</span>{this.props.record.name}</div>
-                            <div><span>المسابقة</span></div>
+        <div><span>المسابقة:</span><a className="read-more" href={"/competitionInfo?competition="+this.props.record.competitions.id}>{this.props.record.competitions.Title}</a></div>
                         </div>
-                        <p> {this.props.record.description} </p>
-                        <a className="read-more" href={"/competitionInfo?competition="+this.props.record.competitions.id}>المزيد</a>
+                        <p> {this.props.record.competitions.Description} </p>
                     </div>
                 </div>
             </div>

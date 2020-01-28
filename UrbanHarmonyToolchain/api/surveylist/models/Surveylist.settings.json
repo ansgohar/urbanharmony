@@ -9,19 +9,14 @@
     "timestamps": true
   },
   "attributes": {
-    "registrationNumber": {
-      "type": "string"
+	"registrationNumber": {
+      "unique": true,
+      "type": "integer"
     },
     "buildingType": {
       "type": "string"
     },
-    "buildingNumber": {
-      "type": "string"
-    },
     "buildingName": {
-      "type": "string"
-    },
-    "fullAddress": {
       "type": "string"
     },
     "buildingValue": {
@@ -32,15 +27,27 @@
       "enum": [
         "exists",
         "No"
-      ]
-    },
-    "region": {
-      "model": "regions",
-      "via": "building"
+      ],
+      "default": "No"
     },
     "petition": {
       "collection": "petition",
       "via": "surveylist"
+    },
+    "address": {
+      "type": "string"
+    },
+    "governorate": {
+      "type": "string"
+    },
+    "mainArea": {
+      "type": "string"
+    },
+    "subArea": {
+      "type": "string"
+    },
+    "buildingNumber": {
+      "type": "integer"
     }
   }
 }

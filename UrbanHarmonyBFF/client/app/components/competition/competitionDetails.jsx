@@ -10,7 +10,6 @@ import uploadResult from "./uploadResult.jsx";
 import CompetitionWinners from './competitionWinners.jsx'
 import * as queryString from "query-string";
 
-
 class CompetitionDetails extends React.Component {
     constructor(props) {
         super(props);

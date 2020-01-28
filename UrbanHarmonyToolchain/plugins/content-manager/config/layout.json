@@ -13,6 +13,24 @@
     "attributes": {
       "regNumber": {
         "appearance": ""
+      },
+      "address": {
+        "appearance": ""
+      },
+      "governorate": {
+        "appearance": ""
+      },
+      "mainArea": {
+        "appearance": ""
+      },
+      "subArea": {
+        "appearance": ""
+      },
+      "registrationNumber": {
+        "appearance": ""
+      },
+      "buildingNumber": {
+        "appearance": ""
       }
     }
   },
@@ -229,14 +247,20 @@
   },
   "studies": {
     "attributes": {
-      "ResearcherName": {
+      "researchName": {
         "appearance": ""
       },
-      "Date": {
+      "researcher": {
         "appearance": ""
       },
-      "Summary": {
+      "publicationDate": {
         "appearance": ""
+      },
+      "publishingHouse": {
+        "appearance": ""
+      },
+      "brief": {
+        "appearance": "WYSIWYG"
       }
     }
   },
@@ -246,13 +270,13 @@
         "appearance": ""
       },
       "Description": {
-        "appearance": ""
+        "appearance": "WYSIWYG"
       },
       "Rules": {
-        "appearance": ""
+        "appearance": "WYSIWYG"
       },
       "Judges": {
-        "appearance": ""
+        "appearance": "WYSIWYG"
       },
       "awards": {
         "appearance": ""

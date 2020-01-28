@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import ReactTable from "react-table";
 import { getComplainsList } from '../../actions/index.js'
+import 'react-table/react-table.css';
 
 class AllComplainsList extends React.Component {
     constructor(props) {
@@ -88,6 +89,21 @@ class AllComplainsList extends React.Component {
             Header: 'العنوان',
             type: String,
             accessor: 'address'
+        },
+		{
+            Header: 'المحافظة',
+            type: String,
+            accessor: 'governorate'
+        },
+		{
+            Header: 'المنطقة الرئيسية',
+            type: String,
+            accessor: 'mainArea'
+        },
+		{
+            Header: 'المنطقة الفرعية',
+            type: String,
+            accessor: 'subArea'
         },
         {
             Header: 'قيمة',
