@@ -87,6 +87,12 @@ enum ENUM_INTERNALNEWS_TYPE {
   Electronic
 }
 
+enum ENUM_JOURNAL_PRESSPDFSHOW {
+  undefined
+  yes
+  no
+}
+
 enum ENUM_LIBRARY_BOOKCATEGORY {
   history
   engineering
@@ -159,20 +165,51 @@ type Internalnews {
   new_image5: UploadFile
   new_image5Alt: String
   news_id: Int
+  newsShortText: String
+  newsSmallImg: UploadFile
+  newsSmallImgWidth: Int
+  newsSmallImgHeight: Int
+  newsSmallImgAlt: String
+  new_image1_width: Int
+  new_image1_height: Int
+  press1: String
+  presstext1: String
+  press2: String
+  presstext2: String
+  press3: String
+  presstext3: String
+  new_image2_width: Int
+  new_image2_height: Int
+  new_image3_width: Int
+  new_image3_height: Int
+  new_image4_width: Int
+  new_image4_height: Int
+  new_image5_width: Int
+  new_image5_height: Int
 }
 
 type Journal {
   _id: ID!
   createdAt: String!
   updatedAt: String!
-  URL: String
   AuthorName: String
   ArticleName: String
-  Description: String
-  ThumpURL: String
-  ImgURL: String
   DatePublished: String
-  image: UploadFile
+  pageNumber: Int
+  small_image: UploadFile
+  small_image_width: Int
+  small_image_height: Int
+  large_image: UploadFile
+  large_image_width: Int
+  large_image_height: Int
+  pressPDFFile: UploadFile
+  pressPDFShow: ENUM_JOURNAL_PRESSPDFSHOW
+  pressComment: String
+  pressCommentLink: String
+  pressText1: String
+  pressLink1: String
+  pressText2: String
+  pressLink2: String
 }
 
 """
@@ -308,6 +345,8 @@ type Surveylist {
   mainArea: String
   subArea: String
   buildingNumber: Int
+  currentOwner: String
+  mainOwner: String
   petition(sort: String, limit: Int, start: Int, where: JSON): [Petition]
 }
 

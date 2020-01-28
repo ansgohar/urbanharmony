@@ -31,6 +31,12 @@
       },
       "buildingNumber": {
         "appearance": ""
+      },
+      "currentOwner": {
+        "appearance": ""
+      },
+      "mainOwner": {
+        "appearance": ""
       }
     }
   },
@@ -183,6 +189,42 @@
     "attributes": {
       "DatePublished": {
         "appearance": ""
+      },
+      "pageNumber": {
+        "appearance": ""
+      },
+      "small_image_width": {
+        "appearance": ""
+      },
+      "small_image_height": {
+        "appearance": ""
+      },
+      "large_image_width": {
+        "appearance": ""
+      },
+      "large_image_height": {
+        "appearance": ""
+      },
+      "pressPDFShow": {
+        "appearance": ""
+      },
+      "pressComment": {
+        "appearance": "WYSIWYG"
+      },
+      "pressCommentLink": {
+        "appearance": ""
+      },
+      "pressText1": {
+        "appearance": "WYSIWYG"
+      },
+      "pressLink1": {
+        "appearance": ""
+      },
+      "pressText2": {
+        "appearance": "WYSIWYG"
+      },
+      "pressLink2": {
+        "appearance": ""
       }
     }
   },
@@ -225,6 +267,66 @@
         "appearance": ""
       },
       "news_id": {
+        "appearance": ""
+      },
+      "newsShortText": {
+        "appearance": "WYSIWYG"
+      },
+      "newsSmallImgWidth": {
+        "appearance": ""
+      },
+      "newsSmallImgHeight": {
+        "appearance": ""
+      },
+      "newsSmallImgAlt": {
+        "appearance": ""
+      },
+      "new_image1_width": {
+        "appearance": ""
+      },
+      "new_image1_height": {
+        "appearance": ""
+      },
+      "press1": {
+        "appearance": ""
+      },
+      "presstext1": {
+        "appearance": "WYSIWYG"
+      },
+      "press2": {
+        "appearance": ""
+      },
+      "presstext2": {
+        "appearance": "WYSIWYG"
+      },
+      "press3": {
+        "appearance": ""
+      },
+      "presstext3": {
+        "appearance": ""
+      },
+      "new_image2_width": {
+        "appearance": ""
+      },
+      "new_image2_height": {
+        "appearance": ""
+      },
+      "new_image3_width": {
+        "appearance": ""
+      },
+      "new_image3_height": {
+        "appearance": ""
+      },
+      "new_image4_width": {
+        "appearance": ""
+      },
+      "new_image4_height": {
+        "appearance": ""
+      },
+      "new_image5_width": {
+        "appearance": ""
+      },
+      "new_image5_height": {
         "appearance": ""
       }
     }

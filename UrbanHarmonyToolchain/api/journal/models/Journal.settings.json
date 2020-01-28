@@ -9,31 +9,71 @@
     "timestamps": true
   },
   "attributes": {
-    "URL": {
-      "type": "string"
-    },
     "AuthorName": {
       "type": "string"
     },
     "ArticleName": {
       "type": "string"
     },
-    "Description": {
-      "type": "text"
-    },
-    "ThumpURL": {
-      "type": "string"
-    },
-    "ImgURL": {
-      "type": "string"
-    },
     "DatePublished": {
       "type": "date"
     },
-    "image": {
+    "pageNumber": {
+      "type": "integer"
+    },
+    "small_image": {
       "model": "file",
       "via": "related",
       "plugin": "upload"
+    },
+    "small_image_width": {
+      "type": "integer"
+    },
+    "small_image_height": {
+      "type": "integer"
+    },
+    "large_image": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload"
+    },
+    "large_image_width": {
+      "type": "integer"
+    },
+    "large_image_height": {
+      "type": "integer"
+    },
+    "pressPDFFile": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload"
+    },
+    "pressPDFShow": {
+      "default": "undefined",
+      "type": "enumeration",
+      "enum": [
+        "undefined",
+        "yes",
+        "no"
+      ]
+    },
+    "pressComment": {
+      "type": "text"
+    },
+    "pressCommentLink": {
+      "type": "string"
+    },
+    "pressText1": {
+      "type": "text"
+    },
+    "pressLink1": {
+      "type": "string"
+    },
+    "pressText2": {
+      "type": "text"
+    },
+    "pressLink2": {
+      "type": "string"
     }
   }
 }
