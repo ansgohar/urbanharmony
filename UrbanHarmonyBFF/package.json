@@ -43,7 +43,7 @@
     "bulma": "^0.5.3",
     "chai": "^4.0.0",
     "css-loader": "^0.28.7",
-    "foreman": "^2.0.0",
+    "foreman": "^3.0.1",
     "html-webpack-plugin": "^2.30.1",
     "markdown-react-js": "^1.0.2",
     "mocha": "^3.4.2",
