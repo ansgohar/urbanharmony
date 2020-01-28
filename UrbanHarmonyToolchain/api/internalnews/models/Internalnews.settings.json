@@ -25,7 +25,8 @@
         "Paper",
         "Electronic"
       ],
-      "required": true
+      "required": true,
+      "default": "Social"
     },
     "FullArticle": {
       "type": "text"
@@ -37,6 +38,72 @@
     },
     "datePublished": {
       "type": "date"
+    },
+    "image2": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload"
+    },
+    "new_paragraph1": {
+      "type": "text"
+    },
+    "new_image1": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload"
+    },
+    "new_image1Alt": {
+      "type": "text"
+    },
+    "new_image1Comment": {
+      "type": "string"
+    },
+    "new_paragraph2": {
+      "type": "text"
+    },
+    "new_image2": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload"
+    },
+    "new_image2Alt": {
+      "type": "string"
+    },
+    "new_paragraph3": {
+      "type": "text"
+    },
+    "new_image3": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload"
+    },
+    "new_image3Alt": {
+      "type": "string"
+    },
+    "new_paragraph4": {
+      "type": "text"
+    },
+    "new_image4": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload"
+    },
+    "new_image4Alt": {
+      "type": "string"
+    },
+    "new_paragraph5": {
+      "type": "text"
+    },
+    "new_image5": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload"
+    },
+    "new_image5Alt": {
+      "type": "string"
+    },
+    "news_id": {
+      "type": "integer"
     }
   }
 }

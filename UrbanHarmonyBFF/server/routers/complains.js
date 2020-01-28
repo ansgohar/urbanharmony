@@ -14,6 +14,7 @@ module.exports = function (app) {
             }
             else if (Array.isArray(data)) {
                 res.json(data);
+				console.log(data.length);
             }
             else {
                 res.json([data]);

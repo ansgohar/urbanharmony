@@ -101,3 +101,8 @@ node_modules/
 
 testApp
 coverage
+
+############################
+# File-system
+############################
+public/uploads

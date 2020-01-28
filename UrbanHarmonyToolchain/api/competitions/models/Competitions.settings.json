@@ -37,6 +37,11 @@
     "contestants": {
       "collection": "contestant",
       "via": "competitions"
+    },
+    "extraInfo": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload"
     }
   }
 }

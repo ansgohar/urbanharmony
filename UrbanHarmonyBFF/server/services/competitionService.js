@@ -18,13 +18,22 @@ class CompetitionService {
                     Authorization: `Bearer ${token}`
                 }
             }
+            
+            let date = new Date();
+            let year = date.getFullYear();
+            let month = date.getMonth();
 
-            fetch(url + 'competitions?_sort=deadline:desc&_limit=1', payload)
+            let firstDay = new Date(year, month, 1);
+            let lastDay = new Date(year, month + 1, 0);
+
+            let query = `_sort=-createdAt&_limit=2&deadline_gt=${firstDay.toISOString()}&deadline_lte=${lastDay.toISOString()}`;
+
+            fetch(url + `competitions?${query}`, payload)
             .then(function (response) {
                 return response.json();
             })
             .then(function (myJson) {
-                let expression = jsonata('$.{"id":_id,"title":Title,"description":Description, "rules": Rules, "judges" : Judges, "deadline" : Deadline, "awards" : awards}');
+                let expression = jsonata('$.{"id":_id,"title":Title,"description":Description, "rules": Rules, "judges" : Judges, "deadline" : deadline, "awards" : awards}');
                 let competitionOfTheMonth = expression.evaluate(myJson);
                 callback(competitionOfTheMonth);
             });
@@ -44,13 +53,13 @@ class CompetitionService {
                 }
             }
 
-            fetch(url + 'competitions', payload)
+            fetch(url + 'competitions/?_limit=1000&_sort=-createdAt', payload)
             .then(res => res.json())
             .then(function (json) {
-                let expression = jsonata('$.{"id":_id,"title":Title,"description":Description, "rules": Rules, "judges" : Judges, "deadline" : deadline, "image" :  "' + url.slice(0, -1) + '"& photo.url, "awards" : awards}');
+                let expression = jsonata('$.{"id":_id,"title":Title,"description":Description, "rules": Rules, "judges" : Judges, "deadline" : deadline, "image" :  "' + url.slice(0, -1) + '"& photo.url, "awards" : awards, "PDF": "' + url.slice(0, -1) + '" & extraInfo.url}');
                 let competitions = expression.evaluate(json);
-                console.log(competitions);
-                console.log(json);
+                
+                
                 callback(competitions);
             });
             
@@ -72,7 +81,7 @@ class CompetitionService {
             fetch(url + 'competitions?_id=' + ID, payload)
             .then(res => res.json())
             .then(function (json) {
-                let expression = jsonata('$.{"id":_id,"title":Title,"description":Description, "rules": Rules, "judges" : Judges, "deadline" : deadline, "image" :  "' + url.slice(0, -1) + '"& photo.url, "awards" : awards}');
+                let expression = jsonata('$.{"id":_id,"title":Title,"description":Description, "rules": Rules, "judges" : Judges, "deadline" : deadline, "image" :  "' + url.slice(0, -1) + '"& photo.url, "awards" : awards, "PDF": "' + url.slice(0, -1) + '" & extraInfo.url}');
                 let competitionID = expression.evaluate(json);
                 callback(competitionID);
             });
@@ -94,9 +103,15 @@ class CompetitionService {
             fetch(url + 'contestant?status=winner', payload)
             .then(res => res.json())
             .then(function (json) {
-                let expression = jsonata('$.{"id":_id,"name":name,"competitionName":competition.Title, "description": competition.Description,"image":"' + url.slice(0, -1) + '"& personalPhoto.url, "compID":competition._id}');
-                let winners = expression.evaluate(json);
-                callback(winners);
+                // let expression = jsonata('$.{"id":_id,"name":name,"competitionName":competition.Title, "description": competition.Description,"image":"' + url.slice(0, -1) + '"& personalPhoto.url, "compID":competition._id}');
+                // let winners = expression.evaluate(json);
+             
+         
+                for(let i=0 ; json.length > i ; i++){
+                    if (json[i].personalPhoto !== null)
+                        json[i].personalPhoto.url = url.slice(0,-1) + json[i].personalPhoto.url;
+                }
+                callback(json);
             });
 
         });

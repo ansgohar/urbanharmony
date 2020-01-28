@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import ReactTable from "react-table";
 import { getComplainsList } from '../../actions/index.js'
+import 'react-table/react-table.css';
 
 class AllComplainsList extends React.Component {
     constructor(props) {
@@ -69,39 +70,70 @@ class AllComplainsList extends React.Component {
     render() {
         const columns = [{
             Header: 'رقم التوثيق',
+            type: Number,
             id: 'registrationNO',
-            accessor: d => d.registrationNO,
+            accessor: d => {
+                if (d.registrationNO === " " || d.registrationNO === null || d.registrationNO === undefined){
+                    return Number(0);
+                } else{
+                    return Number(d.registrationNO);
+                }
+            },
         },
         {
             Header: 'نوع المبنى',
+            type: String,
             accessor: 'type'
         },
         {
             Header: 'العنوان',
+            type: String,
             accessor: 'address'
+        },
+		{
+            Header: 'المحافظة',
+            type: String,
+            accessor: 'governorate'
+        },
+		{
+            Header: 'المنطقة الرئيسية',
+            type: String,
+            accessor: 'mainArea'
+        },
+		{
+            Header: 'المنطقة الفرعية',
+            type: String,
+            accessor: 'subArea'
         },
         {
             Header: 'قيمة',
+            type: String,
             accessor: 'value'
         },
         {
             Header: 'اسم المبنى',
+            type: String,
             accessor: 'buildingName'
         },
         {
             Header: 'رقم المبنى',
+            type: Number,
             accessor: 'buildingNo'
         },
         {
             Header: 'حالة التظلم',
+            type: String,
             accessor: 'status',
             Cell: props => {
                 let surveyed_building_ID = props.original.id;
-                let filtered_data = this.state.petitionList.filter((document) => document.surveylist._id === surveyed_building_ID);
-
-                console.log(surveyed_building_ID);
-                console.log(props);
-                console.log(this.state.petitionList);
+                let filtered_data = this.state.petitionList.filter((document) => {
+                    if (!document.hasOwnProperty('surveylist') || !document.surveylist.hasOwnProperty('_id')){
+                        console.log(document);
+                        console.log(surveyed_building_ID);
+                    }
+                    else (document.surveylist._id === surveyed_building_ID)
+                        return document;
+                });
 
                 if (filtered_data.length !== 0){
                     return (<span><a id={`${filtered_data[0]._id}`} onClick={() => this.showData(filtered_data[0]._id)}>{this.translateStatus(props.value)}</a></span>)

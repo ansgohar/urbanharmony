@@ -34,7 +34,7 @@ class LawsBordersPage extends React.Component {
               <div id="menu1" class="tab-pane fade col-xs-12 no-padding active in">
                 <div class="col-xs-12 col-sm-10 limitheader-cont">
                   <div class="col-xs-12">
-                    <h2 class="col-xs-12">مقدمة عن القوانين والعقوبات المترتبة على مخالفة قواعد البناء في المناطق المتميزة</h2>
+                    <h2 class="col-xs-12">القوانين والعقوبات المترتبة على مخالفة قواعد البناء في المناطق المتميزة</h2>
                   </div>
                 </div>
                 <LawsPage laws={this.props.laws} hide={this.props.laws.length === 0} />
@@ -43,7 +43,7 @@ class LawsBordersPage extends React.Component {
               <div id="menu2" class="tab-pane fade col-xs-12 no-padding">
                 <div class="col-xs-12 col-sm-10 limitheader-cont">
                   <div class="col-xs-12">
-                    <h2 class="col-xs-12">مقدمة عن الحدود والإشتراطات للمناطق المتميزة داخل جمهورية مصر العربية</h2>
+                    <h2 class="col-xs-12">الحدود والإشتراطات للمناطق المتميزة داخل جمهورية مصر العربية</h2>
                   </div>
                 </div>
                 <Borders borders={this.props.borders} hide={this.props.borders.length === 0} />
@@ -53,7 +53,7 @@ class LawsBordersPage extends React.Component {
               <div id="menu3" class="tab-pane fade col-xs-12 no-padding">
                 <div class="col-xs-12 col-sm-10 limitheader-cont">
                   <div class="col-xs-12">
-                    <h2 class="col-xs-12">مقدمة عن الادلة الارشادية </h2>
+                    <h2 class="col-xs-12">الادلة الارشادية</h2>
                   </div>
                 </div>
                 <Guidelines guidelines={this.props.guidelines} hide={this.props.guidelines.length === 0} />

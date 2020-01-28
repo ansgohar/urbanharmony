@@ -20,9 +20,18 @@ export default (async function modified_searchResults(values, dispatch){
     if (values.registrationNumber){
         filters['registrationNumber'] = values.registrationNumber;
     }
-    if (values.streetName){
-        filters['fullAddress_contains'] = values.streetName;
-    }
+	if (values.address){
+		filters['address_contains'] = values.address;
+	}
+	if (values.governorate){
+		filters['governorate_contains'] = values.governorate;
+	}
+	if (values.mainArea){
+		filters['mainArea_contains'] = values.mainArea;
+	}
+	if (values.subArea){
+		filters['subArea_contains'] = values.subArea;
+	}
     if (values.buildingName){
         filters['buildingName_contains'] = values.buildingName;
     }
@@ -33,7 +42,7 @@ export default (async function modified_searchResults(values, dispatch){
     let payload = {
       dir: 'surveylists',
       filters: filters,
-      fields: ["_id", "fullAddress","buildingName","registrationNumber","buildingType","buildingValue","buildingNumber", "status"]
+      fields: ["_id", "address", "governorate", "mainArea", "subArea", "buildingName","registrationNumber","buildingType","buildingValue","buildingNumber", "status"]
     };
 
     options['body'] = JSON.stringify(payload);
@@ -42,7 +51,7 @@ export default (async function modified_searchResults(values, dispatch){
       .then(res => {return res.json()})
       .then(body => {
         console.log(body)
-        let expression = jsonata('data.$.surveylists.{"id":_id, "registrationNO":registrationNumber, "type":buildingType, "address":fullAddress, "value":buildingValue,"status":status, "date":updatedAt,"buildingNo":buildingNumber,"buildingName":buildingName}');
+        let expression = jsonata('data.$.surveylists.{"id":_id, "registrationNO":registrationNumber, "type":buildingType, "address":address, "governorate":governorate, "mainArea":mainArea, "subArea":subArea, "value":buildingValue,"status":status, "date":updatedAt,"buildingNo":buildingNumber,"buildingName":buildingName}');
         let surveyList = expression.evaluate(body);
 
         if (surveyList === undefined || Object.keys(surveyList).length == 0) {

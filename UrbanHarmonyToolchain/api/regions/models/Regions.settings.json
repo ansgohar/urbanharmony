@@ -15,10 +15,6 @@
     "governorate": {
       "model": "governorate",
       "via": "regions"
-    },
-    "building": {
-      "collection": "surveylist",
-      "via": "region"
     }
   }
 }

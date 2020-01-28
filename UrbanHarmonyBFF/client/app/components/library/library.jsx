@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import BooksDetails from './booksPage.jsx';
 import AllVideos from './videos.jsx';
+import Studies from './studies.jsx';
 
 class LibraryPage extends React.Component {
     constructor(props) {
@@ -25,6 +26,7 @@ class LibraryPage extends React.Component {
                             <ul class="col-xs-12 col-sm-5 nav nav-tabs no-padding">
                                 <li class="active"><a data-toggle="tab" href="#menu1">المكتبة العامة</a></li>
                                 <li><a data-toggle="tab" href="#menu2">تسجيلات الجهاز </a></li>
+                                <li><a data-toggle="tab" href="#menu3">دراسات</a></li>
                                 {/* <li><a data-toggle="tab" href="#menu3">دراسات و بحوث</a></li> */}
                             </ul>
                         </div>
@@ -93,6 +95,9 @@ class LibraryPage extends React.Component {
 
                                 <AllVideos videos={this.props.videos} />
 
+                            </div>
+                            <div id="menu3" class="tab-pane face col-xs-12 no-padding">
+                                <Studies />
                             </div>
                         </div>
 

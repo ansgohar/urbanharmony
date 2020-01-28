@@ -13,6 +13,24 @@
     "attributes": {
       "regNumber": {
         "appearance": ""
+      },
+      "address": {
+        "appearance": ""
+      },
+      "governorate": {
+        "appearance": ""
+      },
+      "mainArea": {
+        "appearance": ""
+      },
+      "subArea": {
+        "appearance": ""
+      },
+      "registrationNumber": {
+        "appearance": ""
+      },
+      "buildingNumber": {
+        "appearance": ""
       }
     }
   },
@@ -39,6 +57,9 @@
       },
       "seriesName": {
         "appearance": ""
+      },
+      "abstract": {
+        "appearance": "WYSIWYG"
       }
     }
   },
@@ -169,6 +190,42 @@
     "attributes": {
       "datePublished": {
         "appearance": ""
+      },
+      "new_paragraph1": {
+        "appearance": ""
+      },
+      "new_image1Alt": {
+        "appearance": ""
+      },
+      "new_image1Comment": {
+        "appearance": ""
+      },
+      "new_paragraph2": {
+        "appearance": ""
+      },
+      "new_image2Alt": {
+        "appearance": ""
+      },
+      "new_paragraph3": {
+        "appearance": ""
+      },
+      "new_image3Alt": {
+        "appearance": ""
+      },
+      "new_paragraph4": {
+        "appearance": ""
+      },
+      "new_image4Alt": {
+        "appearance": ""
+      },
+      "new_paragraph5": {
+        "appearance": ""
+      },
+      "new_image5Alt": {
+        "appearance": ""
+      },
+      "news_id": {
+        "appearance": ""
       }
     }
   },
@@ -190,14 +247,20 @@
   },
   "studies": {
     "attributes": {
-      "ResearcherName": {
+      "researchName": {
         "appearance": ""
       },
-      "Date": {
+      "researcher": {
         "appearance": ""
       },
-      "Summary": {
+      "publicationDate": {
         "appearance": ""
+      },
+      "publishingHouse": {
+        "appearance": ""
+      },
+      "brief": {
+        "appearance": "WYSIWYG"
       }
     }
   },
@@ -207,18 +270,40 @@
         "appearance": ""
       },
       "Description": {
-        "appearance": ""
+        "appearance": "WYSIWYG"
       },
       "Rules": {
-        "appearance": ""
+        "appearance": "WYSIWYG"
       },
       "Judges": {
-        "appearance": ""
+        "appearance": "WYSIWYG"
       },
       "awards": {
         "appearance": ""
       },
       "deadline": {
+        "appearance": ""
+      }
+    }
+  },
+  "temporary": {
+    "attributes": {
+      "title": {
+        "appearance": ""
+      },
+      "description": {
+        "appearance": ""
+      },
+      "link": {
+        "appearance": ""
+      },
+      "deadline": {
+        "appearance": ""
+      },
+      "isActive": {
+        "appearance": ""
+      },
+      "type": {
         "appearance": ""
       }
     }

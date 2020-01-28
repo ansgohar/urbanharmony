@@ -9,6 +9,7 @@ type Competitions {
   awards: String
   deadline: String!
   photo: UploadFile
+  extraInfo: UploadFile
   contestants(sort: String, limit: Int, start: Int, where: JSON): [Contestant]
 }
 
@@ -140,6 +141,24 @@ type Internalnews {
   FullArticle: String
   image: UploadFile
   datePublished: String
+  image2: UploadFile
+  new_paragraph1: String
+  new_image1: UploadFile
+  new_image1Alt: String
+  new_image1Comment: String
+  new_paragraph2: String
+  new_image2: UploadFile
+  new_image2Alt: String
+  new_paragraph3: String
+  new_image3: UploadFile
+  new_image3Alt: String
+  new_paragraph4: String
+  new_image4: UploadFile
+  new_image4Alt: String
+  new_paragraph5: String
+  new_image5: UploadFile
+  new_image5Alt: String
+  news_id: Int
 }
 
 type Journal {
@@ -153,6 +172,7 @@ type Journal {
   ThumpURL: String
   ImgURL: String
   DatePublished: String
+  image: UploadFile
 }
 
 """
@@ -176,6 +196,7 @@ type Library {
   title: String!
   image: UploadFile
   seriesName: String
+  abstract: String
 }
 
 union Morph = Competitions | Conditionsandlaws | Conferences | Consultingoffice | Contestant | Governorate | Incident | Internalnews | Journal | Library | Petition | Projects | Regions | Studies | Surveylist | Videos | UploadFile | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsUser
@@ -204,6 +225,8 @@ type Projects {
   Title: String
   imgBefore: UploadFile
   imgAfter: UploadFile
+  imgBefore2: UploadFile
+  imgAfter2: UploadFile
 }
 
 type Query {
@@ -256,33 +279,36 @@ type Regions {
   updatedAt: String!
   regionName: String
   governorate: Governorate
-  building(sort: String, limit: Int, start: Int, where: JSON): [Surveylist]
 }
 
+"""Support for adding studies."""
 type Studies {
   _id: ID!
   createdAt: String!
   updatedAt: String!
-  Title: String
-  PDF: UploadFile
-  ResearcherName: String
-  Date: String
-  Summary: String
+  researchName: String!
+  researcher: String!
+  publicationDate: String
+  publishingHouse: String
+  brief: String
+  research: UploadFile
 }
 
 type Surveylist {
   _id: ID!
   createdAt: String!
   updatedAt: String!
-  registrationNumber: String
+  registrationNumber: Int
   buildingType: String
-  buildingNumber: String
   buildingName: String
-  fullAddress: String
   buildingValue: String
   status: ENUM_SURVEYLIST_STATUS
-  region: Regions
-  petition: Petition
+  address: String
+  governorate: String
+  mainArea: String
+  subArea: String
+  buildingNumber: Int
+  petition(sort: String, limit: Int, start: Int, where: JSON): [Petition]
 }
 
 type UploadFile {

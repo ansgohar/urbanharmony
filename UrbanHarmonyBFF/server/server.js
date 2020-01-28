@@ -13,9 +13,13 @@ const express = require('express');
 const log4js = require('log4js');
 const localConfig = require('./config/local.json');
 const path = require('path');
+const cors = require('cors');
+const helmet = require('helmet');
 
 const logger = log4js.getLogger(appName);
 const app = express();
+app.use(helmet());
+app.use(cors());
 app.use(log4js.connectLogger(logger, { level: process.env.LOG_LEVEL || 'info' }));
 const serviceManager = require('./services/service-manager');
 require('./services/index')(app);
