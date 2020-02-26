@@ -11,6 +11,7 @@ class Signup extends Component {
             name: '',
             email: '',
             phone: '',
+            address: '',
             age: 0
         };
 
@@ -76,6 +77,10 @@ class Signup extends Component {
                 <div className="form-group">
                     <label htmlFor="age">السن</label>
                     <input className="form-control" type="number" name="age" onChange={this.handleChange} />
+                </div>
+                <div className="form-group">
+                    <label htmlFor="address">العنوان</label>
+                    <input className="form-control" type="text" name="address" onChange={this.handleChange} />
                 </div>
                 <button className="btn btn-primary" type="submit" value="submit">تسجيل</button>
             </form>

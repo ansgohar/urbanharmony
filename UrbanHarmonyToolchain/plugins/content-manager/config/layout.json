@@ -147,6 +147,9 @@
       },
       "img3": {
         "appearance": ""
+      },
+      "address": {
+        "appearance": ""
       }
     }
   },

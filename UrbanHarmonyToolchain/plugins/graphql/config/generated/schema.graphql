@@ -61,6 +61,7 @@ type Contestant {
   img3: String
   status: ENUM_CONTESTANT_STATUS
   competitions: Competitions
+  address: String
 }
 
 enum ENUM_CONDITIONSANDLAWS_TYPE {
@@ -79,6 +80,9 @@ enum ENUM_CONTESTANT_STATUS {
   applied
   accepted
   winner
+  first
+  second
+  third
 }
 
 enum ENUM_INTERNALNEWS_TYPE {

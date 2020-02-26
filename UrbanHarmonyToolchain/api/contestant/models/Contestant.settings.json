@@ -43,12 +43,18 @@
       "enum": [
         "applied",
         "accepted",
-        "winner"
+        "winner",
+        "first",
+        "second",
+        "third"
       ]
     },
     "competitions": {
       "model": "competitions",
       "via": "contestants"
+    },
+    "address": {
+      "type": "string"
     }
   }
 }

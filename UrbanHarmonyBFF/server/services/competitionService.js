@@ -33,7 +33,7 @@ class CompetitionService {
                 return response.json();
             })
             .then(function (myJson) {
-                let expression = jsonata('$.{"id":_id,"title":Title,"description":Description, "rules": Rules, "judges" : Judges, "deadline" : deadline, "awards" : awards}');
+                let expression = jsonata('$.{"id":_id,"title":Title,"description":Description, "rules": Rules, "judges" : Judges, "deadline" : deadline, "awards" : awards, "contestants": contestants}');
                 let competitionOfTheMonth = expression.evaluate(myJson);
                 callback(competitionOfTheMonth);
             });
@@ -53,7 +53,7 @@ class CompetitionService {
                 }
             }
 
-            fetch(url + 'competitions/?_limit=1000&_sort=-createdAt', payload)
+            fetch(url + 'competitions/?_limit=1000&_sort=deadline:DESC', payload)
             .then(res => res.json())
             .then(function (json) {
                 let expression = jsonata('$.{"id":_id,"title":Title,"description":Description, "rules": Rules, "judges" : Judges, "deadline" : deadline, "image" :  "' + url.slice(0, -1) + '"& photo.url, "awards" : awards, "PDF": "' + url.slice(0, -1) + '" & extraInfo.url}');
@@ -81,7 +81,7 @@ class CompetitionService {
             fetch(url + 'competitions?_id=' + ID, payload)
             .then(res => res.json())
             .then(function (json) {
-                let expression = jsonata('$.{"id":_id,"title":Title,"description":Description, "rules": Rules, "judges" : Judges, "deadline" : deadline, "image" :  "' + url.slice(0, -1) + '"& photo.url, "awards" : awards, "PDF": "' + url.slice(0, -1) + '" & extraInfo.url}');
+                let expression = jsonata('$.{"id":_id,"title":Title,"description":Description, "contestants": contestants, "rules": Rules, "judges" : Judges, "deadline" : deadline, "image" :  "' + url.slice(0, -1) + '"& photo.url, "awards" : awards, "PDF": "' + url.slice(0, -1) + '" & extraInfo.url}');
                 let competitionID = expression.evaluate(json);
                 callback(competitionID);
             });
@@ -100,13 +100,18 @@ class CompetitionService {
                 }
             }
 
-            fetch(url + 'contestant?status=winner', payload)
+            fetch(url + 'contestant', payload)
             .then(res => res.json())
             .then(function (json) {
                 // let expression = jsonata('$.{"id":_id,"name":name,"competitionName":competition.Title, "description": competition.Description,"image":"' + url.slice(0, -1) + '"& personalPhoto.url, "compID":competition._id}');
                 // let winners = expression.evaluate(json);
-             
-         
+
+                let filteredWinners = json.filter(contestant => {
+                    let rejectedStatus = ['applied', 'accepted'];
+
+                    return !rejectedStatus.includes(contestant.status);
+                });
+
                 for(let i=0 ; json.length > i ; i++){
                     if (json[i].personalPhoto !== null)
                         json[i].personalPhoto.url = url.slice(0,-1) + json[i].personalPhoto.url;
