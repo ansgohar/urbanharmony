@@ -15,7 +15,7 @@ class LawsBordersPage extends React.Component {
     return (
       <div id="borders-page" class="row borders-page">
         <div class="col-xs-12 no-padding ">
-          <h2 class="sec-h2"> القوانين و الإستشارات</h2>
+          <h2 class="sec-h2"> القوانين و إشتراطات</h2>
           <div class="col-xs-12 tabs-container no-padding">
             <div class="col-xs-12 filter-tabs">
               <ul class="col-xs-12 col-sm-5 nav nav-tabs no-padding">

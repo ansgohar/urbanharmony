@@ -6,7 +6,7 @@ const url = localConfig.CMS_URL || process.env.CMS_URL;
 class IncidentsService {
 
     getAllIncidents(callback) {
-        fetch(url + 'incident')
+        fetch(url + 'incident?_sort=Date:DESC')
             .then(function (response) {
                 return response.json();
             })
