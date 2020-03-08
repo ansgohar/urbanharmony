@@ -13,10 +13,17 @@ module.exports = function (app) {
                 res.json([]);
             }
             else if (Array.isArray(data)) {
-                res.json(data);
-				console.log(data.length);
+                let modifiedData = data.map(entry => {
+                    if (entry.value)
+                        entry.value = '-';
+
+                    return entry;
+                });
+                res.json(modifiedData);
             }
             else {
+                if (data.value)
+                    data.value = '-';
                 res.json([data]);
             }
         });
@@ -30,9 +37,17 @@ module.exports = function (app) {
                 res.json([]);
             }
             else if (Array.isArray(data)) {
-                res.json(data);
+                let modifiedData = data.map(entry => {
+                    if (entry.value)
+                        entry.value = '-';
+
+                    return entry;
+                });
+                res.json(modifiedData);
             }
             else {
+                if (data.value)
+                    data.value = '-';
                 res.json([data]);
             }
         });
@@ -44,11 +59,18 @@ module.exports = function (app) {
             if (data === undefined || Object.keys(data).length == 0) {
                 res.json([]);
             }
-
             else if (Array.isArray(data)) {
-                res.json(data);
+                let modifiedData = data.map(entry => {
+                    if (entry.value)
+                        entry.value = '-';
+
+                    return entry;
+                });
+                res.json(modifiedData);
             }
             else {
+                if (data.value)
+                    data.value = '-';
                 res.json([data]);
             }
         });
@@ -60,11 +82,18 @@ module.exports = function (app) {
             if (data === undefined || Object.keys(data).length == 0) {
                 res.json([]);
             }
-
             else if (Array.isArray(data)) {
-                res.json(data);
+                let modifiedData = data.map(entry => {
+                    if (entry.value)
+                        entry.value = '-';
+
+                    return entry;
+                });
+                res.json(modifiedData);
             }
             else {
+                if (data.value)
+                    data.value = '-';
                 res.json([data]);
             }
         });
@@ -76,11 +105,18 @@ module.exports = function (app) {
             if (data === undefined || Object.keys(data).length == 0) {
                 res.json([]);
             }
-
             else if (Array.isArray(data)) {
-                res.json(data);
+                let modifiedData = data.map(entry => {
+                    if (entry.value)
+                        entry.value = '-';
+
+                    return entry;
+                });
+                res.json(modifiedData);
             }
             else {
+                if (data.value)
+                    data.value = '-';
                 res.json([data]);
             }
         });
@@ -121,9 +157,17 @@ module.exports = function (app) {
                 res.json([]);
             }
             else if (Array.isArray(data)) {
-                res.json(data);
+                let modifiedData = data.map(entry => {
+                    if (entry.value)
+                        entry.value = '-';
+
+                    return entry;
+                });
+                res.json(modifiedData);
             }
             else {
+                if (data.value)
+                    data.value = '-';
                 res.json([data]);
             }
         });
@@ -136,9 +180,16 @@ module.exports = function (app) {
                 res.json([]);
             }
             else if (Array.isArray(data)) {
+                let modifiedData = data.map(entry => {
+                    if (entry.surveylist && entry.surveylist.buildingValue)
+                        entry.surveylist.buildingValue = '-';
+
+                    return entry;
+                })
                 res.json(data);
             }
             else {
+                data.surveylist.buildingValue = '-';
                 res.json([data]);
             }
         });
