@@ -1,0 +1,23 @@
+{
+  "name": "manipulation-scripts",
+  "version": "0.0.1",
+  "description": "Script to manipulate DB and other resources",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ansgohar/urbanharmony.git"
+  },
+  "author": "Omar-Handouk",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ansgohar/urbanharmony/issues"
+  },
+  "homepage": "https://github.com/ansgohar/urbanharmony#readme",
+  "dependencies": {
+    "assert": "^2.0.0",
+    "mongodb": "^3.5.4"
+  }
+}

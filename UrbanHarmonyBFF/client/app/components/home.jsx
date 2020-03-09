@@ -73,11 +73,11 @@ export class HomePage extends React.Component {
                         <div className="col-xs-12 sec2-all">
                             <div className="col-xs-12 col-sm-5 sec2RightSide nopadding-mobile">
                                 <div className="image-container-16x9">
-                                    {/* <iframe className="videoDisplay col-xs-12"
+                                     <iframe className="videoDisplay col-xs-12"
                                         width="560" height="315" src="https://www.youtube.com/embed/WB1-H25b3DY" frameborder="0" allow="autoplay; encrypted-media" allowFullScreen>
 
-                                    </iframe> */}
-                                    <img src="assets/images/logo/urban-harmony-logo-video.jpeg" />
+                                    </iframe>
+                                    {/*<img src="assets/images/logo/urban-harmony-logo-video.jpeg" />*/}
                                 </div>
                             </div>
                             <div className="col-xs-12 col-sm-7 sec2LeftSide nopadding-mobile">

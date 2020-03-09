@@ -37,6 +37,9 @@
       },
       "mainOwner": {
         "appearance": ""
+      },
+      "genID": {
+        "appearance": ""
       }
     }
   },
@@ -87,6 +90,12 @@
         "appearance": ""
       },
       "status": {
+        "appearance": ""
+      },
+      "genID": {
+        "appearance": ""
+      },
+      "committeDesicion": {
         "appearance": ""
       }
     }

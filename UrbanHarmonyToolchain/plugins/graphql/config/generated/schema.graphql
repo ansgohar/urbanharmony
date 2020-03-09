@@ -246,13 +246,14 @@ type Petition {
   _id: ID!
   createdAt: String!
   updatedAt: String!
-  owner: String
-  ownerType: String
-  committeeDecision: String
-  recommendation: String
   commiteeDate: String
   status: ENUM_PETITION_STATUS
   surveylist: Surveylist
+  genID: String
+  owner: String!
+  ownerType: String
+  committeDesicion: String
+  recommendation: String
 }
 
 type Projects {
@@ -339,6 +340,7 @@ type Surveylist {
   _id: ID!
   createdAt: String!
   updatedAt: String!
+  genID: String
   registrationNumber: Int
   buildingType: String
   buildingName: String

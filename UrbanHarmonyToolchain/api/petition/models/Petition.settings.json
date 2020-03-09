@@ -1,6 +1,6 @@
 {
   "connection": "default",
-  "collectionName": "",
+  "collectionName": "petition",
   "info": {
     "name": "petition",
     "description": ""
@@ -9,18 +9,6 @@
     "timestamps": true
   },
   "attributes": {
-    "owner": {
-      "type": "string"
-    },
-    "ownerType": {
-      "type": "string"
-    },
-    "committeeDecision": {
-      "type": "string"
-    },
-    "recommendation": {
-      "type": "string"
-    },
     "commiteeDate": {
       "type": "date"
     },
@@ -34,6 +22,22 @@
     "surveylist": {
       "model": "surveylist",
       "via": "petition"
+    },
+    "genID": {
+      "type": "string"
+    },
+    "owner": {
+      "type": "string",
+      "required": true
+    },
+    "ownerType": {
+      "type": "string"
+    },
+    "committeDesicion": {
+      "type": "string"
+    },
+    "recommendation": {
+      "type": "string"
     }
   }
 }
