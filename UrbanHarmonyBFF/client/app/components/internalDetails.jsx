@@ -75,11 +75,9 @@ class DetailID extends React.Component {
             <div className="tile conferenceCard col-xs-12 col-xm-10 page-margin">
                 <div className="col-xs-12 newscard-container nopadding-mobile">
                     <div className="col-xs-12 news-rightSide nopadding-mobile">
-                        <div className="image-container-16x5">
-                            {/* <img src={this.props.record.image} /> */}
-                            <Image src={this.props.record.newImage1} /> 
-                   
-                        </div>
+                        
+                            {this.props.record.newImage1 === 'http://localhost:1337' ? '' : <div className="image-container-16x5"><Image src={this.props.record.newImage1} /></div>}
+                        
                         
                     </div>
                     <div className="col-xs-12 news-leftSide">
@@ -87,29 +85,19 @@ class DetailID extends React.Component {
                         <span className="author">كتبه: جهاز التنسيق الحضاري </span>
                         <h5>تاريخ النشر : {convertDateToArabic(this.props.record.DatePublished)}</h5>
                         <ReactMarkdown source={this.props.record.p1} />
-                        <div className="image-container-4x3">
-                            {/* <img src={this.props.record.image} /> */}
-                            <Image src={this.props.record.newImage2} /> 
-                   
-                        </div>
+                        {this.props.record.newImage2 === 'http://localhost:1337' ? '' : <div className="image-container-4x3"><Image src={this.props.record.newImage2} /></div>} 
                         <ReactMarkdown source={this.props.record.p2} />
-                        <div className="image-container-4x3">
-                            {/* <img src={this.props.record.image} /> */}
-                            <Image src={this.props.record.newImage3} /> 
-                   
-                        </div>
+                        
+                            {this.props.record.newImage3 === 'http://localhost:1337' ? '' : <div className="image-container-4x3"><Image src={this.props.record.newImage3} /></div>} 
+                        
                         <ReactMarkdown source={this.props.record.p3} />
-                        <div className="image-container-4x3">
-                            {/* <img src={this.props.record.image} /> */}
-                            <Image src={this.props.record.newImage4} /> 
-                   
-                        </div>
+                        
+                            {this.props.record.newImage4 === 'http://localhost:1337' ? '' : <div className="image-container-4x3"><Image src={this.props.record.newImage4} /></div>}
+                        
                         <ReactMarkdown source={this.props.record.p4} />
-                        <div className="image-container-4x3">
-                            {/* <img src={this.props.record.image} /> */}
-                            <Image src={this.props.record.newImage5} /> 
-                   
-                        </div>
+                        
+                            {this.props.record.newImage5 === 'http://localhost:1337' ? '' : <div className="image-container-4x3"><Image src={this.props.record.newImage5} /></div>}                   
+                        
                     </div>
                 </div>
 

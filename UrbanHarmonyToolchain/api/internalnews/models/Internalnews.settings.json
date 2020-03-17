@@ -9,14 +9,8 @@
     "timestamps": true
   },
   "attributes": {
-    "AuthorName": {
-      "type": "string"
-    },
     "ArticleName": {
       "type": "string"
-    },
-    "Description": {
-      "type": "text"
     },
     "Type": {
       "type": "enumeration",
@@ -28,21 +22,8 @@
       "required": true,
       "default": "Social"
     },
-    "FullArticle": {
-      "type": "text"
-    },
-    "image": {
-      "model": "file",
-      "via": "related",
-      "plugin": "upload"
-    },
     "datePublished": {
       "type": "date"
-    },
-    "image2": {
-      "model": "file",
-      "via": "related",
-      "plugin": "upload"
     },
     "new_paragraph1": {
       "type": "text"
@@ -52,12 +33,6 @@
       "via": "related",
       "plugin": "upload"
     },
-    "new_image1Alt": {
-      "type": "text"
-    },
-    "new_image1Comment": {
-      "type": "string"
-    },
     "new_paragraph2": {
       "type": "text"
     },
@@ -65,9 +40,6 @@
       "model": "file",
       "via": "related",
       "plugin": "upload"
-    },
-    "new_image2Alt": {
-      "type": "string"
     },
     "new_paragraph3": {
       "type": "text"
@@ -77,9 +49,6 @@
       "via": "related",
       "plugin": "upload"
     },
-    "new_image3Alt": {
-      "type": "string"
-    },
     "new_paragraph4": {
       "type": "text"
     },
@@ -88,9 +57,6 @@
       "via": "related",
       "plugin": "upload"
     },
-    "new_image4Alt": {
-      "type": "string"
-    },
     "new_paragraph5": {
       "type": "text"
     },
@@ -98,77 +64,6 @@
       "model": "file",
       "via": "related",
       "plugin": "upload"
-    },
-    "new_image5Alt": {
-      "type": "string"
-    },
-    "news_id": {
-      "type": "integer"
-    },
-    "newsShortText": {
-      "type": "text"
-    },
-    "newsSmallImg": {
-      "model": "file",
-      "via": "related",
-      "plugin": "upload"
-    },
-    "newsSmallImgWidth": {
-      "type": "integer"
-    },
-    "newsSmallImgHeight": {
-      "type": "integer"
-    },
-    "newsSmallImgAlt": {
-      "type": "string"
-    },
-    "new_image1_width": {
-      "type": "integer"
-    },
-    "new_image1_height": {
-      "type": "integer"
-    },
-    "press1": {
-      "type": "string"
-    },
-    "presstext1": {
-      "type": "text"
-    },
-    "press2": {
-      "type": "string"
-    },
-    "presstext2": {
-      "type": "text"
-    },
-    "press3": {
-      "type": "string"
-    },
-    "presstext3": {
-      "type": "text"
-    },
-    "new_image2_width": {
-      "type": "integer"
-    },
-    "new_image2_height": {
-      "type": "integer"
-    },
-    "new_image3_width": {
-      "type": "integer"
-    },
-    "new_image3_height": {
-      "type": "integer"
-    },
-    "new_image4_width": {
-      "type": "integer"
-    },
-    "new_image4_height": {
-      "type": "integer"
-    },
-    "new_image5_width": {
-      "type": "integer"
-    },
-    "new_image5_height": {
-      "type": "integer"
     }
   }
 }

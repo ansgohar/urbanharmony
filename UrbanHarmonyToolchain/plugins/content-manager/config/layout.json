@@ -237,6 +237,12 @@
       },
       "pressLink2": {
         "appearance": ""
+      },
+      "Description": {
+        "appearance": "WYSIWYG"
+      },
+      "URL": {
+        "appearance": ""
       }
     }
   },
@@ -246,7 +252,7 @@
         "appearance": ""
       },
       "new_paragraph1": {
-        "appearance": ""
+        "appearance": "WYSIWYG"
       },
       "new_image1Alt": {
         "appearance": ""
@@ -255,25 +261,25 @@
         "appearance": ""
       },
       "new_paragraph2": {
-        "appearance": ""
+        "appearance": "WYSIWYG"
       },
       "new_image2Alt": {
         "appearance": ""
       },
       "new_paragraph3": {
-        "appearance": ""
+        "appearance": "WYSIWYG"
       },
       "new_image3Alt": {
         "appearance": ""
       },
       "new_paragraph4": {
-        "appearance": ""
+        "appearance": "WYSIWYG"
       },
       "new_image4Alt": {
         "appearance": ""
       },
       "new_paragraph5": {
-        "appearance": ""
+        "appearance": "WYSIWYG"
       },
       "new_image5Alt": {
         "appearance": ""
