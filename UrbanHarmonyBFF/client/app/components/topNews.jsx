@@ -41,9 +41,9 @@ class News extends React.Component {
         return (
             <div className="carouselContent">
             <div className="thumb-cont">
-                {/* <img class="thumb-img" src={this.props.rec.image}></img> */}
-                 <h2 className="h2NewsTop">{this.props.rec.title}</h2>
-                <Image src={this.props.rec.image} class={"thumb-img-news"}/> 
+                {/*console.info(this.props.rec) && this.props.rec.newImage1 && this.props.rec.newImage1 !== 'http://localhost:1337' ? <Image src={this.props.rec.newImage1} class={"thumb-img-news"}/> : ''*/}
+                {this.props.rec.image && this.props.rec.image.url ? <Image class={"thumb-img-news"} src={`http://localhost:1337/${this.props.rec.image.url}`} /> : ''} 
+                 <h2 className="h2NewsTop">{this.props.rec.title}</h2> 
                 </div>
                
             <p>{this.props.rec.article}</p> 

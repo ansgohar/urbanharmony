@@ -11,7 +11,7 @@ class InternalService {
                 return response.json();
             })
             .then(function (myJson) {
-                let expression = jsonata('$.{"id":_id,"title":ArticleName,"date":createdAt,"label":Type,"DatePublished":datePublished}');
+                let expression = jsonata('$.{"id":_id,"title":ArticleName,"date":createdAt,"label":Type,"DatePublished":datePublished,"newImage1":"' + url.slice(0, -1) + '"& new_image1.url}');
                 let newsObject = expression.evaluate(myJson);
                 callback(newsObject);
             });
@@ -25,7 +25,7 @@ class InternalService {
                 return response.json();
             })
             .then(function (myJson) {
-                let expression = jsonata('$.{"id":_id,"title":ArticleName,"date":createdAt,"label":Type,"DatePublished":datePublished}');
+                let expression = jsonata('$.{"id":_id,"title":ArticleName,"date":createdAt,"label":Type,"DatePublished":datePublished,"newImage1":"' + url.slice(0, -1) + '"& new_image1.url}');
                 let newsObject = expression.evaluate(myJson);
                 callback(newsObject);
             });

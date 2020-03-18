@@ -38,7 +38,7 @@ class Image extends React.Component {
                 //console.log(err)
             });
 
-        if((url.match(/\.(jpeg|jpg|gif|png)$/)) == null){
+        if(url && (typeof url) === 'string' && (url.match(/\.(jpeg|jpg|gif|png)$/)) == null){
                 status = false
             };
 
