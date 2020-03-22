@@ -27,9 +27,13 @@ type Conferences {
   _id: ID!
   createdAt: String!
   updatedAt: String!
-  Title: String
-  Date: String
-  Type: ENUM_CONFERENCES_TYPE!
+  title: String
+  date: String
+  type: ENUM_CONFERENCES_TYPE!
+  details: String
+  link: String
+  photos(sort: String, limit: Int, start: Int, where: JSON): [UploadFile]
+  pdfs(sort: String, limit: Int, start: Int, where: JSON): [UploadFile]
 }
 
 type Consultingoffice {

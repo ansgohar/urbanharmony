@@ -427,5 +427,15 @@
         "appearance": ""
       }
     }
+  },
+  "conferences": {
+    "attributes": {
+      "details": {
+        "appearance": "WYSIWYG"
+      },
+      "link": {
+        "appearance": ""
+      }
+    }
   }
 }
