@@ -108,6 +108,8 @@ class CmpID extends React.Component {
                         <ReactMarkdown source={this.props.competition.rules} />
                         <h3> الجوائز : </h3>
                         <p>{this.props.competition.awards}</p>
+                        <h3> الفائزون : </h3>
+                        <CompetitionWInners contestants={this.props.competition.contestants} />
                         <h3> الحكام : </h3>
                         <ReactMarkdown source={this.props.competition.judges} />
                         {this.props.competition.PDF.includes("uploads") ? <React.Fragment><p>المزيد من التفاصيل: <a href={this.props.competition.PDF} target="_blank">عرض الملف</a></p></React.Fragment> : ''}
@@ -131,6 +133,8 @@ class CmpID extends React.Component {
                         <ReactMarkdown source={this.props.competition.rules} />
                         <h3> الجوائز : </h3>
                         <p>{this.props.competition.awards}</p>
+                        <h3> الفائزون : </h3>
+                        <CompetitionWInners contestants={this.props.competition.contestants} />
                         <h3> الحكام : </h3>
                         <ReactMarkdown source={this.props.competition.judges} />
                         <a className="read-more" href={"/competitionInfo?competition="+prevCmp}>الارشيف</a>
@@ -144,6 +148,23 @@ class CmpID extends React.Component {
 
     }
 }
+
+let CompetitionWInners = (props) => {
+    if (!props.contestants || props.contestants.length === 0) {
+        return (<div></div>);
+    }
+
+    let winners = props.contestants
+    .filter(contestant => contestant.status !== 'applied' && contestant.status !== 'accepted')
+    .map(contestant => <div className='col-xs-12'>
+        <div className="row">
+            <p>اسم الفائز: {contestant.name}</p>
+            <p>المركز: {contestant.status}</p>
+        </div>
+    </div>);
+
+    return (<div>{winners}</div>);
+};
 
 const mapStateToProps = (state, ownProps) => ({
     competitionID: state.competitionID,

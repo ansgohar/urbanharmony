@@ -23,7 +23,7 @@ class ComplainsPage extends React.Component {
                         <div className="col-xs-12 filter-tabs">
                             <ul className="col-xs-12 col-sm-5 nav nav-tabs no-padding">
                                 <li className="active"><a data-toggle="tab" href="#menu1">قوائم الحصر</a></li>
-                                <li><a data-toggle="tab" href="#menu2">التظلمات</a></li>
+                                <li><a data-toggle="tab" href="#menu2">موقف التظلم و الاحكام</a></li>
                             </ul>
                         </div>
                         <div className="tab-content">

@@ -9,6 +9,9 @@
     "timestamps": true
   },
   "attributes": {
+	"genID": {
+      "type": "string"
+    },
     "registrationNumber": {
       "type": "integer"
     },

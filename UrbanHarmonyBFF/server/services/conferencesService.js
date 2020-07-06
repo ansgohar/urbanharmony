@@ -20,9 +20,7 @@ class ConferencesService {
                 return response.json();
             })
             .then(function (myJson) {
-                let expression = jsonata('$.{"id":_id,"title":Title,"date":Date,"type":Type}');
-                let ConferencesObject = expression.evaluate(myJson);
-                callback(ConferencesObject);
+                callback(myJson);
             });
         })
         

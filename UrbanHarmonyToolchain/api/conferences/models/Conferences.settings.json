@@ -9,18 +9,35 @@
     "timestamps": true
   },
   "attributes": {
-    "Title": {
-      "type": "string",
-      "multiple": false
+    "title": {
+      "type": "string"
     },
-    "Date": {
-      "type": "date",
-      "multiple": false
+    "date": {
+      "type": "date"
     },
-    "Type": {
-      "type":"enumeration",
-      "enum": ["Seminar","Internal Conference"],
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "Seminar",
+        "Internal Conference"
+      ],
       "required": true
+    },
+    "details": {
+      "type": "text"
+    },
+    "link": {
+      "type": "string"
+    },
+    "photos": {
+      "collection": "file",
+      "via": "related",
+      "plugin": "upload"
+    },
+    "pdfs": {
+      "collection": "file",
+      "via": "related",
+      "plugin": "upload"
     }
   }
 }

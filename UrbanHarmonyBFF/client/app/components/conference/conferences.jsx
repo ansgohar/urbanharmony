@@ -53,7 +53,7 @@ class Conferences extends React.Component {
 
             let conferenceDate = conference.date ? event.toLocaleDateString('ar-EG', options) : " غير متوفر " ;
 
-            return <TableRow title={conference.title} conferenceType={conferenceType} key={conference.id} conferenceDate={conferenceDate} />
+            return <TableRow title={conference.title} conferenceType={conferenceType} key={conference.id} conferenceDate={conferenceDate} details={conference.details} link={conference.link} photos={conference.photos} pdfs={conference.pdfs}/>
         }
 
        
@@ -82,8 +82,19 @@ class TableRow extends React.Component{
 
     render(){
 
+        let pdfs = undefined;
+        if (this.props.pdfs && this.props.pdfs.length !== 0) {
+            pdfs = this.props.pdfs.map(pdf => {
+                return <a className="row" href={`http://localhost:1337${pdf.url}`} target="_blank"> تحميل الملف</a>
+            });
+        }
 
-
+        let photos = undefined;
+        if (this.props.photos && this.props.photos.length !== 0) {
+            photos = this.props.photos.map(photo => {
+                return <img className="col" src={`http://localhost:1337${photo.url}`} height="300" width="300"/>
+            });
+        }
         return(
             <table className="default-table no-border-table">
                             <tr className="table-row">
@@ -96,11 +107,32 @@ class TableRow extends React.Component{
                                 {this.props.conferenceDate.toString()}
                             </tr>
 
-                                <tr className="table-row">
+                            <tr className="table-row">
                                 <td className="table-data table-header"> نوع المؤتمر </td>
                                 {this.props.conferenceType}
                             </tr>
                             
+                            {this.props.details ? <tr className="table-row">
+                                <td className="table-data table-header">تفاصيل</td>
+                                <ReactMarkdown source={this.props.details}/>
+                            </tr> : ''}
+
+                            {this.props.link ? <tr className="table-row">
+                                <td className="table-data table-header">تفاصيل اخرى</td>
+                                <a href={this.props.link} target="_blank">انقر هنا</a>
+                            </tr> : ''}
+
+                            {photos ? <tr className="table-row">
+                                <td className="table-data table-header">صور</td>
+                                <div className="row">
+                                    {photos}
+                                </div>
+                            </tr> : ''}
+
+                            {pdfs ? <tr className="table-row">
+                                <td className="table-data table-header">ملفات</td>
+                                {pdfs}
+                                </tr> : ''}
                         </table>
         );
     }

@@ -27,9 +27,13 @@ type Conferences {
   _id: ID!
   createdAt: String!
   updatedAt: String!
-  Title: String
-  Date: String
-  Type: ENUM_CONFERENCES_TYPE!
+  title: String
+  date: String
+  type: ENUM_CONFERENCES_TYPE!
+  details: String
+  link: String
+  photos(sort: String, limit: Int, start: Int, where: JSON): [UploadFile]
+  pdfs(sort: String, limit: Int, start: Int, where: JSON): [UploadFile]
 }
 
 type Consultingoffice {
@@ -61,6 +65,7 @@ type Contestant {
   img3: String
   status: ENUM_CONTESTANT_STATUS
   competitions: Competitions
+  address: String
 }
 
 enum ENUM_CONDITIONSANDLAWS_TYPE {
@@ -79,18 +84,15 @@ enum ENUM_CONTESTANT_STATUS {
   applied
   accepted
   winner
+  first
+  second
+  third
 }
 
 enum ENUM_INTERNALNEWS_TYPE {
   Social
   Paper
   Electronic
-}
-
-enum ENUM_JOURNAL_PRESSPDFSHOW {
-  undefined
-  yes
-  no
 }
 
 enum ENUM_LIBRARY_BOOKCATEGORY {
@@ -140,52 +142,19 @@ type Internalnews {
   _id: ID!
   createdAt: String!
   updatedAt: String!
-  AuthorName: String
   ArticleName: String
-  Description: String
   Type: ENUM_INTERNALNEWS_TYPE!
-  FullArticle: String
-  image: UploadFile
   datePublished: String
-  image2: UploadFile
   new_paragraph1: String
   new_image1: UploadFile
-  new_image1Alt: String
-  new_image1Comment: String
   new_paragraph2: String
   new_image2: UploadFile
-  new_image2Alt: String
   new_paragraph3: String
   new_image3: UploadFile
-  new_image3Alt: String
   new_paragraph4: String
   new_image4: UploadFile
-  new_image4Alt: String
   new_paragraph5: String
   new_image5: UploadFile
-  new_image5Alt: String
-  news_id: Int
-  newsShortText: String
-  newsSmallImg: UploadFile
-  newsSmallImgWidth: Int
-  newsSmallImgHeight: Int
-  newsSmallImgAlt: String
-  new_image1_width: Int
-  new_image1_height: Int
-  press1: String
-  presstext1: String
-  press2: String
-  presstext2: String
-  press3: String
-  presstext3: String
-  new_image2_width: Int
-  new_image2_height: Int
-  new_image3_width: Int
-  new_image3_height: Int
-  new_image4_width: Int
-  new_image4_height: Int
-  new_image5_width: Int
-  new_image5_height: Int
 }
 
 type Journal {
@@ -195,21 +164,9 @@ type Journal {
   AuthorName: String
   ArticleName: String
   DatePublished: String
-  pageNumber: Int
-  small_image: UploadFile
-  small_image_width: Int
-  small_image_height: Int
-  large_image: UploadFile
-  large_image_width: Int
-  large_image_height: Int
-  pressPDFFile: UploadFile
-  pressPDFShow: ENUM_JOURNAL_PRESSPDFSHOW
-  pressComment: String
-  pressCommentLink: String
-  pressText1: String
-  pressLink1: String
-  pressText2: String
-  pressLink2: String
+  Description: String
+  ImgURL: UploadFile
+  URL: String
 }
 
 """
@@ -242,13 +199,14 @@ type Petition {
   _id: ID!
   createdAt: String!
   updatedAt: String!
-  owner: String
-  ownerType: String
-  committeeDecision: String
-  recommendation: String
   commiteeDate: String
   status: ENUM_PETITION_STATUS
   surveylist: Surveylist
+  genID: String
+  owner: String!
+  ownerType: String
+  committeDesicion: String
+  recommendation: String
 }
 
 type Projects {
@@ -335,6 +293,7 @@ type Surveylist {
   _id: ID!
   createdAt: String!
   updatedAt: String!
+  genID: String
   registrationNumber: Int
   buildingType: String
   buildingName: String
