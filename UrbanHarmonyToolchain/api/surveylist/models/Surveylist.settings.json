@@ -3,13 +3,14 @@
   "collectionName": "surveylist",
   "info": {
     "name": "surveylist",
-    "description": ""
+    "description": "",
+    "mainField": "genID"
   },
   "options": {
     "timestamps": true
   },
   "attributes": {
-	"genID": {
+    "genID": {
       "type": "string"
     },
     "registrationNumber": {

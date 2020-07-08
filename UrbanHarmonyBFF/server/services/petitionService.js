@@ -6,7 +6,7 @@ class PetitionService {
 
 
     getAllPetitions(callback) {
-        fetch(url + 'petition')
+        fetch(url + 'petition?_limit=999999')
             .then(function (response) {
                 return response.json();
             })

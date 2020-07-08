@@ -24,7 +24,7 @@ class SearchService {
 
             let dir = payload.dir;
             
-            let filters = '(limit: 10000';
+            let filters = '(limit: 999999';
 
             // If there are filters && Object has keys
             if (payload.filters !== undefined && Object.keys(payload.filters).length !== 0){

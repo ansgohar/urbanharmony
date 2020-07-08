@@ -67,11 +67,6 @@ class ComplainsData extends React.Component {
             accessor: 'subArea'
         },
         {
-            Header: 'قيمة',
-            type: String,
-            accessor: 'value'
-        },
-        {
             Header: 'اسم المبنى',
             type: String,
             accessor: 'buildingName'

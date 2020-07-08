@@ -9,7 +9,7 @@ const url = config.CMS_URL || process.env.CMS_URL;
 class StudiesService {
 	getStudies(callback) {
 		auth.getAuthToken((token) => {
-			const path = `${url}studies?_limit=100000`;
+			const path = `${url}studies?_limit=999999`;
 			const request = {
 				method: 'GET',
 				headers: {

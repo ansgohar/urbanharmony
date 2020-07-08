@@ -11,7 +11,7 @@ class ComplainService {
 
     getSurveyList(callback) {
         auth.getAuthToken(function (token) {
-            fetch(url + 'surveylist?_limit=7000', {
+            fetch(url + 'surveylist?_limit=999999', {
                     method: 'GET',
                     headers: {
                         "Content-Type": "application/json",
@@ -32,7 +32,7 @@ class ComplainService {
 
     getSearchResults(SearchQuery, callback) {
         auth.getAuthToken(function (token) {
-            fetch(url + 'surveylist?' + SearchQuery, {
+            fetch(url + 'surveylist?_limit=999999&' + SearchQuery, {
                     method: 'GET',
                     headers: {
                         "Content-Type": "application/json",
@@ -107,7 +107,7 @@ class ComplainService {
     getComplainsSearchResults(Search, callback) {
         auth.getAuthToken(function (token) {
 
-            fetch(url + 'surveylist?status=exists&' + Search, {
+            fetch(url + 'surveylist?_limit=999999&status=exists&' + Search, {
                     method: 'GET',
                     headers: {
                         "Content-Type": "application/json",
@@ -129,7 +129,7 @@ class ComplainService {
     getGovernorates(callback) {
         auth.getAuthToken(function (token) {
 
-            fetch(url + 'Governorate', {
+            fetch(url + 'Governorate?_limit=999999', {
                     method: 'GET',
                     headers: {
                         "Content-Type": "application/json",
@@ -153,7 +153,7 @@ class ComplainService {
         // let query = encodeURIComponent('يوجد');
         auth.getAuthToken(function (token) {
 
-            fetch(url + 'surveylist?status=exists&_limit=7000', {
+            fetch(url + 'surveylist?status=exists&_limit=999999', {
                     method: 'GET',
                     headers: {
                         "Content-Type": "application/json",
@@ -174,7 +174,7 @@ class ComplainService {
     getAllPetitions(callback) {
         auth.getAuthToken(function (token) {
 
-            fetch(url + 'petiton?_limit=7000', {
+            fetch(url + 'petiton?_limit=999999', {
                     method: 'GET',
                     headers: {
                         "Content-Type": "application/json",
@@ -199,7 +199,7 @@ class ComplainService {
     getRegionsByGovernorate(id, callback) {
         auth.getAuthToken(function (token) {
 
-            fetch(url + 'regions?governorate._id=' + id, {
+            fetch(url + 'regions?_limit=999999&governorate._id=' + id, {
                     method: 'GET',
                     headers: {
                         "Content-Type": "application/json",

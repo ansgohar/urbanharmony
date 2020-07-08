@@ -103,6 +103,7 @@ enum ENUM_LIBRARY_BOOKCATEGORY {
 }
 
 enum ENUM_PETITION_STATUS {
+  na
   accepted
   rejected
 }
@@ -207,6 +208,7 @@ type Petition {
   ownerType: String
   committeDesicion: String
   recommendation: String
+  buildingPhoto: UploadFile
 }
 
 type Projects {

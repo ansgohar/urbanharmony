@@ -3,7 +3,8 @@
   "collectionName": "petition",
   "info": {
     "name": "petition",
-    "description": ""
+    "description": "",
+    "mainField": "genID"
   },
   "options": {
     "timestamps": true
@@ -15,9 +16,11 @@
     "status": {
       "type": "enumeration",
       "enum": [
+        "na",
         "accepted",
         "rejected"
-      ]
+      ],
+      "default": "na"
     },
     "surveylist": {
       "model": "surveylist",
@@ -38,6 +41,11 @@
     },
     "recommendation": {
       "type": "string"
+    },
+    "buildingPhoto": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload"
     }
   }
 }
