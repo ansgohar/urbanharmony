@@ -22,11 +22,9 @@ class MoreNews extends React.Component {
                         {/* <input type="radio" id="conferenceCard" name="color" />
                         <label className="filter-conBtn filterBtn  col-xs-3" htmlFor="conferenceCard">مؤتمرات</label> */}
                         <input type="radio" id="pressCard" name="color" value="pressCard" />
-                        <label className="filter-pressBtn filterBtn  col-xs-4" htmlFor="pressCard">صحافة</label>
-                        <input type="radio" id="newsCard" name="color" value="newsCard" />
-                        <label className="filter-newsCard filterBtn  col-xs-4" htmlFor="newsCard">أخبار</label>
-                        <input type="radio" id="all" name="color" value="all" />
-                        <label className="filter-allBtn filterBtn  col-xs-4" htmlFor="all">الكل</label>
+                        <label className="filter-pressBtn filterBtn  col-xs-6" htmlFor="pressCard">صحافة</label>
+                        <input type="radio" id="newsCard" name="color" value="newsCard" checked/>
+                        <label className="filter-newsCard filterBtn  col-xs-6" htmlFor="newsCard">أخبار</label>
 
 
                         <MorePressNews hide={this.props.pressNews.length === 0}

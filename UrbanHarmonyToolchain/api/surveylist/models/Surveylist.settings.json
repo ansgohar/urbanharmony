@@ -3,7 +3,8 @@
   "collectionName": "surveylist",
   "info": {
     "name": "surveylist",
-    "description": ""
+    "description": "",
+    "mainField": "_id"
   },
   "options": {
     "timestamps": true

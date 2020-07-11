@@ -3,7 +3,8 @@
   "collectionName": "petition",
   "info": {
     "name": "petition",
-    "description": ""
+    "description": "",
+    "mainField": "_id"
   },
   "options": {
     "timestamps": true

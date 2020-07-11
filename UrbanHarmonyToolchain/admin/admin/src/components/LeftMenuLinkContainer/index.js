@@ -16,7 +16,7 @@ import messages from './messages.json';
 
 function LeftMenuLinkContainer({ layout, plugins }) {
   const pluginsObject = plugins.toJS();
-  
+
   // Generate the list of sections
   const pluginsSections = Object.keys(pluginsObject).reduce((acc, current) => {
     pluginsObject[current].leftMenuSections.forEach((section = {}) => {
@@ -39,7 +39,7 @@ function LeftMenuLinkContainer({ layout, plugins }) {
 
     return acc;
   }, {});
-  
+
   const linkSections = Object.keys(pluginsSections).map((current, j) => {
     const contentTypesToShow = get(layout, 'layout.contentTypesToShow');
     const contentTypes = contentTypesToShow
@@ -91,6 +91,16 @@ function LeftMenuLinkContainer({ layout, plugins }) {
   return (
     <div className={styles.leftMenuLinkContainer}>
       {linkSections}
+      <div>
+        <p className={styles.title}>Entry forms</p>
+        <ul className={styles.list}>
+          <LeftMenuLink
+            icon="gear"
+            label="Petition insertion"
+            destination='/petition'
+          />
+        </ul>
+      </div>
       <div>
         <p className={styles.title}>
           <FormattedMessage {...messages.plugins} />
