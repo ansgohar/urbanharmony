@@ -3,8 +3,7 @@
   "collectionName": "surveylist",
   "info": {
     "name": "surveylist",
-    "description": "",
-    "mainField": "genID"
+    "description": ""
   },
   "options": {
     "timestamps": true

@@ -3,8 +3,7 @@
   "collectionName": "petition",
   "info": {
     "name": "petition",
-    "description": "",
-    "mainField": "genID"
+    "description": ""
   },
   "options": {
     "timestamps": true
