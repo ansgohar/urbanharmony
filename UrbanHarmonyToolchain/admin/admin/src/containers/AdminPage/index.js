@@ -45,6 +45,7 @@ import Logout from 'components/Logout';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
 import OverlayBlocker from 'components/OverlayBlocker';
 import PluginPage from 'containers/PluginPage/Loadable';
+import PetitionPage from 'containers/PetitionPage';
 
 // Utils
 import auth from 'utils/auth';
@@ -208,6 +209,7 @@ export class AdminPage extends React.Component {
               <Route path="/list-plugins" component={ListPluginsPage} exact />
               <Route path="/install-plugin" component={InstallPluginPage} exact />
               <Route path="/configuration" component={ComingSoonPage} exact />
+              <Route path="/petition" component={PetitionPage} exact />
               <Route path="" component={NotFoundPage} />
               <Route path="404" component={NotFoundPage} />
             </Switch>
