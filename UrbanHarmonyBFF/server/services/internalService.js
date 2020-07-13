@@ -7,8 +7,20 @@ class InternalService {
     getallinternalnews(callback) {
 
         fetch(url + 'internalnews?_limit=999999')
-            .then(function (response) {
-                return response.json();
+            .then(async function (response) {
+                let cmsResponse = await response.json();
+                if (cmsResponse.length <= 100)
+                    return cmsResponse;
+                else {
+                    let morphed = cmsResponse.sort((a, b) => {
+                        let dateA = new Date(a.datePublished);
+                        let dateB = new Date(b.datePublished);
+
+                        return dateB - dateA;
+                    }).slice(0, 101);
+
+                    return morphed;
+                }
             })
             .then(function (myJson) {
                 let expression = jsonata('$.{"id":_id,"title":ArticleName,"date":createdAt,"label":Type,"DatePublished":datePublished,"newImage1":"' + url.slice(0, -1) + '"& new_image1.url}');
