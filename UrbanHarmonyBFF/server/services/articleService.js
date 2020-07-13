@@ -33,8 +33,20 @@ class ArticleService {
     getlimited(limit,callback) {
 
         fetch(url + 'Journal?_sort=updatedAt:desc&_limit=' + limit)
-            .then(function (response) {
-                return response.json();
+            .then(async function (response) {
+                let cmsResponse = await response.json();
+                if (cmsResponse.length <= 100)
+                    return cmsResponse;
+                else {
+                    let morphed = cmsResponse.sort((a, b) => {
+                        let dateA = new Date(a.DatePublished);
+                        let dateB = new Date(b.DatePublished);
+
+                        return dateB - dateA;
+                    }).slice(0, 101);
+
+                    return morphed;
+                }
             })
             .then(function (myJson) {
                 let expression = jsonata('$.{"id":_id,"title":ArticleName,"article":Description,"date":createdAt,"image":ImgURL, "linkURL":URL, "author":AuthorName,"DatePublished":DatePublished}');
@@ -47,8 +59,20 @@ class ArticleService {
     getarticlebyid(id, callback) {
         //console.log(id);
         fetch(url + 'news/' + id)
-            .then(function (response) {
-                return response.json();
+            .then(async function (response) {
+                let cmsResponse = await response.json();
+                if (cmsResponse.length <= 100)
+                    return cmsResponse;
+                else {
+                    let morphed = cmsResponse.sort((a, b) => {
+                        let dateA = new Date(a.DatePublished);
+                        let dateB = new Date(b.DatePublished);
+
+                        return dateB - dateA;
+                    }).slice(0, 101);
+
+                    return morphed;
+                }
             })
             .then(function (myJson) {
 

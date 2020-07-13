@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import ReactTable from "react-table";
 import {getComplainsList} from '../../actions/index.js'
 import 'react-table/react-table.css';
+import * as config from '../../../config/config';
 
 class AllComplainsList extends React.Component {
     constructor(props) {
@@ -34,7 +35,7 @@ class AllComplainsList extends React.Component {
             if (petitionData.recommendation && petitionData.recommendation !== '' && petitionData.recommendation !== ' ')
                 document.getElementById('recommendation').innerHTML = petitionData.recommendation;
             if (petitionData.buildingPhoto && petitionData.buildingPhoto.url && petitionData.buildingPhoto.url !== '' && petitionData.buildingPhoto.url !== ' ')
-                document.getElementById('buildingPhoto').href = `http://0.0.0.0:1337${petitionData.buildingPhoto.url}`;
+                document.getElementById('buildingPhoto').href = `http://${config.host}:${config.cms_port}${petitionData.buildingPhoto.url}`;
         }
 
         document.getElementById('overlay').style.display = 'block';
