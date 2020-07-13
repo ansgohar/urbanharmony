@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import ReactMarkdown from 'react-markdown';
+import * as config from '../../../config/config';
 
 class Study extends Component {
     constructor(props) {
@@ -29,7 +30,7 @@ class Study extends Component {
                             </li>
                             <li className="list-group-item">
                                 <h6>البحث:</h6>
-                                <a href={`http://localhost:1337${this.props.url}`} target='_blank'>انقر هنا لفحص ملف البحث</a>
+                                <a href={`http://${config.host}:${config.cms_port}${this.props.url}`} target='_blank'>انقر هنا لفحص ملف البحث</a>
                             </li>
                         </ul>
                     </div>

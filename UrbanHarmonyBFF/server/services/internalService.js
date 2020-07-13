@@ -6,7 +6,7 @@ class InternalService {
 
     getallinternalnews(callback) {
 
-        fetch(url + 'internalnews')
+        fetch(url + 'internalnews?_limit=999999')
             .then(function (response) {
                 return response.json();
             })

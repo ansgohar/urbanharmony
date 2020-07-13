@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import ReactMarkdown from 'react-markdown';
 import { getConferences } from '../../actions/index.js';
 import * as fetch from 'node-fetch';
+import * as config from '../../../config/config';
 
 class Conferences extends React.Component {
     constructor(props) {
@@ -16,7 +17,7 @@ class Conferences extends React.Component {
 
     getConferences() {
 
-        let url = 'http://localhost:3000/conferencesList';
+        let url = `http://${config.host}:${config.backend_port}/conferencesList`;
         let options = {
             method: 'GET',
             headers: {
@@ -85,14 +86,14 @@ class TableRow extends React.Component{
         let pdfs = undefined;
         if (this.props.pdfs && this.props.pdfs.length !== 0) {
             pdfs = this.props.pdfs.map(pdf => {
-                return <a className="row" href={`http://localhost:1337${pdf.url}`} target="_blank"> تحميل الملف</a>
+                return <a className="row" href={`http://${config.host}:${config.cms_port}${pdf.url}`} target="_blank"> تحميل الملف</a>
             });
         }
 
         let photos = undefined;
         if (this.props.photos && this.props.photos.length !== 0) {
             photos = this.props.photos.map(photo => {
-                return <img className="col" src={`http://localhost:1337${photo.url}`} height="300" width="300"/>
+                return <img className="col" src={`http://${config.host}:${config.cms_port}${photo.url}`} height="300" width="300"/>
             });
         }
         return(

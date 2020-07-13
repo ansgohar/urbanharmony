@@ -2,6 +2,7 @@ import React from 'react';
 import { getALLInternalNews } from '../actions/index'
 import { connect } from 'react-redux';
 import Image from '../components/image.jsx'
+import * as config from '../../config/config';
 
 class AllIntNews extends React.Component {
     constructor(props) {
@@ -67,7 +68,7 @@ class Internal extends React.Component {
             <div className="tile newsCard col-xs-12 nopadding-mobile">
                 <div className="col-xs-12 newscard-container no-padding">
                     <div className="col-xs-12 col-sm-3 news-rightSide nopadding-mobile">
-                        {this.props.record.newImage1 && this.props.record.newImage1 !== 'http://localhost:1337' ? <div className="image-container-4x3"><Image src={this.props.record.newImage1} /></div> : ''} 
+                        {this.props.record.newImage1 && this.props.record.newImage1 !== `http://${config.host}:${config.cms_port}` || this.props.record.newImage1 !== 'http://localhost:1337' ? <div className="image-container-4x3"><Image src={this.props.record.newImage1} /></div> : ''}
                     </div>
                     <div className="col-xs-12 col-sm-9 news-leftSide nopadding-mobile">
                         <span className="cardCat">{this.translateLabel(this.props.record.label)}</span>

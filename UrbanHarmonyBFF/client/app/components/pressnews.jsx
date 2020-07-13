@@ -2,6 +2,7 @@ import React from 'react';
 import { getPressNews } from '../actions/index'
 import { connect } from 'react-redux';
 import Image from '../components/image.jsx'
+import * as config from '../../config/config';
 
 class MorePressNews extends React.Component {
     constructor(props) {
@@ -58,7 +59,7 @@ class Press extends React.Component {
             <div className="tile pressCard col-xs-12 nopadding-mobile">
                 <div className="col-xs-12 newscard-container no-padding">
                     <div className="col-xs-12 col-sm-3 news-rightSide nopadding-mobile">
-                            {this.props.record.image && this.props.record.image.url ? <div className="image-container-4x3"><Image src={`http://localhost:1337/${this.props.record.image.url}`} /></div> : ''} 
+                            {this.props.record.image && this.props.record.image.url ? <div className="image-container-4x3"><Image src={`http://${config.host}:${config.cms_port}/${this.props.record.image.url}`} /></div> : ''}
                     </div>
                     <div className="col-xs-12 col-sm-9 news-leftSide nopadding-mobile">
                         <span className="cardCat">صحافة</span>

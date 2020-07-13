@@ -2,6 +2,7 @@ import React from 'react';
 import { getNews } from '../actions/index'
 import { connect } from 'react-redux';
 import Image from '../components/image.jsx'
+import * as config from '../../config/config';
 
 class TopNews extends React.Component {
     constructor(props) {
@@ -41,8 +42,7 @@ class News extends React.Component {
         return (
             <div className="carouselContent">
             <div className="thumb-cont">
-                {/*console.info(this.props.rec) && this.props.rec.newImage1 && this.props.rec.newImage1 !== 'http://localhost:1337' ? <Image src={this.props.rec.newImage1} class={"thumb-img-news"}/> : ''*/}
-                {this.props.rec.image && this.props.rec.image.url ? <Image class={"thumb-img-news"} src={`http://localhost:1337/${this.props.rec.image.url}`} /> : ''} 
+                {this.props.rec.image && this.props.rec.image.url ? <Image class={"thumb-img-news"} src={`http://${config.host}:${config.cms_port}/${this.props.rec.image.url}`} /> : ''}
                  <h2 className="h2NewsTop">{this.props.rec.title}</h2> 
                 </div>
                

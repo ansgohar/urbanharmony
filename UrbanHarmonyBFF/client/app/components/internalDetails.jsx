@@ -4,7 +4,7 @@ import { getInternalByID } from '../actions/index.js'
 import * as queryString from "query-string";
 import ReactMarkdown from 'react-markdown';
 import Image from '../components/image.jsx'
-
+import * as config from '../../config/config';
 
 class DetailInternal extends React.Component {
     constructor(props) {
@@ -76,7 +76,7 @@ class DetailID extends React.Component {
                 <div className="col-xs-12 newscard-container nopadding-mobile">
                     <div className="col-xs-12 news-rightSide nopadding-mobile">
                         
-                            {this.props.record.newImage1 === 'http://localhost:1337' ? '' : <div className="image-container-16x5"><Image src={this.props.record.newImage1} /></div>}
+                            {this.props.record.newImage1 === `http://${config.host}:${config.cms_port}` || this.props.record.newImage1 === 'http://localhost:1337' ? '' : <div className="image-container-16x5"><Image src={this.props.record.newImage1} /></div>}
                         
                         
                     </div>
@@ -85,18 +85,18 @@ class DetailID extends React.Component {
                         <span className="author">كتبه: جهاز التنسيق الحضاري </span>
                         <h5>تاريخ النشر : {convertDateToArabic(this.props.record.DatePublished)}</h5>
                         <ReactMarkdown source={this.props.record.p1} />
-                        {this.props.record.newImage2 === 'http://localhost:1337' ? '' : <div className="image-container-4x3"><Image src={this.props.record.newImage2} /></div>} 
+                        {this.props.record.newImage2 === `http://${config.host}:${config.cms_port}` || this.props.record.newImage1 === 'http://localhost:1337' ? '' : <div className="image-container-4x3"><Image src={this.props.record.newImage2} /></div>}
                         <ReactMarkdown source={this.props.record.p2} />
                         
-                            {this.props.record.newImage3 === 'http://localhost:1337' ? '' : <div className="image-container-4x3"><Image src={this.props.record.newImage3} /></div>} 
+                            {this.props.record.newImage3 === `http://${config.host}:${config.cms_port}` || this.props.record.newImage1 === 'http://localhost:1337' ? '' : <div className="image-container-4x3"><Image src={this.props.record.newImage3} /></div>}
                         
                         <ReactMarkdown source={this.props.record.p3} />
                         
-                            {this.props.record.newImage4 === 'http://localhost:1337' ? '' : <div className="image-container-4x3"><Image src={this.props.record.newImage4} /></div>}
+                            {this.props.record.newImage4 === `http://${config.host}:${config.cms_port}` || this.props.record.newImage1 === 'http://localhost:1337' ? '' : <div className="image-container-4x3"><Image src={this.props.record.newImage4} /></div>}
                         
                         <ReactMarkdown source={this.props.record.p4} />
                         
-                            {this.props.record.newImage5 === 'http://localhost:1337' ? '' : <div className="image-container-4x3"><Image src={this.props.record.newImage5} /></div>}                   
+                            {this.props.record.newImage5 === `http://${config.host}:${config.cms_port}` || this.props.record.newImage1 === 'http://localhost:1337' ? '' : <div className="image-container-4x3"><Image src={this.props.record.newImage5} /></div>}
                         
                     </div>
                 </div>
