@@ -34,9 +34,6 @@ class NewsResult extends React.Component {
     renderAuthors() {
         let news = this.props.articles;
         let sortedNews = news;
-        console.log(news);
-        console.log(sortedNews);
-        sortedNews.sort((a, b) => (a.DatePublished < b.DatePublished) ? 1 : -1)
         return sortedNews.map(a => {
             console.log(a)
             return <NewsRecord record={a} key={a.id} />;

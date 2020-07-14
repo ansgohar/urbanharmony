@@ -23,7 +23,7 @@ class InternalService {
                 }
             })
             .then(function (myJson) {
-                let expression = jsonata('$.{"id":_id,"title":ArticleName,"date":createdAt,"label":Type,"DatePublished":datePublished,"newImage1":"' + url.slice(0, -1) + '"& new_image1.url}');
+                let expression = jsonata('$.{"id":_id,"title":ArticleName,"date":createdAt,"label":Type,"DatePublished":datePublished,"newImage1":"' + url.slice(0, -1) + '"& new_image1.url, "p1":new_paragraph1}');
                 let newsObject = expression.evaluate(myJson);
                 callback(newsObject);
             });
@@ -32,12 +32,24 @@ class InternalService {
 
     getlimitednews(limit, callback) {
 
-        fetch(url + 'internalnews?_sort=updatedAt:desc&_limit=' + limit)
-            .then(function (response) {
-                return response.json();
+        fetch(url + 'internalnews?_limit=999999')
+            .then(async function (response) {
+                let cmsResponse = await response.json();
+                if (cmsResponse.length <= limit)
+                    return cmsResponse;
+                else {
+                    let morphed = cmsResponse.sort((a, b) => {
+                        let dateA = new Date(a.datePublished);
+                        let dateB = new Date(b.datePublished);
+
+                        return dateB - dateA;
+                    }).slice(0, limit);
+
+                    return morphed;
+                }
             })
             .then(function (myJson) {
-                let expression = jsonata('$.{"id":_id,"title":ArticleName,"date":createdAt,"label":Type,"DatePublished":datePublished,"newImage1":"' + url.slice(0, -1) + '"& new_image1.url}');
+                let expression = jsonata('$.{"id":_id,"title":ArticleName,"date":createdAt,"label":Type,"DatePublished":datePublished,"newImage1":"' + url.slice(0, -1) + '"& new_image1.url, "p1":new_paragraph1}');
                 let newsObject = expression.evaluate(myJson);
                 callback(newsObject);
             });

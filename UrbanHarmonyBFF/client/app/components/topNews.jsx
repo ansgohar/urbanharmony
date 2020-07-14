@@ -42,12 +42,12 @@ class News extends React.Component {
         return (
             <div className="carouselContent">
             <div className="thumb-cont">
-                {this.props.rec.image && this.props.rec.image.url ? <Image class={"thumb-img-news"} src={`http://${config.host}:${config.cms_port}/${this.props.rec.image.url}`} /> : ''}
+                {this.props.rec.newImage1 && this.props.rec.newImage1  !== `http://${config.host}:${config.cms_port}/` ? <Image class={"thumb-img-news"} src={this.props.rec.newImage1} /> : ''}
                  <h2 className="h2NewsTop">{this.props.rec.title}</h2> 
                 </div>
                
             <p>{this.props.rec.article}</p> 
-            <a target="_blank" href={this.props.rec.linkURL}>مصدر الخبر</a>
+            <a target="_self" href={`/detail/?news=${this.props.rec.id}`}>الخبر</a>
         </div>
         );
     }

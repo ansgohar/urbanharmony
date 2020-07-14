@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 
 import './style.scss';
+import * as config from '../../../../../../UrbanHarmonyBFF/server/config/local.json';
 
 export class PetitionPage extends React.Component {
   constructor() {
@@ -41,12 +42,12 @@ export class PetitionPage extends React.Component {
       password: 'ABC2020$'
     };
 
-    const baseUrl = 'http://localhost:1337'
-    let url = '/auth/local';
+    const baseUrl = `${config.CMS_URL}`
+    let url = 'auth/local';
 
     const token = (await axios.post(`${baseUrl}${url}`, identityPayload)).data.jwt;
 
-    url = '/petition';
+    url = 'petition';
 
     let payload = {
       surveylist: this.state.surveyId,

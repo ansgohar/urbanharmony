@@ -1,6 +1,6 @@
 {
   "port": 3000,
-  "CMS_URL":"http://localhost:1337/",
+  "CMS_URL":"http://10.0.0.207:1337/",
   "USER": "admin",
   "SECERT": "ABC2020$"
 }

@@ -32,10 +32,10 @@ class ArticleService {
 
     getlimited(limit,callback) {
 
-        fetch(url + 'Journal?_sort=updatedAt:desc&_limit=' + limit)
+        fetch(url + 'Journal?_limit=999999')
             .then(async function (response) {
                 let cmsResponse = await response.json();
-                if (cmsResponse.length <= 100)
+                if (cmsResponse.length <= limit)
                     return cmsResponse;
                 else {
                     let morphed = cmsResponse.sort((a, b) => {
@@ -43,7 +43,7 @@ class ArticleService {
                         let dateB = new Date(b.DatePublished);
 
                         return dateB - dateA;
-                    }).slice(0, 101);
+                    }).slice(0, limit);
 
                     return morphed;
                 }

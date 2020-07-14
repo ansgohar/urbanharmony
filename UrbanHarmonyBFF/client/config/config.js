@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = {
-  host: 'localhost',
+  host: '10.0.0.207',
   backend_port: 3000,
   cms_port: 1337
 };

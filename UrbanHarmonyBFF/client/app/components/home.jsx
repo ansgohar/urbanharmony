@@ -33,7 +33,7 @@ export class HomePage extends React.Component {
                                     <div className="image-container-16x5">
                                         <img src="assets/images/sections/slider_img_01.jpg" className="carouselImg" alt="1" />
                                     </div>
-                                    <TopNews news={this.props.news[0]} hide={this.props.news.length === 0} />
+                                    <TopNews news={this.props.internalnews[0]} hide={this.props.internalnews.length === 0} />
 
                                 </div>
                                 <div className="item">
@@ -294,11 +294,9 @@ export class HomePage extends React.Component {
                         <h2 className="sec-h2">اخر الاخبار</h2>
                         <div className="filter-container col-xs-12 col-sm-10">
                             <input type="radio" id="pressCard" name="color" value="pressCard" />
-                            <label className="filter-pressBtn filterBtn col-xs-4" htmlFor="pressCard">صحافة</label>
-                            <input type="radio" id="newsCard" name="color" value="newsCard" />
-                            <label className="filter-newsCard filterBtn col-xs-4" htmlFor="newsCard">أخبار</label>
-                            <input type="radio" id="all" name="color" value="all" />
-                            <label className="filter-allBtn filterBtn col-xs-4" htmlFor="all">الكل</label>
+                            <label className="filter-pressBtn filterBtn col-xs-6" htmlFor="pressCard">صحافة</label>
+                            <input type="radio" id="newsCard" name="color" value="newsCard" checked/>
+                            <label className="filter-newsCard filterBtn col-xs-6" htmlFor="newsCard">أخبار</label>
 
                             <NewsResult hide={this.props.articles.length === 0}
                                 articles={this.props.articles} />
