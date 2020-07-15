@@ -72,15 +72,14 @@ class Internal extends React.Component {
                     <div className="col-xs-12 col-sm-3 news-rightSide nopadding-mobile">
                         <div className="image-container-4x3">
                             {/* <img src={this.props.record.image} /> */}
-                            <Image src={this.props.record.image && `http://${config.host}:${config.cms_port}${this.props.record.image.url}`} />
+                            <Image src={this.props.record.newImage1 ? this.props.record.newImage1 : ''} />
                         </div>
                     </div>
                     <div className="col-xs-12 col-sm-9 news-leftSide nopadding-mobile">
                         <span className="cardCat">{this.translateLabel(this.props.record.label)}</span>
                         <h3>{this.props.record.title}</h3>
-                        <span className="author">   كتبة  {this.props.record.author} </span>
                         <h5 className="h5news">تاريخ النشر : {convertDateToArabic(this.props.record.DatePublished)}</h5>
-                        <p>{this.props.record.article}</p>
+                        <p>{this.props.record.p1}</p>
                         <a href={"/detail?news=" + this.props.record.id} >اقرأ المزيد</a>
                     </div>
                 </div>

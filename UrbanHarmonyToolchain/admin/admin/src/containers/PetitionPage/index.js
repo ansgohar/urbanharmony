@@ -1,9 +1,7 @@
 import React from 'react';
 import axios from 'axios';
-
 import './style.scss';
 import * as config from '../../../../../../UrbanHarmonyBFF/server/config/local.json';
-
 export class PetitionPage extends React.Component {
   constructor() {
     super();
@@ -69,6 +67,15 @@ export class PetitionPage extends React.Component {
     const petitionID = petitionResponse._id;
 
     await axios.put(`${baseUrl}${url}/${petitionID}`, {genID: petitionID}, {
+      headers: {
+        'authorization': `Bearer ${token}`,
+        'Content-Type': 'application/json'
+      }
+    });
+
+    url = `content-manager/explorer/surveylist/${payload.surveylist}?source=content-manager`;
+
+    await axios.put(`${baseUrl}${url}`, {status: 'exists'}, {
       headers: {
         'authorization': `Bearer ${token}`,
         'Content-Type': 'application/json'

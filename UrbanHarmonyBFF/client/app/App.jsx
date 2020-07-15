@@ -45,7 +45,7 @@ class App extends React.Component {
                                         <a href="#services">أهم الخدمات<strong class="caret"></strong> </a>
                                         <ul id="imp-service-sub" class="second-level" style={{'width':'200px', marginTop: 0}}>
                                             <li><a href="/complainsDetail">قوائم الحصر والتظلمات</a></li>
-                                            <li><a href="/allIncidents">المرصد الحضاري</a></li>
+                                            <li><a href="/allIncidents">المرصد الحضاري و الظبطية القضائية</a></li>
                                             <li id="dropdow" style={{"width": "200px"}}><a href="/lawsDetails">القوانين</a></li>
                                             <li><a href="/consultingOffices">مكاتب إستشارية</a></li>
                                         </ul>
@@ -56,6 +56,7 @@ class App extends React.Component {
                                     <li className="menu-position"><a href="/moreProjects" >مشروعات</a></li>
                                     <li className="menu-position"><a href="/more" >الأخبار</a></li>
                                     <li className="menu-position"><a href="/library" id="lib">مكتبة الجهاز</a></li>
+                                    <li className="menu-position"><a href="http://urbanharmony.org/grievance/">تسجيل و متابعة التظلمات</a></li>
                                 </ul>
                                 <div className="col-xs-6 col-sm-4 col-md-2 search-cont">
                                     <a id="searchBTN" onClick={()=> {
