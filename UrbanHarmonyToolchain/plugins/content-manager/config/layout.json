@@ -437,5 +437,12 @@
         "appearance": ""
       }
     }
+  },
+  "spotlight": {
+    "attributes": {
+      "url": {
+        "appearance": ""
+      }
+    }
   }
 }

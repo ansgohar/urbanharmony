@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/spotlight",
+      "handler": "Spotlight.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/spotlight/count",
+      "handler": "Spotlight.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/spotlight/:_id",
+      "handler": "Spotlight.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/spotlight",
+      "handler": "Spotlight.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/spotlight/:_id",
+      "handler": "Spotlight.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/spotlight/:_id",
+      "handler": "Spotlight.destroy",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

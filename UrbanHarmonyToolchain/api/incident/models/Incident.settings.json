@@ -16,7 +16,6 @@
       "type": "string"
     },
     "description": {
-      "minLength": 30,
       "type": "text"
     },
     "Date": {

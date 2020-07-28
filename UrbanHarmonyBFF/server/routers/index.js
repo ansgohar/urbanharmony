@@ -35,4 +35,6 @@ module.exports = function (app) {
     require('./contestant')(app);
 
     require('./studies')(app);
+
+    require('./spotlight')(app);
 };  

@@ -194,7 +194,7 @@ type Library {
   abstract: String
 }
 
-union Morph = Competitions | Conditionsandlaws | Conferences | Consultingoffice | Contestant | Governorate | Incident | Internalnews | Journal | Library | Petition | Projects | Regions | Studies | Surveylist | Videos | UploadFile | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsUser
+union Morph = Competitions | Conditionsandlaws | Conferences | Consultingoffice | Contestant | Governorate | Incident | Internalnews | Journal | Library | Petition | Projects | Regions | Spotlight | Studies | Surveylist | Videos | UploadFile | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsUser
 
 type Petition {
   _id: ID!
@@ -253,6 +253,8 @@ type Query {
   projects(sort: String, limit: Int, start: Int, where: JSON): [Projects]
   region(id: ID!): Regions
   regions(sort: String, limit: Int, start: Int, where: JSON): [Regions]
+  spotlight(id: ID!): Spotlight
+  spotlights(sort: String, limit: Int, start: Int, where: JSON): [Spotlight]
   study(id: ID!): Studies
   studies(sort: String, limit: Int, start: Int, where: JSON): [Studies]
   surveylist(id: ID!): Surveylist
@@ -276,6 +278,13 @@ type Regions {
   updatedAt: String!
   regionName: String
   governorate: Governorate
+}
+
+type Spotlight {
+  _id: ID!
+  createdAt: String!
+  updatedAt: String!
+  url: String!
 }
 
 """Support for adding studies."""
