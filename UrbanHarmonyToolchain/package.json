@@ -28,7 +28,7 @@
     "react-dom": "^16.3.2",
     "react-spinners": "^0.3.2",
     "reactstrap": "^6.0.1",
-    "strapi": "^3.0.0-alpha.12.5",
+    "strapi": "^3.0.0-beta.17.8",
     "strapi-mongoose": "^3.0.0-alpha.12.5",
     "styled-components": "^3.2.6"
   },
