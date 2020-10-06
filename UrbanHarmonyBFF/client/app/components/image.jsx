@@ -11,8 +11,8 @@ class Image extends React.Component {
     }
 
 
-    checkurl(url){
-        if (url == undefined){
+    checkUrl(url){
+        if (url === undefined){
             return false
         }
 
@@ -29,18 +29,17 @@ class Image extends React.Component {
         fetch(url, options)
             .then(res => res.json())
             .then(c => {
-                if(Object.values(c)[0] == 404){
+                if(Object.values(c)[0] === 404){
                     status = false;
-                    //console.log(c)
                     
                 }
             }).catch(err => {
-                //console.log(err)
+                console.error(err);
             });
 
         if(url && (typeof url) === 'string' && (url.match(/\.(jpeg|jpg|gif|png)$/)) == null){
                 status = false
-            };
+            }
 
         //console.log(status + " " + url)
         return status ? url : imageNotAvailable;
@@ -48,15 +47,14 @@ class Image extends React.Component {
     }
 
     render(){
-        let imgurl = this.checkurl(this.props.src)
-        //console.log(imgurl)
-        let imgClass = "";
-        if(this.props.class != undefined){
+        let imgUrl = this.checkUrl(this.props.src)
+        let imgClass = {};
+        if(this.props.class !== undefined){
             imgClass = this.props.class
         }
 
         return(
-            <img src={imgurl} class={imgClass} ></img>
+            <img alt="" src={imgUrl} className={imgClass} />
         )
         
     }

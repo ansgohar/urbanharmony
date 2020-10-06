@@ -10,6 +10,7 @@ type Competitions {
   deadline: String!
   photo: UploadFile
   extraInfo: UploadFile
+  url: String
   contestants(sort: String, limit: Int, start: Int, where: JSON): [Contestant]
 }
 

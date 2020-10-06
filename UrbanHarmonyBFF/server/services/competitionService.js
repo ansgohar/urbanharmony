@@ -56,7 +56,7 @@ class CompetitionService {
             fetch(url + 'competitions/?_limit=999999&_sort=deadline:DESC', payload)
             .then(res => res.json())
             .then(function (json) {
-                let expression = jsonata('$.{"id":_id,"title":Title,"description":Description, "rules": Rules, "judges" : Judges, "deadline" : deadline, "image" :  "' + url.slice(0, -1) + '"& photo.url, "awards" : awards, "PDF": "' + url.slice(0, -1) + '" & extraInfo.url}');
+                let expression = jsonata('$.{"id":_id,"title":Title, "contestants": contestants,"description":Description, "rules": Rules, "judges" : Judges, "deadline" : deadline, "image" :  "' + url.slice(0, -1) + '"& photo.url, "awards" : awards, "PDF": "' + url.slice(0, -1) + '" & extraInfo.url}');
                 let competitions = expression.evaluate(json);
                 
                 

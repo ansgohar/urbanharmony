@@ -42,6 +42,9 @@
       "model": "file",
       "via": "related",
       "plugin": "upload"
+    },
+    "url": {
+      "type": "string"
     }
   }
 }

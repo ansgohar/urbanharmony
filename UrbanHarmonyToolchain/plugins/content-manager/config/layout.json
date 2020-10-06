@@ -403,6 +403,9 @@
       },
       "deadline": {
         "appearance": ""
+      },
+      "url": {
+        "appearance": ""
       }
     }
   },

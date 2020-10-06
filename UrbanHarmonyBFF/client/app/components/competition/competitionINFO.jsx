@@ -1,10 +1,9 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { getCompetitionID } from '../../actions/index.js'
+import {connect} from 'react-redux';
+import {getCompetitionID} from '../../actions/index.js'
 import * as queryString from "query-string";
 import ReactMarkdown from 'react-markdown';
 import Image from '../image.jsx'
-import Signup from './signup.jsx';
 
 class CompetitionInfo extends React.Component {
     constructor(props) {
@@ -13,9 +12,7 @@ class CompetitionInfo extends React.Component {
     }
 
     getCmpID() {
-        var parsed = queryString.parse(this.props.location.search);
-        console.log(parsed);
-        console.log(this.props.location);
+        let parsed = queryString.parse(this.props.location.search);
         fetch('/competition/' + parsed.competition, {
             method: 'GET'
         }).then(res => res.json())
@@ -25,7 +22,8 @@ class CompetitionInfo extends React.Component {
 
     render() {
         return (
-            typeof this.props.competitionID === 'undefined' ? <div /> : this.props.competitionID.map(compID => <CmpID competition={compID} key={compID.id} />)
+            typeof this.props.competitionID === 'undefined' ? <div/> : this.props.competitionID.map(compID => <CmpID
+                competition={compID} key={compID.id}/>)
         );
     }
 }
@@ -34,24 +32,24 @@ class CmpID extends React.Component {
     constructor(props) {
         super(props);
         this.getAllCmp();
-        this.state ={
-            cmp:[]
+        this.state = {
+            cmp: []
         }
-      
-    
-        
+
+
     }
 
 
-    getAllCmp(){
+    getAllCmp() {
         fetch('/competition', {
-            method:'GET'
-        }).then(res =>res.json())
-        .then(data => {
-            this.setState({cmp:data})});
+            method: 'GET'
+        }).then(res => res.json())
+            .then(data => {
+                this.setState({cmp: data})
+            });
     }
 
-    checkDates(givenDate1, givenDate2 ) {
+    checkDates(givenDate1, givenDate2) {
         let dateObj = new Date();
 
         let currentDate = new Date(
@@ -64,16 +62,12 @@ class CmpID extends React.Component {
             dateObj.getMilliseconds()
         );
 
-        var b = givenDate1.split(/\D+/);
-        var a = givenDate2.split(/\D+/);
+        let b = givenDate1.split(/\D+/);
+        let a = givenDate2.split(/\D+/);
 
         let givenDate1Obj = new Date(Date.UTC(b[0], --b[1], b[2], b[3], b[4], b[5], b[6]));
         let givenDate2Obj = new Date(Date.UTC(a[0], --a[1], a[2], a[3], a[4], a[5], a[6]));
 
-
-        console.log(givenDate1Obj + "new");
-        console.log(givenDate2Obj + "old");
-        
         return (givenDate1Obj < givenDate2Obj ? false : true);
     }
 
@@ -81,89 +75,76 @@ class CmpID extends React.Component {
 
         let prevCmp = 0;
 
-        console.log(this.state)
-
-        for(let i=0; i<this.state.cmp.length ; i++){
-            if (this.props.competition.title === this.state.cmp[i].title){
-                if(this.props.competition.id != this.state.cmp[i].id){
-                    if(this.checkDates(this.props.competition.deadline, this.state.cmp[i].deadline)){
+        for (let i = 0; i < this.state.cmp.length; i++) {
+            if (this.props.competition.title === this.state.cmp[i].title) {
+                if (this.props.competition.id != this.state.cmp[i].id) {
+                    if (this.checkDates(this.props.competition.deadline, this.state.cmp[i].deadline)) {
                         prevCmp = this.state.cmp[i].id;
-                        console.log(this.state.cmp[i].deadline)
                     }
                 }
             }
         }
-        if(prevCmp === 0){
+        if (prevCmp === 0) {
             return (
                 <div className="col-xs-12 newscard-container nopadding-mobile page-margin">
                     <div className="col-xs-12 news-rightSide nopadding-mobile">
-                        <div className="image-container-16x5">  
-                        <Image src={this.props.competition.image} /> 
-    </div>
-                            </div>
+                        <Image src={this.props.competition.image}/>
+                    </div>
                     <div className="col-xs-12 news-leftSide">
                         <h2> {this.props.competition.title}</h2>
-                        <ReactMarkdown source={this.props.competition.description} />
+                        <ReactMarkdown source={this.props.competition.description}/>
                         <h3> القوانين : </h3>
-                        <ReactMarkdown source={this.props.competition.rules} />
+                        <ReactMarkdown source={this.props.competition.rules}/>
                         <h3> الجوائز : </h3>
                         <p>{this.props.competition.awards}</p>
                         <h3> الفائزون : </h3>
-                        <CompetitionWInners contestants={this.props.competition.contestants} />
+                        <CompetitionWinners contestants={this.props.competition.contestants}/>
                         <h3> الحكام : </h3>
-                        <ReactMarkdown source={this.props.competition.judges} />
-                        {this.props.competition.PDF.includes("uploads") ? <React.Fragment><p>المزيد من التفاصيل: <a href={this.props.competition.PDF} target="_blank">عرض الملف</a></p></React.Fragment> : ''}
-                        <hr></hr>
-                        <Signup competitions={this.props.competition.id} style="margin: 10px" />
+                        <ReactMarkdown source={this.props.competition.judges}/>
+                        <p>المزيد من التفاصيل و الاشتراك: <a href={this.props.competition.url} target="_blank">اضغط هنا</a></p>
                     </div>
                 </div>
             );
-        }else{
+        } else {
             return (
                 <div className="col-xs-12 newscard-container nopadding-mobile page-margin">
                     <div className="col-xs-12 news-rightSide nopadding-mobile">
-                        <div className="image-container-16x5">  
-                        <Image src={this.props.competition.image} /> 
-    </div>
-                            </div>
+                        <Image src={this.props.competition.image}/>
+                    </div>
                     <div className="col-xs-12 news-leftSide">
                         <h2> {this.props.competition.title}</h2>
-                        <ReactMarkdown source={this.props.competition.description} />
+                        <ReactMarkdown source={this.props.competition.description}/>
                         <h3> القوانين : </h3>
-                        <ReactMarkdown source={this.props.competition.rules} />
+                        <ReactMarkdown source={this.props.competition.rules}/>
                         <h3> الجوائز : </h3>
                         <p>{this.props.competition.awards}</p>
                         <h3> الفائزون : </h3>
-                        <CompetitionWInners contestants={this.props.competition.contestants} />
+                        <CompetitionWinners contestants={this.props.competition.contestants}/>
                         <h3> الحكام : </h3>
-                        <ReactMarkdown source={this.props.competition.judges} />
-                        <a className="read-more" href={"/competitionInfo?competition="+prevCmp}>الارشيف</a>
-                        <hr></hr>
-                        <Signup competitions={this.props.competition.id} style="margin: 10px" />
+                        <ReactMarkdown source={this.props.competition.judges}/>
+                        <a className="read-more" href={"/competitionInfo?competition=" + prevCmp}>الارشيف</a>
                     </div>
                 </div>
             );
         }
-
-
     }
 }
 
-let CompetitionWInners = (props) => {
+let CompetitionWinners = (props) => {
     if (!props.contestants || props.contestants.length === 0) {
         return (<div></div>);
     }
 
     let winners = props.contestants
-    .filter(contestant => contestant.status !== 'applied' && contestant.status !== 'accepted')
-    .map(contestant => <div className='col-xs-12'>
-        <div className="row">
-            <p>اسم الفائز: {contestant.name}</p>
-            <p>المركز: {contestant.status}</p>
-        </div>
-    </div>);
+        .filter(contestant => contestant.status !== 'applied' && contestant.status !== 'accepted')
+        .map(contestant => <div className='col-xs-12'>
+            <div className="row">
+                <p>اسم الفائز: {contestant.name}</p>
+                <p>المركز: {contestant.status === 'first' ? 'اﻷول' : (contestant.status === 'second' ? 'الثانى' : 'الثالث')}</p>
+            </div>
+        </div>);
 
-    return (<div>{winners}</div>);
+    return (<div>{winners.length === 0 ? <p>لم يحددوا بعد</p> : winners}</div>);
 };
 
 const mapStateToProps = (state, ownProps) => ({

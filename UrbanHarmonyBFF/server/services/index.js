@@ -21,7 +21,6 @@ module.exports = function (app) {
     require('./searchService')(app, serviceManager);
     require('./conferencesService')(app, serviceManager);
     require('./petitionService')(app, serviceManager);
-    require('./contestantService')(app, serviceManager);
     require('./studiesService')(app, serviceManager);
     require('./spotlightService')(app, serviceManager);
 };

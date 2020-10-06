@@ -23,28 +23,6 @@ class CompetitionList extends React.Component {
         return (
             <div className="col-xs-12 winners">
                 <h2>المسابقات</h2>
-                {/* <div className="col-xs-12 comp-filters competitionDetailsForm">
-                    <div className="col-xs-12 col-sm-6 timepicker-cont nopadding-mobile"> </div>
-                    <div className="col-xs-12 col-sm-6 compwin-cont nopadding-mobile">
-                        <div className="col-xs-12 col-sm-6 form-group timepicker-cont nopadding-mobile">
-                            <label className="fieldLabel col-sm-3 col-xs-12" htmlFor="email">تاريخ عرضها</label>
-                            <div className="col-xs-12 col-sm-9 calendar input-group date" id="datetimepicker2"> <span className="input-group-addon"> <span className="glyphicon glyphicon-calendar"></span> </span>
-                                <input className="form-control" type="text" />
-                            </div>
-                        </div>
-                        <div className="col-xs-12 col-sm-6 form-group no-padding">
-                            <label className="fieldLabel col-sm-3 col-xs-12" htmlFor="email">إسم المسابقة</label>
-                            <div className="col-xs-12 col-sm-9 formField">
-                                <select className="formDropdown" name="#">
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="3">4</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                </div> */}
                 {typeof this.props.allCompetitions === 'undefined' ?  <div/> : this.props.allCompetitions.map(
                     (comp) =>  {
                     
@@ -85,32 +63,12 @@ class CompetitionList extends React.Component {
             dateObj.getMilliseconds()
         );
 
-        var b = givenDate.split(/\D+/);
+        let b = givenDate.split(/\D+/);
 
         let givenDateObj = new Date(Date.UTC(b[0], --b[1], b[2], b[3], b[4], b[5], b[6]));
         // remove the line below if current local time is ahead the actual value
         givenDateObj.setHours(givenDateObj.getHours()-2);
-            
-            
-        // let splt = givenDate.split('T');
-        // let spltG = currentDate.split('T');
-
-        // let givenDateObj = new Date(splt[0]);
-        // let currentDateObj = new Date(splitG[0]);
-
-        // if(givenDateObj < currentDateObj){
-        //     if(split[1] < splitG[1]){
-        //         return callback(false);
-        //     }else{
-        //         return callback(true)
-        //     }
-        // }else{
-        //     return callback(true)
-        // }
-
-
-console.log(currentDate);
-console.log(givenDateObj);
+        
         return (givenDateObj < currentDate ? callback(false) : callback(true));
     }
 
@@ -144,11 +102,9 @@ class CompetitionEntry extends React.Component {
                     <div className="col-xs-12 col-sm-9 news-leftSide">
                         <div className="col-xs-12 winner-name no-padding">
                             <div><span>المسابقة</span> {this.props.record.title}</div>
-                            <div><span>التاريخ</span>{this.convertDateToArabic(this.props.record.deadline)}</div>
                         </div>
                         <p> {this.props.record.description} </p>
                         <a className="read-more" href={"/competitionInfo?competition="+this.props.record.id}>المزيد</a>
-                        {/* <div className="col-xs-12 no-padding"> <a href="#" className="share-btn"></a> <a href="#" className="pdf-btn"></a> </div> */}
                     </div>
                 </div>
             </div>

@@ -1,14 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { browserHistory } from 'react-router';
 import CurrentCompetition from './currentCompetition.jsx'
-import Subscribe from './subscribe.jsx'
 import CompetitionList from './competitionList.jsx'
-import UploadImages from './uploadImages.jsx'
-import showResults from "./showResults.jsx";
-import uploadResult from "./uploadResult.jsx";
 import CompetitionWinners from './competitionWinners.jsx'
-import * as queryString from "query-string";
 
 class CompetitionDetails extends React.Component {
     constructor(props) {
@@ -37,29 +31,12 @@ class CompetitionDetails extends React.Component {
                                         <div className="col-xs-12 nopadding-mobile">
                                             <ul className="col-xs-12 nav nav-tabs">
                                                 <li className="active"><a data-toggle="tab" href="#menu1tab1">معلومات عن المسابقة</a></li>
-                                                <li><a data-toggle="tab" href="#menu1tab2">إشترك معنا</a></li>
-                                                {/* <li><a data-toggle="tab" href="#menu1tab3">تسليم صور المسابقة</a></li> */}
                                             </ul>
                                             <div className="col-xs-12 tab-content nopadding-mobile">
                                                 <div id="menu1tab1" className="col-xs-12 tab-pane subtab fade in active">
                                                     <CurrentCompetition hide={this.props.competition.length === 0}
                                                         competition={this.props.competition} />
                                                 </div>
-                                                <div id="menu1tab2" className="col-xs-12 tab-pane subtab fade">
-                                                    <p>للإشتراك في المسابقة برجاء إرسال :</p>
-                                                    <ul>
-                                                        <li>الاسم</li>
-                                                        <li>صورة شخصية</li>
-                                                        <li>المهنة</li>
-                                                        <li>المحمول</li>
-                                                    </ul>
-                                                    <p>على البريد الالكتروني لجهاز التنسيق الحضاري info@urbanharmony.org</p>
-                                                    {/* <Subscribe onSubmit={showResults} /> */}
-                                                </div>
-                                                {/* <div id="menu1tab3" className="col-xs-12 tab-pane subtab fade no-padding">
-                                                    <p> برجاء وضع روابط الصور الخاصه بك وتأكد من ظهورها فى خانة العرض قبل  </p>
-                                                    <UploadImages token={queryString.parse(this.props.location.search).KEY} onSubmit={uploadResult} />
-                                                </div> */}
                                             </div>
                                         </div>
                                     </div>
