@@ -1,8 +1,6 @@
 import React from 'react';
-import NewsRecord from './result.jsx'
 import NewsResult from './newsResult.jsx'
 import TopNews from './topNews.jsx'
-import TopProject from './project/topProject.jsx'
 import WorkingProject from './project/workingProject.jsx'
 import PlannedProject from './project/plannedProject.jsx'
 import DoneProject from './project/doneProject.jsx'
@@ -10,7 +8,8 @@ import IntNews from './intNews.jsx'
 import CompetitionOfTheMonth from './competition/competitionOfTheMonth.jsx'
 
 import {connect} from 'react-redux';
-import {BrowserRouter, Route, Link, Switch, Redirect} from 'react-router-dom'
+import Image from "./image.jsx";
+import * as config from '../../config/config';
 
 export class HomePage extends React.Component {
 
@@ -26,6 +25,27 @@ export class HomePage extends React.Component {
         fetch('/spotlight', {method: 'GET', headers: {Accept: 'text/plain'}})
             .then(response => response.text())
             .then(response => this.setState({spotlight: response}));
+    }
+
+    topExternalNews() {
+        const topExt = this.props.news[0];
+        if (topExt) {
+            return (
+                <div className="carouselContent">
+                    <div className="thumb-cont">
+                        {topExt.image && topExt.image.url && topExt.image.url !== `http://${config.host}:${config.cms_port}` ?
+                            <Image class={"thumb-img-news"} src={`http://${config.host}:${config.cms_port}${topExt.image.url}`}/> : ''}
+                        <h2 className="h2NewsTop">{topExt.title}</h2>
+                    </div>
+
+                    <a target="_blank" href={topExt.linkURL}>الخبر</a>
+                </div>
+            );
+        } else {
+            return(
+                <div></div>
+            );
+        }
     }
 
     render() {
@@ -58,19 +78,15 @@ export class HomePage extends React.Component {
                                         <img src="assets/images/sections/Main_IMAGE.png" className="carouselImg"
                                              alt="2"/>
                                     </div>
-                                    <TopProject oneproject={this.props.oneproject[0]}
-                                                hide={this.props.oneproject.length === 0}/>
+                                    <TopNews news={this.props.internalnews[1]}
+                                             hide={this.props.internalnews.length === 0}/>
 
                                 </div>
                                 <div className="item">
                                     <div className="image-container-16x5">
                                         <img src="assets/images/sections/karnak.jpg" className="carouselImg" alt="3"/>
                                     </div>
-                                    <div className="carouselContent">
-                                        <CompetitionOfTheMonth hide={this.props.competition.length === 0}
-                                                               competition={this.props.competition} showTitle="true"/>
-                                        <a href="/competitionDetails">المزيد</a>
-                                    </div>
+                                    {this.topExternalNews()}
 
                                 </div>
                                 {/* <!-- Left and right controls --> */}
