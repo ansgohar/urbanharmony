@@ -1,0 +1,33 @@
+{
+  "connection": "default",
+  "collectionName": "",
+  "info": {
+    "name": "subsys",
+    "description": "This is the model of sub-systems that could be integrated dynamically within the site."
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "details": {
+      "type": "text",
+      "required": true
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload"
+    },
+    "link": {
+      "type": "string",
+      "required": true
+    },
+    "show": {
+      "type": "boolean"
+    }
+  }
+}

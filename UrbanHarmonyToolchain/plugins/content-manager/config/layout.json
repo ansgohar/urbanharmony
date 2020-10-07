@@ -97,6 +97,21 @@
       },
       "committeDesicion": {
         "appearance": ""
+      },
+      "address": {
+        "appearance": ""
+      },
+      "governorate": {
+        "appearance": ""
+      },
+      "mainArea": {
+        "appearance": ""
+      },
+      "subArea": {
+        "appearance": ""
+      },
+      "regNo": {
+        "appearance": ""
       }
     }
   },
@@ -444,6 +459,22 @@
   "spotlight": {
     "attributes": {
       "url": {
+        "appearance": ""
+      }
+    }
+  },
+  "subsys": {
+    "attributes": {
+      "title": {
+        "appearance": ""
+      },
+      "details": {
+        "appearance": "WYSIWYG"
+      },
+      "link": {
+        "appearance": ""
+      },
+      "show": {
         "appearance": ""
       }
     }
