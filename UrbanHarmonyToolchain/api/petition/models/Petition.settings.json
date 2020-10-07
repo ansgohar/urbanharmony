@@ -46,6 +46,21 @@
       "model": "file",
       "via": "related",
       "plugin": "upload"
+    },
+    "address": {
+      "type": "string"
+    },
+    "governorate": {
+      "type": "string"
+    },
+    "mainArea": {
+      "type": "string"
+    },
+    "subArea": {
+      "type": "string"
+    },
+    "regNo": {
+      "type": "string"
     }
   }
 }

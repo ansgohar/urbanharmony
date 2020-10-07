@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/subsys",
+      "handler": "Subsys.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/subsys/count",
+      "handler": "Subsys.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/subsys/:_id",
+      "handler": "Subsys.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/subsys",
+      "handler": "Subsys.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/subsys/:_id",
+      "handler": "Subsys.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/subsys/:_id",
+      "handler": "Subsys.destroy",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

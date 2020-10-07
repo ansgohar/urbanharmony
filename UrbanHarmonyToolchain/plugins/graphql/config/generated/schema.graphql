@@ -195,7 +195,7 @@ type Library {
   abstract: String
 }
 
-union Morph = Competitions | Conditionsandlaws | Conferences | Consultingoffice | Contestant | Governorate | Incident | Internalnews | Journal | Library | Petition | Projects | Regions | Spotlight | Studies | Surveylist | Videos | UploadFile | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsUser
+union Morph = Competitions | Conditionsandlaws | Conferences | Consultingoffice | Contestant | Governorate | Incident | Internalnews | Journal | Library | Petition | Projects | Regions | Spotlight | Studies | Subsys | Surveylist | Videos | UploadFile | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsUser
 
 type Petition {
   _id: ID!
@@ -210,6 +210,11 @@ type Petition {
   committeDesicion: String
   recommendation: String
   buildingPhoto: UploadFile
+  address: String
+  governorate: String
+  mainArea: String
+  subArea: String
+  regNo: String
 }
 
 type Projects {
@@ -258,6 +263,8 @@ type Query {
   spotlights(sort: String, limit: Int, start: Int, where: JSON): [Spotlight]
   study(id: ID!): Studies
   studies(sort: String, limit: Int, start: Int, where: JSON): [Studies]
+  subsy(id: ID!): Subsys
+  subsys(sort: String, limit: Int, start: Int, where: JSON): [Subsys]
   surveylist(id: ID!): Surveylist
   surveylists(sort: String, limit: Int, start: Int, where: JSON): [Surveylist]
   video(id: ID!): Videos
@@ -299,6 +306,20 @@ type Studies {
   publishingHouse: String
   brief: String
   research: UploadFile
+}
+
+"""
+This is the model of sub-systems that could be integrated dynamically within the site.
+"""
+type Subsys {
+  _id: ID!
+  createdAt: String!
+  updatedAt: String!
+  title: String!
+  details: String!
+  image: UploadFile
+  link: String!
+  show: Boolean
 }
 
 type Surveylist {

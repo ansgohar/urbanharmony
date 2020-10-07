@@ -36,8 +36,8 @@ export class PetitionPage extends React.Component {
     }
 
     const identityPayload = {
-      identifier: 'admin',
-      password: 'ABC2020$'
+      identifier: config.USER,
+      password: config.SECERT
     };
 
     const baseUrl = `${config.CMS_URL}`
@@ -45,6 +45,15 @@ export class PetitionPage extends React.Component {
 
     const token = (await axios.post(`${baseUrl}${url}`, identityPayload)).data.jwt;
 
+    // Fetch Survey address details
+    url = `surveylist/${this.state.surveyId}`;
+    const surveyDetails = (await axios.get(`${baseUrl}${url}`, {
+      headers: {
+        'authorization': `Bearer ${token}`,
+        'Content-Type': 'application/json'
+      }
+    })).data;
+    
     url = 'petition';
 
     let payload = {
@@ -53,7 +62,12 @@ export class PetitionPage extends React.Component {
       ownerType: this.state.ownerType,
       committeDesicion: this.state.committeDesicion,
       recommendation: this.state.recommendation,
-      commiteeDate: this.state.commiteeDate
+      commiteeDate: this.state.commiteeDate,
+      address: surveyDetails.address,
+      governorate: surveyDetails.governorate,
+      mainArea: surveyDetails.mainArea,
+      subArea: surveyDetails.subArea,
+      regNo: this.state.surveyId
     };
 
     const petitionResponse = (await axios.post(`${baseUrl}${url}`, payload, {
