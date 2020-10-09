@@ -53,7 +53,7 @@ export class PetitionPage extends React.Component {
         'Content-Type': 'application/json'
       }
     })).data;
-    
+
     url = 'petition';
 
     let payload = {

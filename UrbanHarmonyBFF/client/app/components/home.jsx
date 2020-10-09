@@ -10,6 +10,7 @@ import CompetitionOfTheMonth from './competition/competitionOfTheMonth.jsx'
 import {connect} from 'react-redux';
 import Image from "./image.jsx";
 import * as config from '../../config/config';
+import AdditionalSystems from "./additionalSystems.jsx";
 
 export class HomePage extends React.Component {
 
@@ -102,6 +103,9 @@ export class HomePage extends React.Component {
                         </div>
                     </div>
                 </div>
+
+                <AdditionalSystems/>
+
                 {/* <!-- Our Vision -->  */}
                 <div id="ourvision-sec " className="row" id="about">
                     <div className="col-xs-12 no-padding sec2">
@@ -113,7 +117,6 @@ export class HomePage extends React.Component {
                                             frameborder="0" allow="autoplay; encrypted-media" allowFullScreen>
 
                                     </iframe>
-                                    {/*<img src="assets/images/logo/urban-harmony-logo-video.jpeg" />*/}
                                 </div>
                             </div>
                             <div className="col-xs-12 col-sm-7 sec2LeftSide nopadding-mobile">
@@ -264,30 +267,8 @@ export class HomePage extends React.Component {
                                         </div>
                                     </div>
                                 </div>
-                                {/* <div className="cardContainer col-xs-12  col-sm-4 nopadding-mobile">
-                                    <div className="card col-xs-12 no-padding">
-                                        <div className="cardImgContainer col-xs-12 no-padding">
-                                            <div className="image-container-4x3">
-                                                <img className="cardImg" src="assets/images/sections/competition_03.jpg" />
-                                            </div>
-                                        </div>
-                                        <div className="col-xs-12 comp-textitems-cont no-padding">
-                                            <div className="cardText col-xs-12">
-                                                <p>هنالك العديد من الأنواع المتوفرة لنصوص لوريم إيبسوم، ولكن الغالبية تم تعديلها بشكل ما عبر إدخال بعض النوادر أو الكلمات العشوائية إلى النص. إن كنت تريد أن تستخدم نص لوريم إيبسوم ما، عليك أن تتحقق أولاً أن ليس هناك أي كلمات أو عبارات محرجة أو غير لائقة مخبأة في هذا النص. </p>
-                                            </div>
-                                            <div className="col-xs-12 cardBtn stickTotheBottom">
-                                                <button type="button" className="actionBtn 	btn">كراسة الشروط</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div> */}
                             </div>
                         </div>
-                        {/* <div className="col-xs-12">
-                            <div className="col-xs-12 others-cont">
-                                <a href="#" className="more-black" >المزيد من الفاعليات</a>
-                            </div>
-                        </div> */}
                     </div>
                 </div>
                 {/* <!-- Projects --> */}

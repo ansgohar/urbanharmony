@@ -18,11 +18,55 @@ import ConsultingOfficeDetails from './components/consultingOffices/consultingOf
 import AllIncidents from './components/incidents/incidents.jsx';
 import IncidentDetails from './components/incidents/incidentDetails.jsx';
 import Conferences from './components/conference/conferences.jsx';
-
 import { connect } from 'react-redux';
 import { BrowserRouter, Route, Link, Switch } from 'react-router-dom';
+import * as config from '../config/config.js';
 
 class App extends React.Component {
+
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            subsys: []
+        }
+    }
+
+    componentDidMount() {
+        this.fetchSubsys();
+    }
+
+    fetchSubsys() {
+         let credentials = {identifier: config.user, password: config.pass};
+
+         let options = {
+             method: 'POST',
+             headers: {
+                 'Content-Type': 'application/json',
+                 'Accept': 'application/json'
+             },
+             body: JSON.stringify(credentials)
+         };
+
+         let url = `http://${config.host}:${config.cms_port}/auth/local`;
+
+         fetch(url, options)
+             .then(res => res.json())
+             .then(body => body.jwt)
+             .then(token => {
+                 options.method = 'GET';
+                 options.headers['Authorization'] = `Bearer ${token}`;
+                 delete options.body;
+                 delete options.headers['Content-Type'];
+
+                 url = `http://${config.host}:${config.cms_port}/subsys`;
+
+                 fetch(url, options)
+                     .then(res => res.json())
+                     .then(body => this.setState({subsys: body}));
+             })
+             .catch(error => console.error(error));
+    }
 
     render() {
 
@@ -49,7 +93,6 @@ class App extends React.Component {
                                             <li id="dropdow" style={{"width": "200px"}}><a href="/lawsDetails">القوانين</a></li>
                                             <li><a href="/consultingOffices">مكاتب إستشارية</a></li>
                                         </ul>
-
                                     </li>
                                     <li className="menu-position"><a href="/competitionDetails" > مسابقات</a></li>
                                     <li className="menu-position"><a href="/conferences" >ندوات </a></li>
@@ -57,6 +100,13 @@ class App extends React.Component {
                                     <li className="menu-position"><a href="/more" >الأخبار</a></li>
                                     <li className="menu-position"><a href="/library" id="lib">مكتبة الجهاز</a></li>
                                     <li className="menu-position"><a href="http://urbanharmony.org/grievance/">تسجيل و متابعة التظلمات</a></li>
+                                    {this.state.subsys.length ? <li id="additional-services-menu" className="menu-position">
+                                        <a href="#additionalServices">خدمات أضافية<strong className="caret"></strong> </a>
+                                        <ul id="additional-services-sub" className="second-level"
+                                            style={{'width': '200px', marginTop: 0}}>
+                                            {this.state.subsys.map(value => <div><li><a href={value.link}>{value.title}</a></li><br/></div>)}
+                                        </ul>
+                                    </li> : ''}
                                 </ul>
                                 <div className="col-xs-6 col-sm-4 col-md-2 search-cont">
                                     <a id="searchBTN" onClick={()=> {
@@ -119,7 +169,6 @@ class App extends React.Component {
                                     <span>تابعنا على</span>
                                     <a href="https://www.facebook.com/NOUH.Egypt/" target="blank" ><img src="assets/images/icons/facebook_icon.svg" alt="facebook" className="fbIcon" /></a>
                                     <a href="https://www.youtube.com/channel/UCn6HUs-FBOwl8--4WuKZiTw" target="_blank"><img src="assets/images/icons/youtube_icon.svg" alt="youtube" className="ytIcon"  /></a>
-                                    <div className="copy-right">تم التصميم والتنفيذ بواسطة <img className="ibmIcon" src="assets/images/icons/ibm.png" alt="IBMCopyrights" /></div>
                                 </div>
 
                             </div>
