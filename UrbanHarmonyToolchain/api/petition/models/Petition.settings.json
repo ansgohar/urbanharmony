@@ -13,15 +13,6 @@
     "commiteeDate": {
       "type": "date"
     },
-    "status": {
-      "type": "enumeration",
-      "enum": [
-        "na",
-        "accepted",
-        "rejected"
-      ],
-      "default": "na"
-    },
     "surveylist": {
       "model": "surveylist",
       "via": "petition"

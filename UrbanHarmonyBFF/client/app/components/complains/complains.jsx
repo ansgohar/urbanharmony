@@ -79,62 +79,6 @@ class ComplainsPage extends React.Component {
                                                         سداد رسوم تظلم 75 جم ( خمسة وسبعون جنيهاً ) بديوان عام وزارة الثقافة – بميدان الكيت كات – امبابة – الجيزة أو دفع رسم تظلم عن طريق مكتب البريد لصالح وزارة الثقافة وإحضار صورة من الأخطار .
                                                     </p>
                                                 </div>
-                                                {/* <div id="menu1tab2" className="col-xs-12 tab-pane subtab fade">
-                                                    <div className="col-xs-12 progressbar-cont">
-                                                        <ul className="col-xs-12 progressbar">
-                                                            <li className="passed"><div className="progress-style"><div className="prog-contentsty">معلومات شخصية</div></div></li>
-                                                            <li className=""><div className="progress-style"><div className="prog-contentsty">معلومات عن التظلم</div></div></li>
-                                                            <li className=""><div className="progress-style"><div className="prog-contentsty">الدفع</div></div></li>
-                                                            <li className=""><div className="progress-style"><div className="prog-contentsty">تأكيد الإجرائات</div></div></li>
-                                                        </ul>
-                                                    </div>
-                                                    <div className="col-xs-12 competitionDetailsForm">
-                                                        <form className="form-horizontal" action="#">
-                                                            <div className="form-group">
-                                                                <label className="fieldLabel col-sm-1 col-xs-12" htmlFor="Name">الاسم<span className="requiredField">*</span></label>
-                                                                <div className="col-xs-12 col-sm-3 formField">
-                                                                    <input className="form-control" placeholder="" type="text" />
-                                                                </div>
-                                                            </div>
-                                                            <div className="form-group">
-                                                                <label className="fieldLabel col-sm-1 col-xs-12" htmlFor="email">السن</label>
-                                                                <div className="col-xs-12 col-sm-3 formField">
-                                                                    <input className="form-control" placeholder="" type="text" />
-                                                                </div>
-                                                            </div>
-                                                            <div className="form-group">
-                                                                <label className="fieldLabel col-sm-1 col-xs-12" htmlFor="email">المهنة</label>
-                                                                <div className="col-xs-12 col-sm-3 formField">
-                                                                    <input className="form-control" placeholder="" type="text" />
-                                                                </div>
-                                                            </div>
-                                                            <div className="form-group">
-                                                                <label className="fieldLabel col-sm-1 col-xs-12"> البريد الإلكتروني<span className="requiredField">*</span></label>
-                                                                <div className="col-xs-12 col-sm-3 formField">
-                                                                    <input className="form-control" placeholder="" type="email" />
-                                                                </div>
-                                                            </div>
-                                                            <div className="form-group">
-                                                                <label className="fieldLabel col-sm-1 col-xs-12">المحمول<span className="requiredField">*</span></label>
-                                                                <div className="col-xs-12 col-sm-3 formField">
-                                                                    <input className="form-control" placeholder="" type="text" />
-                                                                </div>
-                                                            </div>
-                                                            <div className="form-group">
-                                                                <label className="fieldLabel col-sm-1 col-xs-12">وسيلة التواصل المفضلة</label>
-                                                                <div className="formCheckBox col-xs-12 col-sm-3">
-                                                                    <label className="mobCheckBox">
-                                                                        <input type="checkbox" />
-                                                                        محمول </label>
-                                                                    <label className="emailCheckBox">
-                                                                        <input type="checkbox" />
-                                                                        بريد إلكتروني</label>
-                                                                </div>
-                                                                <input className="btn btn-info submitFormBtn" value="حفظ" type="submit" />
-                                                            </div>
-                                                        </form>
-                                                    </div>
-                                                </div> */}
                                                 <div id="menu1tab3" className="col-xs-12 tab-pane subtab fade no-padding">
 
                                                     <div className="col-xs-12 col-sm-10 limitheader-cont no-padding">

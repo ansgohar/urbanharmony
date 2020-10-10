@@ -24,8 +24,6 @@ class AllComplainsList extends React.Component {
         if (petitionData) {
             if (petitionData.commiteeDate && petitionData.commiteeDate !== '' && petitionData.commiteeDate !== ' ')
                 document.getElementById('commiteeDate').innerHTML = (new Date(petitionData.commiteeDate)).toLocaleDateString('ar-EG');
-            if (petitionData.status && petitionData.status !== '' && petitionData.status !== ' ' && petitionData.status !== 'na')
-                document.getElementById('status').innerHTML = (petitionData.status === 'accepted' ? 'تم القبول' : 'تم الرفض');
             if (petitionData.owner && petitionData.owner !== '' && petitionData.owner !== ' ')
                 document.getElementById('owner').innerHTML = petitionData.owner;
             if (petitionData.ownerType && petitionData.ownerType !== '' && petitionData.ownerType !== ' ')
@@ -34,21 +32,24 @@ class AllComplainsList extends React.Component {
                 document.getElementById('committeDesicion').innerHTML = petitionData.committeDesicion;
             if (petitionData.recommendation && petitionData.recommendation !== '' && petitionData.recommendation !== ' ')
                 document.getElementById('recommendation').innerHTML = petitionData.recommendation;
-            if (petitionData.buildingPhoto && petitionData.buildingPhoto.url && petitionData.buildingPhoto.url !== '' && petitionData.buildingPhoto.url !== ' ')
+            if (petitionData.buildingPhoto && petitionData.buildingPhoto.url && petitionData.buildingPhoto.url !== '' && petitionData.buildingPhoto.url !== ' '){
+                document.getElementById('hiddenPicture').style.display = 'block';
                 document.getElementById('buildingPhoto').href = `http://${config.host}:${config.cms_port}${petitionData.buildingPhoto.url}`;
+            } else {
+                document.getElementById('hiddenPicture').style.display = 'none';
+            }
         }
 
         document.getElementById('overlay').style.display = 'block';
     }
 
     off() {
-        document.getElementById('commiteeDate').innerHTML = 'لم يحدد بعد';
-        document.getElementById('status').innerHTML = 'لم يحدد بعد';
-        document.getElementById('owner').innerHTML = 'لا يوجد';
-        document.getElementById('ownerType').innerHTML = 'لم يحدد بعد';
-        document.getElementById('committeDesicion').innerHTML = 'لم يحدد بعد';
-        document.getElementById('recommendation').innerHTML = 'لم يحدد بعد';
-        document.getElementById('buildingPhoto').href = 'http://via.placeholder.com/150x150';
+        document.getElementById('commiteeDate').innerHTML = '-';
+        document.getElementById('owner').innerHTML = '-';
+        document.getElementById('ownerType').innerHTML = '-';
+        document.getElementById('committeDesicion').innerHTML = '-د';
+        document.getElementById('recommendation').innerHTML = '-';
+        document.getElementById('buildingPhoto').href = '#';
 
         document.getElementById('overlay').style.display = 'none';
     }
@@ -73,14 +74,6 @@ class AllComplainsList extends React.Component {
                 })
             }
         );
-    }
-
-    translateStatus(value) {
-        if (value == 'No') {
-            return 'لا يوجد';
-        } else {
-            return 'يوجد';
-        }
     }
 
     render() {
@@ -149,16 +142,6 @@ class AllComplainsList extends React.Component {
             }
         ]
 
-        /*
-        Cell: props => <span> <a href="" onClick={this.setState(prevState =>{
-                return {
-                    petitionList: prevState.petitionList , 
-                    output: true,
-                    petitionID: props.original.id
-                }
-            })}>{this.translateStatus(props.value)} </a></span>
-        */
-
         let overlayStyle = {
             position: 'fixed',
             display: 'none',
@@ -198,28 +181,27 @@ class AllComplainsList extends React.Component {
                     <div style={cardStyle}>
                         <div style={containerStyle}>
                             <h1>معلومات عن التظلم</h1>
-                            <small><a onClick={() => this.off()}>اغلاق الواجهة</a></small>
+                            <a className='btn btn-danger' onClick={() => this.off()}>اغلاق الواجهة</a>
                             <hr/>
                             <p>مقدم التظلم:</p>
-                            <p id='owner'>لا يوجد</p>
+                            <p id='owner'>-</p>
                             <hr/>
                             <p>صفة المقدم:</p>
-                            <p id='ownerType'>لم يحدد بعد</p>
-                            <hr/>
-                            <p>وضع التظلم:</p>
-                            <p id='status'>لم يحدد بعد</p>
+                            <p id='ownerType'>-</p>
                             <hr/>
                             <p>تاريخ الجلسة:</p>
-                            <p id='commiteeDate'>لم يحدد بعد</p>
+                            <p id='commiteeDate'>-</p>
                             <hr/>
                             <p>قرار اللجنة:</p>
-                            <p id='committeDesicion'>لم يحدد بعد</p>
+                            <p id='committeDesicion'>-</p>
                             <hr/>
                             <p>توصية اللجنة:</p>
-                            <p id='recommendation'>لم يحدد بعد</p>
+                            <p id='recommendation'>-</p>
                             <hr/>
-                            <p>صورة المبني:</p>
-                            <a id='buildingPhoto' target='_blank' href='http://via.placeholder.com/150x150'>فتح الصورة</a>
+                            <div id='hiddenPicture'>
+                                <p>صورة المبني:</p>
+                                <a id='buildingPhoto' target='_blank' href='#'>فتح الصورة</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -227,7 +209,7 @@ class AllComplainsList extends React.Component {
                     <ReactTable
                         data={this.props.complainsList}
                         columns={columns}
-                        defaultPageSize={5}
+                        defaultPageSize={100}
                         previousText='قبل'
                         nextText='بعد'
                         loadingText='تحميل...'
@@ -239,19 +221,6 @@ class AllComplainsList extends React.Component {
                 </div>
             </React.Fragment>
         );
-
-        let petition = (
-            <div>
-                <h5>""حالة التظلم</h5>
-                <p>{() => {
-                    for (let i = 0; this.state.petitionList.length > i; i++) {
-                        if (this.state.petitionList[i].surveylist.id == this.state.petitionID) {
-                            return this.state.petitionList[i].recommendation
-                        }
-                    }
-                }}</p>
-            </div>
-        )
 
         return table;
     }

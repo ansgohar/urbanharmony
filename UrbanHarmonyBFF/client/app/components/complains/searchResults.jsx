@@ -53,7 +53,7 @@ export default (async function modified_searchResults(values, dispatch){
         let expression = jsonata('data.$.surveylists.{"id":_id, "registrationNO":registrationNumber, "type":buildingType, "address":address, "governorate":governorate, "mainArea":mainArea, "subArea":subArea, "value":buildingValue,"status":status, "date":updatedAt,"buildingNo":buildingNumber,"buildingName":buildingName}');
         let surveyList = expression.evaluate(body);
 
-        if (surveyList === undefined || Object.keys(surveyList).length == 0) {
+        if (surveyList === undefined || Object.keys(surveyList).length === 0) {
             surveyList = [];
         }
 

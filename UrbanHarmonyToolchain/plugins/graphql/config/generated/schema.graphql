@@ -103,12 +103,6 @@ enum ENUM_LIBRARY_BOOKCATEGORY {
   sociology
 }
 
-enum ENUM_PETITION_STATUS {
-  na
-  accepted
-  rejected
-}
-
 enum ENUM_PROJECTS_STATUS {
   working
   planned
@@ -202,7 +196,6 @@ type Petition {
   createdAt: String!
   updatedAt: String!
   commiteeDate: String
-  status: ENUM_PETITION_STATUS
   surveylist: Surveylist
   genID: String
   owner: String!
@@ -226,10 +219,7 @@ type Projects {
   Details: String
   Status: ENUM_PROJECTS_STATUS!
   Title: String
-  imgBefore: UploadFile
   imgAfter: UploadFile
-  imgBefore2: UploadFile
-  imgAfter2: UploadFile
 }
 
 type Query {
