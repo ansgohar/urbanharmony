@@ -1,0 +1,1 @@
+db.surveylist.find().forEach(x=>{if(!x.registrationNumber){return;}x.registrationNumber=x.registrationNumber.valueOf().toString();db.surveylist.save(x)})

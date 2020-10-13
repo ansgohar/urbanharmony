@@ -317,7 +317,6 @@ type Surveylist {
   createdAt: String!
   updatedAt: String!
   genID: String
-  registrationNumber: Int
   buildingType: String
   buildingName: String
   buildingValue: String
@@ -329,6 +328,7 @@ type Surveylist {
   buildingNumber: Int
   currentOwner: String
   mainOwner: String
+  registrationNumber: String
   petition(sort: String, limit: Int, start: Int, where: JSON): [Petition]
 }
 
