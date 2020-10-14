@@ -12,9 +12,7 @@ class DetailInternal extends React.Component {
     }
 
     getDetailID() {
-        var parsed = queryString.parse(this.props.location.search);
-        //console.log(parsed);
-        //console.log(this.props.location);
+        let parsed = queryString.parse(this.props.location.search);
         fetch('/internalnews/id/' + parsed.news, {
             method: 'GET'
         }).then(res => res.json()
@@ -46,22 +44,10 @@ class DetailID extends React.Component {
         super(props);
     }
 
-    // convertDateToArabic(date) {
-    //     if (date) {
-    //         let arabicDate = new Date(date);
-    //         return arabicDate.toLocaleDateString('ar-EG');
-    //     }
-    //     else {
-    //         return '' };
-
-    // }
-
     render() {
        function convertDateToArabic(date) {
             if (date) {
                 let arabicDate = new Date(date);
-                //console.log(arabicDate);
-                //console.log(arabicDate.toLocaleDateString('ar-EG'));
                 return arabicDate.toLocaleDateString('ar-EG');
             }
             else {
@@ -74,9 +60,9 @@ class DetailID extends React.Component {
         return (
             <div className="tile conferenceCard col-xs-12 col-xm-10 page-margin">
                 <div className="col-xs-12 newscard-container nopadding-mobile">
-                    <div className="col-xs-12 news-rightSide nopadding-mobile">
+                    <div className="col-xs-12 nopadding-mobile">
                         
-                            {this.props.record.newImage1 === `http://${config.host}:${config.cms_port}` || this.props.record.newImage1 === 'http://localhost:1337' ? '' : <div className="image-container-16x5"><Image src={this.props.record.newImage1} /></div>}
+                            {this.props.record.newImage1 === `http://${config.host}:${config.cms_port}` || this.props.record.newImage1 === 'http://localhost:1337' ? '' : <Image src={this.props.record.newImage1} />}
                         
                         
                     </div>

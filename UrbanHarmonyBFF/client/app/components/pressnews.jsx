@@ -28,8 +28,6 @@ class MorePressNews extends React.Component {
         }
         let news = this.props.pressNews;
         let sortedNews = news;
-        console.log(news);
-        console.log(sortedNews);
         sortedNews.sort((a, b) => (a.DatePublished < b.DatePublished) ? 1 : -1)
         return sortedNews.map(a => {
             return <Press record={a} key={a.id} />;
@@ -65,9 +63,9 @@ class Press extends React.Component {
                         <span className="cardCat">صحافة</span>
                         <h3>{this.props.record.title}</h3>
                         <span className="author">   كتبة  {this.props.record.author} </span>
-                        <h5 className="h5news">تاريخ النشر : {convertDateToArabic(this.props.record.DatePublished)}</h5>
+                        {this.props.record && this.props.record.DatePublished ? <h5 className="h5news">تاريخ النشر : {convertDateToArabic(this.props.record.DatePublished)}</h5> : ''}
                         <p>{this.props.record.article}</p>
-                        <a target="_blank" href={this.props.record.linkURL}>مصدر الخبر</a>
+                        {this.props.record && this.props.record.linkURL ? <a target="_blank" href={this.props.record.linkURL}>مصدر الخبر</a> : ''}
                     </div>
                 </div>
             </div>

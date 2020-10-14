@@ -17,7 +17,7 @@ class AdditionalSystemsItem extends React.Component {
                         <div className="secAdditionalText col-xs-12">
                             <h2>{this.props.title}</h2>
                             <p>{this.props.details}</p>
-                            <a href={this.props.link}>للمزيد اضغط هنا</a>
+                            <a href={this.props.link} target='_blank'>للمزيد اضغط هنا</a>
                         </div>
                     </div>
                     {/*If no image is found do not render the image*/}

@@ -103,18 +103,7 @@ class AdditionalSystems extends React.Component {
                         {/* <!-- Wrapper for slides --> */}
                         <div className="carousel-inner">
                             {this.state.items}
-                            {/* <!-- Left and right controls --> */}
                         </div>
-                        {/*<div style={{display: 'block', padding: '10px'}}>
-                            <a className="left carousel-control" href="#secondaryCarousel" data-slide="prev">
-                                <span className="glyphicon glyphicon-triangle-left"></span>
-                                <span className="sr-only">Previous</span>
-                            </a>
-                            <a className="right carousel-control" href="#secondaryCarousel" data-slide="next">
-                                <span className="glyphicon glyphicon-triangle-right"></span>
-                                <span className="sr-only">Next</span>
-                            </a>
-                        </div>*/}
                     </div>
                 </div>
             </div>
