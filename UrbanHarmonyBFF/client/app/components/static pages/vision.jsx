@@ -1,10 +1,37 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import {connect} from 'react-redux';
 import ReactMarkdown from 'react-markdown';
+import * as config from '../../../config/config';
 
 class Vision extends React.Component {
     constructor(props) {
         super(props);
+
+        this.state = {
+            about: ''
+        }
+    }
+
+    fetchAbout() {
+        const options = {
+            method: 'GET',
+            headers: {
+                Accept: 'application/json'
+            }
+        };
+
+        const host = `http://${config.host}:${config.cms_port}`;
+        const path = `${host}/dynamictexts`;
+        const query = `${path}?location=about`;
+
+        fetch(query, options)
+            .then(res => res.json())
+            .then(body => this.setState({about: body[0].details}))
+            .catch(err => console.error(err));
+    }
+
+    componentDidMount() {
+        this.fetchAbout();
     }
 
     render() {
@@ -13,30 +40,7 @@ class Vision extends React.Component {
                 <div className="col-xs-12 no-padding greyish-background">
                     <h2 className="sec-h2 add-padding">رؤيتنا و أهدافنا</h2>
                     <div className="add-margin" style={{fontSize: "20px"}}>
-                        <strong><p style={{marginTop: "40px"}}>
-                            يهدف الجهاز إلى تحقيق القيم الجمالية للشكل الخارجى للأبنية والفراغات العمرانية والأثرية وأسس النسيج البصرى للمدن والقرى وكافة المناطق الحضارية للدولة، بما فى ذلك المجتمعات العمرانية الجديدة.
-                    </p></strong>
-
-                        <strong><p style={{marginTop:"30px"}}>
-                            ويحق للجهاز فى سبيل تحقيق أهدافه اتخاذ جميع القرارات والتوصيات اللازمة لتحقيق أهدافه, وذلك بما لا يتعارض مع أحكام القوانين والتشريعات القائمة و له على الأخص ما يلى
-                    </p></strong>
-
-                        <p style={{lineHeight: "40px", paddingBottom: "40px", paddingTop:"30px"}}>
-
-                            ١‎.      إعادة صياغة الرؤية الجمالية لكافة مناطق الدولة والعمل على إزالة  التشوهات الحالية.
-<br />
-                            ٢‎.      إعداد قاعدة بيانات شاملة لجميع المبانى ذات الطابع المعمارى المميز بجميع محافظات الجمهورية ووضع القواعد اللازمة للحفاظ عليها.
-<br />
-                            ٣.      وضع الضوابط التى تكفل عدم التغيير فى الشكل المعمارى القائم بمنع الإضافات التى تتم على المبانى القائمة والتى تشوه المنظر العام.
-<br />
-                            ٤.      وضع أسس التعامل مع الفراغات المعمارية كالحدائق والشوارع والأرصفة والإنارة والألوان المستخدمة بمراعاة طبيعة كل منطقة  والمعايير الدولية المتعارف عليها، وذلك بما يحقق احترام حركة المشاة والمعاقين مع استخدام الخامات والألوان التى تتناسب مع الطابع المعمارى لكل منطقة.
-<br />
-                            ٥.      وضع الشروط والضوابط اللازمة لشكل الإعلانات و اللافتات بالشوارع والميادين وعلى واجهات المبانى من حيث المساحة والارتفاع والألوان والمكان الذى يوضع فيه الإعلان أو اللافتة.
-<br />
-                            ٦.       إعادة صياغة الميادين العامة وفقاَ لرؤية معمارية وبصرية تتفق والطابع المميز لكل منطقة مع الاحتفاظ بالشكل القديم الأصلى للميادين التى تمثل طابعاً معمارياً متميزا.ً
-<br />
-                            ٧.      إبداء الرأى فى مشروعات القوانين واللوائح التى تسهم فى تحقيق التنسيق الحضارى.
-    </p>
+                        <ReactMarkdown source={this.state.about}/>
                     </div>
                 </div>
             </div>

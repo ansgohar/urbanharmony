@@ -69,6 +69,15 @@ type Contestant {
   address: String
 }
 
+"""Dynamic text rendering for some static texts"""
+type Dynamictexts {
+  _id: ID!
+  createdAt: String!
+  updatedAt: String!
+  location: String!
+  details: String!
+}
+
 enum ENUM_CONDITIONSANDLAWS_TYPE {
   Laws
   Borders
@@ -189,7 +198,7 @@ type Library {
   abstract: String
 }
 
-union Morph = Competitions | Conditionsandlaws | Conferences | Consultingoffice | Contestant | Governorate | Incident | Internalnews | Journal | Library | Petition | Projects | Regions | Spotlight | Studies | Subsys | Surveylist | Videos | UploadFile | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsUser
+union Morph = Competitions | Conditionsandlaws | Conferences | Consultingoffice | Contestant | Dynamictexts | Governorate | Incident | Internalnews | Journal | Library | Petition | Projects | Regions | Spotlight | Studies | Subsys | Surveylist | Videos | UploadFile | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsUser
 
 type Petition {
   _id: ID!
@@ -233,6 +242,8 @@ type Query {
   consultingoffices(sort: String, limit: Int, start: Int, where: JSON): [Consultingoffice]
   contestant(id: ID!): Contestant
   contestants(sort: String, limit: Int, start: Int, where: JSON): [Contestant]
+  dynamictext(id: ID!): Dynamictexts
+  dynamictexts(sort: String, limit: Int, start: Int, where: JSON): [Dynamictexts]
   governorate(id: ID!): Governorate
   governorates(sort: String, limit: Int, start: Int, where: JSON): [Governorate]
   incident(id: ID!): Incident

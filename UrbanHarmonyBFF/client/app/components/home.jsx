@@ -11,6 +11,7 @@ import {connect} from 'react-redux';
 import Image from "./image.jsx";
 import * as config from '../../config/config';
 import AdditionalSystems from "./additionalSystems.jsx";
+import ReactMarkdown from "react-markdown";
 
 export class HomePage extends React.Component {
 
@@ -18,14 +19,46 @@ export class HomePage extends React.Component {
         super(props);
 
         this.state = {
-            spotlight: 'https://via.placeholder.com/560x315'
+            spotlight: 'https://via.placeholder.com/560x315',
+            vision: '',
+            additionalSection: undefined
         }
     }
 
     componentDidMount() {
-        fetch('/spotlight', {method: 'GET', headers: {Accept: 'text/plain'}})
+
+        const host = `http://${config.host}:${config.cms_port}`;
+        let path = `/spotlight`;
+        let query = '';
+
+        let options = {
+            method: 'GET',
+            headers: {
+                Accept: 'text/plain'
+            }
+        };
+
+        fetch(path, options)
             .then(response => response.text())
-            .then(response => this.setState({spotlight: response}));
+            .then(response => this.setState({spotlight: response}))
+            .catch(err => console.error(err));
+
+        path = `${host}/dynamictexts`;
+        query = `${path}?location=vision`;
+        options.headers.Accept = 'application/json';
+
+        fetch(query, options)
+            .then(res => res.json())
+            .then(body => this.setState({vision: body[0].details}))
+            .catch(err => console.error(err));
+
+        query = `${path}?location=additionalSection`;
+
+        fetch(query, options)
+            .then(res => res.json())
+            .then(body => this.setState({additionalSection: body[0].details}))
+            .catch(err => console.error(err));
+
     }
 
     topExternalNews() {
@@ -104,7 +137,7 @@ export class HomePage extends React.Component {
                     </div>
                 </div>
 
-                <AdditionalSystems/>
+                <AdditionalSystems title={this.state.additionalSection}/>
 
                 {/* <!-- Our Vision -->  */}
                 <div id="ourvision-sec " className="row" id="about">
@@ -121,10 +154,7 @@ export class HomePage extends React.Component {
                             </div>
                             <div className="col-xs-12 col-sm-7 sec2LeftSide nopadding-mobile">
                                 <div className="sec2LeftSideText col-xs-12">
-                                    <h2>رؤيتنا و أهدافنا</h2>
-                                    <p>يهدف الجهاز إلى تحقيق القيم الجمالية للشكل الخارجى للأبنية والفراغات العمرانية
-                                        والأثرية وأسس النسيج البصرى للمدن والقرى وكافة المناطق الحضارية للدولة، بما فى
-                                        ذلك المجتمعات العمرانية الجديدة.</p>
+                                    <ReactMarkdown source={this.state.vision} />
                                     <a className="sec2Btn" href="/vision"> المزيد </a>
                                 </div>
                             </div>

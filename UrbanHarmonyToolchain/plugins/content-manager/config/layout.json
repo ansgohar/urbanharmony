@@ -478,5 +478,22 @@
         "appearance": ""
       }
     }
+  },
+  "dynamicTexts": {
+    "attributes": {
+      "location": {
+        "appearance": ""
+      },
+      "details": {
+        "appearance": "WYSIWYG"
+      }
+    }
+  },
+  "dynamictexts": {
+    "attributes": {
+      "details": {
+        "appearance": "WYSIWYG"
+      }
+    }
   }
 }

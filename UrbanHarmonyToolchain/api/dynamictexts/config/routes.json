@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/dynamictexts",
+      "handler": "Dynamictexts.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/dynamictexts/count",
+      "handler": "Dynamictexts.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/dynamictexts/:_id",
+      "handler": "Dynamictexts.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/dynamictexts",
+      "handler": "Dynamictexts.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/dynamictexts/:_id",
+      "handler": "Dynamictexts.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/dynamictexts/:_id",
+      "handler": "Dynamictexts.destroy",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

@@ -1,10 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import WorkingProject from './workingProject.jsx';
-import PlannedProject from './plannedProject.jsx';
-import DoneProject from './doneProject.jsx';
-
 import AllDoneProject from './allDoneProjects.jsx';
 import AllPlannedProject from './allPlannedProjects.jsx';
 import AllWorkingProject from './allWorkingProjects.jsx';

@@ -1,0 +1,22 @@
+{
+  "connection": "default",
+  "collectionName": "dynamictexts",
+  "info": {
+    "name": "dynamictexts",
+    "description": "Dynamic text rendering for some static texts"
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "location": {
+      "unique": true,
+      "type": "string",
+      "required": true
+    },
+    "details": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

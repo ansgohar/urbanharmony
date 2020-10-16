@@ -94,7 +94,7 @@ class AdditionalSystems extends React.Component {
         return (
             <div id="additionalServices" className="row">
                 <div className="col-xs-12 no-padding additionalSec">
-                    <div className="sec-h2" style={{color: 'white'}}>خدمات أضافية</div>
+                    <div className="sec-h2" style={{color: 'white'}}>{this.props.additionalSection || 'خدمات أضافية'}</div>
                     <div id="secondaryCarousel" className="carousel slide" data-ride="carousel">
                         {/* <!-- Indicators --> */}
                         <ol className="carousel-indicators">

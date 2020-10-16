@@ -28,12 +28,14 @@ class App extends React.Component {
         super(props);
 
         this.state = {
-            subsys: []
+            subsys: [],
+            additionalMenu: undefined
         }
     }
 
     componentDidMount() {
         this.fetchSubsys();
+        this.fetchMenuTitle();
     }
 
     fetchSubsys() {
@@ -68,6 +70,24 @@ class App extends React.Component {
              .catch(error => console.error(error));
     }
 
+    fetchMenuTitle() {
+        const host = `http://${config.host}:${config.cms_port}`;
+        let path = `${host}/dynamictexts`;
+        let query = `${path}?location=additionalMenu`;
+
+        let options = {
+            method: 'GET',
+            headers: {
+                Accept: 'application/json'
+            }
+        };
+
+        fetch(query, options)
+            .then(res => res.json())
+            .then(body => this.setState({additionalMenu: body[0].details}))
+            .catch(err => console.error(err));
+    }
+
     render() {
 
         return (
@@ -88,7 +108,7 @@ class App extends React.Component {
                                     <li id="imp-service-menu" className="menu-position">
                                         <a href="#services">أهم الخدمات<strong class="caret"></strong> </a>
                                         <ul id="imp-service-sub" class="second-level" style={{'width':'200px', marginTop: 0}}>
-                                            <li><a href="/complainsDetail">قوائم الحصر والتظلمات</a></li>
+                                            <li><a href="/complainsDetail">الحصر والتظلمات</a></li>
                                             <li><a href="/allIncidents">المرصد الحضاري و الظبطية القضائية</a></li>
                                             <li id="dropdow" style={{"width": "200px"}}><a href="/lawsDetails">القوانين</a></li>
                                             <li><a href="/consultingOffices">مكاتب إستشارية</a></li>
@@ -101,7 +121,7 @@ class App extends React.Component {
                                     <li className="menu-position"><a href="/library" id="lib">مكتبة الجهاز</a></li>
                                     <li className="menu-position"><a href="http://urbanharmony.org/grievance/">تسجيل و متابعة التظلمات</a></li>
                                     {this.state.subsys.length ? <li id="additional-services-menu" className="menu-position">
-                                        <a href="#additionalServices">خدمات أضافية<strong className="caret"></strong> </a>
+                                        <a href="#additionalServices">{this.state.additionalMenu || 'خدمات أضافية'}<strong className="caret"></strong> </a>
                                         <ul id="additional-services-sub" className="second-level"
                                             style={{'width': '200px', marginTop: 0}}>
                                             {this.state.subsys.map(value => <div><li><a href={value.link}>{value.title}</a></li><br/></div>)}

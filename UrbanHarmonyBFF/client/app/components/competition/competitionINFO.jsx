@@ -87,7 +87,7 @@ class CmpID extends React.Component {
         if (prevCmp === 0) {
             return (
                 <div className="col-xs-12 newscard-container nopadding-mobile page-margin">
-                    <div className="col-xs-12 news-rightSide nopadding-mobile">
+                    <div className="col-xs-12 news-leftSide nopadding-mobile">
                         <Image src={this.props.competition.image}/>
                     </div>
                     <div className="col-xs-12 news-leftSide">

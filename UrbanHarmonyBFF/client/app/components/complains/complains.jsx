@@ -1,16 +1,42 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import ComplainsData from './complainsData.jsx'
-import Governorates from './governorates.jsx'
 import SurveySearch from './search.jsx'
 import AllComplainsList from './complainsList.jsx'
-import ReactTable from "react-table";
 import searchResults from './searchResults.jsx';
 import ComplainSearchResults from './complainsSearchResults.jsx';
+import * as config from "../../../config/config";
+import ReactMarkdown from "react-markdown";
 
 class ComplainsPage extends React.Component {
     constructor(props) {
         super(props);
+
+        this.state = {
+            info: ''
+        }
+    }
+
+    fetchPetitionDetails() {
+        const host = `http://${config.host}:${config.cms_port}`;
+        const path = `${host}/dynamictexts`;
+        const query = `${path}?location=petition`;
+
+        const options = {
+            method: 'GET',
+            headers: {
+                Accept: 'application/json'
+            }
+        };
+
+        fetch(query, options)
+            .then(res => res.json())
+            .then(body => this.setState({info: body[0].details}))
+            .catch(err => console.error(err));
+    }
+
+    componentDidMount() {
+        this.fetchPetitionDetails();
     }
 
     render() {
@@ -54,30 +80,11 @@ class ComplainsPage extends React.Component {
                                         <div className="col-xs-12 nopadding-mobile">
                                             <ul className="col-xs-12 nav nav-tabs">
                                                 <li className="active"><a data-toggle="tab" href="#menu1tab1" aria-expanded="false">معلومات عن تقديم التظلمات</a></li>
-                                                {/* <li className=""><a data-toggle="tab" href="#menu1tab2" aria-expanded="false">قدم تظلمك</a></li> */}
                                                 <li className=""><a data-toggle="tab" href="#menu1tab3" aria-expanded="true">متابعة التظلم</a></li>
                                             </ul>
                                             <div className="col-xs-12 tab-content nopadding-mobile">
                                                 <div id="menu1tab1" className="col-xs-12 tab-pane subtab fade active in">
-                                                    <p>
-                                                        فى ضوء صدور القانون رقم 144 لسنه 2006 بشأن الحفاظ على المبانى ذات الطراز المعمارى المتميز وقد تشكلت لجان لحصر المبانى والمنشآت الصادر بها قرار من المحافظ المختص وتقوم لجنة حصر المبانى والمنشآت بقيد العقارات المحظور هدمها فى سجلات يوضح بها أسباب القيد للمبانى والمنشآت.
-                                                    </p>
-                                                    <p>
-                                                        ويمكن لذوى الشأن التظلم من القرارات النهائية للجنة الحصر بعد اعتمادها من السيد رئيس مجلس الوزراء بالقيد ضمن العقارات المحزور هدمها وذلك بالتقدم بطلب للجنة التظلمات المشكلة بقرار من رئيس مجلس الوزراء خلال شهر من تاريخ الاخطار.
-                                                    </p>
-                                                    <p>
-                                                        المستندات المطلوب للتقدم بطلب تظلم :-
-                                                    <br />
-                                                        طلب تظلم بأسم رئيس لجنه التظلمات .
-                                                    <br />
-                                                        صورة عقد ملكية العقار .
-                                                    <br />
-                                                        صورة التوكيل ( فى حالة وجود موكل ).
-                                                    <br />
-                                                        شهادة مشتملات ( العوايد ).
-                                                    <br />
-                                                        سداد رسوم تظلم 75 جم ( خمسة وسبعون جنيهاً ) بديوان عام وزارة الثقافة – بميدان الكيت كات – امبابة – الجيزة أو دفع رسم تظلم عن طريق مكتب البريد لصالح وزارة الثقافة وإحضار صورة من الأخطار .
-                                                    </p>
+                                                    <ReactMarkdown source={this.state.info} />
                                                 </div>
                                                 <div id="menu1tab3" className="col-xs-12 tab-pane subtab fade no-padding">
 

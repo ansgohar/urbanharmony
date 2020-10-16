@@ -23,7 +23,7 @@ class AdditionalSystemsItem extends React.Component {
                     {/*If no image is found do not render the image*/}
                     {this.props.image && this.props.image.url ? <div className="col-xs-12 col-sm-7 secAdditionalLeft nopadding-mobile">
                         <div className="secAdditionalLeftSidePic">
-                            <img src={`http://${config.host}:${config.cms_port}${this.props.image.url}`} alt="Test"/>
+                            <img className="image-size" src={`http://${config.host}:${config.cms_port}${this.props.image.url}`} alt="Test"/>
                         </div>
                     </div> : ''}
                 </div>
