@@ -59,7 +59,7 @@ class CompetitionDetails extends React.Component {
     }
 }
 
-const mapStateToProps = (state, ownProps) => ({
+const mapStateToProps = (state) => ({
     competition: state.competition,
     allCompetitions: state.allCompetitions,
     winners: state.winners

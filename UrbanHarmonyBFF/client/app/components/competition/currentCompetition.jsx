@@ -21,7 +21,7 @@ class CurrentCompetition extends React.Component {
 
         let date = new Date();
 
-        let currentCompetition = null;
+        let currentCompetition;
 
         if (Array.isArray(this.props.competition) && this.props.competition.length !== 0) {
             let nearestDate = new Date(this.props.competition[0].deadline);

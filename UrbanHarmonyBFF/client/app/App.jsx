@@ -8,18 +8,18 @@ import ProjectDetails from './components/project/projectDetails.jsx'
 import ComplainsPage from './components/complains/complains.jsx'
 import LawsBordersPage from './components/laws-borders/allcontent.jsx'
 import Vision from './components/static pages/vision.jsx'
-import ContactUs from './components//static pages/contactUS.jsx'
+import ContactUs from './components/static pages/contactUS.jsx'
 import RelatedLinks from './components/static pages/relatedLinks.jsx'
 import LibraryPage from './components/library/library.jsx'
 import GlobalSearchPage from './components/global search/searchPage.jsx';
 import CompetitionInfo from './components/competition/competitionINFO.jsx';
 import ConsultingOffices from './components/consultingOffices/consultOffices.jsx';
 import ConsultingOfficeDetails from './components/consultingOffices/consultingOfficeDetails.jsx';
-import AllIncidents from './components/incidents/incidents.jsx';
+import AllIncidents from './components/incidents/index.jsx';
 import IncidentDetails from './components/incidents/incidentDetails.jsx';
 import Conferences from './components/conference/conferences.jsx';
 import { connect } from 'react-redux';
-import { BrowserRouter, Route, Link, Switch } from 'react-router-dom';
+import {Route, Switch } from 'react-router-dom';
 import * as config from '../config/config.js';
 
 class App extends React.Component {

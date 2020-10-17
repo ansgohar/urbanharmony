@@ -28,6 +28,14 @@
       "model": "file",
       "via": "related",
       "plugin": "upload"
+    },
+    "type": {
+      "default": "incident",
+      "type": "enumeration",
+      "enum": [
+        "incident",
+        "other"
+      ]
     }
   }
 }

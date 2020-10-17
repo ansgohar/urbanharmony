@@ -1,8 +1,5 @@
-
-
 import React from 'react';
 import { connect } from 'react-redux';
-import { browserHistory } from 'react-router';
 import { getCompetitionOfTheMonth } from '../../actions/index'
 import ReactMarkdown from 'react-markdown';
 
@@ -26,7 +23,6 @@ class CompetitionOfTheMonth extends React.Component {
                 {this.props.showTitle === "true" ? <h2> {this.props.competition.title}</h2> : null}
 
                 <ReactMarkdown source={this.props.competition.description} />
-
             </div>
         );
     }

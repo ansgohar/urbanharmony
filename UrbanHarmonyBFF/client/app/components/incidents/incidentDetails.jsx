@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { getIncidentDetails } from '../../actions/index.js'
+import ReactMarkdown from "react-markdown";
 import * as queryString from "query-string";
 
 
@@ -26,7 +27,8 @@ class IncidentDetails extends React.Component {
             return arabicDate.toLocaleDateString('ar-EG');
         }
         else {
-            return '' };
+            return ''
+        }
 
     }
 
@@ -46,7 +48,7 @@ class IncidentDetails extends React.Component {
 
                             <tr className="table-row">
                                 <td className="table-data table-header">سبب الرصد </td>
-                                <td className="table-data">{this.props.incidentDetails.description}</td>
+                                <td className="table-data"><ReactMarkdown source={this.props.incidentDetails.description} /></td>
                             </tr>
 
                             <tr className="table-row">

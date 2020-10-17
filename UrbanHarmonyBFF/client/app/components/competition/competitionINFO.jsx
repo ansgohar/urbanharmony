@@ -147,7 +147,7 @@ let CompetitionWinners = (props) => {
     return (<div>{winners.length === 0 ? <p>لم يحددوا بعد</p> : winners}</div>);
 };
 
-const mapStateToProps = (state, ownProps) => ({
+const mapStateToProps = (state) => ({
     competitionID: state.competitionID,
 });
 

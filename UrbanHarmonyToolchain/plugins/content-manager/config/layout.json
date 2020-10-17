@@ -209,6 +209,12 @@
       },
       "Photographer": {
         "appearance": ""
+      },
+      "description": {
+        "appearance": "WYSIWYG"
+      },
+      "type": {
+        "appearance": ""
       }
     }
   },

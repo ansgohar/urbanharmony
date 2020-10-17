@@ -7,15 +7,22 @@ import Image from '../image.jsx'
 class AllIncidents extends React.Component {
     constructor(props) {
         super(props);
-        this.getAllIncidents();
+
+        this.state = {
+            data: []
+        }
     }
 
     getAllIncidents() {
-        fetch('/incidents', {
+        fetch(`/incidents/${this.props.type}`, {
             method: 'GET'
         }).then(res => res.json()
-        ).then(data => this.props.dispatch(getIncidents(data))
+        ).then(data => {this.props.dispatch(getIncidents(data)); this.setState({data: data})}
         );
+    }
+
+    componentDidMount() {
+        this.getAllIncidents();
     }
 
     render() {
@@ -24,13 +31,13 @@ class AllIncidents extends React.Component {
         }
 
         return (
-            <div className="page-margin">
+            <div className="">
                 {this.renderIncidents()}
             </div>
         )
     }
     renderIncidents() {
-        let incidents = this.props.incidents;
+        let incidents = this.state.data;
         return incidents.map(a => {
             return <Incident record={a} key={a.id} />;
         });
@@ -49,7 +56,8 @@ class Incident extends React.Component {
             return arabicDate.toLocaleDateString('ar-EG');
         }
         else {
-            return '' };
+            return '';
+        }
 
     }
 

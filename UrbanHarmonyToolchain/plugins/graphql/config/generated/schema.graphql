@@ -99,6 +99,11 @@ enum ENUM_CONTESTANT_STATUS {
   third
 }
 
+enum ENUM_INCIDENT_TYPE {
+  incident
+  other
+}
+
 enum ENUM_INTERNALNEWS_TYPE {
   Social
   Paper
@@ -141,6 +146,7 @@ type Incident {
   Date: String
   Photographer: String
   image: UploadFile
+  type: ENUM_INCIDENT_TYPE
 }
 
 type Internalnews {

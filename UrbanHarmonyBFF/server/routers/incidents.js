@@ -5,8 +5,13 @@ var express = require('express');
 module.exports = function (app) {
     var router = express.Router();
 
-    router.get('/', function (req, res, next) {
-        Incidents.getAllIncidents(function (data) {
+    router.get('/:type', function (req, res, next) {
+        if (!(req.params.type === 'incident' || req.params.type === 'other')) {
+            next();
+            return;
+        }
+
+        Incidents.getAllIncidents(req.params.type, function (data) {
             if (data === undefined || Object.keys(data).length == 0) {
                 res.json([]);
             }
