@@ -79,15 +79,6 @@ class CompetitionEntry extends React.Component {
     constructor(props) {
         super(props);
     }
-    convertDateToArabic(date) {
-        if (date) {
-            let arabicDate = new Date(date);
-            return arabicDate.toLocaleDateString('ar-EG');
-        }
-        else {
-            return '' };
-
-    }
 
     render() {
         return (
@@ -95,8 +86,8 @@ class CompetitionEntry extends React.Component {
                 <div className="col-xs-12 newscard-container nopadding-mobile">
                     <div className="col-xs-12 col-sm-3 news-rightSide nopadding-mobile">
                         <div className="image-container-4x3"> 
-                        <Image src={this.props.record.image} /> 
-</div>
+                            <Image src={this.props.record.image} />
+                        </div>
                     </div>
                     <div className="col-xs-12 col-sm-9 news-leftSide">
                         <div className="col-xs-12 winner-name no-padding">

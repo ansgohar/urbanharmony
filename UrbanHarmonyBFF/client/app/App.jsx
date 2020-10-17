@@ -18,8 +18,12 @@ import ConsultingOfficeDetails from './components/consultingOffices/consultingOf
 import AllIncidents from './components/incidents/index.jsx';
 import IncidentDetails from './components/incidents/incidentDetails.jsx';
 import Conferences from './components/conference/conferences.jsx';
+import Archive from './components/archive/index.jsx';
+import NewsArchive from './components/archive/news.jsx';
+import JournalsArchive from './components/archive/journals.jsx';
+import CompetitionsArchive from './components/archive/competitions.jsx';
 import { connect } from 'react-redux';
-import {Route, Switch } from 'react-router-dom';
+import {Route, Switch, Link} from 'react-router-dom';
 import * as config from '../config/config.js';
 
 class App extends React.Component {
@@ -112,6 +116,7 @@ class App extends React.Component {
                                             <li><a href="/allIncidents">المرصد الحضاري و الظبطية القضائية</a></li>
                                             <li id="dropdow" style={{"width": "200px"}}><a href="/lawsDetails">القوانين</a></li>
                                             <li><a href="/consultingOffices">مكاتب إستشارية</a></li>
+                                            <li><a HREF="/archive">اﻷرشيف</a></li>
                                         </ul>
                                     </li>
                                     <li className="menu-position"><a href="/competitionDetails" > مسابقات</a></li>
@@ -164,6 +169,10 @@ class App extends React.Component {
                     <Route path="/allIncidents" component={AllIncidents} />
                     <Route path="/incidentDetails" component={IncidentDetails} />
                     <Route path="/conferences" component={Conferences} />
+                    <Route path="/archive" component={Archive} />
+                    <Route path="/newsArchive" component={NewsArchive} />
+                    <Route path="/journalsArchive" component={JournalsArchive} />
+                    <Route path="/competitionsArchive" component={CompetitionsArchive} />
                 </Switch>
 
 

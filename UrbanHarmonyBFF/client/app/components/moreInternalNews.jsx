@@ -43,6 +43,7 @@ class Internal extends React.Component {
     constructor(props) {
         super(props);
     }
+
     translateLabel(label) {
         if(label == 'Social') {
             return 'سوشيال ميديا'

@@ -23,4 +23,8 @@ module.exports = function (app) {
   app.use('/allIncidents', router);
   app.use('/incidentDetails', router);
   app.use('/conferences', router);
+  app.use('/archive', router);
+  app.use('/newsArchive', router);
+  app.use('/journalsArchive', router);
+  app.use('/competitionsArchive', router);
 }
